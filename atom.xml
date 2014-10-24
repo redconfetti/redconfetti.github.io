@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[redconfetti]]></title>
+  <link href="http://redconfetti.github.io/atom.xml" rel="self"/>
+  <link href="http://redconfetti.github.io/"/>
+  <updated>2014-10-24T12:48:35-07:00</updated>
+  <id>http://redconfetti.github.io/</id>
+  <author>
+    <name><![CDATA[Jason Miller]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>
