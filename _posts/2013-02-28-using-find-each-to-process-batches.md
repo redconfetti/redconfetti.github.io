@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Using Find Each to Process Batches
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1469
-wordpress_url: http://www.rubycoloredglasses.com/?p=1469
 date: '2013-02-28 20:49:14 -0800'
-date_gmt: '2013-02-28 20:49:14 -0800'
 categories:
 - Ruby on Rails
 tags:

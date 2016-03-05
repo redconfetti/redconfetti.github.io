@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Advanced Use of Will_Paginate
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 859
-wordpress_url: http://www.redconfetti.com/?p=859
 date: '2011-09-23 18:08:56 -0700'
-date_gmt: '2011-09-23 22:08:56 -0700'
 categories:
 - Ruby on Rails
 tags:
@@ -36,8 +23,8 @@ What I'm not finding however are more advanced methods of using the will_paginat
 You can add the paginated links to the top and bottom of your paginated section using this syntax:</p>
 <pre class="brush:rails"><% paginated_section @contacts do %></p>
 <table id="contacts">
-		<%= render(:partial => "contact_row", :collection => @contacts) %><br />
-	</table><br />
+        <%= render(:partial => "contact_row", :collection => @contacts) %><br />
+    </table><br />
 <% end %></pre></p>
 <h3>Display Page Entries Info</h3><br />
 You can display text on your page such as 'Displaying contacts <strong>11 - 12</strong> of <strong>12</strong> in total' by using the following view helper.</p>

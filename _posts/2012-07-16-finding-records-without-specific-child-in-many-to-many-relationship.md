@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Finding Records without Specific Child in Many-to-Many Relationship
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1289
-wordpress_url: http://www.rubycoloredglasses.com/?p=1289
 date: '2012-07-16 21:57:49 -0700'
-date_gmt: '2012-07-16 21:57:49 -0700'
 categories:
 - Model
 tags:

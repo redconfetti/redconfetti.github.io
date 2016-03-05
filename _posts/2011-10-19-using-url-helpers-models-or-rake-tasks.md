@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Using URL Helpers in Models or Rake Tasks
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 179
-wordpress_url: http://rails.redconfetti.com/?p=179
 date: '2011-10-19 16:41:51 -0700'
-date_gmt: '2011-10-19 23:41:51 -0700'
 categories:
 - Model
 tags: []

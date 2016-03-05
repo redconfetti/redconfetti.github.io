@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Factory Girl Not Generating Factories with Scaffold
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1079
-wordpress_url: http://www.redconfetti.com/?p=1079
 date: '2012-03-19 14:18:44 -0700'
-date_gmt: '2012-03-19 18:18:44 -0700'
 categories:
 - Testing
 tags:

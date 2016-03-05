@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Building a Query String from a Hash with Rails 3
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 176
-wordpress_url: http://rails.redconfetti.com/?p=176
 date: '2011-10-19 14:35:09 -0700'
-date_gmt: '2011-10-19 21:35:09 -0700'
 categories:
 - Controller
 tags: []

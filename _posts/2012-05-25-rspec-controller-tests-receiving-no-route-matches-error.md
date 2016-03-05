@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: RSpec Controller Tests Receiving 'No route matches' Error
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1259
-wordpress_url: http://www.rubycoloredglasses.com/?p=1259
 date: '2012-05-25 18:24:17 -0700'
-date_gmt: '2012-05-25 18:24:17 -0700'
 categories:
 - Gems
 tags:

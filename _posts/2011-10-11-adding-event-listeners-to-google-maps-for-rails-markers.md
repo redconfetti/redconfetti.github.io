@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Adding Event Listeners to Google-Maps-for-Rails Markers
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 7
-wordpress_url: http://rails.redconfetti.com/?p=5
 date: '2011-10-11 11:24:27 -0700'
-date_gmt: '2011-10-11 18:24:27 -0700'
 categories:
 - View
 tags: []

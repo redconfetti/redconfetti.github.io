@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Save the Tests, Don't Throw Them Away
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1158
-wordpress_url: http://www.redconfetti.com/?p=1158
 date: '2012-04-20 17:48:02 -0700'
-date_gmt: '2012-04-20 21:48:02 -0700'
 categories:
 - Testing
 tags:

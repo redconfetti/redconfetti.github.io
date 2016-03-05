@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Generators Not Working in Rails 2.3.8
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1239
-wordpress_url: http://www.rubycoloredglasses.com/?p=1239
 date: '2012-05-16 01:14:15 -0700'
-date_gmt: '2012-05-16 01:14:15 -0700'
 categories:
 - Gems
 tags: []

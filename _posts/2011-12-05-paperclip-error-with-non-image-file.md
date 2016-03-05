@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Paperclip error with non-image file
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 924
-wordpress_url: http://www.redconfetti.com/?p=924
 date: '2011-12-05 16:43:25 -0800'
-date_gmt: '2011-12-05 20:43:25 -0800'
 categories:
 - Ruby on Rails
 tags:

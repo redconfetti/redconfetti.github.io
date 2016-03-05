@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Technical Debt
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1550
-wordpress_url: http://www.rubycoloredglasses.com/?p=1550
 date: '2013-06-03 18:43:05 -0700'
-date_gmt: '2013-06-03 18:43:05 -0700'
 categories:
 - Uncategorized
 tags:

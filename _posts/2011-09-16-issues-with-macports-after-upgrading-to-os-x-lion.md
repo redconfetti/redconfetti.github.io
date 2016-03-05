@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Issues with MacPorts After Upgrading to OS X Lion
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1276
-wordpress_url: http://www.rubycoloredglasses.com/?p=1276
 date: '2011-09-16 18:10:00 -0700'
-date_gmt: '2011-09-16 18:10:00 -0700'
 categories:
 - Mac OS X
 tags:

@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Using Serialize Option with ActiveRecord Objects
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1168
-wordpress_url: http://www.redconfetti.com/?p=1168
 date: '2012-04-25 19:01:26 -0700'
-date_gmt: '2012-04-25 23:01:26 -0700'
 categories:
 - Model
 tags:
@@ -27,22 +14,22 @@ comments: []
 <pre class="brush:rails">
 def self.adjectives<br />
   [<br />
-	  'awesome',<br />
-	  'phenomenal',<br />
-	  'terrific',<br />
-	  'fantastic',<br />
-	  'amazing',<br />
-	  'outstanding',<br />
-	  'stupendous',<br />
-	  'great',<br />
-	  'incredible',<br />
-	  'magnificent',<br />
-	  'impressive',<br />
-	  'excellent',<br />
-	  'sensational',<br />
-	  'fantasmagoric',<br />
-	  'legendary',<br />
-	  'marvelous'<br />
+      'awesome',<br />
+      'phenomenal',<br />
+      'terrific',<br />
+      'fantastic',<br />
+      'amazing',<br />
+      'outstanding',<br />
+      'stupendous',<br />
+      'great',<br />
+      'incredible',<br />
+      'magnificent',<br />
+      'impressive',<br />
+      'excellent',<br />
+      'sensational',<br />
+      'fantasmagoric',<br />
+      'legendary',<br />
+      'marvelous'<br />
   ]<br />
 end<br />
 </pre></p>

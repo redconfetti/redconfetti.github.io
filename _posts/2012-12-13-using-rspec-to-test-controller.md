@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Using Rspec to Test Controllers
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1372
-wordpress_url: http://www.rubycoloredglasses.com/?p=1372
 date: '2012-12-13 01:46:41 -0800'
-date_gmt: '2012-12-13 01:46:41 -0800'
 categories:
 - Testing
 tags:

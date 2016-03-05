@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Form Fields not Displaying with Formtastic
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 151
-wordpress_url: http://rails.redconfetti.com/?p=151
 date: '2011-10-18 10:48:34 -0700'
-date_gmt: '2011-10-18 17:48:34 -0700'
 categories:
 - View
 tags: []

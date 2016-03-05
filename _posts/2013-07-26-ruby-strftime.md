@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Ruby Strftime
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1601
-wordpress_url: http://www.rubycoloredglasses.com/?p=1601
 date: '2013-07-26 22:16:42 -0700'
-date_gmt: '2013-07-26 22:16:42 -0700'
 categories:
 - Ruby
 tags:

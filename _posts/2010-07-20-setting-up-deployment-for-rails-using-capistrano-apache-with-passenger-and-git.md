@@ -1,21 +1,8 @@
 ---
 layout: post
-status: publish
-published: true
 title: Setting up Deployment for Rails using Capistrano, Apache with Passenger and
   Git
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 556
-wordpress_url: http://www.redconfetti.com/?p=556
 date: '2010-07-20 23:48:23 -0700'
-date_gmt: '2010-07-21 03:48:23 -0700'
 categories:
 - Ruby on Rails
 tags:

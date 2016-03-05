@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Factory Girl Associations and Records Persisting Across Tests
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1131
-wordpress_url: http://www.redconfetti.com/?p=1131
 date: '2012-04-11 22:32:23 -0700'
-date_gmt: '2012-04-12 02:32:23 -0700'
 categories:
 - Testing
 tags:

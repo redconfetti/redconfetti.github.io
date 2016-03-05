@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Remote Pair Programming
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1491
-wordpress_url: http://www.rubycoloredglasses.com/?p=1491
 date: '2013-04-22 17:48:59 -0700'
-date_gmt: '2013-04-22 17:48:59 -0700'
 categories:
 - Development
 tags:

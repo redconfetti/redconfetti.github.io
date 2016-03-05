@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Setting up Ubuntu for Rails App via Passenger
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 266
-wordpress_url: http://rails.redconfetti.com/?p=266
 date: '2011-10-29 22:11:11 -0700'
-date_gmt: '2011-10-30 05:11:11 -0700'
 categories:
 - Hosting
 tags: []

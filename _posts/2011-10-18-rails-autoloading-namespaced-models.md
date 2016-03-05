@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Rails 3 Autoloading with Namespaced Models
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 167
-wordpress_url: http://rails.redconfetti.com/?p=167
 date: '2011-10-18 15:50:03 -0700'
-date_gmt: '2011-10-18 22:50:03 -0700'
 categories:
 - Model
 tags: []

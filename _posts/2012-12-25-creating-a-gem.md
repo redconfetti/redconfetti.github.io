@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Creating a Gem
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1396
-wordpress_url: http://www.rubycoloredglasses.com/?p=1396
 date: '2012-12-25 09:50:03 -0800'
-date_gmt: '2012-12-25 09:50:03 -0800'
 categories:
 - Gems
 tags:

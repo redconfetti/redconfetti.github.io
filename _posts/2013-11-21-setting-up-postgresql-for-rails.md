@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Setting up PostgreSQL for Rails
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1627
-wordpress_url: http://www.rubycoloredglasses.com/?p=1627
 date: '2013-11-21 20:14:34 -0800'
-date_gmt: '2013-11-21 20:14:34 -0800'
 categories:
 - Ruby on Rails
 tags:

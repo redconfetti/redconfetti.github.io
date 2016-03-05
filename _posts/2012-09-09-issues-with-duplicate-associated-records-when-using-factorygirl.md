@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Duplicate associated records when using FactoryGirl
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1298
-wordpress_url: http://www.rubycoloredglasses.com/?p=1298
 date: '2012-09-09 23:26:46 -0700'
-date_gmt: '2012-09-09 23:26:46 -0700'
 categories:
 - Testing
 tags:

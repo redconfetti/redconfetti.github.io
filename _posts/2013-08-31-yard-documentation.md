@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Yard Documentation
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1650
-wordpress_url: http://www.rubycoloredglasses.com/?p=1650
 date: '2013-08-31 21:50:47 -0700'
-date_gmt: '2013-08-31 21:50:47 -0700'
 categories:
 - Documentation
 tags:

@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Deleting Git Branches in Remote Repository
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1271
-wordpress_url: http://www.rubycoloredglasses.com/?p=1271
 date: '2012-01-24 18:08:06 -0800'
-date_gmt: '2012-01-24 18:08:06 -0800'
 categories:
 - Development
 tags:

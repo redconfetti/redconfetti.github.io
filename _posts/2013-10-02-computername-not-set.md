@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: 'ComputerName: not set'
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1672
-wordpress_url: http://www.rubycoloredglasses.com/?p=1672
 date: '2013-10-02 23:20:22 -0700'
-date_gmt: '2013-10-02 23:20:22 -0700'
 categories:
 - Mac OS X
 tags:

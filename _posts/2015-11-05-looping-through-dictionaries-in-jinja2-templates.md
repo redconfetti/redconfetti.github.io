@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Looping through dictionaries in jinja2 templates
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1916
-wordpress_url: http://www.rubycoloredglasses.com/?p=1916
 date: '2015-11-05 02:10:32 -0800'
-date_gmt: '2015-11-05 02:10:32 -0800'
 categories:
 - Python
 tags:

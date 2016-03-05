@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Exporting Routes in Rails 3
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 185
-wordpress_url: http://rails.redconfetti.com/?p=185
 date: '2011-10-20 14:36:54 -0700'
-date_gmt: '2011-10-20 21:36:54 -0700'
 categories:
 - Model
 - Rake

@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Spree Extension Development Environment using RVM
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1400
-wordpress_url: http://www.rubycoloredglasses.com/?p=1400
 date: '2012-12-25 10:30:38 -0800'
-date_gmt: '2012-12-25 10:30:38 -0800'
 categories:
 - Gems
 tags:

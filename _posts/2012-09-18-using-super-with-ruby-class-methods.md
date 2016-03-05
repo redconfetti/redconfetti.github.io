@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Using Super with Ruby class methods
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1320
-wordpress_url: http://www.rubycoloredglasses.com/?p=1320
 date: '2012-09-18 21:06:32 -0700'
-date_gmt: '2012-09-18 21:06:32 -0700'
 categories:
 - Ruby
 tags:

@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Devise_For with Skip
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1589
-wordpress_url: http://www.rubycoloredglasses.com/?p=1589
 date: '2013-07-11 22:26:51 -0700'
-date_gmt: '2013-07-11 22:26:51 -0700'
 categories:
 - Ruby on Rails
 tags:

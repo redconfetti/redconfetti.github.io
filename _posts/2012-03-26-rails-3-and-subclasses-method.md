@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Rails 3 and Subclasses Method
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1105
-wordpress_url: http://www.redconfetti.com/?p=1105
 date: '2012-03-26 18:38:14 -0700'
-date_gmt: '2012-03-26 22:38:14 -0700'
 categories:
 - Model
 tags:

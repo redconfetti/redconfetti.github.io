@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Use Ruby to Develop iOS or Mac OSX
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1513
-wordpress_url: http://www.rubycoloredglasses.com/?p=1513
 date: '2013-05-22 01:53:31 -0700'
-date_gmt: '2013-05-22 01:53:31 -0700'
 categories:
 - Mac OS X
 tags:

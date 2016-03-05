@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Uptime Monitoring and Alerts
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1599
-wordpress_url: http://www.rubycoloredglasses.com/?p=1599
 date: '2013-07-26 00:34:25 -0700'
-date_gmt: '2013-07-26 00:34:25 -0700'
 categories:
 - Uncategorized
 tags: []

@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Troubleshooting ActiveResource Requests
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 947
-wordpress_url: http://www.redconfetti.com/?p=947
 date: '2012-01-01 18:46:52 -0800'
-date_gmt: '2012-01-01 22:46:52 -0800'
 categories:
 - Ruby on Rails
 tags:

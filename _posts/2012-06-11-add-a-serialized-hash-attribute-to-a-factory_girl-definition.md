@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Add a Serialized Hash Attribute to a Factory_Girl Definition
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1279
-wordpress_url: http://www.rubycoloredglasses.com/?p=1279
 date: '2012-06-11 20:25:13 -0700'
-date_gmt: '2012-06-11 20:25:13 -0700'
 categories:
 - Testing
 tags:

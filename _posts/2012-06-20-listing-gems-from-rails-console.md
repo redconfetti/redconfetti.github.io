@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Listing Gems from Rails Console
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1285
-wordpress_url: http://www.rubycoloredglasses.com/?p=1285
 date: '2012-06-20 21:59:03 -0700'
-date_gmt: '2012-06-20 21:59:03 -0700'
 categories:
 - Uncategorized
 tags: []

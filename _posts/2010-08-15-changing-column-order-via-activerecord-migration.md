@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Changing Column Order via ActiveRecord Migration
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 605
-wordpress_url: http://www.redconfetti.com/?p=605
 date: '2010-08-15 22:09:40 -0700'
-date_gmt: '2010-08-16 02:09:40 -0700'
 categories:
 - Ruby on Rails
 tags: []

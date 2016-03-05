@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Coding Games
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1485
-wordpress_url: http://www.rubycoloredglasses.com/?p=1485
 date: '2013-04-11 20:30:59 -0700'
-date_gmt: '2013-04-11 20:30:59 -0700'
 categories:
 - Development
 tags:

@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Uninstalling Command Line Tools for Xcode
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1505
-wordpress_url: http://www.rubycoloredglasses.com/?p=1505
 date: '2013-05-20 20:51:42 -0700'
-date_gmt: '2013-05-20 20:51:42 -0700'
 categories:
 - Mac OS X
 tags:

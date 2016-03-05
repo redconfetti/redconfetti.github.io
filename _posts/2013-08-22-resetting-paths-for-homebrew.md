@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Resetting Paths for Homebrew
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1624
-wordpress_url: http://www.rubycoloredglasses.com/?p=1624
 date: '2013-08-22 19:31:38 -0700'
-date_gmt: '2013-08-22 19:31:38 -0700'
 categories:
 - Mac OS X
 tags:

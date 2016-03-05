@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: 'Error: ''unintitialized constant MySQL'' with Rails 3 on Snow Leopard Mac'
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 788
-wordpress_url: http://www.redconfetti.com/?p=788
 date: '2011-05-19 23:05:08 -0700'
-date_gmt: '2011-05-20 03:05:08 -0700'
 categories:
 - Ruby on Rails
 tags: []

@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Rails Performance Statistics
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 598
-wordpress_url: http://www.redconfetti.com/?p=598
 date: '2010-08-09 02:26:40 -0700'
-date_gmt: '2010-08-09 06:26:40 -0700'
 categories:
 - Ruby on Rails
 tags: []

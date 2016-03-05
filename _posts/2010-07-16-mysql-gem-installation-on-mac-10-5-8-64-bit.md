@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: MySQL Gem Installation on Mac 10.5.8 - 64 bit ??
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 537
-wordpress_url: http://www.redconfetti.com/?p=537
 date: '2010-07-16 17:26:14 -0700'
-date_gmt: '2010-07-16 21:26:14 -0700'
 categories:
 - Ruby on Rails
 tags: []
@@ -27,7 +14,7 @@ $ sudo gem install mysql<br />
 Password:</p>
 <p>Building native extensions.  This could take a while...<br />
 ERROR:  Error installing mysql:<br />
-	ERROR: Failed to build gem native extension.</p>
+    ERROR: Failed to build gem native extension.</p>
 <p>/opt/local/bin/ruby extconf.rb<br />
 checking for mysql_query() in -lmysqlclient... no<br />
 checking for main() in -lm... yes<br />
@@ -53,7 +40,7 @@ sudo gem install mysql -- --with-mysql-dir=/usr/local/mysql<br />
 <pre class="brush:bash">
 Building native extensions.  This could take a while...<br />
 ERROR:  Error installing mysql:<br />
-	ERROR: Failed to build gem native extension.</p>
+    ERROR: Failed to build gem native extension.</p>
 <p>/opt/local/bin/ruby extconf.rb --with-mysql-dir=/usr/local/mysql<br />
 checking for mysql_ssl_set()... no<br />
 checking for rb_str_set_len()... no<br />

@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Generating Test File Stubs for Existing Models, Views, and Controllers
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1114
-wordpress_url: http://www.redconfetti.com/?p=1114
 date: '2012-04-03 13:10:12 -0700'
-date_gmt: '2012-04-03 17:10:12 -0700'
 categories:
 - Testing
 tags:

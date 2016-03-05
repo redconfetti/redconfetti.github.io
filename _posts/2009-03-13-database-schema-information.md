@@ -1,18 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Database Schema Information
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
 date: '2009-03-13 17:20:50 -0700'
-date_gmt: '2009-03-13 21:20:50 -0700'
 categories:
 - Ruby on Rails
 tags:

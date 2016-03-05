@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Formtastic use of semantic_form_remote_for
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 187
-wordpress_url: http://rails.redconfetti.com/?p=187
 date: '2011-10-20 15:29:02 -0700'
-date_gmt: '2011-10-20 22:29:02 -0700'
 categories:
 - View
 tags: []

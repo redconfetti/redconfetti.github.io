@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Issues with RVM after upgrade to OS X Mavericks
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1834
-wordpress_url: http://www.rubycoloredglasses.com/?p=1834
 date: '2014-10-02 21:59:00 -0700'
-date_gmt: '2014-10-02 21:59:00 -0700'
 categories:
 - Mac OS X
 - Ruby

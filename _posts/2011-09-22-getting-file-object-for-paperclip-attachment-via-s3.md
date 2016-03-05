@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Getting File object for Paperclip Attachment via S3
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 856
-wordpress_url: http://www.redconfetti.com/?p=856
 date: '2011-09-22 15:34:10 -0700'
-date_gmt: '2011-09-22 19:34:10 -0700'
 categories:
 - Ruby on Rails
 tags:

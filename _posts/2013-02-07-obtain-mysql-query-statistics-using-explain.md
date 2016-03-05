@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Obtain MySQL Query Statistics using Explain
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1453
-wordpress_url: http://www.rubycoloredglasses.com/?p=1453
 date: '2013-02-07 00:56:31 -0800'
-date_gmt: '2013-02-07 00:56:31 -0800'
 categories:
 - Model
 tags:

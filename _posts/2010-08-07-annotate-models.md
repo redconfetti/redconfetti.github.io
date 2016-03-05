@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Annotate Models
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 583
-wordpress_url: http://www.redconfetti.com/?p=583
 date: '2010-08-07 22:02:30 -0700'
-date_gmt: '2010-08-08 02:02:30 -0700'
 categories:
 - Ruby on Rails
 tags:

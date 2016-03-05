@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Bypassing the AngularJS router for anchor tags
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1829
-wordpress_url: http://www.rubycoloredglasses.com/?p=1829
 date: '2014-09-18 19:19:44 -0700'
-date_gmt: '2014-09-18 19:19:44 -0700'
 categories:
 - AngularJS
 tags:

@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Application Builders
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1554
-wordpress_url: http://www.rubycoloredglasses.com/?p=1554
 date: '2013-06-05 07:11:12 -0700'
-date_gmt: '2013-06-05 07:11:12 -0700'
 categories:
 - Ruby on Rails
 tags:
@@ -34,9 +21,9 @@ It appears that I can configure many options in some sort of file, hosted in a G
 <p>While I was trying to follow it's instructions to run the generator, I kept getting an SSL error like so:</p>
 <pre class="brush:shell">      apply  https://raw.github.com/RailsApps/rails-composer/master/composer.rb<br />
 /Users/jsmith/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/net/http.rb:799:in `connect': SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (OpenSSL::SSL::SSLError)<br />
-	from /Users/jsmith/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/net/http.rb:799:in `block in connect'<br />
-	from /Users/jsmith/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/timeout.rb:54:in `timeout'<br />
-	from /Users/jsmith/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/timeout.rb:99:in `timeout'</pre><br />
+    from /Users/jsmith/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/net/http.rb:799:in `block in connect'<br />
+    from /Users/jsmith/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/timeout.rb:54:in `timeout'<br />
+    from /Users/jsmith/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/timeout.rb:99:in `timeout'</pre><br />
 I found the recommendation to run the following to install a CURL CA bundle. After installing this I added the export command to my .zshrc file (zsh equivalent of the .bashrc file).</p>
 <pre class="brush:shell">brew install curl-ca-bundle</pre><br />
 After I did this, then opened a new terminal window, the generator worked just fine.</p>

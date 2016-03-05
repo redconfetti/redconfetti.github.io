@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: History of the Canonical Gem Host for Ruby Gems
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1217
-wordpress_url: http://www.rubycoloredglasses.com/?p=1217
 date: '2012-05-14 18:41:23 -0700'
-date_gmt: '2012-05-14 18:41:23 -0700'
 categories:
 - Gems
 tags: []

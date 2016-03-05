@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Objective C Notes
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1721
-wordpress_url: http://www.rubycoloredglasses.com/?p=1721
 date: '2014-01-09 07:46:44 -0800'
-date_gmt: '2014-01-09 07:46:44 -0800'
 categories:
 - Mac OS X
 tags: []

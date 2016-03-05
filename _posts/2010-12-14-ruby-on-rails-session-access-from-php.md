@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Ruby on Rails session - Access from PHP
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 653
-wordpress_url: http://www.redconfetti.com/?p=653
 date: '2010-12-14 00:25:37 -0800'
-date_gmt: '2010-12-14 04:25:37 -0800'
 categories:
 - Ruby on Rails
 tags: []

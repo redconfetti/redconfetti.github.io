@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Locate and Updatedb with Homebrew
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1093
-wordpress_url: http://www.redconfetti.com/?p=1093
 date: '2012-03-26 14:08:59 -0700'
-date_gmt: '2012-03-26 18:08:59 -0700'
 categories:
 - Mac OS X
 tags:

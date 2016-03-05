@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Undefined method 'ref' for ActiveSupport::Dependencies:Module
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 564
-wordpress_url: http://www.redconfetti.com/?p=564
 date: '2010-07-27 10:19:01 -0700'
-date_gmt: '2010-07-27 14:19:01 -0700'
 categories:
 - Controller
 tags: []

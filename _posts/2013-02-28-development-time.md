@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Development Time
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1467
-wordpress_url: http://www.rubycoloredglasses.com/?p=1467
 date: '2013-02-28 02:02:05 -0800'
-date_gmt: '2013-02-28 02:02:05 -0800'
 categories:
 - Development
 tags:

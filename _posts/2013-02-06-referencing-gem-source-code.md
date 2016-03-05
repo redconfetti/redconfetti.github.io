@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Referencing Gem Source Code
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1441
-wordpress_url: http://www.rubycoloredglasses.com/?p=1441
 date: '2013-02-06 05:11:46 -0800'
-date_gmt: '2013-02-06 05:11:46 -0800'
 categories:
 - Ruby on Rails
 - Gems

@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Using 'for in' in Javascript
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1760
-wordpress_url: http://www.rubycoloredglasses.com/?p=1760
 date: '2014-03-18 02:04:24 -0700'
-date_gmt: '2014-03-18 02:04:24 -0700'
 categories:
 - Javascript
 tags:

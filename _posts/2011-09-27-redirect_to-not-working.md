@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Redirect_to not working
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 896
-wordpress_url: http://www.redconfetti.com/?p=896
 date: '2011-09-27 16:37:59 -0700'
-date_gmt: '2011-09-27 20:37:59 -0700'
 categories:
 - Ruby on Rails
 tags:

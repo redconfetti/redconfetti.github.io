@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Strong Parameters with Spree Extensions
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1773
-wordpress_url: http://www.rubycoloredglasses.com/?p=1773
 date: '2014-04-20 01:05:29 -0700'
-date_gmt: '2014-04-20 01:05:29 -0700'
 categories:
 - Ruby on Rails
 - Gems

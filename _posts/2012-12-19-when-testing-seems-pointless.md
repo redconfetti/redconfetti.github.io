@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: When Testing Seems Pointless
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1382
-wordpress_url: http://www.rubycoloredglasses.com/?p=1382
 date: '2012-12-19 02:51:53 -0800'
-date_gmt: '2012-12-19 02:51:53 -0800'
 categories:
 - Testing
 tags:

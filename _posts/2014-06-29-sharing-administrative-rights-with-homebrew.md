@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Sharing Administrative Rights with Homebrew
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1800
-wordpress_url: http://www.rubycoloredglasses.com/?p=1800
 date: '2014-06-29 18:52:42 -0700'
-date_gmt: '2014-06-29 18:52:42 -0700'
 categories:
 - Mac OS X
 tags:

@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Example Rake Task
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 943
-wordpress_url: http://www.redconfetti.com/?p=943
 date: '2012-01-01 18:26:28 -0800'
-date_gmt: '2012-01-01 22:26:28 -0800'
 categories:
 - Ruby on Rails
 tags:

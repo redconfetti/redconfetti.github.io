@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Recommended Sublime 3 Packages
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1717
-wordpress_url: http://www.rubycoloredglasses.com/?p=1717
 date: '2013-12-17 17:39:00 -0800'
-date_gmt: '2013-12-17 17:39:00 -0800'
 categories:
 - Development
 tags:

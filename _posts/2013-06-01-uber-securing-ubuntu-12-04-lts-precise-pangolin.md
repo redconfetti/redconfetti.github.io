@@ -1,24 +1,13 @@
 ---
 layout: post
-status: publish
-published: true
 title: "&Uuml;ber-Securing Ubuntu 12.04 LTS with Mod-Security + Ruby on Rails 3.2.13"
-author:
-  display_name: marshmallowcreme
-  login: marshmallowcreme
-  email: marshallsontag@gmail.com
-  url: ''
-author_login: marshmallowcreme
 author_email: marshallsontag@gmail.com
 excerpt: "I recently setup a linode server for a new client who wanted the best security
   practices installed.\r\n\r\nMost linux security guides instruct you to disable password
   authentication and enable SSH key authentication for SSH and use iptables to allow
   or block certain ports. But I found this incredible guide that takes it several
   steps further to prevent IP spoofing, DDOS attacks and much more."
-wordpress_id: 1538
-wordpress_url: http://www.rubycoloredglasses.com/?p=1538
 date: '2013-06-01 08:29:51 -0700'
-date_gmt: '2013-06-01 08:29:51 -0700'
 categories:
 - Hosting
 tags:

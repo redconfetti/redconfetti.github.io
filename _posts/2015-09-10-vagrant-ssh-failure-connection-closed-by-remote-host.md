@@ -1,20 +1,7 @@
 ---
 layout: post
-status: publish
-published: true
 title: Vagrant SSH Failure - Connection closed by remote host
-author:
-  display_name: redconfetti
-  login: redconfetti
-  email: jason@redconfetti.com
-  url: http://www.redconfetti.com/
-author_login: redconfetti
-author_email: jason@redconfetti.com
-author_url: http://www.redconfetti.com/
-wordpress_id: 1905
-wordpress_url: http://www.rubycoloredglasses.com/?p=1905
 date: '2015-09-10 19:21:52 -0700'
-date_gmt: '2015-09-10 19:21:52 -0700'
 categories:
 - Development
 tags: []
