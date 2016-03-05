@@ -28,13 +28,33 @@
 
           <nav class="cover-navigation navigation--social">
             <ul class="navigation">
-          
-            {% if site.author.twitter_username %}
-              <!-- Twitter -->
+
+            {% if site.author.github_username %}
+              <!-- GitHub -->
               <li class="navigation__item">
-                <a href="http://twitter.com/{{ site.author.twitter_username }}" title="@{{ site.author.twitter_username }} on Twitter" target="_blank">
-                  <i class="icon icon-social-twitter"></i>
-                  <span class="label">Twitter</span>
+                <a href="https://www.github.com/{{ site.author.github_username }}" title="{{ site.author.github_username }} on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+            {% endif %}
+
+            {% if site.author.delicious_username %}
+              <!-- Delicious -->
+              <li class="navigation__item">
+                <a href="https://delicious.com/{{ site.author.delicious_username }}" title="{{ site.author.delicious_username }} on Delicious" target="_blank">
+                  <i class="icon icon-social-delicious"></i>
+                  <span class="label">Delicious</span>
+                </a>
+              </li>
+            {% endif %}
+
+            {% if site.author.spotify.username %}
+              <!-- Spotify -->
+              <li class="navigation__item">
+                <a href="https://play.spotify.com/user/{{ site.author.spotify.username }}/playlist/{{ site.author.spotify.playlist_id }}" title="{{ site.author.spotify.playlist_name }} on Spotify" target="_blank">
+                  <i class="icon icon-social-spotify"></i>
+                  <span class="label">Spotify</span>
                 </a>
               </li>
             {% endif %}
@@ -49,32 +69,22 @@
               </li>
             {% endif %}
 
+            {% if site.author.twitter_username %}
+              <!-- Twitter -->
+              <li class="navigation__item">
+                <a href="http://twitter.com/{{ site.author.twitter_username }}" title="@{{ site.author.twitter_username }} on Twitter" target="_blank">
+                  <i class="icon icon-social-twitter"></i>
+                  <span class="label">Twitter</span>
+                </a>
+              </li>
+            {% endif %}
+
             {% if site.author.linkedin_username %}
               <!-- LinkedIn -->
               <li class="navigation__item">
                 <a href="https://www.linkedin.com/in/{{ site.author.linkedin_username }}" title="{{ site.author.linkedin_username }} on LinkedIn" target="_blank">
                   <i class="icon icon-social-linkedin"></i>
                   <span class="label">LinkedIn</span>
-                </a>
-              </li>
-            {% endif %}
-
-            {% if site.author.github_username %}
-              <!-- GitHub -->
-              <li class="navigation__item">
-                <a href="https://www.github.com/{{ site.author.github_username }}" title="{{ site.author.github_username }} on GitHub" target="_blank">
-                  <i class="icon icon-social-github"></i>
-                  <span class="label">GitHub</span>
-                </a>
-              </li>
-            {% endif %}
-
-            {% if site.author.delicious_username %}
-              <!-- GitHub -->
-              <li class="navigation__item">
-                <a href="https://delicious.com/{{ site.author.delicious_username }}" title="{{ site.author.delicious_username }} on Delicious" target="_blank">
-                  <i class="icon icon-social-delicious"></i>
-                  <span class="label">Delicious</span>
                 </a>
               </li>
             {% endif %}

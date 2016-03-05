@@ -10,12 +10,16 @@ timezone: America/Los_Angeles
 
 author:
   name: 'Jason Miller'
-  email: jason@redconfetti.com
-  twitter_username: redconfetti
+  # email: jason@redconfetti.com
+  # twitter_username: redconfetti
+  # linkedin_username: redconfetti
   facebook_username: redconfetti
   github_username:  redconfetti
-  linkedin_username:  redconfetti
   delicious_username: redconfetti
+  spotify:
+    username: redconfetti
+    playlist_id: 03bKMoeCxREu1jKjPvCXwD
+    playlist_name: Music for Programming
 
 defaults:
   -
