@@ -53,3 +53,9 @@ end
 ```
 
 See [Rouge Wiki - List of supported languages and lexers](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers) for reference.
+
+## Presentations
+
+I intend to contribute presentations powered by [Reveal.js](https://github.com/hakimel/reveal.js)
+
+[Reveal JS Demo](http://lab.hakim.se/reveal-js/)
