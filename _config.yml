@@ -1,9 +1,10 @@
 # Site settings
 title: rubycoloredglasses
 description: > # this means to ignore newlines until "baseurl:"
-  I am Jason Miller, a web applications developer in the San Francisco Bay area.
+  I'm Jason, a web applications developer in the San Francisco Bay area.
 url: 'http://blog.redconfetti.com'
 baseurl: '/'
+timezone: America/Los_Angeles
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
 
