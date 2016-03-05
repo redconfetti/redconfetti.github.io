@@ -27,10 +27,9 @@ defaults:
 # Build settings
 destination: _site
 paginate: 10
-permalink: /:year/:title/
-markdown: kramdown
+permalink: /:year/:month/:title/
 highlighter: rouge
-
+markdown: kramdown
 kramdown:
   # use Github Flavored Markdown
   input: GFM
