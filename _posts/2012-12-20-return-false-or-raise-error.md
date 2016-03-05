@@ -17,80 +17,47 @@ We ended up defining several custom exception classes, used for different types 
 
 Part of the Exceptional Ruby guide informed me that you don't always have to use a begin..rescue..end block. You can simply insert a rescue block at the end a method, thus rescuing all statements before it. As you can see, we simply rescued the types of exceptions caused by the system calling the API so that it would simply return the error in the response, instead of raising the error in the remote systems <a title="Airbrake error aggregator" href="http://airbrake.io/" target="_blank">Airbrake</a> logs.
 
-<pre class="brush:rails">def handler
-
+``` ruby
+def handler
   raise MyApi::UsageError, "Request must be HTTP POST" unless request.post?
-
   @response = Kabam::GmoApi::Server.handler(params[:json_request])
-
   render :text => @response.to_json
-
 rescue MyApi::InvalidInputError, MyApi::UsageError => e
-
   error_response = MyApi::Response.new(:status => 'failure', :result => e.message)
-
   render :text => error_response.to_json
-
-end```
+end
+```
 
 For reference, here is the hierarchy of standard Ruby exceptions which you can use, or inherit from for your own custom exception classes. 
 
-<pre>
+```
 Exception
-
  NoMemoryError
-
  ScriptError
-
    LoadError
-
    NotImplementedError
-
    SyntaxError
-
  SignalException
-
    Interrupt
-
  StandardError
-
    ArgumentError
-
    IOError
-
      EOFError
-
    IndexError
-
    LocalJumpError
-
    NameError
-
      NoMethodError
-
    RangeError
-
      FloatDomainError
-
    RegexpError
-
    RuntimeError
-
    SecurityError
-
    SystemCallError
-
    SystemStackError
-
    ThreadError
-
    TypeError
-
    ZeroDivisionError
-
  SystemExit
-
  fatal
-
 ```
 

@@ -12,26 +12,15 @@ In the past gems were created manually, or generated using the <a href="http://r
 
 Since then it appears that the most automated way to create a gem is by using Bundler, via the '<a href="http://gembundler.com/v1.2/bundle_gem.html" target="_blank">bundle gem</a>' command.
 
-<pre class="brush:rails">
+``` ruby
 $ bundle gem my_tools
-
       create  my_tools/Gemfile
-
       create  my_tools/Rakefile
-
       create  my_tools/LICENSE
-
       create  my_tools/README.md
-
       create  my_tools/.gitignore
-
       create  my_tools/my_tools.gemspec
-
       create  my_tools/lib/my_tools.rb
-
       create  my_tools/lib/my_tools/version.rb
-
 Initializating git repo in /Users/jsmith/Sites/my_tools
-
 ```
-

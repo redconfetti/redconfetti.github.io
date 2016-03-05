@@ -15,16 +15,10 @@ I found <a href="https://github.com/plataformatec/devise/wiki/How-To:-Allow-user
 
 The solution that I found was to simply remove the 'password' and 'password_confirmation' from the parameter set if both are blank.
 
-<pre class="brush:rails">
+``` ruby
 # remove password parameters if blank
-
 if params[:admin]['password'].blank? &amp;&amp; params[:admin]['confirmation'].blank?
-
   params[:admin].delete('password')
-
   params[:admin].delete('password_confirmation')
-
 end
-
 ```
-

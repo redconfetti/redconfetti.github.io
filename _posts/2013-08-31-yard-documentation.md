@@ -13,17 +13,15 @@ Here are my own notes for using <a href="https://github.com/lsegal/yard" target=
 
 First add the Yard gem to your Gemfile, preferably in the development group if applicable.
 
-<pre class="brush:ruby">group :development do
 
+``` ruby
+group :development do
   # Yard
-
   # YARD is a Ruby Documentation tool
-
   # https://github.com/lsegal/yard
-
   gem "yard", "~> 0.8.7"
-
-end```
+end
+```
 
 ## Running
 
@@ -50,25 +48,22 @@ You can also run a server that updates dynamically as you add documentation.
 $ yard server
 
 >> YARD 0.8.7 documentation server at http://0.0.0.0:8808
-
 [2013-08-31 14:28:15] INFO  WEBrick 1.3.1
-
 [2013-08-31 14:28:15] INFO  ruby 2.0.0 (2013-06-27) [x86_64-darwin12.4.1]
-
-[2013-08-31 14:28:15] INFO  WEBrick::HTTPServer#start: pid=41901 port=8808```
+[2013-08-31 14:28:15] INFO  WEBrick::HTTPServer#start: pid=41901 port=8808
+```
 
 ## Configuration
 
-You can run the 'yardoc' command with options that cause it to parse certain directories for documentation. With Rails applications it appears that this isn't necessary. Rather than add options or flags after the yard command each time, you can configure a <a href="https://github.com/lsegal/yard/blob/master/.yardopts" target="_blank">.yardopts file</a> with the arguments you would normally use from the command line.
+You can run the 'yardoc' command with options that cause it to parse certain directories for documentation. With Rails applications it appears that this isn't necessary. Rather than add options or flags after the yard command each time, you can configure a [.yardopts file](https://github.com/lsegal/yard/blob/master/.yardopts) with the arguments you would normally use from the command line.
 
 Yard will make use of your README.md file as the index page for the documentation, but to include other files you could configure a .yardopts file like so:
 
 ``` shell
 -
-
 README.md
-
-CHANGELOG.md```
+CHANGELOG.md
+```
 
 This makes it possible for the CHANGELOG to show up under the 'File List' section.
 
@@ -76,14 +71,10 @@ I prefer to have my own hierarchy of markdown files in /doc, with generated docu
 
 ``` shell
 --output-dir doc/app
-
 -
-
 doc/DevelopmentTasks.md
-
 CHANGELOG.md
+README.md
+```
 
-README.md```
-
-Here is a good example of a more elaborately <a href="https://github.com/lsegal/yard/blob/master/.yardopts" target="_blank">configured .yardopts file</a>. You can also run 'yardoc --help' to discover other options to add to the file.
-
+Here is a good example of a more elaborately [configured .yardopts file](https://github.com/lsegal/yard/blob/master/.yardopts). You can also run 'yardoc --help' to discover other options to add to the file.

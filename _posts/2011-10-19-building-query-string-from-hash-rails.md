@@ -11,22 +11,24 @@ I have a model has a method that generates and stores a cached link to it's own 
 
 Under Rails 2 the 'options' hash would be passed to build_query_string inside of my method like so:
 
-<pre class="brush:rails">params = ActionController::Routing::Route.new.build_query_string(options)```
+``` ruby
+params = ActionController::Routing::Route.new.build_query_string(options)
+```
 
 Under Rails 3 I receive this error:
 
 ``` shell
-wrong number of arguments (0 for 7)```
+wrong number of arguments (0 for 7)
+```
 
 It turns out that under Rails 3 the Hash library includes a to_query method.
 
-<pre class="brush:rails">irb(main):001:0> h = {:blah => '1', :blah2 => '2'}
-
+``` ruby
+irb(main):001:0> h = {:blah => '1', :blah2 => '2'}
 => {:blah=>"1", :blah2=>"2"}
 
 irb(main):002:0> h.to_query
+=> "blah2=2&amp;blah=1"
+```
 
-=> "blah2=2&amp;blah=1"```
-
-Thanks to mjrussel for <a href="http://stackoverflow.com/questions/3576574/constructing-url-parameters-in-rails-3" target="_blank">posting this on StackOverflow</a>.
-
+Thanks to mjrussel for [posting this on StackOverflow](http://stackoverflow.com/questions/3576574/constructing-url-parameters-in-rails-3).

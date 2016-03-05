@@ -18,37 +18,26 @@ I found this thread on StackOverflow: <a href="http://stackoverflow.com/question
 
 Just in case this article with the code disappears, here is the initializer code you can use to view the HTTP session data from the console. I've added an if statement to make sure the HTTP data is only outputted to the standard output in development mode, for <a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/net/http/rdoc/Net/HTTP.html#method-i-set_debug_output" target="_blank">security purposes</a>, as well as requires the environment variable 'HTTPDEBUG'.
 
-<pre class="brush:rails"># /config/initializers/connection.rb
-
+``` ruby
+# /config/initializers/connection.rb
 class ActiveResource::Connection
 
   # Creates new Net::HTTP instance for communication with
-
   # remote service and resources.
-
   def http
-
     http = Net::HTTP.new(@site.host, @site.port)
-
     http.use_ssl = @site.is_a?(URI::HTTPS)
-
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE if http.use_ssl
-
     http.read_timeout = @timeout if @timeout
 
-    #Here's the addition that allows you to see the output
-
+    # Here's the addition that allows you to see the output
     if Rails.env == 'development' &amp;&amp; ENV['HTTPDEBUG']
-
       http.set_debug_output $stderr
-
     end
 
     return http
-
   end
-
-end```
+end
+```
 
 You can open the Rails console using 'HTTPDEBUG=true rails c' to activate the console with debugging output displayed in the console mode.
-

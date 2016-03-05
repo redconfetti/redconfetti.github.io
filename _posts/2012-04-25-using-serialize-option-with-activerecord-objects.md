@@ -13,65 +13,41 @@ Documentation seems to be more available on how to build forms with check boxes 
 
 Lets say you are working on a form for a blog post that needs a multi-select field of statically defined adjectives, with the one or many adjectives saved to one field for the post.
 
-<pre class="brush:rails">
+``` ruby
 def self.adjectives
-
   [
-
       'awesome',
-
       'phenomenal',
-
       'terrific',
-
       'fantastic',
-
       'amazing',
-
       'outstanding',
-
       'stupendous',
-
       'great',
-
       'incredible',
-
       'magnificent',
-
       'impressive',
-
       'excellent',
-
       'sensational',
-
       'fantasmagoric',
-
       'legendary',
-
       'marvelous'
-
   ]
-
 end
-
 ```
 
 Next, inside of your model, insert a line indicating the name of the string or text field you're going to use to store the serialized values from the form.
 
-<pre class="brush:rails">
+``` ruby
 class Post < ActiveRecord::Base
-
   serialize :positive_adjectives, Array
-
 end
-
 ```
 
 In the view file for your form, insert the following tag to create a select tag which loads all the options with the previously selected ones saved to the post field in a single field, serialized in YAML format.
 
-<pre class="brush:rails">
+``` ruby
 <%= select_tag 'post[positive_adjectives]', options_for_select(Post.adjectives, @post.positive_adjectives), { :multiple => true, :size => 10 } %>
-
 ```
 
 It appears that <a href="http://stackoverflow.com/questions/2080347/activerecord-serialize-using-json-instead-of-yaml/5979949" target="_blank">there are methods</a>, possibly native ones for Rails 3.2.2 soon, for storing your objects in the database in JSON format instead of YAML.

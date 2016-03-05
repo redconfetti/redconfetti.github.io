@@ -12,21 +12,16 @@ I realized this morning that I was having dependency issues with ImageMagick on 
 
 I found <a href="http://www.anthonymclin.com/code/7-miscellaneous/106-updating-xcode-and-macports-for-osx-lion" target="_blank">this article</a> that provided steps for migrating MacPorts for Lion, but I kept getting this error when I tried to uninstall all the packages:
 
-<pre>warning: Failed to execute portfile from registry for apache2 @2.2.17_1+preforkmpm
-
+```
+warning: Failed to execute portfile from registry for apache2 @2.2.17_1+preforkmpm
 too many nested evaluations (infinite loop?)
-
 Warning: Failed to execute portfile from registry for apache2 @2.2.17_1+preforkmpm
-
 too many nested evaluations (infinite loop?)
-
 Warning: Failed to execute portfile from registry for apache2 @2.2.17_1+preforkmpm
-
 too many nested evaluations (infinite loop?)
-
 Warning: Failed to execute portfile from registry for apache2 @2.2.17_1+preforkmpm
-
-too many nested evaluations (infinite loop?)```
+too many nested evaluations (infinite loop?)
+```
 
 I searched and searched for a solution, and even tried to uninstall apache2 @2.2.17_1+preformkmpm, but it told me that apache2 @2.2.17_1+preformkmpm depends on itself, and that I should uninstall it. Obviously that wasn't possible.
 

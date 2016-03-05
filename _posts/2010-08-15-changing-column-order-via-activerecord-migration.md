@@ -11,19 +11,16 @@ Is it possible to change the order of the columns in your MySQL (or other databa
 
 If you check the <a href="http://api.rubyonrails.org/classes/ActiveRecord/Migration.html">ActiveRecord::Migration documentation</a> you'll see there is a method called 'change_column' which accepts various options.
 
-<pre>
+```
 <tt>change_column(table_name, column_name, type, options)</tt>:
 
 Changes the column to a different type using the same parameters as add_column
-
 ```
 
 As of Rails 2.3.6 this is now available by using the :after option. You'll have to include the field type, even though you are not modifying the type.
 
 Example:
 
-<pre class="brush:rails">
+``` ruby
 change_column :orders, :tax_rate, :float, :after => :tax_state
-
 ```
-

@@ -6,13 +6,11 @@ categories:
 - Ruby
 tags:
 - file
-comments: []
 ---
 When working with files, you can open them in one of several modes.
 
-<pre class="brush:ruby">File.new("/file/path.txt", "w")```
+``` ruby
+File.new("/file/path.txt", "w")
+```
 
-You can find the description of these modes in the <a href="http://ruby-doc.org/core-1.9.3/IO.html" target="_blank">IO documentation</a>.
-
- 
-
+You can find the description of these modes in the [IO documentation](http://ruby-doc.org/core-1.9.3/IO.html).

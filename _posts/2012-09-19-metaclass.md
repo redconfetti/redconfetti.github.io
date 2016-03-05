@@ -15,46 +15,33 @@ I might be wrong in my understanding here, but this is what I understand thus fa
 
 Ruby stores methods for an object in it's class, not the object itself. Objects only really store their attributes/variables in memory. However there exists some unseen entity known as the metaclass which belongs to each object, and it can possibly store methods which belong to that object, but not necessarily to that objects class.
 
-<pre class="brush:rails">class Person
-
+``` ruby
+class Person
   def speak
-
     puts "Hello There!"
-
   end
-
 end
 
 john = Person.new
-
 bob = Person.new
 
 class << john
-
   def bark
-
     puts "Ruff! Ruff!"
-
   end
-
 end
 
-> john.speak
+>> john.speak
+=> Hello There!
 
-Hello There!
+>> bob.speak
+=> Hello There!
 
-> bob.speak
+>> john.bark
+=> Ruff! Ruff!
 
-Hello There!
-
-> john.bark
-
-Ruff! Ruff!
-
-> bob.bark
-
+>> bob.bark
 NoMethodError: undefined method `bark' for #
-
 ```
 
 The reference to 'class << john' opens a code block where methods are defined in the metaclass for 'john', and not the 'Person' class.

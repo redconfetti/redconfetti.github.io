@@ -18,14 +18,14 @@ tags:
 - linux
 - hosting
 - ssh
-comments: []
 ---
 I recently setup a linode server for a new client who wanted the best security practices installed.
 
 Most linux security guides instruct you to disable password authentication and enable SSH key authentication for SSH and use iptables to allow or block certain ports. But I found this incredible guide that takes it several steps further to prevent IP spoofing, DDOS attacks and much more.<a id="more"></a><a id="more-1538"></a>
 
 <header id="main-content-header">
-<h1 id="page-title"><a href="http://www.thefanclub.co.za/how-to/how-secure-ubuntu-1204-lts-server-part-1-basics">How to secure an Ubuntu 12.04 LTS server - Part 1 The Basics</a></h1>
+<h1 id="page-title"><a href="http://www.thefanclub.co.za/how-to/how-secure-ubuntu-1204-lts-server-part-1-basics">How to secure an Ubuntu 12.04 LTS server - Part 1 The Basics</a>
+
 
 It also incorporates mod-security rules from the <a href="https://www.owasp.org/index.php/Main_Page">Open Web Application Security Project</a>, which I just learned about through this tutorial.
 

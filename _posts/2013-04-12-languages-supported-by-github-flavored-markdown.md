@@ -10,73 +10,66 @@ tags:
 - markdown
 comments: []
 ---
-I'm currently configuring the <a href="https://github.com/lsegal/yard" target="_blank">Yard documentation</a> tool for use with Ruby/Rails projects. I could see that it's possible to create a <a href="https://github.com/lsegal/yard/blob/master/.yardopts" target="_blank">.yardopts file</a> in the main directory for your Rails application, and simply add command line arguments to the file.
+I'm currently configuring the [Yard documentation](https://github.com/lsegal/yard) tool for use with Ruby/Rails projects. I could see that it's possible to create a [.yardopts file](https://github.com/lsegal/yard/blob/master/.yardopts) in the main directory for your Rails application, and simply add command line arguments to the file.
 
-I just discovered that you can add a list of files, likely placed under the 'doc' directory, to your .yardopts file, and those files will be included in your generated documentation set. This is perfect for changelogs, readme files, and other high level documentation. After installing the Redcarpet gem, you can name these files with the '.md' extension to use <a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Markdown formatting</a> on your documentation.
+I just discovered that you can add a list of files, likely placed under the 'doc' directory, to your .yardopts file, and those files will be included in your generated documentation set. This is perfect for changelogs, readme files, and other high level documentation. After installing the Redcarpet gem, you can name these files with the '.md' extension to use [Markdown formatting](http://daringfireball.net/projects/markdown/syntax) on your documentation.
 
-After further investigation I discovered that Yard supports <a href="https://help.github.com/articles/github-flavored-markdown" target="_blank">Github Flavored Markdown</a>, with support for syntax highlighting of a number of different languages. This is accomplished by wrapping your code with lines that consist of three backticks, with the first line suffixed by the language name.
+After further investigation I discovered that Yard supports [Github Flavored Markdown](https://help.github.com/articles/github-flavored-markdown), with support for syntax highlighting of a number of different languages. This is accomplished by wrapping your code with lines that consist of three backticks, with the first line suffixed by the language name.
 
-<pre class="brush:ruby">```ruby
-
+``` ruby
 this = "Ruby Code"
-
 puts "This is #{this}"
+```
 
-``````
-
-Unfortunately the Github docs refer you to this <a href="http://softwaremaniacs.org/media/soft/highlight/test.html" target="_blank">hightlight.js test page</a> for the list of supported languages.
+Unfortunately the Github docs refer you to this [hightlight.js test page](http://softwaremaniacs.org/media/soft/highlight/test.html) for the list of supported languages.
 
 Here is the list of languages that can be used with the backtick
 
-<ul>
-<li>markdown</li>
-<li><span style="line-height: 12px;">Ruby</span></li>
-<li>PHP</li>
-<li>Perl</li>
-<li>python</li>
-<li>profile - python profiler output</li>
-<li>xml - XML and also used for HTML with inline CSS and Javascript</li>
-<li>css</li>
-<li>json</li>
-<li>javascript</li>
-<li>coffeescript</li>
-<li>django</li>
-<li>apache</li>
-<li>sql</li>
-<li>java</li>
-<li>delphi</li>
-<li>applescript</li>
-<li>cpp - C++</li>
-<li>objectivec</li>
-<li>ini</li>
-<li>cs</li>
-<li>vala</li>
-<li>d - RDMD</li>
-<li>rsl - RenderMan RSL</li>
-<li>rib - RenderMan RIB</li>
-<li>mel - Maya Embedded Language</li>
-<li>smalltalk</li>
-<li>lisp</li>
-<li>clojure</li>
-<li>nginx</li>
-<li>diff</li>
-<li>dos - dos batch files</li>
-<li>bash</li>
-<li>cmake</li>
-<li>axapta</li>
-<li>glsl</li>
-<li>lc</li>
-<li>avrasm - AVR Assembler</li>
-<li>vhdl</li>
-<li>parser3</li>
-<li>tex</li>
-<li>brainfuck</li>
-<li>haskell</li>
-<li>erlang</li>
-<li>erlang-repl</li>
-<li>rust</li>
-<li>matlab</li>
-<li>r</li>
-
-</ul>
-
+* markdown
+* Ruby
+* PHP
+* Perl
+* python
+* profile - python profiler output
+* xml - XML and also used for HTML with inline CSS and Javascript
+* css
+* json
+* javascript
+* coffeescript
+* django
+* apache
+* sql
+* java
+* delphi
+* applescript
+* cpp - C++
+* objectivec
+* ini
+* cs
+* vala
+* d - RDMD
+* rsl - RenderMan RSL
+* rib - RenderMan RIB
+* mel - Maya Embedded Language
+* smalltalk
+* lisp
+* clojure
+* nginx
+* diff
+* dos - dos batch files
+* bash
+* cmake
+* axapta
+* glsl
+* lc
+* avrasm - AVR Assembler
+* vhdl
+* parser3
+* tex
+* brainfuck
+* haskell
+* erlang
+* erlang-repl
+* rust
+* matlab
+* r

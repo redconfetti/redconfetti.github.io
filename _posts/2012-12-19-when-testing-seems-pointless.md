@@ -14,31 +14,26 @@ I remember when I was first exposed to the concept of test driven development (T
 
 Take for instance the following method:
 
-<pre class="brush:rails">class SomeClass
-
+``` ruby
+class SomeClass
   def self.todays_date
-
     Time.now.strftime("%Y-%m-%d")
-
   end
-
-end```
+end
+```
 
 All this method does is return the date in 'YYYY-MM-DD' format. This might be used to name a log file, or in an <a href="http://railscasts.com/episodes/202-active-record-queries-in-rails-3" target="_blank">ActiveRecord finder method</a> call.
 
 The unit test for this method, using RSpec, would look like this:
 
-<pre class="brush:rails">describe ".todays_date" do
-
+``` ruby
+describe ".todays_date" do
   it 'returns todays date in YYYY-MM-DD format' do
-
     result = Contest.todays_date
-
     result.should == Time.now.strftime("%Y-%m-%d")
-
   end
-
-end```
+end
+```
 
 Doesn't that just seem silly? Yes!
 
@@ -49,6 +44,3 @@ Ensuring that the modules, classes, and objects you've designed provide the expe
 For more complex methods, the test helps you catch errors as you create the method, and in the future when you modify the method. The tests even act as a form of documentation, as they provide an example of how the rest of your code might interface with your method.
 
 There is surely a learning curve to unit testing like this, and integration testing which ensures your units work together as expected. Once you develop the skills necessary to employ testing in your application, you'll realize that the peace of mind obtained once your system becomes a large system is very valuable. It allows you to be more agile, not needing to be extra careful. Able to bring on new developers that aren't completely familiar with your code like you are. Refactoring major parts of the system are also easier, as the tests point out every area of the application which isn't behaving in a way which the rest of the application expects.
-
- 
-

@@ -56,7 +56,8 @@ alias updatedb='sudo /usr/libexec/locate.updatedb'
 
 ```
 
-<hr />
+---- 
+
 I used to use MacPorts to ensure that my command line environment on my Mac was almost exclusively using MacPort provided binaries, not the built in binaries and libraries that are packaged with Mac OS X.
 
 I had heard of Homebrew, but MacPorts seemed to work fine for me. Then I realized that Homebrew does the same thing, but installs software in /usr/local, which doesn't require sudo. The benefits of Homebrew seem to be <a href="http://tedwise.com/2010/08/28/homebrew-vs-macports/" target="_blank">simplicity, lack of intrusiveness, and speed</a>. I'm likely going to use it as the package manager in my Rails developer toolkit in the future.
@@ -69,11 +70,8 @@ I installed the 'findutils' package that includes 'locate' via Homebrew.
 $ brew install findutils
 
 ==> Downloading http://ftpmirror.gnu.org/findutils/findutils-4.4.2.tar.gz
-
 ######################################################################## 100.0%
-
 ==> ./configure --prefix=/usr/local/Cellar/findutils/4.4.2 --program-prefix=g --disable-debug
-
 ==> make install
 
 Warning: Non-libraries were installed to "lib".
@@ -81,12 +79,10 @@ Warning: Non-libraries were installed to "lib".
 Installing non-libraries to "lib" is bad practice.
 
 The offending files are:
-
 /usr/local/Cellar/findutils/4.4.2/lib/charset.alias
-
 ==> Summary
-
-/usr/local/Cellar/findutils/4.4.2: 19 files, 1.2M, built in 68 seconds```
+/usr/local/Cellar/findutils/4.4.2: 19 files, 1.2M, built in 68 seconds
+```
 
 I thought that the warning regarding non-libraries being installed to "lib" stopped the package from being installed properly, but it turns out that the executables were installed with symlinks placed in /usr/local/bin (which is in my path) and pointing to the actual installed binaries. Instead of 'locate' and 'updatedb', the commands are 'glocate' and 'gupdatedb'.
 
@@ -96,17 +92,17 @@ I didn't want to have to setup a running cron daemon on my Mac, and I'm just fin
 
 ``` shell
 alias updatedb="gupdatedb --localpaths='/Users/jmiller' --output='/Users/jmiller/tmp/locatedb'"
-
 alias locate="glocate"
-
-export LOCATE_PATH="~/tmp/locatedb"```
+export LOCATE_PATH="~/tmp/locatedb"
+```
 
 Before this would work though, I did need to create a 'tmp' folder in my home directory.
 
 ``` shell
-mkdir ~/tmp```
+mkdir ~/tmp
+```
 
-<span style="color: #ff0000;"><strong>UPDATE:</strong></span>
+<strong class="text-alert">UPDATE:</strong>
 
 This wasn't successful however. I started to get an error:
 
@@ -117,7 +113,8 @@ $ updatedb
 
 /usr/bin/sort: Set LC_ALL='C' to work around the problem.
 
-/usr/bin/sort: The strings compared were `/USERS/JMILLER/LIBRARY/APPLICATION SUPPORT/TEXTMATE/BUNDLES/SCSS.TMBUNDLE/COMMANDS/INCREASE NUMBER.TMCOMMAND' and `/USERS/JMILLER/LIBRARY/APPLICATION SUPPORT/TEXTMATE/BUNDLES/SCSS.TMBUNDLE/COMMANDS/INSERT COLOR302200246.TMCOMMAND'.```
+/usr/bin/sort: The strings compared were `/USERS/JMILLER/LIBRARY/APPLICATION SUPPORT/TEXTMATE/BUNDLES/SCSS.TMBUNDLE/COMMANDS/INCREASE NUMBER.TMCOMMAND' and `/USERS/JMILLER/LIBRARY/APPLICATION SUPPORT/TEXTMATE/BUNDLES/SCSS.TMBUNDLE/COMMANDS/INSERT COLOR302200246.TMCOMMAND'.
+```
 
 I'm going to just use the locate/updatedb options which come packaged with Mac OS X.
 

@@ -36,46 +36,33 @@ Earlier today I had a new functional test I wrote fail because it was expecting 
 
 It turns out that you should only use associations to define the relationship inside of a child factory for it's parent, not the other way around. If you do it the other way around, you'll end up getting 'stack level too deep' errors. I expected that perhaps there would be some sort of way of defining that a factory should create or build the children records, which are defined separately, but for practicality it doesn't seem this is the case. Instead, Factory Girl expects you to use the 'after_create' callback to cause associated children records to be created. I guess this makes sense, as it would be too redundant to create multiple factories in a separate file, much like you define child fixtures. Its more encapsulated to generate the children with the parent in the same code block.
 
-<pre class="brush:rails">
+``` ruby
 factory :user do
-
   association :group
-
   name "John Smith"
-
   created_at "2011-04-11 12:00:00"
-
   factory :user_with_posts do
 
     # default to 5 posts
-
     ignore do
-
       posts_count 5
-
     end
 
     after_create do |user, evaluator|
-
       FactoryGirl.create_list(:post, evaluator.posts_count, user: user)
-
     end
 
   end
-
 end
 
 ```
 
 The above declaration would allow one to create a user with 5 posts by default, or create one with 15 posts instead. Ironically enough, I figured this out by referring to the <a href="https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md" target="_blank">official FactoryGirl GETTING STARTED</a> docs, after searching elsewhere on the internet.
 
-<pre class="brush:rails">
+``` ruby
 FactoryGirl.create(:user).posts.length # 0
-
 FactoryGirl.create(:user_with_posts).posts.length # 5
-
 FactoryGirl.create(:user_with_posts, posts_count: 15).posts.length # 15
-
 ```
 
 I've been creating factories instead of fixtures, using factories exclusively in my application. I assumed that somehow when I ran tests that Test::Unit and/or FactoryGirl would automatically create and destroy the records which are created for each test, so that there is a clean slate each time an individual test is run. Further investigation pointed to the term being 'transactional', with a deprecated 'use_transactional_fixtures' setting that was declared as either TRUE or FALSE for ActiveSupport::TestCase. It appears this is the default now for tests.
@@ -85,23 +72,14 @@ Once I added a factory that generates a parent with children records, I had anot
 Then I inspected log/test.log, and saw that there were transactional commands occurring with BEGIN and ROLLBACK commands <a href="http://dev.mysql.com/doc//refman/5.0/en/commit.html" target="_blank">used by MySQL</a>.
 
 ``` shell
-
    (0.1ms)  BEGIN
-
    (0.1ms)  SAVEPOINT active_record_1
-
   SQL (0.2ms)  INSERT INTO `posts` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Foo', 'This is Foo', '2012-04-12 03:56:24', '2012-04-12 03:56:24')
-
    (0.1ms)  RELEASE SAVEPOINT active_record_1
-
    (0.1ms)  SAVEPOINT active_record_1
-
   SQL (0.2ms)  DELETE FROM `posts` WHERE `posts`.`id` = 1
-
    (0.1ms)  RELEASE SAVEPOINT active_record_1
-
    (0.4ms)  ROLLBACK
-
 ```
 
 And yet for each ID of each record created by Factory Girl the number was incremented each time. I was perplexed why the tests were transactional, however the ID's were being incremented. I'm using MySQL 5.5.19, with InnoDB tables, so the transactional commands being used should be supported.

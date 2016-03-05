@@ -49,9 +49,7 @@ I've been forewarned that cPanel does things it's own way, so if you're trying t
 To stay within the "box" of the cPanel environment, I installed Ruby using the script provided by cPanel 
 
 ``` shell
-
 /scripts/installruby
-
 ```
 
 ## Gitosis
@@ -59,31 +57,22 @@ To stay within the "box" of the cPanel environment, I installed Ruby using the s
 To setup Gitosis you have to first install Python tools.
 
 ``` shell
-
 yum -y install python-setuptools
-
 ```
 
 Next, to install Git, you'll have to use a special command because cPanel has configured /etc/yum.conf to exclude certain packages, including perl packages, so that they do not break or conflict with the cPanel system. Use the following command to install Git:
 
 ``` shell
-
 yum --disableexcludes=main install git
-
 ```
 
 From the root home directory, download and install Gitosis.
 
 ``` shell
-
 cd /root
-
 git clone git://eagain.net/gitosis.git
-
 cd gitosis
-
 python setup.py install
-
 ```
 
 Next create an account to host your Git repositories from the WHM interface. I've added a user with the user name 'git', and used 'git.web-app-host.com' as the domain (a subdomain under my hosting service domain). Set the password to a very long secure password. You won't be needing it again, as you'll be using an SSH key to authenticate.
@@ -91,21 +80,15 @@ Next create an account to host your Git repositories from the WHM interface. I'v
 After you're done creating the cPanel account which will host the repositories, copy your public key from your local machine to your root users home direcotry ( /root/ ).
 
 ``` shell
-
 scp ~/.ssh/id_rsa.pub root@vps.web-app-host.com:/root
-
 ```
 
 Go back to your SSH session as 'root' on the server and run this command to initialize the Gitosis repository under the 'git' user account.
 
 ``` shell
-
 root@vps [~]# sudo -H -u git gitosis-init < /root/id_rsa.pub
-
 Initialized empty Git repository in /home/git/repositories/gitosis-admin.git/
-
 Reinitialized existing Git repository in /home/git/repositories/gitosis-admin.git/
-
 ```
 
 NOTE: Do not use the 'Manage SSH Keys' option from the cPanel for the Git acccount, as this will remove the Gitosis-admin repository key from /home/git/.ssh/authorized_keys.
@@ -113,43 +96,34 @@ NOTE: Do not use the 'Manage SSH Keys' option from the cPanel for the Git acccou
 Run the following command to make sure the post-update hook is executable. If this isn't done, then tasks performed by Gitosis after you commit an update aren't performed (i.e. creating new repositories).
 
 ``` shell
-
 sudo chmod u+x /home/git/repositories/gitosis-admin.git/hooks/post-update
-
 ```
 
 On your local machine, run the following command to clone the Gitosis-admin repository, used to manage your repositories on the server, to your local machine.
 
 ``` shell
-
 git clone git@<YOURSERVER>:gitosis-admin.git
-
 ```
 
 This should look like this:
 
 ``` shell
-
 $ git clone git@vps.web-app-host.com:gitosis-admin.git
 
 Cloning into 'gitosis-admin'...
-
 stdin: is not a tty
-
 remote: Counting objects: 5, done.
-
 remote: Compressing objects: 100% (5/5), done.
-
 remote: Total 5 (delta 0), reused 5 (delta 0)
-
 Receiving objects: 100% (5/5), done.
-
 ```
 
-<hr />
+----
+
 Note: If you are prompted for a password when running this clone command, you likely have some sort of SSH configuration not setup properly on your local machine. If you're using multiple keys with various hosts, check ~/.ssh/config and make sure you're using the proper syntax. Run 'ssh git@<YOURSERVER> -v' to get a verbose output of what's happening when the SSH session is initialized to investigate further.
 
-<hr />
+----
+
 On the remote machine, go ahead and delete your public key from the root users home directory.
 
 ``` shell
@@ -164,54 +138,38 @@ If you're configuring new users, simply add their public SSH keys to the 'keydir
 
 For instance I've added a repository called 'marketsim', and then added 'marketsim' to the 'writable' setting for the gitosis-admin group.
 
-<pre class="brush:text">
+```
 [gitosis]
 
 [group gitosis-admin]
-
 writable = gitosis-admin marketsim
-
 members = jason@mymacbook.local
 
 [repo marketsim]
-
 gitweb = no
-
 description = Market Simulation App
-
 owner = Jason Miller
-
 daemon = no
-
 ```
 
 Alternatively I could create a new group with writable access to the 'marketsim' repository.
 
-<pre class="brush:text">
+```
 [gitosis]
 
 [group gitosis-admin]
-
 writable = gitosis-admin
-
 members = jason@mymacbook.local
 
 [group marketsim-team]
-
 members = jason@mymacbook.local
-
 writable = marketsim
 
 [repo marketsim]
-
 gitweb = no
-
 description = Market Simulation App
-
 owner = Jason Miller
-
 daemon = no
-
 ```
 
 I could add 'newteammember.pub' in the 'keydir' folder, then add 'newteammember' after 'jason@mymacbook.local' separated by a space. This would make another team member part of that group which has write access to the repository.
@@ -223,33 +181,21 @@ NOTE: You may receive the warning "remote: WARNING:gitosis.gitweb.set_descriptio
 Now I'm going to initialize my new repository and push it to the remote server.
 
 ``` shell
-
 $ cd marketsim
-
 $ git init .
-
 $ git add .
-
 $ git commit -m "initial commit"
-
 $ git remote add origin git@vps.web-app-host.com:marketsim.git
 
 $ git push origin master
 
 stdin: is not a tty
-
 Initialized empty Git repository in /home/git/repositories/marketsim.git/
-
 Counting objects: 3, done.
-
 Writing objects: 100% (3/3), 209 bytes, done.
-
 Total 3 (delta 0), reused 0 (delta 0)
-
 To git@vps.web-app-host.com:marketsim.git
-
  * [new branch]      master -> master
-
 ```
 
 ## Deploying to Server
@@ -259,36 +205,27 @@ I've created an account with the username 'marketsi' to host the deployed applic
 For property deployment you'll need to install the 'Bundler' gem so that the deployment script can install the gems needed for your application. You'll need to install this as 'root' so that the 'bundle' script is available under /usr/bin/bundle.
 
 ``` shell
-
 $ ssh root@vps.web-app-host.com
-
 root@vps [~]# gem install bundler
-
 Fetching: bundler-1.0.21.gem (100%)
-
 Successfully installed bundler-1.0.21
 
 1 gem installed
 
 Installing ri documentation for bundler-1.0.21...
-
 Installing RDoc documentation for bundler-1.0.21...
 
 root@vps [~]# which bundle
-
 /usr/bin/bundle
-
 ```
 
 I've modified my deploy.rb file for my Rails application like so:
 
-<pre class="brush:rails">
+``` ruby
 require "bundler/capistrano"
-
 load "deploy/assets"
 
 #############################################################
-
 # Settings
 
 set :application, "marketsim"
@@ -296,65 +233,44 @@ set :application, "marketsim"
 default_run_options[:pty] = true  # Must be set for the password prompt from git to work
 
 set :use_sudo, false
-
 set :user, "marketsi"  # The server's user for deploys
-
 set :deploy_to, "/home/#{user}/rails"
-
 set :ssh_options, { :forward_agent => true }
-
 set :domain, "marketsim.org"
-
 server domain, :app, :web
-
 role :db, domain, :primary => true
 
 #############################################################
-
 # Git
 
 set :scm, :git
-
 set :repository,  "git@vps.web-app-host.com:marketsim.git"
-
 set :branch, "master"
-
 set :deploy_via, :remote_cache
 
 #############################################################
-
 # Passenger
 
 namespace :passenger do
-
   desc "Restart Application"
-
   task :restart do
-
     run "touch #{current_path}/tmp/restart.txt"
-
   end
-
 end
 
 after :deploy, "passenger:restart"
-
 ```
 
 Now to run the script to setup the deployment directories on the remote server.
 
 ``` shell
-
 cap deploy:setup
-
 ```
 
 This created a folder under /home/marketsi/rails with the 'releases' and 'shared' folder. Now I'll actually deploy.
 
 ``` shell
-
 cap deploy
-
 ```
 
 The gems were installed with no issue by Bundler for me. Hopefully the same goes for you.
@@ -364,67 +280,48 @@ The gems were installed with no issue by Bundler for me. Hopefully the same goes
 The next step is to configure Apache to serve the Rails application for my domain name. Install the Passenger gem via SSH logged in as root:
 
 ``` shell
-
 gem install passenger
-
 ```
 
 Install Passenger using the Apache module installation command. All dependencies should be found and displayed in green.
 
 ``` shell
-
 passenger-install-apache2-module
-
 ```
 
-At the end of the installation script it provides the Apache configuration settings which you place in httpd.conf. Since we're using cPanel, which over-writes the Apache configuration when the EasyApache system is used to rebuild Apache, PHP, and other modules, place this configuration in /usr/local/apache/conf/includes/pre_main_global.conf.
+At the end of the installation script it provides the Apache configuration settings which you place in httpd.conf. Since we're using cPanel, which over-writes the Apache configuration when the EasyApache system is used to rebuild Apache, PHP, and other modules, place this configuration in `/usr/local/apache/conf/includes/pre_main_global.conf`.
 
-<pre class="brush:text">
+```
 # /usr/local/apache/conf/includes/pre_main_global.conf
 
 LoadModule passenger_module /usr/lib/ruby/gems/1.8/gems/passenger-3.0.11/ext/apache2/mod_passenger.so
-
 PassengerRoot /usr/lib/ruby/gems/1.8/gems/passenger-3.0.11
-
 PassengerRuby /usr/bin/ruby
-
 ```
 
 Next make a backup of the httpd.conf, run the configuration distiller script, rebuild, and then restart Apache.
 
 ``` shell
-
 cp /usr/local/apache/conf/httpd.conf /usr/local/apache/conf/httpd.conf.bak-modrails
-
 /usr/local/cpanel/bin/apache_conf_distiller --update
-
 /scripts/rebuildhttpdconf
-
 /etc/init.d/httpd restart
-
 ```
 
 The cPanel system makes the Apache Document Root for each account map to /home/username/public_html. Because of this you will need to remove the 'public_html' directory, and then create a symlink from that directory to the 'public' directory for your applications current release:
 
 ``` shell
-
 rm -rf /home/marketsi/public_html/
-
 ln -s /home/marketsi/rails/current/public /home/marketsi/public_html
-
 chown marketsi:nobody public_html/
-
 chmod 750 public_html/
-
 ```
 
 Next add a .htaccess file in your application under the 'public' folder, and make sure it contains 'RailsBaseURI /', as well as a directive with the PassengerAppRoot.
 
-<pre class="brush:rails">
+``` ruby
 RailsBaseURI /
-
 PassengerAppRoot /home/marketsi/rails/current
-
 ```
 
 ## MySQL Database
@@ -432,4 +329,3 @@ PassengerAppRoot /home/marketsi/rails/current
 If your application returns an error page 'We're sorry, but something went wrong.', check the production.log file on the server. In my case, the application was running, but it couldn't connect to the database with the existing database.yml settings for production.
 
 As cPanel controls the MySQL databases and usernames, you'll have to create a database manually via the cPanel, create the user and assign all privileges to it for the database, and then configure your database.yml appropriately.
-

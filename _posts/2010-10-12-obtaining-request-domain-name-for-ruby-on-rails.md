@@ -9,7 +9,8 @@ comments: []
 ---
 I'm using Rails 2.3.8. To obtain the domain name for the website being requested (i.e. mysite.com, mysite.net), just reference 'request.host'.
 
-<pre class="brush:rails">@host = request.host```
+```
+ruby@host = request.host
+```
 
 You can only reference request.host in the views, or the controller.
-

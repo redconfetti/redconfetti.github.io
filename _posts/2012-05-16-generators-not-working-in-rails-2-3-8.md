@@ -16,30 +16,21 @@ I eventually found out that <a href="https://github.com/carlhuda/bundler/issues/
 I found that I could use the 'gem server' command to run a local gem server, so I've been using the following commands to package up my gem and install it to the default system RubyGems (I'm using RVM), after I've updated the version for the gem in the gemspec (or version.rb file) in the gem source directory.
 
 ``` shell
-
 $ gem build ~/Documents/gems/my-gem/my-gem.gemspec
-
 $ gem install --local my-gem-0.0.2.gem
-
 Successfully installed my-gem-0.0.2
-
 1 gem installed
-
 Installing ri documentation for my-gem-0.0.2...
-
 Building YARD (yri) index for my-gem-0.0.2...
-
 Installing RDoc documentation for my-gem-0.0.2...
-
 ```
 
 I then go into the Gemfile for my Rails 2.3.8 app and update the version, each time like so. As you can see I have a 'source' command for Bundler to obtain gems from my locally running Gem server.
 
-<pre class="brush:rails">
+``` ruby
 source "http://0.0.0.0:8808/"
 
 gem 'my-gem', '0.0.2'
-
 ```
 
 I run a 'bundle install', then run 'bundle exec ruby script/generate' to see if the generator defined in my gem is registering with the Rails app. Unfortunately so far the Devise generators are registering, but mine are not. I'm still investigating.
@@ -47,11 +38,8 @@ I run a 'bundle install', then run 'bundle exec ruby script/generate' to see if 
 To remove the previous un-successful gems, I use this command.
 
 ``` shell
-
 $ gem uninstall my-gem -v 0.0.1
-
 Successfully uninstalled my-gem-0.0.1
-
 ```
 
 Further investigation just revealed that somehow my gems are being installed, but are empty (no files). It's obvious now why my generators aren't registering, they aren't even declared in a file. I found that I needed to make the commits to my Git repository for my gem, and push the changes, and then run the 'gem build' command from within the gem directory itself. 
@@ -59,25 +47,17 @@ Further investigation just revealed that somehow my gems are being installed, bu
 Prior to this it got these errors:
 
 ``` shell
-
 $ gem build ~/Documents/gems/my-gem/my-gem.gemspec
-
 fatal: Not a git repository (or any of the parent directories): .git
-
 fatal: Not a git repository (or any of the parent directories): .git
-
 fatal: Not a git repository (or any of the parent directories): .git
-
 WARNING:  no homepage specified
 
   Successfully built RubyGem
-
   Name: my-gem
-
   Version: 0.0.3
 
   File: kabam-gmo-api-rails2-0.0.8.gem
-
 ```
 
 If I run 'gem build my-gem.gemspec' from inside of the gem folder, these errors did not occur. I simply rebuilt my gem, and another gem I also developed which it depends on , installed them in the default system gem set (which makes them available via my gem server). Then I ran 'bundle install' on my Rails 2 app, then 'bundle exec ruby script/generate' and now I see my generator.
@@ -89,15 +69,11 @@ I'm finally deploying my app, which relies on this gem I've developed with a Rai
 Further investigation shows that gems loaded from a gem server are placed in an accessible path, however gems originating locally or from git are loaded under a bundler gems path.
 
 ``` shell
-
 $ bundle list kabam-gmo-api-rails2
-
 /Users/jsmith/.rvm/gems/ruby-1.8.7-p358@myapp/bundler/gems/gmo-api-rails2-7296b5229c7c
 
 $ bundle list rspec
-
 /Users/jsmith/.rvm/gems/ruby-1.8.7-p358@myapp/gems/rspec-1.3.2
-
 ```
 
 I suspect that this alternative gem path just isn't present in the environment when bundler installs via Git or local.
@@ -105,4 +81,3 @@ I suspect that this alternative gem path just isn't present in the environment w
 I found an article by Yehuda Katz that <a href="http://yehudakatz.com/2010/04/12/some-of-the-problems-bundler-solves/" target="_blank">explains the internals of Bundler</a> further. This issue just isn't worth the time and effort to resolve. 
 
 I've just included instructions for building the gems from source, installing to Gem path, running 'bundle install' with just the install gem names, running generators, restoring the Gemfile configuration to use Git repo URI's, and running 'bundle install' again.
-
