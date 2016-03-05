@@ -1,42 +1,35 @@
-# jekyll-uno
+# RubyColoredGlasses
 
-Jekyll-Uno - a minimal, responsive theme for Jekyll based on the [Uno](https://github.com/daleanthony/Uno) theme for Ghost.
+Source code for [blog.redconfetti.com](http://blog.redconfetti.com/)
 
-> :warning:
-  This theme requires ruby and rubygems installed
+## Installation
 
-### Features
+### Install RVM
 
-* Clean layout
-* Resposive layout
-* Pagination
-* Syntax highlighting
-* Social links
-* Tags listing page
-* Categories listing page
-* Google Analytics integration
-* Disqus integration
+```
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+```
 
----
+You will have to change into the directory to initialize the gemset. If the version of Ruby required is not installed, you'll be prompted to install it (e.g. `rvm install ruby-2.2.1`)
 
-### Install and Test
+### Install Gems
 
-1. Download or clone repo `git clone git@github.com:joshgerdes/jekyll-uno.git`
-2. Enter the folder: `cd jekyll-uno/`
-3. If you don't have bundler installed: `gem install bundler`
-3. Install Ruby gems: `bundle install`
-4. Start Jekyll server: `jekyll serve`
+This blog requires that you install the Bundler gem, and then run `bundle install` to install all needed gem dependencies.
 
-Access via: [http://localhost:4000/jekyll-uno](http://localhost:4000/jekyll-uno)
+```
+gem install bundler
+bundle install
+```
 
----
+## Jekyll
 
-### Demo and Download
+This blog is powered by [Jekyll](https://jekyllrb.com/docs/home/) - [Documentation](https://jekyllrb.com/docs/home/) - [Github](https://github.com/jekyll/jekyll) - [Jekyll-Uno theme](https://github.com/joshgerdes/jekyll-uno)
 
-[Demo](http://joshgerdes.com/jekyll-uno/)
-[Download](https://github.com/joshgerdes/jekyll-uno/archive/master.zip)
+The configuration for the site are stored in [config.yml](./_config.yml). See [Jekyll Docs - Configuration](https://jekyllrb.com/docs/configuration/)
 
-![jekyll-uno - free Jekyll theme](/screenshot.png)
+### Server
+
+You can run `jekyll serve` in the terminal, and then visit [http://127.0.0.1:4000/](http://127.0.0.1:4000/) to preview the site as you work on it.
 
 ---
 
