@@ -48,38 +48,76 @@ comments:
   content: I was getting errors, too, and the solution was to create the ~/tmp.
     Thanks for the tip!
 ---
-<p><strong><span style="color: #ff0000;">UPDATE:</span> I ran into errors and decided to not use the findutils provided by Homebrew. I simply setup the following alias in .bash_profile and this did the trick. This is using the built in locate database provided with Mac OS X Snow Leopard.</strong></p>
-<pre class="brush:shell">
-alias updatedb='sudo /usr/libexec/locate.updatedb'<br />
-</pre></p>
+<strong><span style="color: #ff0000;">UPDATE:</span> I ran into errors and decided to not use the findutils provided by Homebrew. I simply setup the following alias in .bash_profile and this did the trick. This is using the built in locate database provided with Mac OS X Snow Leopard.</strong>
+
+``` shell
+
+alias updatedb='sudo /usr/libexec/locate.updatedb'
+
+```
+
 <hr />
-<p>I used to use MacPorts to ensure that my command line environment on my Mac was almost exclusively using MacPort provided binaries, not the built in binaries and libraries that are packaged with Mac OS X.</p>
-<p>I had heard of Homebrew, but MacPorts seemed to work fine for me. Then I realized that Homebrew does the same thing, but installs software in /usr/local, which doesn't require sudo. The benefits of Homebrew seem to be <a href="http://tedwise.com/2010/08/28/homebrew-vs-macports/" target="_blank">simplicity, lack of intrusiveness, and speed</a>. I'm likely going to use it as the package manager in my Rails developer toolkit in the future.</p>
-<p>I just noticed that I am not able to use the 'locate' command to search for certain matching filenames on my system. I love using this option piped into grep to find what I'm looking for, such as the path to a particular gem I'm needing to inspect the code for.</p>
-<p>I installed the 'findutils' package that includes 'locate' via Homebrew.</p>
-<pre class="brush:shell">$ brew install findutils<br />
-==> Downloading http://ftpmirror.gnu.org/findutils/findutils-4.4.2.tar.gz<br />
-######################################################################## 100.0%<br />
-==> ./configure --prefix=/usr/local/Cellar/findutils/4.4.2 --program-prefix=g --disable-debug<br />
-==> make install<br />
-Warning: Non-libraries were installed to "lib".<br />
-Installing non-libraries to "lib" is bad practice.<br />
-The offending files are:<br />
-/usr/local/Cellar/findutils/4.4.2/lib/charset.alias<br />
-==> Summary<br />
-/usr/local/Cellar/findutils/4.4.2: 19 files, 1.2M, built in 68 seconds</pre><br />
-I thought that the warning regarding non-libraries being installed to "lib" stopped the package from being installed properly, but it turns out that the executables were installed with symlinks placed in /usr/local/bin (which is in my path) and pointing to the actual installed binaries. Instead of 'locate' and 'updatedb', the commands are 'glocate' and 'gupdatedb'.</p>
-<p>As advised by <a href="http://superuser.com/questions/109590/whats-the-equivalent-of-linuxs-updatedb-command-for-the-mac" target="_blank">Grogs</a>, I updated my .bash_profile file to set the LOCATE_PATH to point to the database in my local users tmp directory.</p>
-<p>I didn't want to have to setup a running cron daemon on my Mac, and I'm just fine with running the updatedb command manually when needed, so I simply added aliases to build and locate using the proper executable filenames.</p>
-<pre class="brush:shell">alias updatedb="gupdatedb --localpaths='/Users/jmiller' --output='/Users/jmiller/tmp/locatedb'"<br />
-alias locate="glocate"<br />
-export LOCATE_PATH="~/tmp/locatedb"</pre><br />
-Before this would work though, I did need to create a 'tmp' folder in my home directory.</p>
-<pre class="brush:shell">mkdir ~/tmp</pre><br />
-<span style="color: #ff0000;"><strong>UPDATE:</strong></span></p>
-<p>This wasn't successful however. I started to get an error:</p>
-<pre class="brush:shell">$ updatedb<br />
-/usr/bin/sort: string comparison failed: Illegal byte sequence<br />
-/usr/bin/sort: Set LC_ALL='C' to work around the problem.<br />
-/usr/bin/sort: The strings compared were `/USERS/JMILLER/LIBRARY/APPLICATION SUPPORT/TEXTMATE/BUNDLES/SCSS.TMBUNDLE/COMMANDS/INCREASE NUMBER.TMCOMMAND' and `/USERS/JMILLER/LIBRARY/APPLICATION SUPPORT/TEXTMATE/BUNDLES/SCSS.TMBUNDLE/COMMANDS/INSERT COLOR302200246.TMCOMMAND'.</pre><br />
-I'm going to just use the locate/updatedb options which come packaged with Mac OS X.</p>
+I used to use MacPorts to ensure that my command line environment on my Mac was almost exclusively using MacPort provided binaries, not the built in binaries and libraries that are packaged with Mac OS X.
+
+I had heard of Homebrew, but MacPorts seemed to work fine for me. Then I realized that Homebrew does the same thing, but installs software in /usr/local, which doesn't require sudo. The benefits of Homebrew seem to be <a href="http://tedwise.com/2010/08/28/homebrew-vs-macports/" target="_blank">simplicity, lack of intrusiveness, and speed</a>. I'm likely going to use it as the package manager in my Rails developer toolkit in the future.
+
+I just noticed that I am not able to use the 'locate' command to search for certain matching filenames on my system. I love using this option piped into grep to find what I'm looking for, such as the path to a particular gem I'm needing to inspect the code for.
+
+I installed the 'findutils' package that includes 'locate' via Homebrew.
+
+``` shell
+$ brew install findutils
+
+==> Downloading http://ftpmirror.gnu.org/findutils/findutils-4.4.2.tar.gz
+
+######################################################################## 100.0%
+
+==> ./configure --prefix=/usr/local/Cellar/findutils/4.4.2 --program-prefix=g --disable-debug
+
+==> make install
+
+Warning: Non-libraries were installed to "lib".
+
+Installing non-libraries to "lib" is bad practice.
+
+The offending files are:
+
+/usr/local/Cellar/findutils/4.4.2/lib/charset.alias
+
+==> Summary
+
+/usr/local/Cellar/findutils/4.4.2: 19 files, 1.2M, built in 68 seconds```
+
+I thought that the warning regarding non-libraries being installed to "lib" stopped the package from being installed properly, but it turns out that the executables were installed with symlinks placed in /usr/local/bin (which is in my path) and pointing to the actual installed binaries. Instead of 'locate' and 'updatedb', the commands are 'glocate' and 'gupdatedb'.
+
+As advised by <a href="http://superuser.com/questions/109590/whats-the-equivalent-of-linuxs-updatedb-command-for-the-mac" target="_blank">Grogs</a>, I updated my .bash_profile file to set the LOCATE_PATH to point to the database in my local users tmp directory.
+
+I didn't want to have to setup a running cron daemon on my Mac, and I'm just fine with running the updatedb command manually when needed, so I simply added aliases to build and locate using the proper executable filenames.
+
+``` shell
+alias updatedb="gupdatedb --localpaths='/Users/jmiller' --output='/Users/jmiller/tmp/locatedb'"
+
+alias locate="glocate"
+
+export LOCATE_PATH="~/tmp/locatedb"```
+
+Before this would work though, I did need to create a 'tmp' folder in my home directory.
+
+``` shell
+mkdir ~/tmp```
+
+<span style="color: #ff0000;"><strong>UPDATE:</strong></span>
+
+This wasn't successful however. I started to get an error:
+
+``` shell
+$ updatedb
+
+/usr/bin/sort: string comparison failed: Illegal byte sequence
+
+/usr/bin/sort: Set LC_ALL='C' to work around the problem.
+
+/usr/bin/sort: The strings compared were `/USERS/JMILLER/LIBRARY/APPLICATION SUPPORT/TEXTMATE/BUNDLES/SCSS.TMBUNDLE/COMMANDS/INCREASE NUMBER.TMCOMMAND' and `/USERS/JMILLER/LIBRARY/APPLICATION SUPPORT/TEXTMATE/BUNDLES/SCSS.TMBUNDLE/COMMANDS/INSERT COLOR302200246.TMCOMMAND'.```
+
+I'm going to just use the locate/updatedb options which come packaged with Mac OS X.
+

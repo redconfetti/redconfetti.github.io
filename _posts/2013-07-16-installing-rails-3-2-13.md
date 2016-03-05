@@ -8,6 +8,10 @@ tags:
 - Rails 3
 comments: []
 ---
-<p>Rails 4 is out now, and installs by default. You might need to install Rails 3 for a project. This is how you do it.</p>
-<pre class="brush:shell">gem install --version '3.2.13' rails</pre><br />
- </p>
+Rails 4 is out now, and installs by default. You might need to install Rails 3 for a project. This is how you do it.
+
+``` shell
+gem install --version '3.2.13' rails```
+
+ 
+

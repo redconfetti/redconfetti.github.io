@@ -8,24 +8,44 @@ tags:
 - superclass
 comments: []
 ---
-<p>One of the awesome things about Ruby is that you can over-ride methods you define, or even over-write methods that are built into Ruby.</p>
-<p>This may not be unique with Ruby, but you can also over-ride super class methods in your defined subclass and use 'super' to execute the logic defined in the super class version of that method.</p>
+One of the awesome things about Ruby is that you can over-ride methods you define, or even over-write methods that are built into Ruby.
+
+This may not be unique with Ruby, but you can also over-ride super class methods in your defined subclass and use 'super' to execute the logic defined in the super class version of that method.
+
 <pre class="brush:rails">
-class ScumbagSteve<br />
-  def hello<br />
-    puts "Hey, can I borrow $5."<br />
-  end<br />
-end</p>
-<p>class GoodGuyGreg < ScumbagSteve<br />
-  def hello<br />
-    super<br />
-    puts "...I'll pay you back tomorrow with interest."<br />
-  end<br />
-end</p>
-<p>> guy = GoodGuyGreg.new<br />
- => #<GoodGuyGreg:0x100346e70><br />
-> guy.hello<br />
-Hey, can I borrow $5.<br />
-...I'll pay you back tomorrow with interest.<br />
- => nil<br />
-</pre></p>
+class ScumbagSteve
+
+  def hello
+
+    puts "Hey, can I borrow $5."
+
+  end
+
+end
+
+class GoodGuyGreg < ScumbagSteve
+
+  def hello
+
+    super
+
+    puts "...I'll pay you back tomorrow with interest."
+
+  end
+
+end
+
+> guy = GoodGuyGreg.new
+
+ => #<GoodGuyGreg:0x100346e70>
+
+> guy.hello
+
+Hey, can I borrow $5.
+
+...I'll pay you back tomorrow with interest.
+
+ => nil
+
+```
+

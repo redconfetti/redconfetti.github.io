@@ -8,8 +8,13 @@ tags:
 - batch processing
 comments: []
 ---
-<p>I just found out that there is a <a href="http://apidock.com/rails/ActiveRecord/Batches/ClassMethods/find_each" target="_blank">find_each</a> method provided by ActiveRecord which loops through an array of models that are retrieved in batches of 1000 at a time.</p>
-<p>The find is performed by find_in_batches with a batch size of 1000 (or as specified by the :batch_size option).</p>
-<pre class="brush:ruby">User.find_each(:start => 2000, :batch_size => 5000) do |user|<br />
-  user.do_something<br />
-end</pre></p>
+I just found out that there is a <a href="http://apidock.com/rails/ActiveRecord/Batches/ClassMethods/find_each" target="_blank">find_each</a> method provided by ActiveRecord which loops through an array of models that are retrieved in batches of 1000 at a time.
+
+The find is performed by find_in_batches with a batch size of 1000 (or as specified by the :batch_size option).
+
+<pre class="brush:ruby">User.find_each(:start => 2000, :batch_size => 5000) do |user|
+
+  user.do_something
+
+end```
+

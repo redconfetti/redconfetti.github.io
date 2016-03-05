@@ -7,4 +7,5 @@ categories:
 tags: []
 comments: []
 ---
-<p>I'm sorry Taryn. My friend just pointed <a href="http://rubyglasses.blogspot.com/" target="_blank">your site</a> out to me. I swear it was a coincidence. I like your background by the way.</p>
+I'm sorry Taryn. My friend just pointed <a href="http://rubyglasses.blogspot.com/" target="_blank">your site</a> out to me. I swear it was a coincidence. I like your background by the way.
+

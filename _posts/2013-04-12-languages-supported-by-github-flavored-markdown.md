@@ -10,15 +10,24 @@ tags:
 - markdown
 comments: []
 ---
-<p>I'm currently configuring the <a href="https://github.com/lsegal/yard" target="_blank">Yard documentation</a> tool for use with Ruby/Rails projects. I could see that it's possible to create a <a href="https://github.com/lsegal/yard/blob/master/.yardopts" target="_blank">.yardopts file</a> in the main directory for your Rails application, and simply add command line arguments to the file.</p>
-<p>I just discovered that you can add a list of files, likely placed under the 'doc' directory, to your .yardopts file, and those files will be included in your generated documentation set. This is perfect for changelogs, readme files, and other high level documentation. After installing the Redcarpet gem, you can name these files with the '.md' extension to use <a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Markdown formatting</a> on your documentation.</p>
-<p>After further investigation I discovered that Yard supports <a href="https://help.github.com/articles/github-flavored-markdown" target="_blank">Github Flavored Markdown</a>, with support for syntax highlighting of a number of different languages. This is accomplished by wrapping your code with lines that consist of three backticks, with the first line suffixed by the language name.</p>
-<pre class="brush:ruby">```ruby<br />
-this = "Ruby Code"<br />
-puts "This is #{this}"<br />
-```</pre><br />
-Unfortunately the Github docs refer you to this <a href="http://softwaremaniacs.org/media/soft/highlight/test.html" target="_blank">hightlight.js test page</a> for the list of supported languages.</p>
-<p>Here is the list of languages that can be used with the backtick</p>
+I'm currently configuring the <a href="https://github.com/lsegal/yard" target="_blank">Yard documentation</a> tool for use with Ruby/Rails projects. I could see that it's possible to create a <a href="https://github.com/lsegal/yard/blob/master/.yardopts" target="_blank">.yardopts file</a> in the main directory for your Rails application, and simply add command line arguments to the file.
+
+I just discovered that you can add a list of files, likely placed under the 'doc' directory, to your .yardopts file, and those files will be included in your generated documentation set. This is perfect for changelogs, readme files, and other high level documentation. After installing the Redcarpet gem, you can name these files with the '.md' extension to use <a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Markdown formatting</a> on your documentation.
+
+After further investigation I discovered that Yard supports <a href="https://help.github.com/articles/github-flavored-markdown" target="_blank">Github Flavored Markdown</a>, with support for syntax highlighting of a number of different languages. This is accomplished by wrapping your code with lines that consist of three backticks, with the first line suffixed by the language name.
+
+<pre class="brush:ruby">```ruby
+
+this = "Ruby Code"
+
+puts "This is #{this}"
+
+``````
+
+Unfortunately the Github docs refer you to this <a href="http://softwaremaniacs.org/media/soft/highlight/test.html" target="_blank">hightlight.js test page</a> for the list of supported languages.
+
+Here is the list of languages that can be used with the backtick
+
 <ul>
 <li>markdown</li>
 <li><span style="line-height: 12px;">Ruby</span></li>
@@ -67,5 +76,7 @@ Unfortunately the Github docs refer you to this <a href="http://softwaremaniacs.
 <li>erlang-repl</li>
 <li>rust</li>
 <li>matlab</li>
-<li>r</li><br />
-</ul></p>
+<li>r</li>
+
+</ul>
+

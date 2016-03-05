@@ -7,8 +7,15 @@ categories:
 tags: []
 comments: []
 ---
-<h2>Adding User</h2><br />
-When setting up a new website manually on an Ubuntu server you need to establish a user account with a home directory, and Bash shell access to the server.</p>
-<pre class="brush:shell">useradd -m testuser -s /bin/bash</pre><br />
-After creating the account you'll want to assign a password for the account.</p>
-<pre class="brush:shell">passwd testuser</pre></p>
+## Adding User
+
+When setting up a new website manually on an Ubuntu server you need to establish a user account with a home directory, and Bash shell access to the server.
+
+``` shell
+useradd -m testuser -s /bin/bash```
+
+After creating the account you'll want to assign a password for the account.
+
+``` shell
+passwd testuser```
+

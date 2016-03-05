@@ -11,15 +11,25 @@ tags:
 - s3
 comments: []
 ---
-<p>I'm working on a project where we are using the Paperclip plugin for Ruby on Rails for file handling and associations with other models.</p>
-<p>I'm working on a CSV import option right now, using <a href="http://satishonrails.wordpress.com/2007/07/18/how-to-import-csv-file-in-rails/" target="_blank">this tutorial</a> to help me get a head start on how to break the contents of the file up into rows and columns. I'm not passing the file directly from a form to the controller method, but I'm opening the file that has already been saved after being uploaded via AJAX.</p>
-<p>I couldn't find out how I would get the file itself into an object that I can pass to the parser like so:</p>
+I'm working on a project where we are using the Paperclip plugin for Ruby on Rails for file handling and associations with other models.
+
+I'm working on a CSV import option right now, using <a href="http://satishonrails.wordpress.com/2007/07/18/how-to-import-csv-file-in-rails/" target="_blank">this tutorial</a> to help me get a head start on how to break the contents of the file up into rows and columns. I'm not passing the file directly from a form to the controller method, but I'm opening the file that has already been saved after being uploaded via AJAX.
+
+I couldn't find out how I would get the file itself into an object that I can pass to the parser like so:
+
 <pre class="brush:rails">
-@parsed_file=CSV::Reader.parse(params[:dump][:file])<br />
-</pre><br />
-It turns out that you simply need to refer to the Paperclip attachment and then use 'to_file' like so:</p>
+@parsed_file=CSV::Reader.parse(params[:dump][:file])
+
+```
+
+It turns out that you simply need to refer to the Paperclip attachment and then use 'to_file' like so:
+
 <pre class="brush:rails">
-require 'csv'<br />
-@upload = Upload.find(params[:upload_id])<br />
-@parsed_file = CSV::Reader.parse(@upload.attachment.to_file)<br />
-</pre></p>
+require 'csv'
+
+@upload = Upload.find(params[:upload_id])
+
+@parsed_file = CSV::Reader.parse(@upload.attachment.to_file)
+
+```
+

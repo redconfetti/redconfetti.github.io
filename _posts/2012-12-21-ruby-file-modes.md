@@ -8,7 +8,11 @@ tags:
 - file
 comments: []
 ---
-<p>When working with files, you can open them in one of several modes.</p>
-<pre class="brush:ruby">File.new("/file/path.txt", "w")</pre><br />
-You can find the description of these modes in the <a href="http://ruby-doc.org/core-1.9.3/IO.html" target="_blank">IO documentation</a>.</p>
-<p> </p>
+When working with files, you can open them in one of several modes.
+
+<pre class="brush:ruby">File.new("/file/path.txt", "w")```
+
+You can find the description of these modes in the <a href="http://ruby-doc.org/core-1.9.3/IO.html" target="_blank">IO documentation</a>.
+
+ 
+

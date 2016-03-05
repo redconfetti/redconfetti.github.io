@@ -6,6 +6,9 @@ categories:
 - Uncategorized
 tags: []
 ---
-<p>Just happened to hear about these solutions recently.</p>
-<p><a href="https://www.pingdom.com/" target="_blank">Pingdom</a></p>
-<p><a href="http://www.pagerduty.com/" target="_blank">PagerDuty</a></p>
+Just happened to hear about these solutions recently.
+
+<a href="https://www.pingdom.com/" target="_blank">Pingdom</a>
+
+<a href="http://www.pagerduty.com/" target="_blank">PagerDuty</a>
+

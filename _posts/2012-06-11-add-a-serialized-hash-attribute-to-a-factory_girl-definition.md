@@ -59,30 +59,57 @@ comments:
   date_gmt: '2015-06-01 01:24:02 -0700'
   content: Thanks for this. I used the 2nd option and it worked.:)
 ---
-<p>I recently declared an ActiveRecord model which stores a serialized Hash inside of a text field. When I tried to setup a factory for this model using FactoryGirl, I received many syntax errors. This is because FactoryGirl attributes expect a single value or a certain form of code block.</p>
-<pre class="brush:rails">  factory :post do<br />
-    title        "Example Post"<br />
-    body         "This is the body of the example post"<br />
-    meta         { "version" => 2 }<br />
-    created_at   "2012-06-01 17:53:13"<br />
-  end<br />
-</pre><br />
-To include a hash as an attribute of a factory, declare the Hash separately and then simply assign it directly in the factory definition.</p>
-<pre class="brush:rails">  meta_hash = { :version => 2 }</p>
-<p>  factory :post do<br />
-    title        "Example Post"<br />
-    body         "This is the body of the example post"<br />
-    meta         meta_hash<br />
-    created_at   "2012-06-01 17:53:13"<br />
-  end<br />
-</pre><br />
-As <a href="https://github.com/joshuaclayton" target="_blank">Joshua Clayton</a> pointed out, one could also do <a href="https://gist.github.com/joshuaclayton/3056591" target="_blank">the following:</a></p>
-<pre class="brush:rails">factory :post do<br />
-  title        "Example Post"<br />
-  body         "This is the body of the example post"</p>
-<p>  meta         { { version: 2 } }<br />
-  # or<br />
-  meta({ version: 2 })</p>
-<p>  created_at   "2012-06-01 17:53:13"<br />
-end<br />
-</pre></p>
+I recently declared an ActiveRecord model which stores a serialized Hash inside of a text field. When I tried to setup a factory for this model using FactoryGirl, I received many syntax errors. This is because FactoryGirl attributes expect a single value or a certain form of code block.
+
+<pre class="brush:rails">  factory :post do
+
+    title        "Example Post"
+
+    body         "This is the body of the example post"
+
+    meta         { "version" => 2 }
+
+    created_at   "2012-06-01 17:53:13"
+
+  end
+
+```
+
+To include a hash as an attribute of a factory, declare the Hash separately and then simply assign it directly in the factory definition.
+
+<pre class="brush:rails">  meta_hash = { :version => 2 }
+
+  factory :post do
+
+    title        "Example Post"
+
+    body         "This is the body of the example post"
+
+    meta         meta_hash
+
+    created_at   "2012-06-01 17:53:13"
+
+  end
+
+```
+
+As <a href="https://github.com/joshuaclayton" target="_blank">Joshua Clayton</a> pointed out, one could also do <a href="https://gist.github.com/joshuaclayton/3056591" target="_blank">the following:</a>
+
+<pre class="brush:rails">factory :post do
+
+  title        "Example Post"
+
+  body         "This is the body of the example post"
+
+  meta         { { version: 2 } }
+
+  # or
+
+  meta({ version: 2 })
+
+  created_at   "2012-06-01 17:53:13"
+
+end
+
+```
+

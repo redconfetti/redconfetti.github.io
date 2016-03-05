@@ -8,6 +8,9 @@ tags:
 - mobile
 comments: []
 ---
-<p>It seems like the industry is all astir about mobile these days. I'm thinking of jumping into such interests.</p>
-<p>Heard about this today. It's like New Relic for mobile apps.</p>
-<p><a href="https://www.crittercism.com/" target="_blank">https://www.crittercism.com/</a></p>
+It seems like the industry is all astir about mobile these days. I'm thinking of jumping into such interests.
+
+Heard about this today. It's like New Relic for mobile apps.
+
+<a href="https://www.crittercism.com/" target="_blank">https://www.crittercism.com/</a>
+

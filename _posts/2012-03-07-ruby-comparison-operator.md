@@ -9,5 +9,7 @@ tags:
 - ruby
 comments: []
 ---
-<p>I saw this in some code recently, wasn't sure what it did.</p>
-<p>It basically returns TRUE or FALSE if there is a regular expression match, with the regular expression coming after the '=~'.</p>
+I saw this in some code recently, wasn't sure what it did.
+
+It basically returns TRUE or FALSE if there is a regular expression match, with the regular expression coming after the '=~'.
+

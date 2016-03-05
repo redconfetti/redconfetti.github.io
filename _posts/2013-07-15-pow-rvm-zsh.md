@@ -10,8 +10,14 @@ tags:
 - zsh
 comments: []
 ---
-<p>I'm using a Rails 3 app, and my colleague updated the RVM config to use Ruby 2.0.0. I was having issues getting POW to work with the app. I'm using ZSH as my shell also.</p>
-<p>The following command resolved my issue.</p>
-<pre class="brush:shell">rvm env . -- --env > .powenv</pre><br />
-Props to <a href="http://stackoverflow.com/questions/10154928/pow-rvm-and-zsh-not-working-together" target="_blank">Linus on StackOverflow</a> for this solution.</p>
-<p> </p>
+I'm using a Rails 3 app, and my colleague updated the RVM config to use Ruby 2.0.0. I was having issues getting POW to work with the app. I'm using ZSH as my shell also.
+
+The following command resolved my issue.
+
+``` shell
+rvm env . -- --env > .powenv```
+
+Props to <a href="http://stackoverflow.com/questions/10154928/pow-rvm-and-zsh-not-working-together" target="_blank">Linus on StackOverflow</a> for this solution.
+
+ 
+

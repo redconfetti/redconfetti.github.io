@@ -8,5 +8,7 @@ tags:
 - htaccess
 comments: []
 ---
-<p>I'm not sure how one would use this, but it looks like it's supposed to be useful.</p>
-<p><a href="http://htaccess.madewithlove.be/" target="_blank">http://htaccess.madewithlove.be/</a></p>
+I'm not sure how one would use this, but it looks like it's supposed to be useful.
+
+<a href="http://htaccess.madewithlove.be/" target="_blank">http://htaccess.madewithlove.be/</a>
+

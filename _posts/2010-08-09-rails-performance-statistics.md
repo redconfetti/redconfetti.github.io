@@ -7,5 +7,7 @@ categories:
 tags: []
 comments: []
 ---
-<p>Again, as I search for things, I stumble onto new tools. I just found out about a tool for monitoring the performance of Java and Ruby applications called <a href="http://www.newrelic.com/" target="_blank">New Relic</a>.</p>
-<p>They provide a free service level for Startups and Students even.</p>
+Again, as I search for things, I stumble onto new tools. I just found out about a tool for monitoring the performance of Java and Ruby applications called <a href="http://www.newrelic.com/" target="_blank">New Relic</a>.
+
+They provide a free service level for Startups and Students even.
+

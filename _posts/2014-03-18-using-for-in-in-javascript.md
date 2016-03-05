@@ -8,5 +8,7 @@ tags:
 - javascript
 - JsLint
 ---
-<p>Today our lead front-end developer pointed out to me that when using a 'for in' loop in Javascript that you want to make sure to use hasOwnProperty() on the element to make sure it belongs to the object, and not properties that were inherited through the prototype chain.</p>
-<p>More information is available on <a href="http://www.jslint.com/lint.html#forin" target="_blank">this page</a> describing common Javascript code mistakes caught by JSLint.</p>
+Today our lead front-end developer pointed out to me that when using a 'for in' loop in Javascript that you want to make sure to use hasOwnProperty() on the element to make sure it belongs to the object, and not properties that were inherited through the prototype chain.
+
+More information is available on <a href="http://www.jslint.com/lint.html#forin" target="_blank">this page</a> describing common Javascript code mistakes caught by JSLint.
+
