@@ -21,6 +21,8 @@
           <nav class="cover-navigation cover-navigation--primary">
             <ul class="navigation">
               <li class="navigation__item"><a href="{{ site.baseurl }}#blog" title="link to {{ site.title }} blog" class="blog-button">Blog</a></li>
+              <li class="navigation__item"><a href="{{ site.baseurl }}about" title="link to about" class="blog-button">About</a></li>
+              <li class="navigation__item"><a href="{{ site.baseurl }}cheat-sheets" title="link to cheat sheets" class="blog-button">Cheat Sheets</a></li>
             </ul>
           </nav>
 
@@ -63,6 +65,16 @@
                 <a href="https://www.github.com/{{ site.author.github_username }}" title="{{ site.author.github_username }} on GitHub" target="_blank">
                   <i class="icon icon-social-github"></i>
                   <span class="label">GitHub</span>
+                </a>
+              </li>
+            {% endif %}
+
+            {% if site.author.delicious_username %}
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://delicious.com/{{ site.author.delicious_username }}" title="{{ site.author.delicious_username }} on Delicious" target="_blank">
+                  <i class="icon icon-social-delicious"></i>
+                  <span class="label">Delicious</span>
                 </a>
               </li>
             {% endif %}
