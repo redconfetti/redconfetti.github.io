@@ -1,5 +1,9 @@
 @import url(uno.css);
+/* @import url(github-highlight.css); */
 @import url(monokai.css);
+
+.disclaimer { color: #aaa; }
+.text-alert { color: #f00; }
 
 /* Modifications */
 
