@@ -1,6 +1,6 @@
 # RubyColoredGlasses
 
-Source code for [blog.redconfetti.com](http://blog.redconfetti.com/)
+Source code for [rubycoloredglasses](http://www.rubycoloredglasses.com/)
 
 ## Installation
 
