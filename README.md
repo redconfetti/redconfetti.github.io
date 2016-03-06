@@ -37,7 +37,14 @@ The configuration for the site are stored in [config.yml](./_config.yml). See [J
 
 You can run `jekyll serve` in the terminal, and then visit [http://127.0.0.1:4000/](http://127.0.0.1:4000/){:target="_blank"} to preview the site as you work on it.
 
-## Code Highlighting
+## Style Guide
+
+### Markdown
+
+* [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+* [HTML to Markdown Converter](https://domchristie.github.io/to-markdown/)
+
+### Code Highlighting
 
 Code highlighting is supported by the [Rouge gem](https://github.com/jneen/rouge){:target="_blank"}.
 
