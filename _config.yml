@@ -10,10 +10,10 @@ timezone: America/Los_Angeles
 
 author:
   name: 'Jason Miller'
-  # email: jason@redconfetti.com
+  email: jason@redconfetti.com
   # twitter_username: redconfetti
-  # linkedin_username: redconfetti
-  facebook_username: redconfetti
+  linkedin_username: redconfetti
+  # facebook_username: redconfetti
   github_username:  redconfetti
   delicious_username: redconfetti
   spotify:
