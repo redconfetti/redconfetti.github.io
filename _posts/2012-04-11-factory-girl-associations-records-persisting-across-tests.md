@@ -28,7 +28,7 @@ comments:
     luck with TDD - I'm loving it, like you say it catched bugs so early, some of
     which you don't even mean to test for."
 ---
-I just recently started to adopt test driven development practices. The project I'm working on needs to get done soon, and I didn't want to get held up learning Rspec. After much consulting with other developers at the <a href="http://www.kabam.com/" target="_blank">company I work</a> for, I had decided to use basic Test::Unit tests with FactoryGirl factories instead of fixtures, and adopt Shoulda if a scenario arises where the options it provides (contexts) are needed.
+I just recently started to adopt test driven development practices. The project I'm working on needs to get done soon, and I didn't want to get held up learning Rspec. After much consulting with other developers at the [company I work](http://www.kabam.com/) for, I had decided to use basic Test::Unit tests with FactoryGirl factories instead of fixtures, and adopt Shoulda if a scenario arises where the options it provides (contexts) are needed.
 
 So far things have been running well, and I'm starting to understand just how important testing is. You don't have to write tests for every single thing you do, but if you implement some sort of feature that you seriously don't want to break at some point in the future, setup a test for it. Once you setup a test for one type of feature, you can re-use the code later for similar testing. So don't worry about how long it takes the first time around, it will pay off later when that function isn't broken because you caught it. I didn't realize it, but errors you didn't expect it to directly catch, like the dreaded "undefined method 'foo' for nil:NilClass" exception, also popup periodically and alert you that you broke something, even though your test wasn't built to catch those. This is nice because you might change something in a model, and then all of a sudden something in a view is broken.
 
@@ -54,10 +54,9 @@ factory :user do
 
   end
 end
-
 ```
 
-The above declaration would allow one to create a user with 5 posts by default, or create one with 15 posts instead. Ironically enough, I figured this out by referring to the <a href="https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md" target="_blank">official FactoryGirl GETTING STARTED</a> docs, after searching elsewhere on the internet.
+The above declaration would allow one to create a user with 5 posts by default, or create one with 15 posts instead. Ironically enough, I figured this out by referring to the [official FactoryGirl GETTING STARTED](https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md) docs, after searching elsewhere on the internet.
 
 ``` ruby
 FactoryGirl.create(:user).posts.length # 0
@@ -69,7 +68,7 @@ I've been creating factories instead of fixtures, using factories exclusively in
 
 Once I added a factory that generates a parent with children records, I had another controller test report an error where the assert_select didn't find the form with ID I had expected. That ID was for one of the children records, with a form expected using id "edit_message_1", but was instead getting "edit_message_41". Further investigation suggested that records are persisting across tests.
 
-Then I inspected log/test.log, and saw that there were transactional commands occurring with BEGIN and ROLLBACK commands <a href="http://dev.mysql.com/doc//refman/5.0/en/commit.html" target="_blank">used by MySQL</a>.
+Then I inspected log/test.log, and saw that there were transactional commands occurring with BEGIN and ROLLBACK commands [used by MySQL](http://dev.mysql.com/doc//refman/5.0/en/commit.html).
 
 ``` shell
    (0.1ms)  BEGIN

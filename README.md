@@ -41,7 +41,8 @@ You can run `jekyll serve` in the terminal, and then visit [http://127.0.0.1:400
 
 ### Markdown
 
-[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+* [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+* [HTML to Markdown Converter](https://domchristie.github.io/to-markdown/)
 
 ### Code Highlighting
 

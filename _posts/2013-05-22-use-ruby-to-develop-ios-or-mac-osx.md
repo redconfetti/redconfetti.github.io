@@ -13,5 +13,4 @@ I haven't evaluated this yet, but another developer at my local Ruby meetup grou
 
 "RubyMotion is a revolutionary toolchain that lets you quickly develop and test native iOS and OS X applications for iPhone, iPad and Mac, all using the awesome Ruby language you know and love."
 
-<a href="http://www.rubymotion.com/" target="_blank"><img class="alignnone size-medium wp-image-1515" alt="logotype-icon" src="http://www.rubycoloredglasses.com/wp-content/uploads/2013/05/logotype-icon-300x300.png" width="300" height="300" /></a>
-
+![Ruby Motion icon](/images/posts/ruby-motion-icon.png "Ruby Motion icon")
