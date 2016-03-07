@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ruby Tips</title>
+    <meta name="description" content="Ruby tips">
+    <meta name="author" content="Jason Miller">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="../reveal.js-3.2.0/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js-3.2.0/css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="../reveal.js-3.2.0/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js-3.2.0/css/print/pdf.css' : '../reveal.js-3.2.0/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../reveal.js-3.2.0/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Ruby Tips</h1>
+          <p>
+            <small>
+              Created by <a href="http://www.rubycoloredglasses.com/">Jason Miller</a>
+            </small>
+          </p>
+        </section>
+
+        <section>
+          <section>
+            <h1>fetch</h1>
+          </section>
+
+          <section>
+            <p>The `[]` method returns `nil` when a value is not present</p>
+
+            <pre><code class="hljs" data-trim contenteditable>
+            @user_id = options[:user_id]
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Protect your logic at the gates</h3>
+            <pre><code class="hljs" data-trim contenteditable>
+  class UserProfile
+    def initialize(options = {})
+      @user_id = options[:user_id]
+      raise ArgumentError, 'User ID must be supplied' if @user_id.blank?
+    end
+  end
+            </code></pre>
+
+            <aside class="notes">
+              <p>
+                Developers often use an "options" hash to make the interface more flexible.
+                This is especially the case with methods that are being inherited from other classes.
+              </p>
+
+              <p>
+                Because we want to prevent errors resulting from a nil value with
+                required values, we could take the approach of raising an exception when
+                the argument isn't as expected
+              </p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Hash#fetch</h2>
+
+            <pre><code class="hljs" data-trim contenteditable>
+  class UserProfile
+    def initialize(options = {})
+      @user_id = options.fetch(:user_id)
+    end
+  end
+            </code></pre>
+
+            <aside class="notes">
+              Instead we can use the fetch method, which does not return nil
+            </aside>
+          </section>
+
+          <section>
+            <h2>Hash#fetch</h2>
+            <p>
+              fetch raises an exception when the key is not present
+            </p>
+            <pre><code class="hljs" data-trim contenteditable>
+>> names = {:jane => "Jane Smith"}
+=> {:jane=>"Jane Smith"}
+> names.fetch(:john)
+KeyError: key not found: :john
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Hash#fetch</h2>
+            <p>
+              What if we want a custom exception?
+            </p>
+            <pre class="fragment">
+              <code class="hljs" data-trim contenteditable>
+class UserProfile
+  def initialize(options = {})
+    @user_id = options.fetch(:user_id) do
+      raise KeyError, "User ID must be supplied"
+    end
+  end
+end
+              </code>
+            </pre>
+            <aside class="notes">
+              We can specify our own exception if we wish.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Hash#fetch</h2>
+            <p>
+              fetch also accepts a default value
+            </p>
+            <pre>
+              <code class="hljs" data-trim contenteditable>
+class UserProfile
+  def initialize(options = {})
+    @user_id = options.fetch(:user_id) do
+      raise KeyError, "User ID must be supplied"
+    end
+    @cache = options.fetch(:cache, false)
+  end
+end
+              </code>
+            </pre>
+            <aside class="notes">
+              We can also provide a default value as a second argument with fetch.
+            </aside>
+          </section>
+
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="../reveal.js-3.2.0/lib/js/head.min.js"></script>
+    <script src="../reveal.js-3.2.0/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../reveal.js-3.2.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../reveal.js-3.2.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../reveal.js-3.2.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../reveal.js-3.2.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../reveal.js-3.2.0/plugin/zoom-js/zoom.js', async: true },
+          { src: '../reveal.js-3.2.0/plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
