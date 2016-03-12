@@ -38,7 +38,7 @@ Resolving dependencies...
 # Bundle Open
 
 
-After you have configured your <a href="http://www.rubycoloredglasses.com/2012/11/changing-the-default-text-editor/" target="_blank">default text editor</a>, which could be Vim, Emacs, Textmate, or Sublime, you can use 'bundle open' to quickly open your editor with the root directory for the gems source code loaded.
+After you have configured your [default text editor](/2012/11/changing-the-default-text-editor/), which could be Vim, Emacs, Textmate, or Sublime, you can use 'bundle open' to quickly open your editor with the root directory for the gems source code loaded.
 
 ``` shell
 $ bundle open rake
@@ -65,17 +65,17 @@ Initializating git repo in /Users/redconfetti/Sites/annotate_gemfile/smash_pumpk
 
 # Bundle Inject
 
-
-Bundle Inject is an undocumented feature added on <a href="https://github.com/bundler/bundler/blob/master/CHANGELOG.md#130pre-nov-29-2012" target="_blank">November 29, 2012, in version 1.3.0.pre</a>, implemented by Engine Yard likely for their own automation. This command allows you to add gems to your Gemfile from the command line. <a href="http://www.youtube.com/watch?v=8C4ayBHTES0" target="_blank">Great jorb Engine Yard</a>!
+Bundle Inject is an undocumented feature added on [November 29, 2012, in version 1.3.0.pre](https://github.com/bundler/bundler/blob/master/CHANGELOG.md#130pre-nov-29-2012), implemented by Engine Yard likely for their own automation. This command allows you to add gems to your Gemfile from the command line. [Great jorb Engine Yard](http://www.youtube.com/watch?v=8C4ayBHTES0)!
 
 ``` shell
 $ bundle inject
 
-bundle inject requires at least 2 arguments: "bundle inject GEM VERSION ...".```
+bundle inject requires at least 2 arguments: "bundle inject GEM VERSION ...".
+```
 
-Bundler defines this command, as well as the others, in <a href="https://github.com/bundler/bundler/blob/master/lib/bundler/cli.rb#L807" target="_blank">Bundler::CLI</a>. This file defines the command line interface for bundle commands (bundle install, bundle update, bundle exec, bundle gem,etc) using <a href="https://github.com/erikhuda/thor#description" target="_blank">Thor</a>. Thor command support standard command line style <a href="http://whatisthor.com/#options-and-flags" target="_blank">options and flags</a>.
+Bundler defines this command, as well as the others, in [Bundler::CLI](https://github.com/bundler/bundler/blob/master/lib/bundler/cli.rb#L807). This file defines the command line interface for bundle commands (bundle install, bundle update, bundle exec, bundle gem,etc) using [Thor](https://github.com/erikhuda/thor#description). Thor command support standard command line style [options and flags](http://whatisthor.com/#options-and-flags).
 
-<span style="line-height: 21px;">Here is an example of the default intended use of the command.</span>
+Here is an example of the default intended use of the command.
 
 ``` shell
 $ bundle inject poltergeist 1.3.0

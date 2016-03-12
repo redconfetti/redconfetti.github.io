@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "&Uuml;ber-Securing Ubuntu 12.04 LTS with Mod-Security + Ruby on Rails 3.2.13"
+title: "Über-Securing Ubuntu 12.04 LTS with Mod-Security + Ruby on Rails 3.2.13"
 author_name: Marshall Sontag
 author_email: marshallsontag@gmail.com
 excerpt: "I recently setup a linode server for a new client who wanted the best security
