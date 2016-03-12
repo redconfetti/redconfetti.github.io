@@ -43,6 +43,8 @@ You can run `jekyll serve` in the terminal, and then visit [http://127.0.0.1:400
 
 Search page is powered by [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
 
+Due to lack of Jekyll plugin support with Github pages, [search.json](./search.json) had to be configured with supported [Liquid Template Filters](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#standard-filters) to ensure that the generated JSON used for the search is valid.
+
 ## Style Guide
 
 ### Markdown
