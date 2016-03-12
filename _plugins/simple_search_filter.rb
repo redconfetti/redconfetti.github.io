@@ -4,7 +4,7 @@ module Jekyll
       input.gsub! '\\','&#92;'
       input.gsub! /\t/, '    '
       input.gsub! '\'', ''
-      input.gsub! '"', ''
+      input.gsub! "\"", ''
       input.strip_control_and_extended_characters
     end
   end
