@@ -13,28 +13,18 @@ I recently needed to install a program on my Mac using Homebrew. I was instructe
 
 ``` shell
 Warning: /usr/bin occurs before /usr/local/bin
-
 This means that system-provided programs will be used instead of those
-
 provided by Homebrew. The following tools exist at both paths:
-
     gcov-4.2
-
     git
-
     git-cvsserver
-
     git-receive-pack
-
     git-shell
-
     git-upload-archive
-
     git-upload-pack
-
 Consider amending your PATH so that /usr/local/bin
-
-occurs before /usr/bin in your PATH.```
+occurs before /usr/bin in your PATH.
+```
 
 I am using Zsh instead of Bash, and checked my .bashrc, .bash_profile, .zshenv, and .zshrc files. None of those expressed the path with the /usr/bin path expressed before the /usr/local/bin.
 
@@ -44,23 +34,15 @@ It turns out that there is a file - /etc/paths - which controls the default path
 
 ``` shell
 /usr/local/bin
-
 /usr/bin
-
 /bin
-
 /usr/sbin
-
-/sbin```
+/sbin
+```
 
 I opened a new terminal and ran 'brew doctor' again.
 
 ``` shell
 $ brew doctor
-
-Your system is ready to brew.```
-
- 
-
- 
-
+Your system is ready to brew.
+```

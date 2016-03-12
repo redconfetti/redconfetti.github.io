@@ -13,9 +13,5 @@ Some people want to download the documentation for the languages they're using. 
 
 Here are two sources of downloadable documentation.
 
-<a href="http://railsapi.com/" target="_blank">Ruby on Rails Documentation</a>
-
-<a href="http://www.ruby-doc.org/downloads/" target="_blank">Ruby documentation</a>
-
- 
-
+* [Ruby on Rails Documentation](http://railsapi.com/)
+* [Ruby documentation](http://www.ruby-doc.org/downloads/)

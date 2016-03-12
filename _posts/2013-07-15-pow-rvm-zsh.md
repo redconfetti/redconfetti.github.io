@@ -15,9 +15,7 @@ I'm using a Rails 3 app, and my colleague updated the RVM config to use Ruby 2.0
 The following command resolved my issue.
 
 ``` shell
-rvm env . -- --env > .powenv```
+rvm env . -- --env > .powenv
+```
 
-Props to <a href="http://stackoverflow.com/questions/10154928/pow-rvm-and-zsh-not-working-together" target="_blank">Linus on StackOverflow</a> for this solution.
-
- 
-
+Props to [Linus on StackOverflow](http://stackoverflow.com/questions/10154928/pow-rvm-and-zsh-not-working-together) for this solution.

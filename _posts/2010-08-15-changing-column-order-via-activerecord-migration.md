@@ -13,7 +13,6 @@ If you check the <a href="http://api.rubyonrails.org/classes/ActiveRecord/Migrat
 
 ```
 <tt>change_column(table_name, column_name, type, options)</tt>:
-
 Changes the column to a different type using the same parameters as add_column
 ```
 

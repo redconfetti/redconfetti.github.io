@@ -8,7 +8,5 @@ tags: []
 ---
 Just happened to hear about these solutions recently.
 
-<a href="https://www.pingdom.com/" target="_blank">Pingdom</a>
-
-<a href="http://www.pagerduty.com/" target="_blank">PagerDuty</a>
-
+* [Pingdom](https://www.pingdom.com/)
+* [PagerDuty](http://www.pagerduty.com/)

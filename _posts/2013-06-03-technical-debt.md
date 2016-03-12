@@ -10,7 +10,4 @@ comments: []
 ---
 If I were to pick one area of advice for any aspiring business men seeking their Master of Business Administration degree, with the intent of working for a company that involves developers, I recommend that you explore this concept. If you're unaware of this possibility, your project might eventually end up drastically behind.
 
-<a href="http://en.wikipedia.org/wiki/Technical_debt" target="_blank">Technical Debt</a>
-
- 
-
+[Technical Debt](http://en.wikipedia.org/wiki/Technical_debt)

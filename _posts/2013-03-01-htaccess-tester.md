@@ -10,5 +10,5 @@ comments: []
 ---
 I'm not sure how one would use this, but it looks like it's supposed to be useful.
 
-<a href="http://htaccess.madewithlove.be/" target="_blank">http://htaccess.madewithlove.be/</a>
+[http://htaccess.madewithlove.be/](http://htaccess.madewithlove.be/)
 

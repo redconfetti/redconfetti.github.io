@@ -11,7 +11,5 @@ comments: []
 Rails 4 is out now, and installs by default. You might need to install Rails 3 for a project. This is how you do it.
 
 ``` shell
-gem install --version '3.2.13' rails```
-
- 
-
+gem install --version '3.2.13' rails
+```

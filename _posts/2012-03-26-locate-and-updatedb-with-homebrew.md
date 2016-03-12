@@ -8,52 +8,11 @@ tags:
 - os x lion
 - findutils
 - homebrew
-comments:
-- id: 337
-  author: Jamie
-  author_email: jamie+nospam@stoic.net
-  author_url: ''
-  date: '2012-04-17 15:44:05 -0700'
-  date_gmt: '2012-04-17 19:44:05 -0700'
-  content: |-
-    You don't even need to bother with running locate / updatedb on OS X since Spotlight is already doing all the heavy lifting to index your files. Add this to your .bashrc to simulate the locate command.
-
-    alias locate='mdfind -name'
-
-    The mdfind command by default will conduct a full text search of all your files, but since everything has already been indexed it's often quite a bit faster than grep. I've slowly been trying to retrain myself to use it instead of grep (but old habits die hard).
-
-    "man mdfind" for more info
-- id: 9623
-  author: Hong Xu
-  author_email: hong@topbug.net
-  author_url: http://www.topbug.net
-  date: '2013-05-06 08:16:14 -0700'
-  date_gmt: '2013-05-06 08:16:14 -0700'
-  content: "The solution is really simple:\r\n\r\nLC_ALL='C' sudo updatedb"
-- id: 18559
-  author: Dan Pritts
-  author_email: danpritts@yahoo.com
-  author_url: ''
-  date: '2013-11-06 16:15:36 -0800'
-  date_gmt: '2013-11-06 16:15:36 -0800'
-  content: "unfortunately, spotlight doesn't index everything.  \r\n\r\n# mdfind -name
-    krb5.conf\r\n/usr/share/man/man5/krb5.conf.5\r\n\r\n# locate
-    krb5.conf\r\n/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/share/man/man5/krb5.conf.5\r\n/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/share/man/man5/krb5.conf.5\r\n/usr/share/man/man5/krb5.conf.5"
-- id: 22756
-  author: Valerie Parham-Thompson
-  author_email: valerie.parham.thompson@gmail.com
-  author_url: ''
-  date: '2014-01-02 13:59:46 -0800'
-  date_gmt: '2014-01-02 13:59:46 -0800'
-  content: I was getting errors, too, and the solution was to create the ~/tmp.
-    Thanks for the tip!
 ---
 <strong><span style="color: #ff0000;">UPDATE:</span> I ran into errors and decided to not use the findutils provided by Homebrew. I simply setup the following alias in .bash_profile and this did the trick. This is using the built in locate database provided with Mac OS X Snow Leopard.</strong>
 
 ``` shell
-
 alias updatedb='sudo /usr/libexec/locate.updatedb'
-
 ```
 
 ---- 

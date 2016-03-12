@@ -12,5 +12,5 @@ It seems like the industry is all astir about mobile these days. I'm thinking of
 
 Heard about this today. It's like New Relic for mobile apps.
 
-<a href="https://www.crittercism.com/" target="_blank">https://www.crittercism.com/</a>
+[https://www.crittercism.com/](https://www.crittercism.com/)
 

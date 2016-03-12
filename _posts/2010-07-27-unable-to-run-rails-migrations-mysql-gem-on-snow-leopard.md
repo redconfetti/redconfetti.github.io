@@ -10,13 +10,9 @@ comments: []
 After upgrading to Snow Leopard, and trying to run 'rake db:migrate', I received this error once. This seems common to others which have upgraded, especially back when Snow Leopard was released in August of 2009:
 
 ``` shell
-
 rake aborted!
-
 uninitialized constant MysqlCompat::MysqlRes
-
 (See full trace by running task with --trace)
-
 ```
 
 I've tried to troubleshoot by reinstalling the MySQL gem, and the 64 bit version of the MySQL server. I'm no longer receiving this error above.
@@ -24,139 +20,72 @@ I've tried to troubleshoot by reinstalling the MySQL gem, and the 64 bit version
 When installing the MySQL Gem, I receive a bunch of errors, unless I specify to not install documentation.
 
 ``` shell
-
 $ sudo env ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/opt/local/lib/mysql5/bin/mysql_config
-
 Building native extensions.  This could take a while...
-
 Successfully installed mysql-2.8.1
-
 1 gem installed
-
 Installing ri documentation for mysql-2.8.1...
-
 No definition for next_result
-
 No definition for field_name
-
 No definition for field_table
-
 No definition for field_def
-
 No definition for field_type
-
 No definition for field_length
-
 No definition for field_max_length
-
 No definition for field_flags
-
 No definition for field_decimals
-
 No definition for time_inspect
-
 No definition for time_to_s
-
 No definition for time_get_year
-
 No definition for time_get_month
-
 No definition for time_get_day
-
 No definition for time_get_hour
-
 No definition for time_get_minute
-
 No definition for time_get_second
-
 No definition for time_get_neg
-
 No definition for time_get_second_part
-
 No definition for time_set_year
-
 No definition for time_set_month
-
 No definition for time_set_day
-
 No definition for time_set_hour
-
 No definition for time_set_minute
-
 No definition for time_set_second
-
 No definition for time_set_neg
-
 No definition for time_set_second_part
-
 No definition for time_equal
-
 No definition for error_errno
-
 No definition for error_sqlstate
-
 Installing RDoc documentation for mysql-2.8.1...
-
 No definition for next_result
-
 No definition for field_name
-
 No definition for field_table
-
 No definition for field_def
-
 No definition for field_type
-
 No definition for field_length
-
 No definition for field_max_length
-
 No definition for field_flags
-
 No definition for field_decimals
-
 No definition for time_inspect
-
 No definition for time_to_s
-
 No definition for time_get_year
-
 No definition for time_get_month
-
 No definition for time_get_day
-
 No definition for time_get_hour
-
 No definition for time_get_minute
-
 No definition for time_get_second
-
 No definition for time_get_neg
-
 No definition for time_get_second_part
-
 No definition for time_set_year
-
 No definition for time_set_month
-
 No definition for time_set_day
-
 No definition for time_set_hour
-
 No definition for time_set_minute
-
 No definition for time_set_second
-
 No definition for time_set_neg
-
 No definition for time_set_second_part
-
 No definition for time_equal
-
 No definition for error_errno
-
 No definition for error_sqlstate
-
 ```
 
 I've realized that these errors don't occur if you try to install without documentation included. 
@@ -194,47 +123,28 @@ I've completely uninstalled all the gems I had installed. I'm only working on on
 ``` shell
 
 $ sudo gem list -d | grep Installed
-
     Installed at: /opt/local/lib/ruby/gems/1.8
-
     Installed at: /opt/local/lib/ruby/gems/1.8
-
     Installed at: /opt/local/lib/ruby/gems/1.8
-
     Installed at: /opt/local/lib/ruby/gems/1.8
-
     Installed at: /opt/local/lib/ruby/gems/1.8
-
     Installed at: /opt/local/lib/ruby/gems/1.8
-
     Installed at: /opt/local/lib/ruby/gems/1.8
-
     Installed at: /opt/local/lib/ruby/gems/1.8
-
     Installed at: /opt/local/lib/ruby/gems/1.8
-
     Installed at: /opt/local/lib/ruby/gems/1.8
-
     Installed at: /opt/local/lib/ruby/gems/1.8
-
     Installed at: /opt/local/lib/ruby/gems/1.8
-
 ```
 
 When I run a migration I still received an error. I doubted that the MySQL gem is installed properly, but this I can't be completely sure of. No one else has reported this error, so I'm really stuck.
 
 ``` shell
-
 $ rake db:migrate
-
 (in /Users/jason/rj4)
-
 rake aborted!
-
 undefined method `ref' for ActiveSupport::Dependencies:Module
-
 (See full trace by running task with --trace)
-
 ```
 
 Finally I realized that this error was the result of some issue with the Devise gem which my co-worker installed for user authentication. I found this <a href="http://groups.google.com/group/plataformatec-devise/browse_thread/thread/b143fe5a08b86ac6">Google Groups</a> posting about the same error.
@@ -242,50 +152,27 @@ Finally I realized that this error was the result of some issue with the Devise 
 I installed devise version 1.0.8 and this resolved the issue.
 
 ``` shell
-
 $ sudo gem install devise -v=1.0.8
-
 Successfully installed devise-1.0.8
-
 1 gem installed
-
 Installing ri documentation for devise-1.0.8...
-
 Installing RDoc documentation for devise-1.0.8...
-
 $ rake db:migrate
-
 (in /Users/jason/rj4)
-
 rake aborted!
-
 Unknown database 'rj4_development'
-
 (See full trace by running task with --trace)
-
-jason-imac:rj4 jason$ rake db:create
-
+$ rake db:create
 (in /Users/jason/rj4)
-
-jason-imac:rj4 jason$ rake db:migrate
-
+$ rake db:migrate
 (in /Users/jason/rj4)
-
 ==  CreateProperties: migrating ===============================================
-
 -- create_table(:properties)
-
    -> 0.0712s
-
 ==  CreateProperties: migrated (0.0713s) ======================================
-
 ==  CreateUsers: migrating ====================================================
-
 -- create_table(:users)
-
    -> 0.0967s
-
 ==  CreateUsers: migrated (0.0969s) ===========================================
-
 ```
 

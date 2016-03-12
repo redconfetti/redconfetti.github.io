@@ -13,12 +13,8 @@ I had recently used a branch to handle all the modifications I was making to a s
 I found that 'git push origin :branch_name' will delete the repository from the remote server if the branch has been removed locally.
 
 ``` shell
-
 $ git push origin :rails3
-
-To git@redconfetti.com:myrepo.git
-
+To git@example.com:myrepo.git
  - [deleted]         rails3
-
 ```
 

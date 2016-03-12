@@ -12,19 +12,8 @@ comments: []
 ---
 I've worked on various projects that used various task management applications hosted in the cloud (software as a service). I hear about new ones every so often, so I decided to note them here for future reference.
 
-<a href="http://www.pivotaltracker.com/" target="_blank">Pivotal Tracker</a> - Anyone trying to adopt the agile / scrum method of development has likely used this.
-
-<a href="http://basecamp.com/" target="_blank">BaseCampHQ.com</a> - This is the first Rails application. The reason Ruby on Rails exists. Simple and elegant.
-
-<a href="http://www.wrike.com/" target="_blank">Wrike.com</a> - Very flexible. Can be used to multiple people, in different organizations, matching any special hierarchy of tasks.
-
-<a href="https://planscope.io/" target="_blank">PlanScope.io</a>
-
-<a href="http://asana.com/" target="_blank">Asana.com</a>
-
- 
-
- 
-
- 
-
+* [Pivotal Tracker](http://www.pivotaltracker.com/) - Anyone trying to adopt the agile / scrum method of development has likely used this.
+* [BaseCampHQ.com](http://basecamp.com/) - This is the first Rails application. The reason Ruby on Rails exists. Simple and elegant.
+* [Wrike.com](http://www.wrike.com/) - Very flexible. Can be used to multiple people, in different organizations, matching any special hierarchy of tasks.
+* [PlanScope.io](https://planscope.io/)
+* [Asana.com](http://asana.com/)

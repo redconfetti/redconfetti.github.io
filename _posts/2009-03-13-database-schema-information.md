@@ -10,7 +10,7 @@ tags:
 ---
 It can be very useful to have the database table schema information available to you when you are working on a model in a Ruby on Rails application. There is a plugin available which provides the schema information in comments at the top of each model called Annotate Models Plugin.
 
-{% highlight sql %}
+``` sql
 # == Schema Information
 # Schema version: 20090215021706
 #
@@ -34,16 +34,16 @@ It can be very useful to have the database table schema information available to
 #  billing_address_id     :integer(11)     default(0), not null
 #  order_account_id       :integer(11)     default(0), not null
 #  subscription_id        :integer(11)
-{% endhighlight %}
+```
 
 You can install the plugin using the following command from the root of your Rails application.
 
-{% highlight shell %}
+``` shell
 script/plugin install http://repo.pragprog.com/svn/Public/plugins/annotate_models
-{% endhighlight %}
+```
 
 After you are done installing the plugin, simply run the rake task by using this command:
 
-{% highlight shell %}
+``` shell
 rake annotate_models
-{% endhighlight %}
+```

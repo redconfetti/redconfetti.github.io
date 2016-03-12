@@ -127,9 +127,7 @@ Note: If you are prompted for a password when running this clone command, you li
 On the remote machine, go ahead and delete your public key from the root users home directory.
 
 ``` shell
-
 rm /root/id_rsa.pub
-
 ```
 
 After cloning the Gitosis repository to your local machine, you simply modify and commit changes to the 'gitosis.conf' file inside of the 'gitosis-admin' folder.

@@ -19,19 +19,22 @@ git fetch
 
 git rebase -i origin/master
 
-git commit --amend --reset-author```
+git commit --amend --reset-author
+```
 
 You can confirm that your last commit which contains all the changes you've provided in your feature branch is the last one using 'git log'.
 
 Next, create a new branch from your rebased feature branch using a name that describes the first portion of modifications you're wanting to split off from your finished feature branch.
 
 ``` shell
-git checkout -b new_comments_and_docs```
+git checkout -b new_comments_and_docs
+```
 
 Then reset your branch to the commit that comes before your squashed commit. This is practically the state of the last commit in the master branch that you rebased from.
 
 ``` shell
-git reset HEAD^```
+git reset HEAD^
+```
 
 If you run 'git status' now, you'll see the list of unstaged/modified files, and untracked/new files that contain your work from this branch. It's a good idea to take this list of files and separate them into groups for the split branches you plan on creating, using 'git diff' on the modified files to review the changes you made. This will help you avoid mistakenly forgetting to include certain files during the process.
 
@@ -42,7 +45,8 @@ After you've added the files/modifications you wish to keep in this branch, and 
 ``` shell
 git checkout *
 
-git clean -f```
+git clean -f
+```
 
 You now have a split version of your feature branch. Checkout your feature branch and perform the steps above for the other changes you wish to split into separate branches.
 

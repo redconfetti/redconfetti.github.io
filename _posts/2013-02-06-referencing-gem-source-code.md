@@ -17,10 +17,9 @@ Instead, it's useful to simply unpack a gem into your Rails application so that 
 
 ``` shell
 gem unpack refinerycms --version 2.0.9 --target vendor/gems
-
 gem unpack refinerycms-core --version 2.0.9 --target vendor/gems
-
-gem unpack refinerycms-dashboard --version 2.0.9 --target vendor/gems```
+gem unpack refinerycms-dashboard --version 2.0.9 --target vendor/gems
+```
 
 These unpacked gems are not referenced in my Gemfile, so I expect there shouldn't be any conflicts. The source is just there for my referencing pleasure.
 

@@ -13,7 +13,6 @@ Here are my own notes for using <a href="https://github.com/lsegal/yard" target=
 
 First add the Yard gem to your Gemfile, preferably in the development group if applicable.
 
-
 ``` ruby
 group :development do
   # Yard
@@ -29,18 +28,13 @@ You can use Yard to generate documentation by just running 'Yard' from the root 
 
 ``` shell
 $ yard
-
 Files:          36
-
 Modules:        10 (   10 undocumented)
-
 Classes:        26 (   21 undocumented)
-
 Constants:       0 (    0 undocumented)
-
 Methods:       140 (   54 undocumented)
-
- 51.70% documented```
+ 51.70% documented
+```
 
 You can also run a server that updates dynamically as you add documentation.
 
