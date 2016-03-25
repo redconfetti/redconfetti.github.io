@@ -89,4 +89,7 @@ gpg -d -o secret.txt secret.txt.gpg
 
 # import a persons public key
 gpg --import publickey.txt
+
+# get ASCII-armored public key
+gpg --output publickey.txt --armor --export jsmith@example.com
 ```
