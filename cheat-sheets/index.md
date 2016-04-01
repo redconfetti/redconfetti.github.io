@@ -11,13 +11,7 @@ Here are my own personal cheat sheets. I've organized some into their own pages,
 * [Vagrant](/cheat-sheets/vagrant/)
 * [Docker](/cheat-sheets/docker/)
 * [Node Package Manager (NPM)](/cheat-sheets/npm/)
-
-## Linux Commands
-
-{% highlight shell %}
-# Create Tar Gzip archive
-tar -cvzf archive.tar.gz /path/to/folder/
-{% endhighlight %}
+* [Linux](/cheat-sheets/linux/)
 
 ## ActiveRecord
 
