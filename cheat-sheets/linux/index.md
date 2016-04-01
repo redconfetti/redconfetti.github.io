@@ -10,8 +10,8 @@ For example, you can read more about the `file` command by running `man file`.
 
 
 ``` shell
-# see the type of information a file holds (text, executable, etc)
-file
+# Discover a files type (text, executable, etc)
+file /bin/bash
 
 # Create Tar Gzip archive
 tar -cvzf archive.tar.gz /path/to/folder/
