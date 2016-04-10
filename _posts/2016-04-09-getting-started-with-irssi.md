@@ -16,16 +16,19 @@ applications, so I've decided to use [IRSSI](https://irssi.org/) instead of
 ## Installation
 
 Installing IRSSI is easy on Ubuntu, simply use:
+
 ```
 apt-get install irssi
 ```
 
 You can also install it using Homebrew on Mac OSX:
+
 ```
 brew install irssi
 ```
 
 After it's done installing, simply run the program
+
 ```
 irssi
 ```
@@ -89,17 +92,20 @@ default channel.
 You can use these commands to get started immediately:
 
 Set your nick name and real name
+
 ```
 /set nick <nick>
 /set real_name <Real Name>
 ```
 
 Connecting to FreeNode
+
 ```
 /connect irc.freenode.net 8001
 ```
 
 Join Channel
+
 ```
 /join #ubuntu
 ```
@@ -118,11 +124,13 @@ account and obtain instructions to verify yourself.
 
 To make sure that your email address isn't revealed to other users, use the
 following command to ensure that it is hidden.
+
 ```
 /msg NickServ SET HIDEMAIL ON
 ```
 
 You can verify your information with the NickServ by using:
+
 ```
 /msg nickserv info
 ```
@@ -132,6 +140,7 @@ You can verify your information with the NickServ by using:
 Configure IRSSI with Freenode network, then register the Freenode server you 
 will connect to via an SSL connection, then configure the automatically joined
 channel (#ubuntu in this example).
+
 ```
 /network add Freenode
 /server add -auto -ssl -ssl_verify -ssl_capath /etc/ssl/certs -network Freenode irc.freenode.net 7000

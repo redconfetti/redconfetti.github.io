@@ -7,6 +7,9 @@ title: NPM
 ## Common Commands
 
 ``` shell
+# Update Node Package Manager
+npm install -g npm
+
 # Initialize an NPM managed project, creating packages.json
 npm init
 
