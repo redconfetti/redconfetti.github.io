@@ -2,7 +2,7 @@
 layout: page
 title: Git
 ---
-[Back to Cheat Sheets](/cheat-sheets/)
+[Back to Cheat Sheets](/resources/cheat-sheets/)
 
 [Other Git Tips](http://mislav.uniqpath.com/2010/07/git-tips/)
 

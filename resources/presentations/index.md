@@ -3,6 +3,8 @@ layout: page
 title: Presentations
 ---
 
+Back to [Resources](/resources/)
+
 The following presentation is a work in progress. I'm using it to take notes as I discover
 new approaches that can help my development skills.
 

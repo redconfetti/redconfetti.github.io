@@ -2,7 +2,7 @@
 layout: page
 title: PostgreSQL
 ---
-[Back to Cheat Sheets](/cheat-sheets/)
+[Back to Cheat Sheets](/resources/cheat-sheets/)
 
 These commands are specific to Postgres installed on a Mac using [Homebrew](http://brew.sh/). I recommend using [Lunchy](https://github.com/mperham/lunchy) to manage the daemons running on Mac OSX machines.
 

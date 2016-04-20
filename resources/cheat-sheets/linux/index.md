@@ -2,7 +2,7 @@
 layout: page
 title: Linux
 ---
-[Back to Cheat Sheets](/cheat-sheets/)
+[Back to Cheat Sheets](/resources/cheat-sheets/)
 
 Use the `man` command to read more about any of the following commands.
 

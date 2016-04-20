@@ -2,16 +2,19 @@
 layout: page
 title: Cheat Sheets
 ---
+
+Back to [Resources](/resources/)
+
 Here are my own personal cheat sheets. I've organized some into their own pages, or simply added a few commands below.
 
-* [Git](/cheat-sheets/git/)
-* [RVM](/cheat-sheets/rvm/)
-* [Rails Tests](/cheat-sheets/rails-tests/)
-* [PostgreSQL](/cheat-sheets/postgresql/)
-* [Vagrant](/cheat-sheets/vagrant/)
-* [Docker](/cheat-sheets/docker/)
-* [Node Package Manager (NPM)](/cheat-sheets/npm/)
-* [Linux](/cheat-sheets/linux/)
+* [Git](/resources/cheat-sheets/git/)
+* [RVM](/resources/cheat-sheets/rvm/)
+* [Rails Tests](/resources/cheat-sheets/rails-tests/)
+* [PostgreSQL](/resources/cheat-sheets/postgresql/)
+* [Vagrant](/resources/cheat-sheets/vagrant/)
+* [Docker](/resources/cheat-sheets/docker/)
+* [Node Package Manager (NPM)](/resources/cheat-sheets/npm/)
+* [Linux](/resources/cheat-sheets/linux/)
 
 ## ActiveRecord
 

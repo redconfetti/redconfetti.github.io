@@ -2,7 +2,7 @@
 layout: page
 title: Vagrant
 ---
-[Back to Cheat Sheets](/cheat-sheets/)
+[Back to Cheat Sheets](/resources/cheat-sheets/)
 
 ``` shell
 # creates virtual machine (VM) for first time, or starts the VM if it's not running

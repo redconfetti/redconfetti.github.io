@@ -2,7 +2,7 @@
 layout: page
 title: Docker
 ---
-[Back to Cheat Sheets](/cheat-sheets/)
+[Back to Cheat Sheets](/resources/cheat-sheets/)
 
 ## Docker-Machine
 

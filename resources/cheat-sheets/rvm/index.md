@@ -2,7 +2,7 @@
 layout: page
 title: RVM
 ---
-[Back to Cheat Sheets](/cheat-sheets/)
+[Back to Cheat Sheets](/resources/cheat-sheets/)
 
 ``` shell
 # list all available Ruby versions
