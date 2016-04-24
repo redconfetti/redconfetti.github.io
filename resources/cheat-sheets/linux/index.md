@@ -15,4 +15,7 @@ file /bin/bash
 
 # Create Tar Gzip archive
 tar -cvzf archive.tar.gz /path/to/folder/
+
+# scan network for hosts
+sudo nmap -sS -O -v 192.168.0/24
 ```
