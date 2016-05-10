@@ -46,3 +46,6 @@ Back to [Resources](/resources/)
 ### AngularJS
 
 * [ng-newsletter - Build custom directives with AngularJS](http://www.ng-newsletter.com/posts/directives.html)
+* [Egghead.io](https://egghead.io/lessons) - Lessons on Javascript, CSS, AngularJS 1 & 2, React, NodeJS, and more
+* [Thinkster](https://thinkster.io/) - Lessons on AngularJS, React, Ionic, Firebase, and Swift
+
