@@ -33,6 +33,10 @@ Back to [Resources](/resources/)
 
 * [Codeassium](https://codassium.com/) - Collaborative code editor, video conferencing, code execution
 * [Cloud9](https://c9.io/) - Cloud / browser based IDE. Includes built in terminal, image editor, and language tools.
+* [Nitrous](http://nitrous.io/) - A development platform with a collaborative web IDE.
+* [Koding](https://koding.com/) - A social development platform with real-time collaborative features. Requires AWS EC2 instance for back-end.
+* [CodeAnywhere](https://codeanywhere.com/) - Cross platform Web IDE
+* [Kobra](https://kobra.io/) - Realtime collaborative coding, with built in video & voice chat. Not meant to be an IDE.
 
 ## Transpilers
 
