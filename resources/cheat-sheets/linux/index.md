@@ -18,4 +18,10 @@ tar -cvzf archive.tar.gz /path/to/folder/
 
 # scan network for hosts
 sudo nmap -sS -O -v 192.168.0/24
+
+# View Manual Page for Executable Utility
+man cp
+
+# Search for Manuals by Keyword
+man -k directories
 ```
