@@ -24,4 +24,7 @@ man cp
 
 # Search for Manuals by Keyword
 man -k directories
+
+# view calendar
+cal
 ```
