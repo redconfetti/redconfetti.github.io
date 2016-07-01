@@ -18,8 +18,8 @@ and view the history of messages that I had missed.
 Recently I heard about [Tmux](https://en.wikipedia.org/wiki/Tmux) as an
 alternative solution, and also discovered that it can also be used to maintain
 separate virtual terminals (windows), as well as split the screen into separate
-"panes". The same can be done with GNU screen, but people claim that there are
-[reasons to use tmux instead of screen](http://superuser.com/questions/236158/tmux-vs-screen).
+"panes". Splitting the screen into panes can also be done with GNU screen, but
+it's not as well supported. See [reasons to use tmux instead of screen](http://superuser.com/questions/236158/tmux-vs-screen).
 
 # Installation
 
