@@ -1,11 +1,11 @@
-/* TEAM */
-Developer & Designer: Josh Gerdes
-Twitter: @joshgerdes
-Site: http://joshgerdes.com
-Location: Minneapolis, MN, USA
-						
+/* TEAM */           
+Your title: Jason Miller
+Site: http://www.rubycoloredglasses.com/
+Twitter: redconfetti
+Location: Berkeley, California, United States of America
+
 /* THANKS */
-Name: Dale Anthony
+Name: Josh Gerdes
 
 /* SITE */
 Last update: 2016/02/10
