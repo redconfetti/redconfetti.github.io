@@ -67,6 +67,8 @@ the [common commands](http://www.ircbeginner.com/ircinfo/ircc-commands.html)
 that IRC programs support. Here are a few:
 
 * `/join #channel_name` - Joins a channel
+* `/names` - Lists names of users in the current channel
+* `/who <nickname>` - Get info on user (shown in window 1)
 * `/me <action>` - Announces some action such as `/me waves hello`
 * `/msg <nickname> <message>` - Send a direct message to another user
 * `/ignore <nickname>` - Block someone that is harassing you

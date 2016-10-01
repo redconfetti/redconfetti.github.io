@@ -34,6 +34,9 @@ git push origin :old_name # delete old remote branch
 git push origin new_name # create new branch on remote
 git branch --set-upstream-to=origin/new_name
 
+# push to remote with upstream tracking specified
+git push -u origin qa
+
 # remove file from repository, without actually deleting
 # good for files you only want locally, and have added to .gitignore
 git rm --cached mylogfile.log
