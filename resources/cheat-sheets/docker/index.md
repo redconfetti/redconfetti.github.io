@@ -9,6 +9,9 @@ title: Docker
 Docker uses virtual machine(s) (VM) provided by [Virtualbox](https://www.virtualbox.org/) to run your Docker application(s). You can manage the VM's by using 'docker-machine'.
 
 ``` shell
+# List Virtual Machines
+docker-machine ls
+
 # Start Docker Virtual Machine
 docker-machine start
 
@@ -28,7 +31,10 @@ docker-machine status
 docker-machine ip
 
 # Upgrade Docker Machine
-docker-machine stop# docker-machine upgrade
+docker-machine stop
+
+# docker-machine upgrade
+docker-machine upgrade
 ```
 
 ## Docker
