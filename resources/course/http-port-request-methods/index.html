@@ -1,0 +1,59 @@
+---
+layout: page
+status: publish
+published: true
+title: HTTP Port and Request Methods
+author:
+  display_name: redconfetti
+  login: redconfetti
+  email: jason@redconfetti.com
+  url: ''
+author_login: redconfetti
+author_email: jason@redconfetti.com
+wordpress_id: 82
+wordpress_url: http://rails.redconfetti.com/?page_id=82
+date: '2011-10-13 10:20:16 -0700'
+date_gmt: '2011-10-13 17:20:16 -0700'
+categories: []
+tags: []
+comments: []
+---
+<h2>HTTP Ports</h2>
+<p>A web browser by default will make a request to an HTTP server on <a href="http://en.wikipedia.org/wiki/Port_number#Common_port_numbers" target="_blank">port 80</a>, the standard HTTP server port, however it's possible for web servers to use a different port in special circumstances. To specify an alternative port in the address for the request, simply add a colon and the number after the domain. For instance many hosting companies use a system known as cPanel to manage their hosting accounts on a web server. Since the web server runs on port 80, the cPanel administrative interface runs on port 2082 like so: <a href="http://www.redconfetti.com:2082/" target="_blank">http://www.redconfetti.com:2082/</a></p>
+<h2>Standard GET and POST Requests</h2>
+<p>The most common HTTP method used to make a request of a web server is the 'GET' method, which simply tells the server to provide the contents of a specific resource based on the URL. Upon receiving the request, the server sends back a status line, such as "HTTP/1.1 200 OK" (indicating a successful request), along with the body of the response which is either the HTML webpage being requested, or an error message.</p>
+<p>For example, here is the GET request sent to a server after the browser has been told to go to http://www.example.com/index.html</p>
+<pre>GET /index.html HTTP/1.1
+Host: www.example.com</pre>
+<p>The server might then respond with these headers:</p>
+<pre>HTTP/1.1 200 OK
+Date: Mon, 23 May 2005 22:38:34 GMT
+Server: Apache/1.3.3.7 (Unix) (Red-Hat/Linux)
+Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT
+Etag: "3f80f-1b6-3e1cb03b"
+Accept-Ranges: bytes
+Content-Length: 438
+Connection: close
+Content-Type: text/html; charset=UTF-8</pre>
+<p>...and thereafter include the 438 bytes of HTML coding for the index web page in the body of the response.</p>
+<p>The contents of an HTTP request are not seen in the web browser when requesting a web page, and just the same the 'header' information of the HTTP response provided by the server are not seen in the web browser either. It is only the body of the response which is either rendered in the browser window (such as an HTML web page), or displayed directly (such as images).</p>
+<p>Sometimes a GET request includes additional information used by the resource. For instance a webpage address such as http://www.redconfetti.com/index.php?page=about&amp;style=black would result in a request such as:</p>
+<pre>GET /index.php?page=about&amp;style=black HTTP/1.1
+Host: www.example.com</pre>
+<p>This type of request allows you to see the information being provided to the server in the URL for the page/resource. This method is recommended for webpages which provide different information based on the additional parameters included in the request, but not for scripts/pages which create, update, or delete resources on the server as the URL can be bookmarked and re-used, leading to accidental and unwanted modifications.</p>
+<p>The second most common HTTP method used with requests to web servers is the 'POST' method. A POST request is the type typically used when a web form is submitted to the server. A web form can either submit information via GET (like shown above) or via a POST request. A POST request includes information in a certain format in addition to the path of the resource.</p>
+<p>This type of request cannot be accidentally re-submitted to the server, and in fact your browser will specifically ask you if you wish to re-submit the request when you choose to 'Refresh' a page that was loaded via a POST request.</p>
+<p>A POST request for an email form on a website may look like this:</p>
+<pre>POST /contact/send-email.php HTTP/1.1
+Host: www.example.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 46
+
+name=John%20Smith&amp;email=john.smith@mailinator.com&amp;message=Hello,How%20are%20you!</pre>
+<h2>Other HTTP Methods</h2>
+<p>HTTP defines nine methods/request types indicating the desired action to be performed on the resource (webpage, image, or other file) being requested. These methods are: HEAD, GET, POST, PUT, DELETE, TRACE, OPTIONS, CONNECT, and PATCH.</p>
+<p>Most people think of HTTP as a simple read-only medium where a browser makes a request and receives information, and the only method available to publish or remove content from a website is via FTP. <a href="http://en.wikipedia.org/wiki/Tim_Berners-Lee" target="_blank">Tim Berners-Lee</a>, the inventor of the World Wide Web, originally designed the first browser called "<em>WorldWideWeb</em>" as a read/write browser; meaning you could not only browse and read content, but create and edit content too. The majority of websites today only operate through GET requests for the majority of pages, and sometimes use POST for web form submissions, but do not utilize the other HTTP requests types. These other request methods were intended to allow web servers to act like full services which not only provide options to 'GET' resources, but also to create new resources using the 'PUT' request type, or delete resources using the 'DELETE' request type.</p>
+<p>The PUT method is similar to POST, as it provides data with the request separate of the path of the resource being requested. The DELETE method is much like GET, but is intended for requests to delete certain resources.</p>
+<p>More detail on the HTTP methods is available <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html" target="_blank">W3.org Definitions page</a>.</p>
+<p>[previous]<br />
+[next]</p>

@@ -1,0 +1,292 @@
+---
+layout: page
+status: publish
+published: true
+title: Setting Up a Rails Development Environment for PC Users
+author:
+  display_name: redconfetti
+  login: redconfetti
+  email: jason@redconfetti.com
+  url: ''
+author_login: redconfetti
+author_email: jason@redconfetti.com
+wordpress_id: 220
+wordpress_url: http://rails.redconfetti.com/?page_id=220
+date: '2011-10-22 23:16:50 -0700'
+date_gmt: '2011-10-23 06:16:50 -0700'
+categories: []
+tags: []
+comments: []
+---
+<h2>Ubuntu Linux</h2>
+<p>If you're using a PC instead of a Mac, I recommend that you develop your Ruby on Rails application using Ubuntu Linux instead of Windows. Some Ruby Gems are dependent on software which is available for Linux or Mac OS X, but has not yet been ported to Windows (at least in a compatible manner). The Ruby on Rails community also consists of a majority of Linux or Mac OS X users, so most documentation that you find on various Rails related topics will provide instructions which apply to the commands for those operating systems, and not Windows. Overall using a Unix-based operating system to develop your Rails application will mean less headaches.</p>
+<p>Ubuntu is the easiest Linux distribution for use as a server or desktop operating system. It supports most hardware without requiring complex steps to make. There is also an abundance of documentation supporting the use of Ubuntu to perform various tasks.</p>
+<p>You can install Ubuntu without needing to prepare a separate partition on your hard drive via the Windows Installer for Ubuntu known as <a href="http://www.ubuntu.com/download/ubuntu/windows-installer" target="_blank">WUBI</a>. WUBI places a file which contains the entire Ubuntu system in the root of your existing Windows partition, and configures your computer to provide you the choice of using Windows or Ubuntu when you start the computer.</p>
+<p>Alternatively you can run Ubuntu using <a href="https://www.virtualbox.org/" target="_blank">Virtualbox</a> inside of Windows, so you don't have to restart your computer each time you want to start working on your Rails application. This may cause your computer to run slow however, as it involves both operating systems being loaded into memory and run at the same time.</p>
+<h2>Development Environment</h2>
+<p>Your development environment will consist of a text editor for modifying the source code of your application, a terminal which provides a command prompt (or command line interface) for running certain commands, and a web browser for viewing and testing the website application that you are developing on your local machine.</p>
+<p>Each of these programs we are going to use separately. I'm teaching it to you this way so that you can choose to use an alternative terminal or text editor later if you choose. Choice is good.</p>
+<p>Or if you find one that works for you, you can look into what is known as an Integrated Development Environment (IDE) which provides a text editor, terminal, web browser, and other tools all in one program. One example is <a href="http://www.aptana.com/products/radrails" target="_blank">RadRails</a> by Aptana.</p>
+<p>There is also a web-based IDE tailored for Rails projects called <a href="http://c9.io/" target="_blank">Cloud9</a>. It's free if you're using it with a project that you plan on sharing with the public as an open-source project for free on <a href="https://github.com/" target="_blank">Github</a>, otherwise you'll need to pay $15 a month.</p>
+<h2>Setting up the Launcher Bar for your Programs</h2>
+<p>The latest version of Ubuntu uses a desktop interface known as <a href="http://unity.ubuntu.com/about/" target="_blank">Unity</a>. This interface features a bar on the left side of the screen known as the Launcher. When you open any programs from the launcher, the launcher will disappear. If you place your mouse against the far left side of the screen, the launcher will reappear.</p>
+<p>Click on the 'Dash Home' icon at the top of the launcher to open up another feature of the Unity interface known as the 'Dash'. This area provides options to search and open programs which are installed within your Ubuntu system.</p>
+<p>Search for 'gEdit' and the Dash will display the 'Text Editor' program, which you'll be using as your text editor. Go ahead and drag this icon to your launcher on the left side of the screen. After the 'gEdit' icon appears in the launcher, feel free to click on the icon and hold for a second or two, then drag the icon nearer to the top of the list of icons.</p>
+<p>If you right-click on icons, such as 'LibreOffice Impress' (a Microsoft Powerpoint-like program) or 'LibreOffice Calc' (a Microsoft Excel-like program), you can choose 'Remove from launcher' to remove those icons from the launcher so that it's less cluttered.</p>
+<p>Go ahead and search for 'Terminal' from the dash, and drag this to your launcher.</p>
+<p>By default Ubuntu will come with Firefox installed. You might want to use Chromium, which is like the Linux version of Google Chrome. You can do this by opening the 'Ubuntu Software Center' program from the dash or your launcher, searching for 'Chromium' and then choosing to install it. After it's installed it will be available if you search for it in the dash, and then drag the icon to your launcher.</p>
+<h2>Text Editor</h2>
+<p>When you're spending most of your time coding, you want to make sure that your experience working with code is simple, easy on the eyes, and productive. On Mac OS X there is a program called Textmate which is very popular with programmers because it runs fast, includes a built in file browser, supports <a href="http://en.wikipedia.org/wiki/Syntax_highlighting" target="_blank">syntax coloring</a> (which helps you avoid mistakes), is elegant and easy on the eyes, and includes code completion features.</p>
+<p>Unfortunately Textmate isn't available for Linux, however the text editor that comes with Ubuntu, gEdit, can be setup to work much like Textmate.</p>
+<h4>Add Plugin Support to gEdit</h4>
+<p>First open the Ubuntu Software Center and search for 'gedit-plugins'. This will find a package with the description 'Set of plugins for gEdit'. Install this package.</p>
+<h4>Download and Install Monaco Font</h4>
+<p>Download the Monaco font using <a href="http://rails.redconfetti.com/wp-content/uploads/2011/10/MONACO.ttf" target="_blank">this link</a>. After the file is downloaded, open it up from your Home directory under the 'Downloads' folder. It should display examples of how the font looks, and provide an 'Install' button in the bottom right corner. Click on this button to install the font.</p>
+<p><a href="http://rails.redconfetti.com/wp-content/uploads/2011/10/install-monaco.png"><img class="alignnone size-medium wp-image-244" title="install-monaco" src="http://rails.redconfetti.com/wp-content/uploads/2011/10/install-monaco-300x170.png" alt="" width="300" height="170" /></a></p>
+<h4>Darkmate Theme for gEdit</h4>
+<p>Download this <a href="http://rails.redconfetti.com/wp-content/uploads/2011/10/darkmate.xml" target="_blank">Darkmate theme file</a> for gEdit which emulates the color scheme of Textmate which is very easy on the eyes. Install the file by opening gEdit, hold down the ALT key to reveal the menu items at the top of the screen, go to Edit &gt; Preferences &gt; Fonts and Colors. Click on the 'Add' button and then navigate and choose the file from your Downloads folder. After it installs and applies the theme, click on the 'Close' button in the bottom right corner of the Preferences window.</p>
+<h4>File Browser for gEdit</h4>
+<p>Download the last version of the <a href="http://www.stambouliote.de/projects/gedit_plugins.html" target="_blank">Class Browser plugin</a> for gEdit (version 0.2.1) using <a href="http://www.stambouliote.de/download/gedit_classbrowser-0.2.1.tar.gz" target="_blank">this link</a>.  The file is a Tar/Gzip file, which is like a ZIP file that is supported by all the Linux-based operating systems. Open the file and click on the 'Extract' button. This will cause a window to popup and allow you to choose where you wish to extract the plugin folder. Choose your home folder, which bares your user name, and then click on CTRL+H to display the hidden files/folders. Open '.local', then 'share'. You'll see some folders in here, but likely won't see one for 'gedit'. Click on the 'Create folder' button in the top right section and create a folder named 'gedit'. This will place you inside of the folder. Next click on 'Create folder' once again and name it 'plugins'. Click on the 'Extract' button to place the plugin folder under 'plugins'.</p>
+<p>Open the gEdit text editor, hold down the ALT key and go to Edit &gt; Preferences, then select the Plugins tab. You should have a check mark next to 'File Browser Panel'. Close the Preferences window, and while still holding the ALT key select View &gt; Side Panel. This will cause the file browser to display on the left side of the screen.</p>
+<h2>Installing Ruby</h2>
+<p>Now that you have a text editor which has feature which closely resemble Textmate, a Terminal which provides a command prompt, and a web browser, we're ready to install the libraries needed for the Ruby on Rails application.</p>
+<p>The first step is to install Ruby, which is the program which reads and interprets Ruby code from the scripts you create, an runs those scripts in real time.</p>
+<p>Ruby version 1.8.7 is recommended because it's known to be stable without causing any issues. Ruby 1.9.2 is also compatible with the latest version of Ruby on Rails (version 3.1), however it's fairly new, and a rule of thumb is that it is best to avoid the newest software if you're not a seasoned developer that can find the cause of a problem, find a solution, and report the bugs or issues that you've found.</p>
+<p>To install Ruby 1.8.7 for Ubuntu open the Terminal program and run 'sudo apt-get install ruby-full'.</p>
+<pre class="brush:shell">
+jason@ubuntu:/usr/bin$ sudo apt-get install ruby-full
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  libtcltk-ruby1.8 ri1.8 ruby1.8-dev ruby1.8-full tcl8.5 tk8.5
+Suggested packages:
+  tclreadline
+The following NEW packages will be installed:
+  libtcltk-ruby1.8 ri1.8 ruby-full ruby1.8-dev ruby1.8-full tcl8.5 tk8.5
+0 upgraded, 7 newly installed, 0 to remove and 0 not upgraded.
+Need to get 5,009 kB/5,635 kB of archives.
+After this operation, 66.2 MB of additional disk space will be used.
+Do you want to continue [Y/n]? Y
+</pre>
+<h2>Installing Ruby Gems</h2>
+<p>Most programming languages provide standard features such as variables, operators, conditional statements, loops, etc. In addition to these standard features a core set of libraries are typically provided which provide functions for working with the file system, networking, etc.</p>
+<p>All these features and libraries are the building blocks of any computer program, however there are many common actions which you may want to perform with your program that you would need to program from scratch. Luckily there are programming libraries which are made for free to the public which provide methods for performing certain actions via your own Ruby scripts or Rails application.</p>
+<p>In some cases you simply download a library file, place it inside of the directories for your project, and then add some sort of command that points to the location of that library file so that its functions may be included and used by your own script.</p>
+<p>With common Ruby libraries, this isn't necessary because Ruby supports a program known as <a href="http://en.wikipedia.org/wiki/RubyGems" target="_blank">RubyGems</a> which downloads and installs libraries for you, and then makes those libraries available for inclusion in your scripts without having to know the path of the libraries. These libraries are known as 'gems' in the Ruby community, and the Ruby Gem program relies on the centralized repository of gems which are hosted at <a href="http://rubygems.org/" target="_blank">http://rubygems.org/</a>.</p>
+<p>Programs such as Ruby Gems are known as package managers, and are available for many other programming languages as well. For the Perl programming language there is a package manager and repository made available by the <a href="http://www.cpan.org/modules/INSTALL.html" target="_blank">Comprehensive Perl Archive Network - CPAN.org</a>. For the PHP programming language there is a package manager and repository made available by the <a href="http://pear.php.net/" target="_blank">PHP Extension and Application Repository - PEAR.PHP.NET</a>.</p>
+<p>Rails itself is a Gem, as are the many libraries which the Rails framework relies on (ActiveModel, ActiveResource, ActiveSupport, etc). When you install Rails, these other gems are installed as dependencies, which means that the Rails gem needs them so Ruby Gems installs them as well.</p>
+<p>To install Ruby Gems on your Ubuntu system you could use the Ubuntu Software Center by searching for 'rubygems', but I'm advising against this because you're not able to use commands such as 'gem --update system' to update Ruby Gems itself.</p>
+<p>The best thing to do is to go to the <a href="http://rubyforge.org/frs/?group_id=126" target="_blank">RubyForge download page</a> for Ruby Gems and download the latest 'tgz' package. Currently this is rubygems-1.8.10.tgz. Download the package, and then open your Terminal program and run 'cd ~/Downloads/' to switch to the 'Downloads' folder under your home directory. As shown below I used the 'ls' command to view the files in my Downloads folder, which showed that the file was present. Next 'tar -zxvf rubygems-1.8.10.tgz' is the command to extract the contents of the file to the same directory.</p>
+<pre class="brush:shell">
+jason@ubuntu:~$ cd ~/Downloads/
+jason@ubuntu:~/Downloads$ ls
+rubygems-1.8.10.tgz
+gedit_classbrowser-0.2.1  MONACO.TTF
+jason@ubuntu:~/Downloads$ tar -zxvf rubygems-1.8.10.tgz
+rubygems-1.8.10/
+rubygems-1.8.10/.autotest
+rubygems-1.8.10/.document
+rubygems-1.8.10/.gemtest
+rubygems-1.8.10/bin/
+.
+.
+.
+</pre>
+<p>After this completes use 'cd rubygems-1.8.10.tgz' to switch to the new directory that was just created. From within this directory run 'sudo ruby setup.rb' to install Ruby Gems.</p>
+<pre class="brush:shell">
+jason@ubuntu:~/Downloads/rubygems-1.8.10$ sudo ruby setup.rb 
+[sudo] password for jason: 
+RubyGems 1.8.10 installed
+
+== 1.8.10 / 2011-08-25
+
+RubyGems 1.8.10 contains a security fix that prevents malicious gems from
+executing code when their specification is loaded.  See
+https://github.com/rubygems/rubygems/pull/165 for details.
+
+* 5 bug fixes:
+
+  * RubyGems escapes strings in ruby-format specs using #dump instead of #to_s
+    and %q to prevent code injection.  Issue #165 by Postmodern
+  * RubyGems attempt to activate the psych gem now to obtain bugfixes from
+    psych.
+  * Gem.dir has been restored to the front of Gem.path.  Fixes remaining
+    problem with Issue #115
+  * Fixed Syck DefaultKey infecting ruby-format specifications.
+  * `gem uninstall a b` no longer stops if gem "a" is not installed.
+
+
+------------------------------------------------------------------------------
+
+RubyGems installed the following executables:
+	/usr/bin/gem1.8
+</pre>
+<p>This installs Ruby Gems, but doesn't make it available by simply using 'gem' as the command. Run the command 'sudo ln -s /usr/bin/gem1.8 /usr/bin/gem' to create a shortcut to gem1.8 using the command 'gem'.</p>
+<pre class="brush:shell">
+jason@ubuntu:~$ sudo ln -s /usr/bin/gem1.8 /usr/bin/gem
+[sudo] password for jason: 
+jason@ubuntu:~$ gem --version
+1.8.10
+</pre>
+<p>To ensure that it's all up-to-date, run the command 'gem update --system'.</p>
+<pre class="brush:shell">
+jason@ubuntu:~$ sudo gem update --system
+Updating rubygems-update
+Fetching: rubygems-update-1.8.11.gem (100%)
+Successfully installed rubygems-update-1.8.11
+Installing RubyGems 1.8.11
+RubyGems 1.8.11 installed
+
+== 1.8.11 / 2011-10-03
+
+* Bug fix:
+  * Deprecate was moved to Gem::Deprecate to stop polluting the top-level
+    namespace.
+
+------------------------------------------------------------------------------
+
+RubyGems installed the following executables:
+	/usr/bin/gem1.8
+
+RubyGems system software updated
+jason@ubuntu:~$
+</pre>
+<h2>Installing Rails</h2>
+<p>From the Terminal window run the command 'sudo gem install rails'. You'll be prompted to enter your password for your Ubuntu user account. Type this in and press enter again. Remember that sometimes you'll be prompted from the command line to enter your password, and you won't see stars or characters to indicate each character of your password that you're typing in. Just type it in and press ENTER. If you've typed it wrong, try again until it works.</p>
+<p>The output you get should be similar to this:</p>
+<pre class="brush:shell">
+jason@ubuntu:~$ sudo gem install rails
+[sudo] password for jason:
+Fetching: multi_json-1.0.3.gem (100%)
+Fetching: activesupport-3.1.1.gem (100%)
+Fetching: builder-3.0.0.gem (100%)
+Fetching: i18n-0.6.0.gem (100%)
+Fetching: activemodel-3.1.1.gem (100%)
+Fetching: rack-1.3.5.gem (100%)
+Fetching: rack-cache-1.1.gem (100%)
+Fetching: rack-test-0.6.1.gem (100%)
+Fetching: rack-mount-0.8.3.gem (100%)
+Fetching: hike-1.2.1.gem (100%)
+Fetching: tilt-1.3.3.gem (100%)
+Fetching: sprockets-2.0.3.gem (100%)
+Fetching: erubis-2.7.0.gem (100%)
+Fetching: actionpack-3.1.1.gem (100%)
+Fetching: arel-2.2.1.gem (100%)
+Fetching: tzinfo-0.3.30.gem (100%)
+Fetching: activerecord-3.1.1.gem (100%)
+Fetching: activeresource-3.1.1.gem (100%)
+Fetching: mime-types-1.16.gem (100%)
+Fetching: polyglot-0.3.2.gem (100%)
+Fetching: treetop-1.4.10.gem (100%)
+Fetching: mail-2.3.0.gem (100%)
+Fetching: actionmailer-3.1.1.gem (100%)
+Fetching: rake-0.9.2.2.gem (100%)
+Fetching: thor-0.14.6.gem (100%)
+Fetching: rack-ssl-1.3.2.gem (100%)
+Fetching: json-1.6.1.gem (100%)
+Building native extensions.  This could take a while...
+Fetching: rdoc-3.11.gem (100%)
+Depending on your version of ruby, you may need to install ruby rdoc/ri data:
+
+= 1.9.2 : nothing to do! Yay!
+Fetching: railties-3.1.1.gem (100%)
+Fetching: bundler-1.0.21.gem (100%)
+Fetching: rails-3.1.1.gem (100%)
+Successfully installed multi_json-1.0.3
+Successfully installed activesupport-3.1.1
+Successfully installed builder-3.0.0
+Successfully installed i18n-0.6.0
+Successfully installed activemodel-3.1.1
+Successfully installed rack-1.3.5
+Successfully installed rack-cache-1.1
+Successfully installed rack-test-0.6.1
+Successfully installed rack-mount-0.8.3
+Successfully installed hike-1.2.1
+Successfully installed tilt-1.3.3
+Successfully installed sprockets-2.0.3
+Successfully installed erubis-2.7.0
+Successfully installed actionpack-3.1.1
+Successfully installed arel-2.2.1
+Successfully installed tzinfo-0.3.30
+Successfully installed activerecord-3.1.1
+Successfully installed activeresource-3.1.1
+Successfully installed mime-types-1.16
+Successfully installed polyglot-0.3.2
+Successfully installed treetop-1.4.10
+Successfully installed mail-2.3.0
+Successfully installed actionmailer-3.1.1
+Successfully installed rake-0.9.2.2
+Successfully installed thor-0.14.6
+Successfully installed rack-ssl-1.3.2
+Successfully installed json-1.6.1
+Successfully installed rdoc-3.11
+Successfully installed railties-3.1.1
+Successfully installed bundler-1.0.21
+Successfully installed rails-3.1.1
+31 gems installed
+Installing ri documentation for multi_json-1.0.3...
+Installing ri documentation for activesupport-3.1.1...
+Installing ri documentation for builder-3.0.0...
+Installing ri documentation for i18n-0.6.0...
+Installing ri documentation for activemodel-3.1.1...
+Installing ri documentation for rack-1.3.5...
+Installing ri documentation for rack-cache-1.1...
+Installing ri documentation for rack-test-0.6.1...
+Installing ri documentation for rack-mount-0.8.3...
+Installing ri documentation for hike-1.2.1...
+Installing ri documentation for tilt-1.3.3...
+Installing ri documentation for sprockets-2.0.3...
+Installing ri documentation for erubis-2.7.0...
+Installing ri documentation for actionpack-3.1.1...
+Installing ri documentation for arel-2.2.1...
+Installing ri documentation for tzinfo-0.3.30...
+Installing ri documentation for activerecord-3.1.1...
+Installing ri documentation for activeresource-3.1.1...
+Installing ri documentation for mime-types-1.16...
+Installing ri documentation for polyglot-0.3.2...
+Installing ri documentation for treetop-1.4.10...
+Installing ri documentation for mail-2.3.0...
+Installing ri documentation for actionmailer-3.1.1...
+Installing ri documentation for rake-0.9.2.2...
+Installing ri documentation for thor-0.14.6...
+Installing ri documentation for rack-ssl-1.3.2...
+Installing ri documentation for json-1.6.1...
+Installing ri documentation for rdoc-3.11...
+Installing ri documentation for railties-3.1.1...
+Installing ri documentation for bundler-1.0.21...
+Installing ri documentation for rails-3.1.1...
+Installing RDoc documentation for multi_json-1.0.3...
+Installing RDoc documentation for activesupport-3.1.1...
+Installing RDoc documentation for builder-3.0.0...
+Installing RDoc documentation for i18n-0.6.0...
+Installing RDoc documentation for activemodel-3.1.1...
+Installing RDoc documentation for rack-1.3.5...
+Installing RDoc documentation for rack-cache-1.1...
+Installing RDoc documentation for rack-test-0.6.1...
+Installing RDoc documentation for rack-mount-0.8.3...
+Installing RDoc documentation for hike-1.2.1...
+Installing RDoc documentation for tilt-1.3.3...
+Installing RDoc documentation for sprockets-2.0.3...
+Installing RDoc documentation for erubis-2.7.0...
+Installing RDoc documentation for actionpack-3.1.1...
+Installing RDoc documentation for arel-2.2.1...
+Installing RDoc documentation for tzinfo-0.3.30...
+Installing RDoc documentation for activerecord-3.1.1...
+Installing RDoc documentation for activeresource-3.1.1...
+Installing RDoc documentation for mime-types-1.16...
+Installing RDoc documentation for polyglot-0.3.2...
+Installing RDoc documentation for treetop-1.4.10...
+Installing RDoc documentation for mail-2.3.0...
+Installing RDoc documentation for actionmailer-3.1.1...
+Installing RDoc documentation for rake-0.9.2.2...
+Installing RDoc documentation for thor-0.14.6...
+Installing RDoc documentation for rack-ssl-1.3.2...
+Installing RDoc documentation for json-1.6.1...
+Installing RDoc documentation for rdoc-3.11...
+Installing RDoc documentation for railties-3.1.1...
+Installing RDoc documentation for bundler-1.0.21...
+Installing RDoc documentation for rails-3.1.1...
+jason@ubuntu:~$</pre>
+<p>[previous]<br />
+[next]</p>

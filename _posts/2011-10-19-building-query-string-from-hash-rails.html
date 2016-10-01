@@ -1,0 +1,34 @@
+---
+layout: post
+status: publish
+published: true
+title: Building a Query String from a Hash with Rails 3
+author:
+  display_name: redconfetti
+  login: redconfetti
+  email: jason@redconfetti.com
+  url: ''
+author_login: redconfetti
+author_email: jason@redconfetti.com
+wordpress_id: 176
+wordpress_url: http://rails.redconfetti.com/?p=176
+date: '2011-10-19 14:35:09 -0700'
+date_gmt: '2011-10-19 21:35:09 -0700'
+categories:
+- prerequisites
+tags: []
+comments: []
+---
+<p>I have a model has a method that generates and stores a cached link to it's own view for use in mailers. Under Rails 2 the method which generated this link created the beginning of the URL based on the owner of the object (this is a multi-domain system I'm working on), however it required that a hash of parameters be included in the link.</p>
+<p>Under Rails 2 the 'options' hash would be passed to build_query_string inside of my method like so:</p>
+<pre class="brush:rails">params = ActionController::Routing::Route.new.build_query_string(options)</pre>
+<p>Under Rails 3 I receive this error:</p>
+<pre class="brush:shell">wrong number of arguments (0 for 7)</pre>
+<p>It turns out that under Rails 3 the Hash library includes a to_query method.</p>
+<pre class="brush:rails">
+irb(main):001:0> h = {:blah => '1', :blah2 => '2'}
+=> {:blah=>"1", :blah2=>"2"}
+irb(main):002:0> h.to_query
+=> "blah2=2&blah=1"
+</pre>
+<p>Thanks to mjrussel for <a href="http://stackoverflow.com/questions/3576574/constructing-url-parameters-in-rails-3" target="_blank">posting this on StackOverflow</a>.</p>

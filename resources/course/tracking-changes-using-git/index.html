@@ -1,0 +1,58 @@
+---
+layout: page
+status: publish
+published: true
+title: Tracking Changes using Git
+author:
+  display_name: redconfetti
+  login: redconfetti
+  email: jason@redconfetti.com
+  url: ''
+author_login: redconfetti
+author_email: jason@redconfetti.com
+wordpress_id: 261
+wordpress_url: http://rails.redconfetti.com/?page_id=261
+date: '2011-10-29 21:11:53 -0700'
+date_gmt: '2011-10-30 04:11:53 -0700'
+categories: []
+tags: []
+comments: []
+---
+<p><a href="http://en.wikipedia.org/wiki/Git_(software)" target="_blank">Git</a> is a free distributed revision control system. A revision control system allows developers to submit additions or modifications they make to a software project to a central database known as a repository. Each change made to the source code for the project is known as a commit. With each commit a developer will include a comment which describes what the change is.</p>
+<p>Unlike other popular revision control systems, such as Subversion, Git allows the developer to make multiple commits to a local repository hosted from their local computer. Once they are ready to share their changes with other developers, they will push the one or many commits they've made locally to the remotely hosted repository. When a developer begins a session of modifying a project, they'll usually run a command to 'pull' all of the latest changes made by other developers to their own local repository. This ensures that changes made by other developers do not conflict with the changes they are about to make.</p>
+<h2>Setting up an SSH Key on your Local Machine</h2>
+<h3>Checking for Existing Keys</h3>
+<p>First check to see if you have SSH keys setup on your machine.</p>
+<pre class="brush:bash">
+$ cd ~/.ssh
+-bash: cd: /Users/johnsmith/.ssh: No such file or directory
+</pre>
+<p>If the directory does exist, run 'ls' to see if there is an id_rsa (or id_dsa) and id_rsa.pub (or id_dsa.pub) file present. If so, you already have an SSH key pair setup to with the Git repository.</p>
+<p>If it is indicated that the directory doesn't exist, you do not have SSH keys setup for your user account on your computer yet. Proceed with these instructions to generate SSH keys below.</p>
+<h3>Generating SSH Keys</h3>
+<p>Run the following command to generate the SSH keys.</p>
+<pre class="brush:bash">ssh-keygen -t rsa -C "your_email@youremail.com"</pre>
+<p>When asked for a passphrase, you can provide one, but it's not required. Using a passphrase with your SSH key only makes authentication more secure, and makes it so you have to provide the passphrase each time you connect to a remote server using the key. Other options include the use of a mechanism which provides the password for you when using the SSH keys, such as the <a href="http://help.github.com/ssh-key-passphrases/" target="_blank">keychain provided by Mac OS X</a>.</p>
+<h2>Setting up a Remote Repository</h2>
+<p>For the purposes of this article I will assume that you are using a server running the Ubuntu operating system, a popular Linux distribution used for both desktop and server machines. I highly recommend using a <a href="http://www.linode.com/" target="_blank">Linode VPS</a> with Ubuntu installed.</p>
+<p>We'll be using a program known as Gitosis to setup the Git repository that you'll be hosting from the server to keep track of changes made to your application. The first step in accomplishing this is to install Git on your Ubuntu server. This is done using the apt-get package manager which is available from the Ubuntu command line.</p>
+<pre class="brush:shell">
+sudo apt-get install git-core
+</pre>
+<p>Next we'll need to download Gitosis, the program which is going to aid in the setup and management of the repositories hosted from the server.</p>
+<pre class="brush:shell">
+cd ~
+git clone git://eagain.net/gitosis.git
+</pre>
+<p>This will place a folder named 'gitosis' inside of your home directory. Now move this directory to the /usr/local directory where software not provided by apt-get is typically installed.</p>
+<pre class="brush:shell">sudo mv gitosis/ /usr/local</pre>
+<p>Next go into the /usr/local/gitosis folder, install Python using apt-get, and then run the setup.py script as a super user (using sudo) inside of the folder to complete the installation.</p>
+<pre class="brush:shell">
+cd /usr/local/gitosis
+sudo apt-get install python-setuptools
+sudo python setup.py install
+</pre>
+<p>Now that Gitosis is installed, the next step is to create a user account on the Ubuntu server which will host the repository for the project, as well as other repositories you choose to add in the future. Run the following command to add the 'git' user which will exist on the server without a password (so no one can login as the 'git' user), with it's home directory specified as /var/git (a proper place for the repositories to be hosted from the system).</p>
+<pre class="brush:shell">
+sudo adduser -system -shell /bin/sh -gecos 'git version control' -group -disabled-password -home /var/git git
+</pre>

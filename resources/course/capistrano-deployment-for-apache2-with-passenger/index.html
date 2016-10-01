@@ -1,0 +1,230 @@
+---
+layout: page
+status: publish
+published: true
+title: Capistrano Deployment for Apache2 with Passenger
+author:
+  display_name: redconfetti
+  login: redconfetti
+  email: jason@redconfetti.com
+  url: ''
+author_login: redconfetti
+author_email: jason@redconfetti.com
+wordpress_id: 280
+wordpress_url: http://rails.redconfetti.com/?page_id=280
+date: '2011-12-29 12:31:19 -0800'
+date_gmt: '2011-12-29 19:31:19 -0800'
+categories: []
+tags: []
+comments: []
+---
+<p>This page outlines how to configure a Ruby on Rails 3 application with the Capistrano gem, and deploy your application to a remote server running Apache2 and the Passenger (mod_rails) extension.</p>
+<h2>Preparing the Server</h2>
+<h3>Creating Remote User Account</h3>
+<p>First we need to setup the server to host the Rails application. This is done by creating a user account which will have a home directory to store the files being deployed to the server. The following commands will create the user account with a home directory, and provide the user with Bash shell access.</p>
+<pre class="brush:shell">
+useradd -m testuser -s /bin/bash
+passwd testuser
+</pre>
+<h3>Adding Public Key to Remote User</h3>
+<p>At some point you should have created an SSH key pair for use with the Git repository you're using. Log into the remote server as the new user you've created, and place the contents of your public key file (~/.ssh/id_rsa.pub) inside of the file located at ~/.ssh/authorized_keys under the remote account.</p>
+<p>Before the '.ssh' folder exists in the remote account, we should create an SSH key pair for the remote account too.</p>
+<pre class="brush:shell">
+testuser@remoteserver:~$ pwd
+/home/testuser
+testuser@remoteserver:~$ ssh-keygen -t dsa
+Generating public/private dsa key pair.
+Enter file in which to save the key (/home/testuser/.ssh/id_dsa): 
+Created directory '/home/testuser/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/testuser/.ssh/id_dsa.
+Your public key has been saved in /home/testuser/.ssh/id_dsa.pub.
+The key fingerprint is:
+8e:69:75:a8:ba:c0:9a:a2:90:67:69:40:48:14:64:37 testuser@remoteserver
+The key's randomart image is:
++--[ DSA 1024]----+
+|o*.E             |
+|+ b .            |
+|..               |
+|.        .       |
+|.       S .      |
+| + .   3 .       |
+|o x   = .        |
+|o* . n           |
+|*   o.           |
++-----------------+
+</pre>
+<p>Once this is completed, you can switch to the .ssh folder and create the 'authorized_keys' folder, and paste your own public key onto the first line inside of the file.</p>
+<pre class="brush:shell">
+testuser@remoteserver:~$ cd .ssh
+testuser@remoteserver:~/.ssh$ nano authorized_keys
+</pre>
+<p>With your local computers private key added to the 'authorized_keys' file of the remote account, you'll be able to login to the remote account via SSH from your local computer without a password (or at least using the password setup with your SSH key pair).</p>
+<p>Next copy the public key under ~/.ssh/id_dsa.pub on the remote server, and configure your Git repository to with the remote users public key so that the remote user may download updates from the Git repository.</p>
+<h2>Setting up Deployment Script</h2>
+<p>For our Rails application we will use Capistrano to deploy updates to our application to the live server, with the server configured to use Passenger (mod_rails) with Apache2.</p>
+<p>Assuming that the Rails application has already been setup on your local machine in a directory, initialized to be a local Git repository that is configured to push to an upstream server, we first need to setup the Rails application to be used with the Capistrano gem.</p>
+<h3>Install Capistrano Gem</h3>
+<p>Run the following from the command line to install the Capistrano gem if you haven't already.</p>
+<pre class="brush:shell">
+gem install capistrano
+</pre>
+<h3>Configure Rails Application to Require Capistrano</h3>
+<p>Open your Gemfile in your Rails application root folder and add the following on a new line so that Capistrano is available in the Rails application environment.</p>
+<pre class="brush:rails">
+gem 'capistrano'
+</pre>
+<p>While you have the Gemfile open, also add the 'execjs' and 'therubyracer' gem requirements in the assets group to ensure that the application deploys successfully without errors with the new Sprockets/Asset Pipeline system which precompiles assets (images, stylesheets, Javascript) under the /public folder when pushing your application out to the remote server.</p>
+<pre class="brush:rails">
+group :assets do
+  gem 'sass-rails',   '~> 3.1.5'
+  gem 'coffee-rails', '~> 3.1.1'
+  gem 'uglifier', '>= 1.0.3'
+  gem 'execjs'
+  gem 'therubyracer'
+end
+</pre>
+<h3>Add Deployment Configuration to Application</h3>
+<p>From the root directory of your application, run the following command to setup your application to use Capistrano for deployment. This adds a file named 'deploy.rb' under your 'config' folder.</p>
+<pre class="brush:shell">
+capify .
+</pre>
+<p>Open the deploy.rb file and paste the following deployment recipe into the file, and then change the repository address, usernames, passwords, and other items as needed.</p>
+<pre class="brush:rails">
+#############################################################
+#	Application
+#############################################################
+
+set :application, "testapplication"
+
+#############################################################
+#	Settings
+#############################################################
+
+# runs 'bundle install' during deployment
+# precompiles assets in production
+require "bundler/capistrano"
+load "deploy/assets"
+
+default_run_options[:pty] = true  # Must be set for the password prompt from git to work
+set :use_sudo, false
+
+#############################################################
+#	Servers
+#############################################################
+
+set :user, "testuser"  # The remote server user for deploys
+set :scm_passphrase, "remoteuserpassword"  # The remote server user's password
+
+set :deploy_to, "/home/#{user}"
+set :ssh_options, { :forward_agent => true }
+
+set :domain, "myapplicationdomain.com"
+server domain, :app, :web
+role :db, domain, :primary => true
+
+#############################################################
+#	Git
+#############################################################
+
+set :scm, :git
+set :repository,  "git@git.myrepository.com:testapp.git"
+set :branch, "master"
+set :deploy_via, :remote_cache
+
+#############################################################
+#	Passenger
+#############################################################
+
+namespace :passenger do
+  desc "Restart Application"  
+  task :restart do  
+    run "touch #{current_path}/tmp/restart.txt"  
+  end
+end
+
+after :deploy, "passenger:restart"
+
+</pre>
+<p>You can view a list of Capistrano tasks which are available, much like Rake tasks by using the 'cap -T' command.</p>
+<pre class="brush:shell">
+$ cap -T
+cap bundle:install           # Install the current Bundler environment.
+cap deploy                   # Deploys your project.
+cap deploy:assets:clean      # Run the asset clean rake task.
+cap deploy:assets:precompile # Run the asset precompilation rake task.
+cap deploy:check             # Test deployment dependencies.
+cap deploy:cleanup           # Clean up old releases.
+cap deploy:cold              # Deploys and starts a `cold' application.
+cap deploy:migrate           # Run the migrate rake task.
+cap deploy:migrations        # Deploy and run pending migrations.
+cap deploy:pending           # Displays the commits since your last deploy.
+cap deploy:pending:diff      # Displays the `diff' since your last deploy.
+cap deploy:restart           # Blank task exists as a hook into which to inst...
+cap deploy:rollback          # Rolls back to a previous version and restarts.
+cap deploy:rollback:code     # Rolls back to the previously deployed version.
+cap deploy:setup             # Prepares one or more servers for deployment.
+cap deploy:start             # Blank task exists as a hook into which to inst...
+cap deploy:stop              # Blank task exists as a hook into which to inst...
+cap deploy:symlink           # Updates the symlink to the most recently deplo...
+cap deploy:update            # Copies your project and updates the symlink.
+cap deploy:update_code       # Copies your project to the remote servers.
+cap deploy:upload            # Copy files to the currently deployed version.
+cap deploy:web:disable       # Present a maintenance page to visitors.
+cap deploy:web:enable        # Makes the application web-accessible again.
+cap invoke                   # Invoke a single command on the remote servers.
+cap passenger:restart        # Restart Application
+cap shell                    # Begin an interactive Capistrano session.
+
+Some tasks were not listed, either because they have no description,
+or because they are only used internally by other tasks. To see all
+tasks, type `cap -vT'.
+
+Extended help may be available for these tasks.
+Type `cap -e taskname' to view it.
+</pre>
+<p>Run 'cap deploy:setup' to configure the remote account to contain the folders needed to host the various folders and files needed for our deployed application.</p>
+<pre class="brush:shell">
+$ cap deploy:setup
+  * executing `deploy:setup'
+  * executing "mkdir -p /home/testuser /home/testuser/releases /home/testuser/shared /home/testuser/shared/system /home/testuser/shared/log /home/testuser/shared/pids"
+    servers: ["myapplicationdomain.com"]
+    [myapplicationdomain.com] executing command
+    command finished in 122ms
+  * executing "chmod g+w /home/testuser /home/testuser/releases /home/testuser/shared /home/testuser/shared/system /home/testuser/shared/log /home/testuser/shared/pids"
+    servers: ["myapplicationdomain.com"]
+    [myapplicationdomain.com] executing command
+    command finished in 100ms
+</pre>
+<p>If this runs successfully, like the example above, use 'cap deploy' to push out the current version of your application in the Git repository to the remote server, which will begin with something like this:</p>
+<pre class="brush:shell">
+$ cap deploy
+  * executing `deploy'
+  * executing `deploy:update'
+ ** transaction: start
+  * executing `deploy:update_code'
+    updating the cached checkout on all servers
+    executing locally: "git ls-remote git@git.myrepository.com:testapp.git master"
+    command finished in 1975ms
+.
+.
+.
+</pre>
+<p>After deploying for the first time, you're then free to configure Apache with a configuration similar to the following. With Passenger you simply need to point to the 'public' folder under the 'current' folder which stores the most current deployed version of your application.</p>
+<pre class="brush:text">
+&lt;VirtualHost *:80&gt;
+  ServerAdmin your@emailaddress.com
+  ServerName myapplicationdomain.com
+  ServerAlias www.myapplicationdomain.com
+
+  DocumentRoot /home/testuser/current/public
+  &lt;Directory "/home/testuser/current/public"&gt;
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    allow from all
+  &lt;/Directory&gt;
+
+&lt;/VirtualHost&gt;
+</pre>
