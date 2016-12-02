@@ -203,4 +203,10 @@ git stash drop stash@{0}
 
 # clear all stored stashes
 git stash clear
+
+# delete git tag with specific name
+git tag -d tagName
+
+# delete remote tag
+git push origin :refs/tags/tagName
 ```
