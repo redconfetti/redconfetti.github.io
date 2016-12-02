@@ -188,4 +188,19 @@ git apply --stat file.patch
 
 # apply a patch
 git am file.patch
+
+# save current unstaged changes to stash
+git stash
+
+# view list of stashes
+git stash list
+
+# apply first stash to current branch
+git stash apply stash@{0}
+
+# drop first stash
+git stash drop stash@{0}
+
+# clear all stored stashes
+git stash clear
 ```
