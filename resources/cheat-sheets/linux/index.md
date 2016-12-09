@@ -30,6 +30,13 @@ man -k directories
 cal
 ```
 
+# sudo
+
+``` shell
+# list the sudo privileges for the current user
+sudo -l
+```
+
 # tmux
 
 ## Commands
