@@ -7,6 +7,12 @@ title: Git
 [Other Git Tips](http://mislav.uniqpath.com/2010/07/git-tips/)
 
 ``` shell
+# Manuals
+# You can view the manual pages on any of the commands below by using
+# 'man git-' followed by the verbs supported by Git such as 'log' or 'commit'
+man git-log
+man git-commit
+
 # clear all changes
 git reset --hard
 
