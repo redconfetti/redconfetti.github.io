@@ -167,6 +167,9 @@ git diff HEAD^..HEAD
 # show changes between two commits
 git diff 4fb063f..f5a6ff9
 
+# show changes between tagged release and master
+git diff v1.0..master
+
 # show changes between two branches
 git diff master my-feature-branch
 
