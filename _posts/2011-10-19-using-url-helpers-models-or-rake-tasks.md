@@ -4,8 +4,6 @@ title: Using URL Helpers in Models or Rake Tasks
 date: '2011-10-19 16:41:51 -0700'
 categories:
 - Model
-tags: []
-comments: []
 ---
 If for some reason you need to use URL helpers which are based on the routes you've defined in Rails 3.1, simply add the following to the model method or rake task:
 

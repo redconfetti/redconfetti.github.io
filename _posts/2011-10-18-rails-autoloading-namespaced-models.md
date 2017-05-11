@@ -4,8 +4,6 @@ title: Rails 3 Autoloading with Namespaced Models
 date: '2011-10-18 15:50:03 -0700'
 categories:
 - Model
-tags: []
-comments: []
 ---
 I'm working through an upgrade from Rails 2.3.8 to Rails 3.1, and a set of name spaced models that I setup are giving errors when I run a certain Rake task that relies on them. I looked into the issue and it appears that I need to learn the way Rails 3 loads models.
 

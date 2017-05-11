@@ -14,16 +14,14 @@ So I'm currently upgrading from Rails 2.3.8 to Rails 3.1, and I found that the f
 ``` ruby
 <%= semantic_form_for @product do |f| %>
 ```
-
 ... instead of ...
-
-
 ``` ruby
+
 <% semantic_form_for @product do |f| %>
+
 ```
 
 This was one of the first steps I performed as advised by the rails 3 upgrade instructions. I just now realized however that inside of the code block are other code blocks for the form fields and the submit button. These too must include the equal sign, which was the reason why my form fields were not displaying.
-
 
 ``` ruby
 <%= f.inputs :name => "Author", :for => :author do |author_form| %>
@@ -35,4 +33,3 @@ This was one of the first steps I performed as advised by the rails 3 upgrade in
   <%= f.commit_button %>
 <% end %>
 ```
-
