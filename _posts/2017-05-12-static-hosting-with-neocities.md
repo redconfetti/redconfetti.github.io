@@ -36,6 +36,64 @@ send them [$100 via Bitcoin](https://neocities.org/supporter/bitcoin).
 So my goal at the current moment is to explore if it's possible to generate a website via Jekyll, and then upload
 it to one of the Neocities sites.
 
+# Import
+
+One of the first steps for me is to [import my Wordpress site](http://import.jekyllrb.com/docs/wordpress/). There is a plugin that one can use to import all of their Wordpress content into a Jekyll site, however it requires that you have
+direct MySQL access to your server.
+
+Note: The importer only converts your posts and creates YAML front-matter. It does not import any layouts, styling, or external files (images, CSS, etc.).
+
+## Configure Server for Public Access
+
+I had to go into my server and configure MySQLd to bind to more than just the local host
+address. This required that I edit /etc/mysql/mysql.conf.d/mysqld.cnf on the Ubuntu machine
+I'm currently hosting the site from and change the IP to `0.0.0.0`.
+
+```
+# Instead of skip-networking the default is now to listen only on
+# localhost which is more compatible and is not less secure.
+# bind-address          = 127.0.0.1
+bind-address            = 0.0.0.0
+```
+
+I was then able to connect directly to the server and authenticate. Luckily I didn't
+have any sort of firewall blocking the ports. I tested the connection using this command:
+```
+mysql --host=123.321.123.5 --user=my_user --password=mySecr3tPaSS my_database_name
+```
+## Install Gems
+
+```
+gem install jekyll-import unidecode sequel mysql2 htmlentities
+```
+
+## Perform Import
+
+I'm choosing to import all the files to `md` (Markdown) file extensions instead of 'html'. This command worked just fine for me.
+
+```
+ruby -rubygems -e 'require "jekyll-import";
+  JekyllImport::Importers::WordPress.run({
+    "dbname"   => "my_db_name",
+    "user"     => "my_db_username",
+    "password" => "my_secret_password",
+    "host"     => "192.123.193.12",
+    "socket"   => "",
+    "table_prefix"   => "wp_",
+    "site_prefix"    => "",
+    "clean_entities" => true,
+    "comments"       => true,
+    "categories"     => true,
+    "tags"           => true,
+    "more_excerpt"   => true,
+    "more_anchor"    => true,
+    "extension"      => "md",
+    "status"         => ["publish"]
+  })'
+```
+
+This resulted in all my pages and posted imported into the repository, and ready for a long cleanup.
+
 # Resources
 
 Here are some various links I've explored in finding a low-cost Jekyll based hosting solution.
