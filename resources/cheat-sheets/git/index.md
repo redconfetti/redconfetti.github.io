@@ -7,6 +7,12 @@ title: Git
 [Other Git Tips](http://mislav.uniqpath.com/2010/07/git-tips/)
 
 ``` shell
+# Manuals
+# You can view the manual pages on any of the commands below by using
+# 'man git-' followed by the verbs supported by Git such as 'log' or 'commit'
+man git-log
+man git-commit
+
 # clear all changes
 git reset --hard
 
@@ -161,6 +167,9 @@ git diff HEAD^..HEAD
 # show changes between two commits
 git diff 4fb063f..f5a6ff9
 
+# show changes between tagged release and master
+git diff v1.0..master
+
 # show changes between two branches
 git diff master my-feature-branch
 
@@ -188,4 +197,25 @@ git apply --stat file.patch
 
 # apply a patch
 git am file.patch
+
+# save current unstaged changes to stash
+git stash
+
+# view list of stashes
+git stash list
+
+# apply first stash to current branch
+git stash apply stash@{0}
+
+# drop first stash
+git stash drop stash@{0}
+
+# clear all stored stashes
+git stash clear
+
+# delete git tag with specific name
+git tag -d tagName
+
+# delete remote tag
+git push origin :refs/tags/tagName
 ```

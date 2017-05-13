@@ -30,6 +30,25 @@ man -k directories
 cal
 ```
 
+# grep
+``` shell
+# reveal 10 lines before, and 20 lines after matching line for context
+grep -B10 -A20 'HTTP 404' /path/to/file
+```
+
+# top
+``` shell
+# view running processes, including threads
+top -H
+```
+
+# sudo
+
+``` shell
+# list the sudo privileges for the current user
+sudo -l
+```
+
 # tmux
 
 ## Commands
