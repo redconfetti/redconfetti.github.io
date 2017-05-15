@@ -106,4 +106,6 @@ Here are some various links I've explored in finding a low-cost Jekyll based hos
 * [Jekyll Docs - Wordpress Import](http://import.jekyllrb.com/docs/wordpress/)
 * [Jekyll Docs - Deployment Methods](https://jekyllrb.com/docs/deployment-methods/)
 * [James Ward - Jekyll on Heroku](https://www.jamesward.com/2014/09/24/jekyll-on-heroku)
-
+* [Netlify](https://www.netlify.com/) - Static hosting with a free entry tier
+* [Hugo](https://gohugo.io/overview/usage/) - an alternative to Jekyll I assume
+* [Smashing Magazine - Static Website Generators Reviewed](https://www.smashingmagazine.com/2015/11/static-website-generators-jekyll-middleman-roots-hugo-review/)
