@@ -2,7 +2,6 @@
 layout: post
 title:  "Static Hosting with Neocities"
 date:   2017-05-12 09:43:51 -0700
-categories: static hosting
 categories:
 - hosting
 tags:

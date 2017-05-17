@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Detecting if WebMock is enabled for Net::HTTP
-date: '2015-09-10 19:21:52 -0700'
+date: '2017-05-17 14:43:52 -0700'
 categories:
 - Ruby
 tags:
