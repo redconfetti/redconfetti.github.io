@@ -41,5 +41,5 @@ I don't see the equivalent modification in other adapters, such as
 [Curb](https://github.com/bblimke/webmock/blob/e3d0cd1c/lib/webmock/http_lib_adapters/curb_adapter.rb)
 
 I'm going to open a Github issue requesting support such as this. Perhaps a simple unified call to set a class
-variable in WebMock class itself, with a corresponding `WebMock.is_enabled?` method. I'll make a pull request soon for
-this.
+variable in WebMock class itself, with a corresponding `WebMock.is_enabled?` method. I've made
+[an issue](https://github.com/bblimke/webmock/issues/701) to request this. I will make a pull request soon.

@@ -7,6 +7,7 @@ categories:
 tags: []
 comments: []
 ---
+
 After upgrading to Snow Leopard, and trying to run 'rake db:migrate', I received this error once. This seems common to others which have upgraded, especially back when Snow Leopard was released in August of 2009:
 
 ``` shell

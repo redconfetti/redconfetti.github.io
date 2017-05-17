@@ -10,6 +10,7 @@ Here are my own personal cheat sheets. I've organized some into their own pages,
 * [Git](/resources/cheat-sheets/git/)
 * [RVM](/resources/cheat-sheets/rvm/)
 * [Rails Tests](/resources/cheat-sheets/rails-tests/)
+* [MySQL](/resources/cheat-sheets/mysql/)
 * [PostgreSQL](/resources/cheat-sheets/postgresql/)
 * [Vagrant](/resources/cheat-sheets/vagrant/)
 * [Docker](/resources/cheat-sheets/docker/)
