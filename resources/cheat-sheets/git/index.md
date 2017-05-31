@@ -198,6 +198,9 @@ git apply --stat file.patch
 # apply a patch
 git am file.patch
 
+# create a commit that reverts a previous commit
+git revert 04567899ae36651daf3dfa117a1088d594632370
+
 # save current unstaged changes to stash
 git stash
 
