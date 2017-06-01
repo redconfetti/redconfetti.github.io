@@ -16,6 +16,7 @@ Here are my own personal cheat sheets. I've organized some into their own pages,
 * [Docker](/resources/cheat-sheets/docker/)
 * [Node Package Manager (NPM)](/resources/cheat-sheets/npm/)
 * [Linux](/resources/cheat-sheets/linux/)
+* [Mac OS](/resources/cheat-sheets/mac-os/)
 
 ## ActiveRecord
 
