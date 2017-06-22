@@ -204,6 +204,9 @@ git revert 04567899ae36651daf3dfa117a1088d594632370
 # save current unstaged changes to stash
 git stash
 
+# save current unstaged changes to stash with description
+git stash store -m <message>
+
 # view list of stashes
 git stash list
 
