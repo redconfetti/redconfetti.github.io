@@ -45,16 +45,6 @@
               </li>
             {% endif %}
 
-            {% if site.author.delicious_username %}
-              <!-- Delicious -->
-              <li class="navigation__item">
-                <a href="https://delicious.com/{{ site.author.delicious_username }}" title="{{ site.author.delicious_username }} on Delicious" target="_blank">
-                  <i class="icon icon-social-delicious"></i>
-                  <span class="label">Delicious</span>
-                </a>
-              </li>
-            {% endif %}
-
             {% if site.author.spotify.username %}
               <!-- Spotify -->
               <li class="navigation__item">
@@ -112,7 +102,6 @@
                 <span class="label">RSS</span>
               </a>
             </li>
-          
             </ul>
           </nav>
 
