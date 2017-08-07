@@ -3,5 +3,5 @@ layout: page
 title: Notes
 ---
 
-* [ECMAScript 2015](/resources/notes/es-2015.md)
+* [ECMAScript 2015](/resources/notes/es-2015/)
 

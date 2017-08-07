@@ -5,15 +5,11 @@ description: > # this means to ignore newlines until "baseurl:"
 url: 'http://www.rubycoloredglasses.com'
 baseurl: '/'
 timezone: America/Los_Angeles
-# google_analytics: 'UA-XXXXXX-X'
-# disqus_shortname: 'your-disqus-name'
 
 author:
   name: 'Jason Miller'
   email: jason@redconfetti.com
-  # twitter_username: redconfetti
   linkedin_username: redconfetti
-  # facebook_username: redconfetti
   github_username:  redconfetti
   spotify:
     username: redconfetti
