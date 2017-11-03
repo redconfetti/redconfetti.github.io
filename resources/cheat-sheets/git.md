@@ -71,6 +71,9 @@ git show 6d3b08115028d013d676bc03ece72db3e6e06225
 # interactive rebase from remote master
 git rebase -i origin/master
 
+# interactive rebase from last 4 commits
+git rebase -i HEAD~4
+
 # create a branch from an earlier commit (time travel is possible!)
 git checkout -b oldstuff commit_hash
 
