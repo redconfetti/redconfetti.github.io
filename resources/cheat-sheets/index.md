@@ -9,6 +9,7 @@ Here are my own personal cheat sheets. I've organized some into their own pages,
 
 * [Git](/resources/cheat-sheets/git/)
 * [RVM](/resources/cheat-sheets/rvm/)
+* [RubyGems](/resources/cheat-sheets/rubygems/)
 * [Rails Tests](/resources/cheat-sheets/rails-tests/)
 * [MySQL](/resources/cheat-sheets/mysql/)
 * [PostgreSQL](/resources/cheat-sheets/postgresql/)
@@ -64,7 +65,7 @@ $ psql myapp_development
 ## PGP Encryption / Decryption
 See [Introduction to GnuPG](http://www.ianatkinson.net/computing/gnupg.htm){:target="_blank"} for more detail.
 
-```
+``` shell
 # install using homebrew
 brew install gpg
 
