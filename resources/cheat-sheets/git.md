@@ -13,9 +13,6 @@ title: Git
 man git-log
 man git-commit
 
-# clear all changes
-git reset --hard
-
 # alternative way to clear all changes
 git checkout .
 
@@ -83,11 +80,14 @@ git checkout -b branch_name remote_name/branch_name
 # merge selected files from another branch
 git checkout frombranch thedir/thefile.txt anotherdir/anotherfile.txt
 
-# undo an unsuccessful merge
+# clear all changes
 git reset --hard
 
 # undo a successful merge or commit
 git reset --hard HEAD^
+
+# undo a successful commit, keep changes
+git reset --soft HEAD^
 
 # delete a tracking branch
 git branch -r -d otherguys/master
