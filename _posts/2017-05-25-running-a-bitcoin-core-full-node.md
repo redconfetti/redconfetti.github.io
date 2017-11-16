@@ -13,8 +13,16 @@ tags:
 There has been a lot of hype concerning crypto currencies like Bitcoin and Ethereum recently. I even had some of my own
 minor gains through an account I have with [Coinbase.com](http://www.coinbase.com/).
 
-For some reason I wasn't much into the zeitgeist of Bitcoin investment, or even the possibilities of blockchain
+I haven't been much into the zeitgeist of Bitcoin investment, or even the possibilities of blockchain
 methods used for real-world applications other than currency, until now.
+
+You will need a server that has at least 150 GB available, and as the size of the blockchain increases this will rise.
+I configured my node to use the auto-pruning feature, but it still is using 128 GB currently.
+
+```
+$ du -sh .bitcoin/
+128G  .bitcoin/
+```
 
 # Install the software-properties-common Package
 
@@ -56,7 +64,8 @@ sudo apt-get install bitcoind
 A problem that you will likely run into is where the daemon uses up all the disk space on your server. I recommend
 creating a
 [bitcoin.conf](https://raw.githubusercontent.com/bitcoin/bitcoin/master/contrib/debian/examples/bitcoin.conf)
-configuration file. I decided to simply limit mine to 10 GB.
+configuration file. It's best to set the minimum value for pruning, and also set the db cache size to be an appropriate
+amount of RAM in measured in megabytes.
 
 ```
 # Enable pruning to reduce storage requirements by deleting old blocks.
@@ -64,8 +73,10 @@ configuration file. I decided to simply limit mine to 10 GB.
 # 0 = default (no pruning).
 # 1 = allows manual pruning via RPC.
 # >=550 = target to stay under in MiB.
-#prune=550
-prune=10240
+prune=550
+
+# Set database cache size in megabytes (4 to 16384, default: 300)
+dbcache=1000
 ```
 
 # Run Bitcoin Core Daemon
