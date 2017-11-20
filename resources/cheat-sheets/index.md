@@ -18,6 +18,7 @@ Here are my own personal cheat sheets. I've organized some into their own pages,
 * [Node Package Manager (NPM)](/resources/cheat-sheets/npm/)
 * [Linux](/resources/cheat-sheets/linux/)
 * [Mac OS](/resources/cheat-sheets/mac-os/)
+* [Vim](/resources/cheat-sheets/vim/)
 
 ## ActiveRecord
 
