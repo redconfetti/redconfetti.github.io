@@ -9,3 +9,7 @@ indent_size = 2
 
 [*.{js,rb,erb,html}]
 charset = utf-8
+
+[search.json]
+indent_style = tab
+indent_size = 2
