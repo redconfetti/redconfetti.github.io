@@ -4,10 +4,45 @@ title: Ruby on Rails
 ---
 [Back to Cheat Sheets](/resources/cheat-sheets/)
 
-```
-# Generate new Rails API app
-rails new my_api --api
+# Generate New Rails App
 
-# Generate new Rails app using PostgreSQL database
+```
+# Generate for API only
+rails new my_app --api
+
+# Using MySQL database
+rails new_my_app --database=mysql
+
+# Using PostgreSQL database
 rails new my_app --database=postgresql
+
+# Without Turbolinks
+rails new my_app --skip-turbolinks
+
+# Without JavaScript
+rails new my_app --skip-javascript
+rails new my_app -J
+
+# Without Sprockets
+rails new my_app --skip-sprockets
+rails new my_app -S
+
+# Without Tests
+rails new my_app --skip-test
+
+# Don't run Bundle Install
+rails new my_app --skip-bundle
+
+# Preconfigure for app-like JavaScript with Webpack (options: react/vue/angular)
+rails new my_app --webpack=WEBPACK
+
+# Preconfigure for Vue with Webpack
+rails new my_app --webpack=vue
+```
+
+# Rake Tasks
+
+```
+# Display Rails routing table
+rake routes
 ```

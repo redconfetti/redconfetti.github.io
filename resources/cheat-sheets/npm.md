@@ -13,10 +13,10 @@ npm install -g npm
 # Initialize an NPM managed project, creating packages.json
 npm init
 
-;Install Package, and add to packages.json as dependency
+# Install Package, and add to packages.json as dependency
 npm install package-name --save
 
-;Uninstall Package
+# Uninstall Package
 npm uninstall package-name --save
 
 # List installed packages
@@ -28,6 +28,9 @@ npm prune
 
 # List outdated packages
 npm outdated
+
+# Install Package as production dependency
+npm install --save-prod gulp
 
 # Install Package as development dependency
 npm install --save-dev gulp
