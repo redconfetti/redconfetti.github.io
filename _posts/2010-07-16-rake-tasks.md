@@ -7,7 +7,9 @@ categories:
 tags: []
 comments: []
 ---
-If you're wanting to know which Rake tasks are available for you to use from the command line, simply use the 'rake -T' command:
+
+If you're wanting to know which Rake tasks are available for you to use from
+the command line, simply use the 'rake -T' command:
 
 ``` shell
 $ rake -T
@@ -21,7 +23,8 @@ rake db:drop                              # Drops the database for the current R
 rake db:drop:all                          # Drops all the local databases defined in config/database.yml
 ```
 
-A really useful one is the 'routes' option which outputs a list of the routes configured.
+A really useful one is the 'routes' option which outputs a list of the routes
+configured.
 
 ``` shell
 macbook:railsproject jason$ rake routes
@@ -29,4 +32,3 @@ macbook:railsproject jason$ rake routes
   /:controller/:action/:id
   /:controller/:action/:id(.:format)
 ```
-
