@@ -7,9 +7,11 @@ categories:
 tags:
 - rails3.1
 - factory_girl
-comments: []
 ---
-I just started a new Rails 3.2 project, and to ensure that the proper test files are generated using Shoulda or Factory_Girl, I've installed those gems and configured the application to generate the test files using these gems.
+
+I just started a new Rails 3.2 project, and to ensure that the proper test
+files are generated using Shoulda or Factory_Girl, I've installed those gems
+and configured the application to generate the test files using these gems.
 
 Added to config/application.rb:
 
@@ -24,7 +26,8 @@ Added to config/application.rb:
   end
 ```
 
-Each time I would try to create a new scaffold, it would use shoulda to generate the test unit file, but would generate a YAML fixture.
+Each time I would try to create a new scaffold, it would use shoulda to
+generate the test unit file, but would generate a YAML fixture.
 
 ``` shell
 invoke active_record
@@ -35,9 +38,13 @@ create test/unit/post_test.rb
 create test/fixtures/posts.yml
 ```
 
-Over a year ago there was <a href="https://github.com/indirect/rails3-generators" target="_blank">a gem needed</a> to ensure that generators were present to generate Factory_Girl factories instead of YAML fixtures, but the code for those generators was moved to the official Factory_Girl gem, so that's not the cause of this issue.
+Over a year ago there was [a gem needed][1] to ensure that generators were
+present to generate Factory_Girl factories instead of YAML fixtures, but the
+code for those generators was moved to the official Factory_Girl gem, so
+that's not the cause of this issue.
 
-It turns out that I had configured factory_girl_rails in my Gemfile only under the 'test' group, and not the 'development' group as well.
+It turns out that I had configured factory_girl_rails in my Gemfile only under
+the 'test' group, and not the 'development' group as well.
 
 ``` ruby
 group :development, :test do
@@ -47,4 +54,7 @@ group :development, :test do
 end
 ```
 
-After configuring these under both test and development, the scaffold generator created the factory under 'test/factories' as I had expected.
+After configuring these under both test and development, the scaffold
+generator created the factory under 'test/factories' as I had expected.
+
+[1]: https://github.com/indirect/rails3-generators

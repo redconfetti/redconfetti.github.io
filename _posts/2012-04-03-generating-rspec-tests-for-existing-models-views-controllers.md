@@ -9,12 +9,16 @@ tags:
 - testing
 - rspec
 - tdd
-comments: []
 ---
-I've noticed that if you install certain testing gems, like Factory Girl, or Rspec, that your Rails application will create test files for these libraries instead of using the defaults. Even further you can configure the generators used by your Rails app in /config/application.rb
+
+I've noticed that if you install certain testing gems, like Factory Girl, or
+Rspec, that your Rails application will create test files for these libraries
+instead of using the defaults. Even further you can configure the generators
+used by your Rails app in /config/application.rb
 
 ``` ruby
-# Configure generators values. Many other options are available, be sure to check the documentation.
+# Configure generators values. Many other options are available,
+# be sure to check the documentation.
 # http://edgeguides.rubyonrails.org/generators.html#customizing-your-workflow
 
 config.generators do |g|
@@ -25,7 +29,10 @@ config.generators do |g|
 end
 ```
 
-I've been anxious however in deciding which testing tools to learn and use with my project. If I choose the wrong one, then all the scaffold generated test code will be generated for the test framework I might choose to quit using at some point.
+I've been anxious however in deciding which testing tools to learn and use
+with my project. If I choose the wrong one, then all the scaffold generated
+test code will be generated for the test framework I might choose to quit
+using at some point.
 
 This is not completely correct though, as I've discovered.
 
@@ -39,13 +46,17 @@ rails generate rspec:view
 rails generate rspec:controller
 ```
 
-Even better though, if you're looking for scaffold style files to be put in place, use the following syntax to generate scaffold code.
+Even better though, if you're looking for scaffold style files to be put in
+place, use the following syntax to generate scaffold code.
 
 ``` shell
 rails generate rspec:scaffold Post title:string body:text
 ```
 
-If you decide to use basic Test::Unit based tests, instead of going with Rspec, you can also reconfigure your app to use Test::Unit again with generators, and then use the rake commands to generate the files that were generated via rspec.
+If you decide to use basic Test::Unit based tests, instead of going with
+Rspec, you can also reconfigure your app to use Test::Unit again with
+generators, and then use the rake commands to generate the files that were
+generated via rspec.
 
 ``` shell
 $ rails g

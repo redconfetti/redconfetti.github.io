@@ -6,9 +6,11 @@ categories:
 - Ruby
 tags:
 - irb
-comments: []
 ---
-Stephen Ball of RakeRoutes.com has a cool post on how to customize your IRB environment.
 
-[Customize your IRB](http://rakeroutes.com/blog/customize-your-irb/?utm_source=rubyweekly&amp;utm_medium=email)
+Stephen Ball of RakeRoutes.com has a cool post on how to customize your IRB
+environment.
 
+[Customize your IRB][1]
+
+[1]: http://rakeroutes.com/blog/customize-your-irb/

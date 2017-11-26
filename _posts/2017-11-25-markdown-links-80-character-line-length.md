@@ -33,7 +33,7 @@ breaks into the URL of the link without breaking the link.
 ## Alternative Syntax
 
 Typically link syntax is provided like so:
-```
+``` markdown
 [Google](http://www.google.com/)
 ```
 
@@ -48,7 +48,7 @@ linking that separates the text content from the URL.
 The links may still wrap at the bottom of the document, but at least the
 content is easy to read in plain text, even on the command line.
 
-```
+``` markdown
 My Links:
 
 * [Github Flavored Markdown][1]
@@ -63,7 +63,7 @@ throughout the page out of order, which bothers me in some obsessive-compulsive
 sort of way.
 
 Instead you can use the link text itself.
-```
+``` markdown
 Check out [Spotify] for cool music
 
 [Spotify]: https://www.spotify.com/
@@ -72,7 +72,7 @@ Check out [Spotify] for cool music
 Alternatively, you can also use a case insensitive text key if the link text is
 too informal for you.
 
-```
+``` markdown
 [Click here for Google][Google Link]
 
 [google link]: http://www.google.com/
@@ -82,7 +82,7 @@ too informal for you.
 
 A similar alternative for images can also be used:
 
-```
+``` markdown
 ![Beautiful flower photo][flower photo]
 
 [flower photo]: /images/flower.png

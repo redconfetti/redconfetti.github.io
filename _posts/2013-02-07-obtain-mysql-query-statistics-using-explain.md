@@ -7,11 +7,15 @@ categories:
 tags:
 - mysql
 - explain
-comments: []
 ---
-Sometimes it really counts to restructure the queries made to your MySQL database, especially so that they do make use of indexes which are present on the table.
 
-You can obtain information on which keys are being used with a query by using the [EXPLAIN](http://dev.mysql.com/doc/refman/5.0/en/explain.html) statement before your SELECT statement. Here are some examples of it's [output](http://dev.mysql.com/doc/refman/5.0/en/explain-output.html).
+Sometimes it really counts to restructure the queries made to your MySQL
+database, especially so that they do make use of indexes which are present on
+the table.
+
+You can obtain information on which keys are being used with a query by using
+the [EXPLAIN][1] statement before your SELECT statement. Here are some
+examples of it's [output][2].
 
 ```
 mysql> EXPLAIN SELECT * FROM USERS WHERE area_id = 2;
@@ -30,4 +34,7 @@ mysql> EXPLAIN SELECT * FROM USERS WHERE group_id = 16515319;
 +----+-------------+---------+------+---------------------------+--------------------------+---------+-------+------+-------+
 1 row in set (0.00 sec)
 ```
+
+[1]: http://dev.mysql.com/doc/refman/5.0/en/explain.html
+[2]: http://dev.mysql.com/doc/refman/5.0/en/explain-output.html
 
