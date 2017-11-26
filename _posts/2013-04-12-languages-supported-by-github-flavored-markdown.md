@@ -10,6 +10,8 @@ tags:
 - markdown
 ---
 
+__NOTE:__ This post updated on 11/26/2017
+
 I'm currently configuring the [Yard documentation][1] tool for use with
 Ruby/Rails projects. I could see that it's possible to create a
 [.yardopts file][2] in the main directory for your Rails application, and
@@ -28,67 +30,78 @@ number of different languages. This is accomplished by wrapping your code with
 lines that consist of three backticks, with the first line suffixed by the
 language name.
 
+``` markdown
 ``` ruby
 this = "Ruby Code"
 puts "This is #{this}"
+```
 ```
 
 Unfortunately the Github docs refer you to this [hightlight.js test page][5]
 for the list of supported languages.
 
-Here is the list of languages that can be used with the backtick
+Github uses Linguist to perform language detection and syntax highlighting.
+Here a list of common languages that can be used with the backtick (see
+full list in [Linguist - languages.yml][6]).
 
+* actionscript3
 * apache
 * applescript
-* avrasm - AVR Assembler
-* axapta
+* asp
 * brainfuck
+* c
+* cfm
 * clojure
 * cmake
-* coffeescript
+* coffee-script, coffeescript, coffee
 * cpp - C++
 * cs
+* csharp
 * css
+* csv
 * bash
-* d - RDMD
-* delphi
 * diff
-* dos - dos batch files
-* django
-* erlang
-* erlang-repl
-* glsl
-* haskell
-* ini
+* elixir
+* erb - HTML + Embedded Ruby
+* go
+* haml
+* http
 * java
-* json
 * javascript
-* lc
-* lisp
+* json
+* jsx
+* less
+* lolcode
+* make - Makefile
 * markdown
 * matlab
-* mel - Maya Embedded Language
 * nginx
 * objectivec
-* parser3
+* pascal
 * PHP
 * Perl
 * python
 * profile - python profiler output
-* r
-* rib - RenderMan RIB
-* rsl - RenderMan RSL
 * rust
+* salt, saltstate - Salt
+* shell, sh, zsh, bash - Shell scripting
 * sql
-* tex
-* vala
-* Ruby
+* scss
+* sql
+* svg
+* swift
+* rb, jruby, ruby - Ruby
 * smalltalk
+* vim, viml - Vim Script
+* volt
 * vhdl
+* vue
 * xml - XML and also used for HTML with inline CSS and Javascript
+* yaml
 
 [1]: https://github.com/lsegal/yard
 [2]: https://github.com/lsegal/yard/blob/master/.yardopts
 [3]: http://daringfireball.net/projects/markdown/syntax
 [4]: https://help.github.com/articles/github-flavored-markdown
 [5]: http://softwaremaniacs.org/media/soft/highlight/test.html
+[6]: https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
