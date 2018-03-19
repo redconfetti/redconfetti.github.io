@@ -20,6 +20,7 @@ title: Git
 * [Git Remove](#git-remove)
 * [Git Reset](#git-reset)
 * [Git Stash](#git-stash)
+* [Tagging](#tagging)
 * [Patching](#patching)
 * [Misc](#misc)
 
@@ -90,6 +91,13 @@ git commit --amend -m "New message"
 
 # update the last commit with current date/time
 git commit --amend --reset-author
+
+See [Auto-squashing Git Commits][1] | [StackOverflow][2]
+```
+# append staged changes into previous commit
+git add .
+git commit --fixup=4321dcba
+git rebase --interactive --autosquash 4321dcba^
 ```
 
 # Git Diff
@@ -263,11 +271,12 @@ git am file.patch
 
 # Tagging
 ``` shell
-# delete git tag with specific name
+# delete git tag locally
 git tag -d tagName
 
 # delete remote tag
 git push origin :refs/tags/tagName
+git push --delete origin tagName
 ```
 
 # Misc
@@ -289,4 +298,10 @@ git revert 04567899ae36651daf3dfa117a1088d594632370
 
 # view changes in commit, using SHA hash
 git show 6d3b08115028d013d676bc03ece72db3e6e06225
+
+# List tags sorted in descending order, include first 5 in output
+git tag -l -n1 --sort=-v:refname | head -n 5
 ```
+
+[1]: https://robots.thoughtbot.com/autosquashing-git-commits
+[2]: https://stackoverflow.com/a/27721031/556737
