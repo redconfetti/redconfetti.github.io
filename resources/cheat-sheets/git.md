@@ -20,6 +20,7 @@ title: Git
 * [Git Remove](#git-remove)
 * [Git Reset](#git-reset)
 * [Git Stash](#git-stash)
+* [Tagging](#tagging)
 * [Patching](#patching)
 * [Misc](#misc)
 
@@ -263,11 +264,12 @@ git am file.patch
 
 # Tagging
 ``` shell
-# delete git tag with specific name
+# delete git tag locally
 git tag -d tagName
 
 # delete remote tag
 git push origin :refs/tags/tagName
+git push --delete origin tagName
 ```
 
 # Misc
@@ -289,4 +291,7 @@ git revert 04567899ae36651daf3dfa117a1088d594632370
 
 # view changes in commit, using SHA hash
 git show 6d3b08115028d013d676bc03ece72db3e6e06225
+
+# List tags sorted in descending order, include first 5 in output
+git tag -l -n1 --sort=-v:refname | head -n 5
 ```
