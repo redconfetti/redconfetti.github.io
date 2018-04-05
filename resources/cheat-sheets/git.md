@@ -277,6 +277,15 @@ git tag -d tagName
 # delete remote tag
 git push origin :refs/tags/tagName
 git push --delete origin tagName
+
+# modify git tag locally
+git tag -a v1.23 04567899ae -f
+
+# force push all local tags
+git push origin --tags -f
+
+# update local tags from remote
+git fetch origin --tags
 ```
 
 # Misc
