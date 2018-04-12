@@ -91,6 +91,7 @@ git commit --amend -m "New message"
 
 # update the last commit with current date/time
 git commit --amend --reset-author
+```
 
 See [Auto-squashing Git Commits][1] | [StackOverflow][2]
 ```
@@ -140,6 +141,9 @@ git log --all --grep="contents of message"
 
 # view commits in oneline format
 git log --pretty=oneline
+
+# view commits in oneline format, with decorations
+git log --oneline --decorate
 
 # view last 20 logs in reverse with raw comment body only
 # good for reporting work performed
