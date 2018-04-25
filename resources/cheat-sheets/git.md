@@ -93,6 +93,14 @@ git commit --amend -m "New message"
 git commit --amend --reset-author
 ```
 
+See [Auto-squashing Git Commits][1] | [StackOverflow][2]
+```
+# append staged changes into previous commit
+git add .
+git commit --fixup=4321dcba
+git rebase --interactive --autosquash 4321dcba^
+```
+
 # Git Diff
 ``` shell
 # show unstaged changes since last commit
@@ -133,6 +141,9 @@ git log --all --grep="contents of message"
 
 # view commits in oneline format
 git log --pretty=oneline
+
+# view commits in oneline format, with decorations
+git log --oneline --decorate
 
 # view last 20 logs in reverse with raw comment body only
 # good for reporting work performed
@@ -313,3 +324,6 @@ git show 6d3b08115028d013d676bc03ece72db3e6e06225
 # List tags sorted in descending order, include first 5 in output
 git tag -l -n1 --sort=-v:refname | head -n 5
 ```
+
+[1]: https://robots.thoughtbot.com/autosquashing-git-commits
+[2]: https://stackoverflow.com/a/27721031/556737
