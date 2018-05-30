@@ -275,6 +275,15 @@ git am file.patch
 
 # Tagging
 ``` shell
+# Tag with annotation
+git tag -a v1.1 -m "version 1.1 (CodeName: Jason)"
+
+# Tag without annotation
+git tag -a v1.2
+
+# Tag a specific commit
+git tag -a v1.0 74a360f
+
 # delete git tag locally
 git tag -d tagName
 

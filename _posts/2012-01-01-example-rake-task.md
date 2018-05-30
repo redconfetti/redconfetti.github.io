@@ -1,5 +1,6 @@
 ---
 layout: post
+published: true
 title: Example Rake Task
 date: '2012-01-01 18:26:28 -0800'
 categories:
