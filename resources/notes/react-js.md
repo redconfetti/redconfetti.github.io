@@ -1,9 +1,7 @@
 ---
 layout: page
-title: ES2015 Notes
+title: React
 ---
-
-# Powering Up with React
 
 [CodeSchool Course](http://campus.codeschool.com/courses/powering-up-with-react/level/1/section/1/first-component)
 
@@ -29,27 +27,27 @@ After Facebook open-sourced React, it’s now used by Dropbox, AirBNB, Instagram
 
 See [http://javascript-roadtrip.codeschool.com/](http://javascript-roadtrip.codeschool.com/)
 
-- Declaring variables
-- Creating and invoking functions
+* Declaring variables
+* Creating and invoking functions
 
 ### ES2015
 
 See [http://es2015.codeschool.com/](http://es2015.codeschool.com/)
 
-- Class Syntax
-- Arrow functions
-- Spread operator
+* Class Syntax
+* Arrow functions
+* Spread operator
 
 ## What We’ll Learn
 
 We'll cover some of the features React offers, including how to:
 
-- Write React components
-- Render data to the page
-- Make components communicate
-- Handle user events
-- Capture user input
-- Talk to remote servers
+* Write React components
+* Render data to the page
+* Make components communicate
+* Handle user events
+* Capture user input
+* Talk to remote servers
 
 ## Component-based Architecture
 
@@ -67,7 +65,7 @@ the feed, as well as a separate Story component for each story displayed in the 
 
 A component in React works similar to JavaScript functions: It generates an output every time it is invoked.
 
-With a React component a *render()* method is called, which generates the HTML:
+With a React component a _render()_ method is called, which generates the HTML:
 
 ```html
 <div>
@@ -76,7 +74,7 @@ With a React component a *render()* method is called, which generates the HTML:
 </div>
 ```
 
-10 minutes later we run the *render()* method again, and instead it generates:
+10 minutes later we run the _render()_ method again, and instead it generates:
 
 ```html
 <div>
@@ -107,7 +105,7 @@ the update faster.
 
 We want to simply print a message to the screen using a React component.
 
-Components in React are JavaScript classes that inherit from the *React.Component* base class.
+Components in React are JavaScript classes that inherit from the _React.Component_ base class.
 
 ```jsx
 /* components.js */
@@ -117,7 +115,7 @@ Components in React are JavaScript classes that inherit from the *React.Componen
 class StoryBox extends React.Component {
   // every component needs a render() function
   render() {
-    return( <div>Story Box</div> );
+    return <div>Story Box</div>
   }
 }
 ```
@@ -135,15 +133,13 @@ to the DOM.
 ```jsx
 class StoryBox extends React.Component {
   render() {
-    return( <div>Story Box</div> );
+    return <div>Story Box</div>
   }
 }
 
 // first arg: Invokes the StoryBox component (no quotes needed)
 // second arg: The target container where component will be rendered to
-ReactDOM.render(
-  <StormBox />, document.getElementById('story-app')
-);
+ReactDOM.render(<StormBox />, document.getElementById("story-app"))
 ```
 
 ## Referencing the Component
@@ -159,9 +155,7 @@ This is JSX syntax, so the case used with the component name is important.
 ```jsx
 /* components.js */
 
-ReactDOM.render(
-<StormBox />, document.getElementById('story-app')
-);
+ReactDOM.render(<StormBox />, document.getElementById("story-app"))
 ```
 
 The page must contain a DIV with the correct ID.
@@ -197,28 +191,28 @@ That’s all there is to creating a component. Now we just need to add libraries
 
 ### Project Folder
 
-- index.html
-- components.js
-- vendors
-  - react.js
-  - react-dom.js
-  - babel.js
+* index.html
+* components.js
+* vendors
+  * react.js
+  * react-dom.js
+  * babel.js
 
 ## Our React Application Flow
 
 To clarify, here is what takes place when we load a page with a React component:
 
-- index.html is opened
-- dependencies defined in index.html are loaded
-- StoryBox component is rendered, then applied to the actual DOM element
+* index.html is opened
+* dependencies defined in index.html are loaded
+* StoryBox component is rendered, then applied to the actual DOM element
 
 ## Quick Recap on React
 
-- React was built to solve one problem: building large applications with data that changes over time
-- In React, we write apps in terms of components
-- We use JavaScript classes when declaring React components
-- Components must extend the React.Component class and must contain a render() method
-- We call the ReactDOM.render() function to render components to a webpage
+* React was built to solve one problem: building large applications with data that changes over time
+* In React, we write apps in terms of components
+* We use JavaScript classes when declaring React components
+* Components must extend the React.Component class and must contain a render() method
+* We call the ReactDOM.render() function to render components to a webpage
 
 # Level 1 - Section 2
 
@@ -230,14 +224,15 @@ The markup we use when writing React apps is not a string. This markup is called
 class StoryBox extends React.Component {
   render() {
     // HTML elements are written in lowercase
-    return( <div>Story Box</div> );
+    return <div>Story Box</div>
   }
 }
 
 ReactDOM.render(
   // React components are written in upper camelcase
-  <StoryBox />, document.getElementById('story-app')
-);
+  <StoryBox />,
+  document.getElementById("story-app")
+)
 ```
 
 JSX is just another way of writing JavaScript with a transpile step.
@@ -265,12 +260,12 @@ JSX looks similar to HTML, and it is ultimately transformed into JavaScript.
 ```jsx
 class StoryBox extends React.Component {
   render() {
-    return(
+    return (
       <div>
         <h3>Stories App</h3>
         <p className="lead">Sample paragraph</p>
       </div>
-    );
+    )
   }
 }
 ```
@@ -280,10 +275,12 @@ reserved JavaScript keyword.
 
 ```jsx
 // Transpiled JSX code
-React.createElement("div", null,
+React.createElement(
+  "div",
+  null,
   React.createElement("h3", null, "Stories App"),
-  React.createElement("p", {className: "lead"}, "Sample paragraph")
-);
+  React.createElement("p", { className: "lead" }, "Sample paragraph")
+)
 ```
 
 Browsers do not understand JSX, but they do understand JavaScript. They are able to run the transpiled JavaScript
@@ -300,20 +297,18 @@ that is created from the JSX, which then is applied as HTML within the DOM.
 
 ## Using the Date Object in JSX
 
-Here, we’re displaying the current time using JavaScript’s native *Date* object and JSX.
+Here, we’re displaying the current time using JavaScript’s native _Date_ object and JSX.
 
 ```jsx
 class StoryBox extends React.Component {
   render() {
-    const now = new Date();
-    return(
+    const now = new Date()
+    return (
       <div>
         <h3>Stories</h3>
-        <p className="lead">
-          Current time: {now.toTimeString()}
-        </p>
+        <p className="lead">Current time: {now.toTimeString()}</p>
       </div>
-    );
+    )
   }
 }
 ```
@@ -322,20 +317,18 @@ Code written within curly braces gets interpreted as literal JavaScript in JSX.
 
 ## Iterating Arrays in JSX
 
-Here, we’re displaying a list of elements using JSX and JavaScript’s native *map* function.
+Here, we’re displaying a list of elements using JSX and JavaScript’s native _map_ function.
 
 ```jsx
 class StoryBox extends React.Component {
   render() {
     // ...
-    const topicsList = ['HTML', 'JavaScript', 'React'];
-    return(
+    const topicsList = ["HTML", "JavaScript", "React"]
+    return (
       <div>
-        <ul>
-          { topicsList.map( topic => <li>{topic}</li> ) }
-        </ul>
+        <ul>{topicsList.map(topic => <li>{topic}</li>)}</ul>
       </div>
-    );
+    )
   }
 }
 ```
@@ -350,12 +343,12 @@ In the above code, the JSX is converted to:
 
 ## Quick Recap on JSX
 
-- JSX stands for **JavaScript XML**.
-- JSX markup looks similar to HTML, but ultimately gets transpiled to **JavaScript function calls**, which React will
-know hot to render to the page.
+* JSX stands for **JavaScript XML**.
+* JSX markup looks similar to HTML, but ultimately gets transpiled to **JavaScript function calls**, which React will
+  know hot to render to the page.
 
-- Code written within curly braces are interpreted as literal JavaScript
-- It is a common pattern to map arrays to JSX elements.
+* Code written within curly braces are interpreted as literal JavaScript
+* It is a common pattern to map arrays to JSX elements.
 
 # Level 2 - Talk Through Props
 
@@ -368,8 +361,8 @@ This will allow users to interact with each other, provide social commentary, et
 
 What the structure of our React app should look like.
 
-- CommentBox as the root component
-- Comment as the re-usable component for each comment displayed
+* CommentBox as the root component
+* Comment as the re-usable component for each comment displayed
 
 ## Pattern for Adding New Components
 
@@ -419,7 +412,7 @@ Here is an isolated example of what the comment component will render:
 
 ## Writing the Comment Component
 
-The *Comment* component renders the markup for each comment, including its author and body.
+The _Comment_ component renders the markup for each comment, including its author and body.
 
 ```jsx
 class Comment extends React.Component {
@@ -427,16 +420,14 @@ class Comment extends React.Component {
     return (
       <div className="comment">
         <p className="comment-header">Anne Droid</p>
-        <p className="comment-body">
-          I wanna know what love is...
-        </p>
+        <p className="comment-body">I wanna know what love is...</p>
         <div className="comment-footer">
           <a href="#" className="comment-footer-delete">
             Delete Comment
           </a>
         </div>
       </div>
-    );
+    )
   }
 }
 ```
@@ -459,7 +450,7 @@ class CommentBox extends React.Component {
           <Comment />
         </div>
       </div>
-    );
+    )
   }
 }
 ```
@@ -483,7 +474,7 @@ class CommentBox extends React.Component {
           <Comment author="Bending Bender" body="Excellent stuff" />
         </div>
       </div>
-    );
+    )
   }
 }
 ```
@@ -498,16 +489,14 @@ class Comment extends React.Component {
     return (
       <div className="comment">
         <p className="comment-header">{this.props.author}</p>
-        <p className="comment-body">
-          {this.props.body}
-        </p>
+        <p className="comment-body">{this.props.body}</p>
         <div className="comment-footer">
           <a href="#" className="comment-footer-delete">
             Delete Comment
           </a>
         </div>
       </div>
-    );
+    )
   }
 }
 ```
@@ -516,10 +505,10 @@ class Comment extends React.Component {
 
 We just covered a lot of content — here’s a summary of what we learned.
 
-- Convert HTML mockup to React components
-- Created two components: **CommentBox** and **Comment**
-- How to pass arguments to components using **props**
-- Props look like HTML element attributes
+* Convert HTML mockup to React components
+* Created two components: **CommentBox** and **Comment**
+* How to pass arguments to components using **props**
+* Props look like HTML element attributes
 
 ## Problem: Props Aren’t Dynamic Yet
 
@@ -532,14 +521,14 @@ Typically, when we consume data from API servers, we are returned object arrays.
 
 ```jsx
 const commentList = [
-  { id: 1, author: 'Morgan McCircuit', body: 'Great picture!' },
-  { id: 2, author: 'Bending Bender', body: 'Excellent stuff' }
-];
+  { id: 1, author: "Morgan McCircuit", body: "Great picture!" },
+  { id: 2, author: "Bending Bender", body: "Excellent stuff" }
+]
 ```
 
 ## Mapping an Array to JSX
 
-We can use JavaScript’s *map* function to create an array with Comment components.
+We can use JavaScript’s _map_ function to create an array with Comment components.
 
 ```jsx
 class CommentBox extends React.Component {
@@ -547,36 +536,33 @@ class CommentBox extends React.Component {
   // Underscore helps distinguish custom methods from React methods
   _getComments() {
     const commentList = [
-      { id: 1, author: 'Morgan McCircuit', body: 'Great picture!' },
-      { id: 2, author: 'Bending Bender', body: 'Excellent stuff' }
-    ];
+      { id: 1, author: "Morgan McCircuit", body: "Great picture!" },
+      { id: 2, author: "Bending Bender", body: "Excellent stuff" }
+    ]
 
-    return commentList.map( () => {
-      return (<Comment />);
-    });
+    return commentList.map(() => {
+      return <Comment />
+    })
   }
 }
 ```
 
 ## Passing Dynamic Props
 
-The callback to *map* takes an argument that represents each element from the calling object.
+The callback to _map_ takes an argument that represents each element from the calling object.
 
 ```jsx
 class CommentBox extends React.Component {
   // ...
   _getComments() {
     const commentList = [
-      { id: 1, author: 'Morgan McCircuit', body: 'Great picture!' },
-      { id: 2, author: 'Bending Bender', body: 'Excellent stuff' }
-    ];
+      { id: 1, author: "Morgan McCircuit", body: "Great picture!" },
+      { id: 2, author: "Bending Bender", body: "Excellent stuff" }
+    ]
 
-    return commentList.map( (comment) => {
-      return (
-        <Comment
-          author={comment.author} body={comment.body} />
-      );
-    });
+    return commentList.map(comment => {
+      return <Comment author={comment.author} body={comment.body} />
+    })
   }
 }
 ```
@@ -593,11 +579,10 @@ Specifying a **unique key** when creating multiple components of the same type c
 helps React track which element is which within the loop.
 
 ```jsx
-<Comment
-  author={comment.author} body={comment.body} key={comment.id} />
+<Comment author={comment.author} body={comment.body} key={comment.id} />
 ```
 
-## Using the _getComments() method
+## Using the \_getComments() method
 
 We’ll store the returned value in a variable named comments and use it for display purposes.
 
@@ -628,28 +613,28 @@ says ’1 comments’ it’s incorrect grammar.
 
 ## Fixing the Title With Comment Count
 
-Let’s write a new method called _getCommentsTitle() that handles the plural case in our title.
+Let’s write a new method called \_getCommentsTitle() that handles the plural case in our title.
 
 ```jsx
 class CommentBox extends React.Component {
   render() {
-    const comments = this._getComments();
-    return(
+    const comments = this._getComments()
+    return (
       // ...
       <h4 className="comment-count">
         {this._getCommentsTitle(comments.length)}
       </h4>
       // ...
-    );
+    )
   }
 
   _getCommentsTitle(commentCount) {
     if (commentCount === 0) {
-      return 'No comments yet';
+      return "No comments yet"
     } else if (commentCount === 1) {
-      return '1 comment';
+      return "1 comment"
     } else {
-      return `${commentCount} comments`;
+      return `${commentCount} comments`
     }
   }
 }
@@ -659,9 +644,9 @@ The title now handles different quantities of comments accordingly.
 
 ## Quick Recap on Dynamic Props
 
-- How to pass dynamic props using variables
-- How to map object arrays to JSX arrays for display purposes
-- Used JavaScript to handle plural case on the title
+* How to pass dynamic props using variables
+* How to map object arrays to JSX arrays for display purposes
+* Used JavaScript to handle plural case on the title
 
 # Level 3 - Component State
 
@@ -676,10 +661,10 @@ button clicks?
 
 ## Different Ways to Manipulate the DOM
 
-1. Direct DOM Manipulation
-  1. jQuery, Backbone, etc.
-2. Indirect DOM Manipulation
-  1. React
+1.  Direct DOM Manipulation
+1.  jQuery, Backbone, etc.
+1.  Indirect DOM Manipulation
+1.  React
 
 ## Direct DOM Manipulation
 
@@ -689,13 +674,13 @@ Events → DOM Updates
 
 ```js
 /* jquery example */
-$('.show-btn').on('click', function() {
-  $('.comment-list').show();
-});
+$(".show-btn").on("click", function() {
+  $(".comment-list").show()
+})
 
-$('.hide-btn').on('click', function() {
-  $('.comment-list').hide();
-});
+$(".hide-btn").on("click", function() {
+  $(".comment-list").hide()
+})
 ```
 
 ## Indirect DOM Manipulation
@@ -719,12 +704,12 @@ render() {
 
 ## How to Use State in a Component
 
-The **state** is a JavaScript object that lives inside each component. We can access it via *this.state*.
+The **state** is a JavaScript object that lives inside each component. We can access it via _this.state_.
 
 ```jsx
 class CommentBox extends React.Component {
   render() {
-    const comments = this._getComments();
+    const comments = this._getComments()
     if (this.state.showComments) {
       // add code for displaying comments
     }
@@ -733,7 +718,7 @@ class CommentBox extends React.Component {
         <h4 className="h4">{this._getCommentsTitle(comment.length)}</h4>
         <div className="comment-list">{comments}</div>
       </div>
-    );
+    )
   }
 }
 ```
@@ -743,8 +728,8 @@ class CommentBox extends React.Component {
 ```jsx
 class CommentBox extends React.Component {
   render() {
-    const comments = this._getComments();
-    let commentNodes;
+    const comments = this._getComments()
+    let commentNodes
     if (this.state.showComments) {
       commentNodes = <div className="comment-list">{comments}</div>
     }
@@ -753,7 +738,7 @@ class CommentBox extends React.Component {
         <h4 className="h4">{this._getCommentsTitle(comment.length)}</h4>
         {commentNodes}
       </div>
-    );
+    )
   }
 }
 ```
@@ -765,10 +750,10 @@ We set the initial state of our component in the class constructor.
 ```jsx
 class CommentBox extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
       showComments: false
-    };
+    }
   }
   render() {
     // ...
@@ -781,17 +766,17 @@ intact.
 
 ## How to Update a Component’s State
 
-We don’t assign to the state object directly — instead, we call *setState* by passing it an object.
+We don’t assign to the state object directly — instead, we call _setState_ by passing it an object.
 
 ```jsx
 // wrong, will not work
-this.state.showComments = true;
+this.state.showComments = true
 
 // updates showComments property
-this.setState({showComments: true})
+this.setState({ showComments: true })
 ```
 
-Calling *setState* **will only update** the properties passed as an argument, not replace the entire *state* object.
+Calling _setState_ **will only update** the properties passed as an argument, not replace the entire _state_ object.
 
 ## Causing State Change
 
@@ -799,11 +784,11 @@ State changes are usually triggered by user interactions with our app.
 
 Things that could cause state change:
 
-- Button clicks
-- Link clicks
-- Form submissions
-- AJAX requests
-- And more!
+* Button clicks
+* Link clicks
+* Form submissions
+* AJAX requests
+* And more!
 
 ## Handling Click Events
 
@@ -836,17 +821,17 @@ We can switch the button text based on the component’s state.
 class CommentBox extends React.Component {
   render() {
     // ...
-    let buttonText = 'Show comments';
+    let buttonText = "Show comments"
     if (this.state.showComments) {
-      buttonText = 'Hide comments';
+      buttonText = "Hide comments"
       // ...
     }
 
-    return(
+    return (
       // ...
       <button onClick={this._handleClick.bind(this)}>{buttonText}</button>
       // ...
-    );
+    )
   }
 }
 ```
@@ -857,16 +842,16 @@ Our app shows and hides comments when the button is clicked.
 
 ## Quick Recap on State
 
-- State represents data that changes over time.
-- We declare and **initial state** in the component’s constructor.
-- We update state by calling *this.setState()*.
-- Calling this.setState() causes our component to re-render.
+* State represents data that changes over time.
+* We declare and **initial state** in the component’s constructor.
+* We update state by calling _this.setState()_.
+* Calling this.setState() causes our component to re-render.
 
 # Level 4 - Synthetic Events
 
 ## Adding New Comments
 
-We want to let users add new comments to our app. We will call the new component *CommentForm*, and it will provide
+We want to let users add new comments to our app. We will call the new component _CommentForm_, and it will provide
 input fields for the user to provide their name, the comment text, and then click on ‘Post Comment’.
 
 ## New Component: CommentForm
@@ -884,15 +869,13 @@ class CommentForm extends React.Component {
         <label>Join the discussion</label>
         <div className="comment-form-fields">
           <input placeholder="Name:" />
-          <textarea placeholder="Comment:"></textarea>
+          <textarea placeholder="Comment:" />
         </div>
         <div className="comment-form-actions">
-          <button type="submit">
-            Post comment
-          </button>
+          <button type="submit">Post comment</button>
         </div>
       </form>
-    );
+    )
   }
 }
 ```
@@ -907,27 +890,27 @@ class CommentForm extends React.Component {
     return (
       <form className="comment-form" onSubmit={this._handleSubmit.bind(this)}>
         // ...
-          <input placeholder="Name:" />
-          <textarea placeholder="Comment:"></textarea>
+        <input placeholder="Name:" />
+        <textarea placeholder="Comment:" />
         // ...
       </form>
-    );
+    )
   }
 
   _handleSubmit(event) {
     // prevents page from reloading when form is submitted
-    event.preventDefault();
+    event.preventDefault()
   }
 }
 ```
 
 ## Problem: Can’t Access User Input in handleSubmit()
 
-We still need a way to access the name and comment field values within the *_handleSubmit()* function.
+We still need a way to access the name and comment field values within the _\_handleSubmit()_ function.
 
 ## Accessing Form Data from Handler
 
-We can use *refs* for assign form values to **properties** on the component object.
+We can use _refs_ for assign form values to **properties** on the component object.
 
 ```jsx
 <input placeholder="Name:" ref={(input) => this._author = input} />
@@ -942,16 +925,19 @@ class CommentForm extends React.Component {
     return (
       <form className="comment-form" onSubmit={this._handleSubmit.bind(this)}>
         // ...
-          <input placeholder="Name:" ref={(input) => this._author = input} />
-          <textarea placeholder="Comment:" ref={(textarea) => this._body = textarea}></textarea>
+        <input placeholder="Name:" ref={input => (this._author = input)} />
+        <textarea
+          placeholder="Comment:"
+          ref={textarea => (this._body = textarea)}
+        />
         // ...
       </form>
-    );
+    )
   }
 
   _handleSubmit(event) {
     // prevents page from reloading when form is submitted
-    event.preventDefault();
+    event.preventDefault()
   }
 }
 ```
@@ -959,23 +945,24 @@ class CommentForm extends React.Component {
 ## What Setting the refs is Actually Doing
 
 ```jsx
-<input placeholder="Name:" ref={(input) => this._author = input} />
+<input placeholder="Name:" ref={input => (this._author = input)} />
 ```
 
 This is the same as:
 
 ```jsx
-<input placeholder="Name:" ref={
-                              function(input) {
-                                this._author = input;
-                              }.bind(this)
-                          } />
+<input
+  placeholder="Name:"
+  ref={function(input) {
+    this._author = input
+  }.bind(this)}
+/>
 ```
 
 The DOM element itself is passed into the callback as ‘input’, with the CommentForm passed as `*this*` via the
-*bind()* call.
+_bind()_ call.
 
-You may be wondering, who calls this function? React runs *ref* callbacks on render.
+You may be wondering, who calls this function? React runs _ref_ callbacks on render.
 
 ## Passing the User Input to the CommentBox
 
@@ -1021,11 +1008,10 @@ class CommentBox extends React.Component {
         <CommentForm addComment={this._addComment.bind(this)} />
         // ...
       </div>
-    );
+    )
   }
   // this method gets triggered by CommentForm when a new comment is added
-  _addComment(author, body) {
-  }
+  _addComment(author, body) {}
 }
 ```
 
@@ -1039,35 +1025,35 @@ class CommentBox extends React.Component {
         <CommentForm addComment={this._addComment.bind(this)} />
         // ...
       </div>
-    );
+    )
   }
   _addComment(author, body) {
     const comment = {
       id: this.state.comments.length + 1,
       author,
       body
-    };
-    this.setState({ comments: this.state.comments.concat([comment]) });
+    }
+    this.setState({ comments: this.state.comments.concat([comment]) })
   }
 }
 ```
 
-We are using *concat()* instead of *push(),* because *concat()* returns a new reference to the array, instead of mutating the existing array. This helps React stay fast, by detecting the change that happened in the array earlier on.
+We are using _concat()_ instead of _push(),_ because _concat()_ returns a new reference to the array, instead of mutating the existing array. This helps React stay fast, by detecting the change that happened in the array earlier on.
 
 This `comments` array doesn’t exist in the state yet though.
 
 ## Comments Are Not Part of the State
 
-Currently, we’re defining an array every time the _getComments method is called. Let’s move this data to the **state**.
+Currently, we’re defining an array every time the \_getComments method is called. Let’s move this data to the **state**.
 
 ```jsx
 class CommentBox extends React.Component {
   // ...
   _getComments() {
     const commentList = [
-      { id: 1, author: 'Morgan McCircuit', body: 'Great picture!' },
-      { id: 2, author: 'Bending Bender', body: 'Excellent stuff' }
-    ];
+      { id: 1, author: "Morgan McCircuit", body: "Great picture!" },
+      { id: 2, author: "Bending Bender", body: "Excellent stuff" }
+    ]
     // ...
   }
 }
@@ -1078,14 +1064,14 @@ To dynamically update the component, we need to move the comments list into the 
 ```jsx
 class CommentBox extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
       showComments: false,
       comments: [
-        { id: 1, author: 'Morgan McCircuit', body: 'Great picture!' },
-        { id: 2, author: 'Bending Bender', body: 'Excellent stuff' }
+        { id: 1, author: "Morgan McCircuit", body: "Great picture!" },
+        { id: 2, author: "Bending Bender", body: "Excellent stuff" }
       ]
-    };
+    }
   }
 }
 ```
@@ -1100,14 +1086,11 @@ Let’s use the comments from the state object to render our component.
 class CommentBox extends React.Component {
   // ...
   _getComments() {
-    return this.state.comments.map((comment) => {
+    return this.state.comments.map(comment => {
       return (
-        <Comment
-          author={comment.author}
-          body={comment.body}
-          key={comment.id} />
-      );
-    });
+        <Comment author={comment.author} body={comment.body} key={comment.id} />
+      )
+    })
   }
 }
 ```
@@ -1122,10 +1105,10 @@ event.
 
 ## Quick Recap
 
-- We use React’s event system to capture user input, including form submissions and button clicks.
-- **Refs** allow us to reference DOM elements in our code after the component has been rendered.
-- Parent components can pass callback functions as props to child components to allow two-way communication.
-- Synthetic events are a cross-browser wrapper around a browser’s native event system.
+* We use React’s event system to capture user input, including form submissions and button clicks.
+* **Refs** allow us to reference DOM elements in our code after the component has been rendered.
+* Parent components can pass callback functions as props to child components to allow two-way communication.
+* Synthetic events are a cross-browser wrapper around a browser’s native event system.
 
 # Level 5 - Section 1 - Talking to Remote Servers
 
@@ -1138,14 +1121,14 @@ In the real world, we’d want to pull comments from an API instead of hard-codi
 ```jsx
 class CommentBox extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
       showComments: false,
       comments: [
-        { id: 1, author: 'Morgan McCircuit', body: 'Great picture!' },
-        { id: 2, author: 'Bending Bender', body: 'Excellent stuff' }
+        { id: 1, author: "Morgan McCircuit", body: "Great picture!" },
+        { id: 2, author: "Bending Bender", body: "Excellent stuff" }
       ]
-    };
+    }
   }
 }
 ```
@@ -1157,11 +1140,11 @@ Let’s set the initial state of comments as an empty array so we can later popu
 ```jsx
 class CommentBox extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
       showComments: false,
       comments: []
-    };
+    }
   }
 }
 ```
@@ -1170,14 +1153,13 @@ class CommentBox extends React.Component {
 
 jQuery will help us make Ajax requests. We can download it from the jQuery website and include it in our HTML page.
 
-- index.html
-- components.js
-- vendors
-  - react.js
-  - react-dom.js
-  - babel.js
-  - jquery.js
-
+* index.html
+* components.js
+* vendors
+  * react.js
+  * react-dom.js
+  * babel.js
+  * jquery.js
 
 ```html
 <!DOCTYPE html>
@@ -1202,12 +1184,12 @@ class CommentBox extends React.Component {
   // ...
   _fetchComments() {
     jQuery.ajax({
-      method: 'GET',
-      url: '/api/comments',
-      success: (comments) => {
-        this.setState({comments})
+      method: "GET",
+      url: "/api/comments",
+      success: comments => {
+        this.setState({ comments })
       }
-    });
+    })
   }
 }
 ```
@@ -1215,7 +1197,7 @@ class CommentBox extends React.Component {
 We call the setState method when data is received from the API server. We are using the arrow function because it
 preserves the ‘this’ binding to our class.
 
-## Deciding Where to Call _fetchComments()
+## Deciding Where to Call \_fetchComments()
 
 ```jsx
 class CommentBox extends React.Component {
@@ -1229,9 +1211,9 @@ class CommentBox extends React.Component {
 }
 ```
 
-We cannot call _fetchComments from render(), or else we will get an infinite loop, because the *render()* method is
-used by React when new data must be shown inside of the component rendering. *fetchComments* calls *setState*, which
-calls *render()*.
+We cannot call \_fetchComments from render(), or else we will get an infinite loop, because the _render()_ method is
+used by React when new data must be shown inside of the component rendering. _fetchComments_ calls _setState_, which
+calls _render()_.
 
 ## React’s Lifecycle Methods
 
@@ -1240,9 +1222,9 @@ be removed from the DOM.
 
 We will focus on 3 lifecycle methods.
 
-- componentWillMount() - called after constructor()
-- componentDidMount() - called after render()
-- componentWillUnmount()
+* componentWillMount() - called after constructor()
+* componentDidMount() - called after render()
+* componentWillUnmount()
 
 For a full list of React’s lifecycle methods, visit
 [https://reactjs.org/docs/react-component.html#the-component-lifecycle](https://reactjs.org/docs/react-component.html#the-component-lifecycle)
@@ -1256,7 +1238,7 @@ The componentWillMount method is called **before** the component is rendered to 
 ```jsx
 class CommentBox extends React.Component {
   componentWillMount() {
-    _fetchComments();
+    _fetchComments()
   }
 
   render() {
@@ -1274,7 +1256,7 @@ In order to check whether new comments are added, we can periodically check the 
 
 ## Polling Data on the Mounting Phase
 
-The *componentDidMount* method is called **after** the component is rendered to the page. This is a perfect place to
+The _componentDidMount_ method is called **after** the component is rendered to the page. This is a perfect place to
 start our polling process.
 
 ```jsx
@@ -1282,7 +1264,7 @@ class CommentBox extends React.Component {
   // ...
   componentDidMount() {
     // run comment fetching every 5000 milliseconds (5 seconds)
-    setInterval(() => this._fetchComments(), 5000);
+    setInterval(() => this._fetchComments(), 5000)
   }
 }
 ```
@@ -1293,9 +1275,9 @@ React optimizes the rendering process by **only updating the DOM** when **change
 markup. When running setState, if the actual state in the Virtual DOM is not modified, no changes occur to the actual
 page.
 
-- New state value after initial Ajax request → DOM change happens
-- No new state value after second periodic Ajax request → No DOM change
-- New state value after third periodic Ajax request → DOM change happens
+* New state value after initial Ajax request → DOM change happens
+* No new state value after second periodic Ajax request → No DOM change
+* New state value after third periodic Ajax request → DOM change happens
 
 Note: render() is called after each Ajax response because setState is in the response function.
 
@@ -1305,25 +1287,22 @@ Page changes in a single-page app environment will cause each CommentBox compone
 five seconds, even when they’re no longer being displayed.
 
 With each new view that is loaded in a single page application, without the browser actually reloading the rendered
-page, the *setInterval()* method sets up yet another interval timer that makes the same request every 5 seconds.
+page, the _setInterval()_ method sets up yet another interval timer that makes the same request every 5 seconds.
 
 ## Preventing Memory Leaks
 
-Each component is responsible for removing any timers it has created. We will remove the *timer* on the 
-*componentWillUnmount* method.
+Each component is responsible for removing any timers it has created. We will remove the _timer_ on the
+_componentWillUnmount_ method.
 
 ```jsx
 class CommentBox extends React.Component {
   // ...
   componentDidMount() {
-    this._timer = setInterval(
-      () => this._fetchComments(),
-      5000
-    );
+    this._timer = setInterval(() => this._fetchComments(), 5000)
   }
 
   componentWillUnmount() {
-    clearInterval(this._timer);
+    clearInterval(this._timer)
   }
 }
 ```
@@ -1336,21 +1315,21 @@ Our app can be freely navigated through now, without causing multiple unnecessar
 
 ## Reviewing the Steps for Loading Comments
 
-1. *componentWillMount()* is called.
-2. *render()* is called and *CommentBox* is mounted. “No comments yet” displayed.
-3. Component waits for API response and when it is received, *setState()* is called, causing *render()* to be called
-again.
-4. *componentDidMount()* is called, causing *this._fetchComments* to be triggered **every five seconds**.
-5. *componentWillUnmount()* is called when the component is about to be removed from the DOM and clears the
-*fetchComments* timeout.
+1.  _componentWillMount()_ is called.
+2.  _render()_ is called and _CommentBox_ is mounted. “No comments yet” displayed.
+3.  Component waits for API response and when it is received, _setState()_ is called, causing _render()_ to be called
+    again.
+4.  _componentDidMount()_ is called, causing _this.\_fetchComments_ to be triggered **every five seconds**.
+5.  _componentWillUnmount()_ is called when the component is about to be removed from the DOM and clears the
+    _fetchComments_ timeout.
 
 ## Quick Recap on Lifecycle Methods
 
-Lifecycle methods in React are functions that get called during certain *phases* that components go through.
+Lifecycle methods in React are functions that get called during certain _phases_ that components go through.
 
-- *componentWillMount()* is called **before** the component is rendered.
-- *componentDidMount()* is called **after** the component is rendered.
-- *componentWillUnmount()* is called immediately before the component is **removed from the DOM**.
+* _componentWillMount()_ is called **before** the component is rendered.
+* _componentDidMount()_ is called **after** the component is rendered.
+* _componentWillUnmount()_ is called immediately before the component is **removed from the DOM**.
 
 # Level 5 - Section 2 - Adding and Deleting Comments on the Server Side
 
@@ -1367,9 +1346,9 @@ class CommentBox extends React.Component {
   // ...
   _deleteComment(comment) {
     jQuery.ajax({
-      method: 'DELETE',
+      method: "DELETE",
       url: `/api/comments/${comment.id}`
-    });
+    })
   }
 }
 ```
@@ -1384,15 +1363,15 @@ class CommentBox extends React.Component {
   // ...
   _deleteComment(comment) {
     jQuery.ajax({
-      method: 'DELETE',
+      method: "DELETE",
       url: `/api/comments/${comment.id}`
-    });
+    })
 
-    const comments = [...this.state.comments];
-    const commentIndex = comments.indexOf(comment);
-    comments.splice(commentIndex, 1);
+    const comments = [...this.state.comments]
+    const commentIndex = comments.indexOf(comment)
+    comments.splice(commentIndex, 1)
 
-    this.setState({comments});
+    this.setState({ comments })
   }
 }
 ```
@@ -1404,14 +1383,14 @@ The `const` **declaration** creates a read-only reference to a value. It does **
 immutable, just that the variable identifier cannot be reassigned. For instance, in the case where the content is an
 object, this means the object's contents (e.g., its parameters) can be altered.
 
-*splice()* is used to add or remove items from an array. See
+_splice()_ is used to add or remove items from an array. See
 [Array.prototype.splice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice).
 The first argument is the location to begin, the second is the number of items to delete.
 
 ## Passing a Callback Prop to Comment
 
-Events are **fired** from the *Comment* component. Since the event handler is **defined** on the parent component
-*CommentBox*, we’ll pass it as a prop named *onDelete*.
+Events are **fired** from the _Comment_ component. Since the event handler is **defined** on the parent component
+_CommentBox_, we’ll pass it as a prop named _onDelete_.
 
 ```jsx
 class CommentBox extends React.Component {
@@ -1422,37 +1401,38 @@ class CommentBox extends React.Component {
         <Comment
           key={comment.id}
           comment={comment}
-          onDelete={this._deleteComment.bind(this)} />
-      );
-    });
+          onDelete={this._deleteComment.bind(this)}
+        />
+      )
+    })
   }
 }
 ```
 
 ## Adding an Event Listener to the Delete Button
 
-Let’s add an event listener to the Delete Comment button and call the *onDelete* callback *prop*.
+Let’s add an event listener to the Delete Comment button and call the _onDelete_ callback _prop_.
 
 ```jsx
 class Comment extends React.Component {
   render() {
-    return(
+    return (
       // ...
       <a href="#" onClick={this._handleDelete.bind(this)}>
         Delete comment
       </a>
       // ...
-    );
+    )
   }
 
   _handleDelete(event) {
-    event.preventDefault();
-    this.props.onDelete(this.props.comment);
+    event.preventDefault()
+    this.props.onDelete(this.props.comment)
   }
 }
 ```
 
-Inside of *_handleDelete()* we’re ensuring that the page isn’t reloaded when the link is clicked. Then we’re calling
+Inside of _\_handleDelete()_ we’re ensuring that the page isn’t reloaded when the link is clicked. Then we’re calling
 the function that was passed to the component as ‘onDelete’, and passing it the current comment.
 
 ## Adding a Confirmation to the Delete Button
@@ -1462,26 +1442,26 @@ Let’s add an **if statement** and only call the onDelete callback prop **if co
 ```jsx
 class Comment extends React.Component {
   render() {
-    return(
+    return (
       // ...
       <a href="#" onClick={this._handleDelete.bind(this)}>
         Delete comment
       </a>
       // ...
-    );
+    )
   }
 
   _handleDelete(event) {
-    event.preventDefault();
+    event.preventDefault()
 
-    if (confirm('Are you sure?')) {
-      this.props.onDelete(this.props.comment);
+    if (confirm("Are you sure?")) {
+      this.props.onDelete(this.props.comment)
     }
   }
 }
 ```
 
-*confirm()* is a native JavaScript function that displays a modal dialog with the message and two buttons
+_confirm()_ is a native JavaScript function that displays a modal dialog with the message and two buttons
 (“OK” and “Cancel”).
 
 ## Comments Aren’t Added to a Remote Server
@@ -1492,8 +1472,8 @@ We would like to post new comments to a remote server so they can persist across
 class Comment extends React.Component {
   // ...
   _addComment(author, body) {
-    const comment = { id: this.state.comments.length + 1, author, body };
-    this.setState({ comments: this.state.comments.concat([comment]) });
+    const comment = { id: this.state.comments.length + 1, author, body }
+    this.setState({ comments: this.state.comments.concat([comment]) })
   }
 }
 ```
@@ -1510,27 +1490,26 @@ they can be persisted.
 class Comment extends React.Component {
   // ...
   _addComment(author, body) {
-    const comment = { author, body };
+    const comment = { author, body }
 
-    jQuery.post('/api/comments', {comment})
-      .success(newComment => {
-        this.setState({ comments: this.state.comments.concat([newComment]) });
-      });
+    jQuery.post("/api/comments", { comment }).success(newComment => {
+      this.setState({ comments: this.state.comments.concat([newComment]) })
+    })
   }
 }
 ```
 
 Here we’re sending the arguments to the remote API, and then assigning the new comment which contains the server side
-generated ID into the comment array within the *state* object*.*
+generated ID into the comment array within the _state_ object*.*
 
 ## One-way Control Flow
 
 Control flows from **higher level components** down to child components, forcing changes to happen reactively. This
 keeps apps **modular and fast**.
 
-- The CommentBox component passes the *_deleteComment()* method to Comment as a callback
-- The CommentBox component passes the *_addComment()* method to CommentForm as a callback
-- The CommentBox component passes the *author* and *body* props to each Comment component
+* The CommentBox component passes the _\_deleteComment()_ method to Comment as a callback
+* The CommentBox component passes the _\_addComment()_ method to CommentForm as a callback
+* The CommentBox component passes the _author_ and _body_ props to each Comment component
 
 When a child component needs to send data back to the parent, it does so via a callback.
 
@@ -1538,11 +1517,12 @@ When a child component needs to send data back to the parent, it does so via a c
 
 Here’s a review of the two most important things we learned in this section.
 
-- Parent components can send data to child components using props.
-- Child components can accept **callback functions as props** to communicate back with parent components.
-# Followup
-- Screencast: [Add a Build System to a React Application](https://www.codeschool.com/screencasts/add-a-build-system-to-a-react-application)
-- [Pluralsight - Building Applications with React and Flux](https://www.pluralsight.com/courses/react-flux-building-applications)
-- [Pluralsight - React.js on Rails: Building a Full Stack Web App](https://www.pluralsight.com/courses/reactjs-on-rails-building-full-stack-web-app)
-- [Pluralsight - Webpack Fundamentals](https://www.pluralsight.com/courses/webpack-fundamentals)
+* Parent components can send data to child components using props.
+* Child components can accept **callback functions as props** to communicate back with parent components.
 
+# Followup
+
+* Screencast: [Add a Build System to a React Application](https://www.codeschool.com/screencasts/add-a-build-system-to-a-react-application)
+* [Pluralsight - Building Applications with React and Flux](https://www.pluralsight.com/courses/react-flux-building-applications)
+* [Pluralsight - React.js on Rails: Building a Full Stack Web App](https://www.pluralsight.com/courses/reactjs-on-rails-building-full-stack-web-app)
+* [Pluralsight - Webpack Fundamentals](https://www.pluralsight.com/courses/webpack-fundamentals)

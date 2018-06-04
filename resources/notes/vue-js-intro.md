@@ -1,3 +1,8 @@
+---
+layout: page
+title: VueJS Intro
+---
+
 # The Vue Instance
 
 We're going to build a shopping cart system to introduce new Vue concepts. We'll
