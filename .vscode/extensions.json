@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "EditorConfig.editorconfig",
+    "shd101wyy.markdown-preview-enhanced",
+    "DavidAnson.vscode-markdownlint",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "ms-vscode.sublime-keybindings",
+    "wayou.vscode-todo-highlight"
+  ]
+}
