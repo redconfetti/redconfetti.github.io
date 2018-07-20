@@ -1,2 +1,3 @@
 User-agent: *
 Disallow: /resources/notes/
+Sitemap: https://www.rubycoloredglasses.com/sitemap.xml
