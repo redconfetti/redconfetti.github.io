@@ -181,6 +181,12 @@ git config --global alias.mylog "log --pretty=format:'%h %s [%an]' --graph"
 git mylog
 ```
 
+# Git Merge-Base
+``` shell
+# Find the point at which a branch forked from another branch
+git merge-base --fork-point master feature_branch
+```
+
 # Git Push
 ``` shell
 # push to remote with upstream tracking specified
