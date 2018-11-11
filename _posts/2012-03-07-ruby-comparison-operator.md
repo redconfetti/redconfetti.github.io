@@ -7,9 +7,9 @@ categories:
 tags:
 - comparison operator
 - ruby
-comments: []
 ---
+
 I saw this in some code recently, wasn't sure what it did.
 
-It basically returns TRUE or FALSE if there is a regular expression match, with the regular expression coming after the '=~'.
-
+It basically returns TRUE or FALSE if there is a regular expression match,
+with the regular expression coming after the '=~'.

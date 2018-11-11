@@ -1,0 +1,108 @@
+---
+layout: page
+status: publish
+published: true
+title: Web Technologies
+author:
+  display_name: redconfetti
+  login: redconfetti
+  email: jason@redconfetti.com
+  url: ''
+author_login: redconfetti
+author_email: jason@redconfetti.com
+wordpress_id: 68
+wordpress_url: http://rails.redconfetti.com/?page_id=68
+date: '2011-10-13 09:58:29 -0700'
+date_gmt: '2011-10-13 16:58:29 -0700'
+categories: []
+tags: []
+comments: []
+---
+<h2>Web Browsers</h2>
+<p>The majority of requests made to a web server are from a client computer running a web browser such as <a title="Google Chrome" href="http://www.google.com/chrome" target="_blank">Google Chrome</a>, <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Mozilla Firefox</a>, or Microsoft Internet Explorer. Web browsers and web servers are both designed to communicate using the Hypertext Transfer Protocol (HTTP).</p>
+<p>Websites are also accessed from web servers by special software created by search engines called robots, such as <a href="http://en.wikipedia.org/wiki/Googlebot" target="_blank">Googlebot</a>. This software is used by search engines to traverse all the pages, through the links on each page, and index all the content from the websites so that the content may be searched via the search engine.</p>
+<h2>Web Servers</h2>
+<p>The most popular web server in use is <a title="Apache HTTP Server Project" href="http://httpd.apache.org/" target="_blank">Apache</a>, which hosted approximately 54% of all domains on the Internet as of <a href="http://news.netcraft.com/archives/2010/06/16/june-2010-web-server-survey.html" target="_blank">June 2010</a>. Apache is provided by an open source software foundation and runs on Linux/Unix, Windows, and has been ported to run under Mac OS X (a Unix based operating system).</p>
+<p>The second most popular web server is <a href="http://en.wikipedia.org/wiki/Internet_Information_Services" target="_blank">Internet Information Services (IIS)</a> provided by Microsoft, and only runs on Windows, and is used to host approximately 26% of domains on the Internet.</p>
+<p>Third is a new contender called <a href="http://en.wikipedia.org/wiki/Nginx" target="_blank">Nginx</a> which is known for being lightweight (using low memory of server machine) and efficient, counted as hosting 5.44% of websites in June 2010. Nginx is also provided via an open source project and runs on practically all operating systems (Linux, Unix, Windows, OS X).</p>
+<h2>HTML</h2>
+<p>Hypertext Markup Language (HTML) is not a programming language, but is a markup language used to describe webpages. A programming language is able to receive input, perform calculations, and output the results. A markup language is only used to describe how a document should be displayed. In the browser an HTML page looks like a document, but the file itself is only text coding which conforms to the standards of the HTML language.</p>
+<p>HTML standards evolve as time passes. Currently the most popular versions of HTML in use on the Internet are HTML 4, and XHTML 1.1.</p>
+<p>eXtensible HyperText Markup Language (XHTML) is like HTML, but conforms to the stricter standards of XML. XHTML was introduced to make HTML <a href="http://en.wikipedia.org/wiki/Xhtml#Motivation" target="_blank">more extensible, and increase interoperability</a> with other XML based data formats.</p>
+<p>HTML5 is currently being finalized as the new standard for websites.</p>
+<p><a href="http://www.w3schools.com/html/html_intro.asp" target="_blank">Learn HTML</a> through W3Schools.</p>
+<h2>eXtensible Markup Language (XML)</h2>
+<p><a href="http://www.w3schools.com/xml/" target="_blank">XML</a> was introduced as a format that could be used to describe not just documents, but is flexible and extensible enough to encapsulate an unlimited number of structured data formats.</p>
+<p>Many systems today use XML to request or transmit data to other systems on the internet. For instance the Google Checkout service provides an <a href="http://code.google.com/apis/checkout/developer/Google_Checkout_XML_API.html" target="_blank">XML API</a> for use by websites wishing to integrate with the payment processing service.</p>
+<p>Two of the most well known uses of XML are podcasts and RSS feed.  <a href="http://en.wikipedia.org/wiki/Podcast" target="_blank">Podcasts</a> feeds are files in a type of XML format which describe information on audio files which can be downloaded and listened to. Podcast subscription software, such as iTunes, is used to track new audio files which are made available via the podcast feeds. When a new audio file becomes available, the software downloads the audio file and typically adds it to the portable audio player device (such as an iPod). Much like podcasts, <a href="http://en.wikipedia.org/wiki/Rss_feed" target="_blank">RSS feeds</a> provide a similar purpose, but instead of providing information on audio files, they instead provide data on documents, such as blog posts, which are provided by a particular website. People who like to keep themselves updated on various topics will subscribe to several sites using a RSS feed reader program. The reader program allows them to scan the titles and excerpts of all the pages/posts which have been made available recently, and choose which ones they wish to link to to read the page/post in its entirety. Google provides a free RSS reader available online by Google known as <a href="http://www.google.com/reader/view/" target="_blank">Google Reader</a>.</p>
+<h2>Cascading Style Sheets (CSS)</h2>
+<p><a href="http://www.w3schools.com/css/" target="_blank">CSS</a> is used to define the how HTML elements are displayed on a websites pages. This applies not only to the standard HTML elements defined by the language, but can also be specified for element which contain certain id fields (which represent a single specific element), or elements which are assigned to a certain class (for styles which apply to multiple elements).</p>
+<p>For instance, all the paragraphs displayed on a page will be wrapped in a paragraph tag like so:</p>
+<pre class="brush:html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Nunc et ante urna. Morbi facilisis interdum libero, id interdum ligula vestibulum eget. Fusce ipsum 
+libero, viverra eu rutrum ut, ultricies nec libero. Mauris sit amet dolor nec lorem congue dapibus 
+eget id felis. Morbi sit amet orci tellus. Aenean aliquam laoreet metus, ac feugiat erat eleifend
+ at.&lt;/p&gt;</pre>
+<p>CSS coding such as this would be used to define the font type, size, and weight (normal or bold) of the text:</p>
+<pre class="brush:css">
+&lt;style type="text/css"&gt;
+  p { 
+      font-family:Arial,Helvetica,sans-serif;
+      font-weight: normal;
+      font-size: 12px; 
+  }
+&lt;/style&gt;
+</pre>
+<p>Just the same another paragraph might require some sort of special style that is unlike all the other paragraphs throughout the website. For instance a paragraph that displays in a sidebar with a dark background.</p>
+<pre class="brush:html">
+&lt;p id="sidebar-thanks"&gt;
+  Thanks for visiting my website. Feel free to check out these links 
+  to my friends websites displayed below.
+&lt;/p&gt;
+</pre>
+<p>As you can see this paragraph has an id set to 'sidebar-thanks'. The following CSS coding could be used to ensure that the text is smaller, and that it is white so that it stands out on the dark background of the sidebar it's being displayed inside of.</p>
+<pre class="brush:css">
+&lt;style type="text/css"&gt;
+  p#sidebar-thanks { 
+    font-size:9px; 
+    color:#FFFFFF; 
+  }
+&lt;/style&gt;
+</pre>
+<p>This paragraph will still be of normal weight, and also be Arial, Helvetica, or san-serif, but will instead be 9 pixels in size, and white instead of the default black.</p>
+<p><a href="http://www.w3schools.com/css/css_intro.asp" target="_blank">Learn more about CSS</a> at W3Schools.</p>
+<h2>Javascript</h2>
+<p>Javascript is a client-side scripting language which is included with web pages and is executed only by the web browser that is displaying the page. Javascript is typically used to make modifications to elements displayed on a web page in realtime, instead of requiring the user to submit data to the web server, and wait for the page to reload with a different state from the web server.</p>
+<p>A common use of Javascript includes providing a popup alert to the user when they attempt to submit an incomplete web form, thus stopping the form from being submitted to the server until all necessary information is present. A method known as <a href="http://www.w3schools.com/ajax/default.asp" target="_blank">Asynchronous Javascript (AJAX)</a> is a newer method of Javascript programming which allows the browser to connect to a script running on the web server (using a server side language such as PHP or Ruby), request and receive certain information, and then present the information inside of the web page without requiring the webpage to reload. One of the most popular demonstrations of this is the Google Maps interface which loads new map images as you click and drag the map to view a new geographic location.</p>
+<h2>jQuery</h2>
+<p>Performing certain tasks using Javascript can be very tedious in that the common web browsers in use by the public, mentioned above, do not support certain Javascript commands in the same manner. This is especially the case regarding Internet Explorer in comparison to Firefox and Chrome (yes, I dislike Microsoft too). Many Javascript developers in the past have used complex sets of commands to detect the type of web browser being used, and thus execute the proper command that works for that web browser.</p>
+<p>To avoid this complication altogether there have been libraries/frameworks introduced which provide cross-browser compatible functions so you don't have to worry about which browser your coding will or will not work in. The first Javascript library introduced that gained widespread use was <a href="http://www.prototypejs.org/" target="_blank">Prototype</a>, which was released in February 2005 to provide the foundation for AJAX support in Ruby on Rails. A library known as <a href="http://en.wikipedia.org/wiki/Script.aculo.us" target="_blank">Script.aculo.us</a> was released in June of 2005, built upon Prototype to provide easy implementation of visual effects and user interface elements.</p>
+<p>More recently another library known as <a href="http://www.jquery.com/" target="_blank">jQuery</a>, released in January 2006, has taken the lead as the most popular Javascript frameworks, with <a href="http://jqueryui.com/" target="_blank">jQueryUI</a> being a library which extends jQuery to provide visual effects, animations, and user interface elements, while also supporting various themes which can be easily produced and applied to the webpage interface.</p>
+<h2>Ruby</h2>
+<p>Ruby is a programming language which was introduced in the mid-1990's by Japanese programmer Yukihiro Matsumoto, also known as 'Matz'. The Ruby language was designed for programmer productivity and fun, stressing that systems need to emphasize human rather than computer needs.</p>
+<p>Ruby is an object-oriented programming language, which simply means that the language places an emphasis on software elements which are treated as objects which have certain properties, and perform certain actions. Every variable inside of a Ruby program is an object which is of a certain class type, and has several methods which can be performed on it's value. Ruby objects are also reflective, which means that they can reveal information about themselves, such as their class.</p>
+<p>Many programming languages, such as C or Java, require a program known as a compiler which converts the source code you've written into a program file or files which can then be executed and run on the computer. Ruby is a scripting language that is run by an interpreter program in realtime, similar to other languages such as PHP or Perl, and thus it doesn't require compiling. You simply run the command for ruby to execute the script and it does what the script is programmed to do.</p>
+<p>For example, let say you install Ruby, then put the following code into a file called 'hello.rb':  </p>
+<pre class="brush:ruby">
+puts "Hello World"
+</pre>
+<p>If you then opened the Terminal, changed to the directory that contains the file, and then ran the command 'ruby hello.rb', you would see something like this:</p>
+<pre class="brush:shell">
+$ ruby hello.rb
+Hello World!
+$ 
+</pre>
+<h2>YAML</h2>
+<p>Similar to XML, YAML is simply just another standard for storing various types of structured data. YAML uses a syntax which results in a very clean and easy to read format, utilizing mostly <a href="http://en.wikipedia.org/wiki/Yaml#Sample_document" target="_blank">tab characters and colons</a> to describe the structure of the data.</p>
+<p>Ruby on Rails often uses YAML as the format for configuration files.</p>
+<h2>Rails</h2>
+<p><a href="http://rubyonrails.org/" target="_blank">Ruby on Rails</a> is a web application framework, which means that it provides a structure which includes directories, configuration files, and many software libraries, which support the development of website applications. Obviously the name "Ruby on Rails" is meant to communicate the metaphor of using Ruby on a track, much like a train track, which gets you where you want to go smoothly and quickly.</p>
+<p>A developer which is familiar with the Ruby on Rails framework will be able to easily aquaint themselves with other Ruby on Rails applications they haven't worked on before, as all the various types of files that make up the coding for the application are stored in the same directories, and use the same programming structure. One of the primary philosophies of Ruby on Rails is "Convention over Configuration", which means that a developer only needs to specify unconventional aspects of the application...everything else which is conventionally provided by a website is provided by the Rails system.</p>
+<p>Ruby on Rails is designed to allow most coding by a web developer to be implemented using the Ruby programming language. For instance all interactions with the database server are handled by Ruby scripts which utilize a Ruby library known as ActiveRecord which converts Ruby commands into the SQL language commands which are sent to a database server such as MySQL, PostgreSQL, SQLite3, Oracle, etc. One benefit of the use of such a library is that a Ruby on Rails system can switch to a different type of database server should the need arise at some point in the future, without a lengthy migration process handled by developers and database administrator staff.</p>
+<h2>Conclusion</h2>
+<p>If you're looking to dive into web development I recommend that you start with HTML and CSS first. Check out the links to the W3School tutorials provided above. If these aren't working for you, consider buying a book about HTML or CSS.</p>
+<p>You won't need Javascript, but it's recommended that you learn the basics as soon as you can so that you can use it once the need arises. Your understanding of HTML and CSS will help you become familiar with the structure of the webpage, and how to select certain HTML elements by ID or class. Javascript will help to acquaint you to what is known as the <a href="http://www.w3schools.com/htmldom/default.asp" target="_blank">Document Object Model (DOM)</a>, which is needed to know which parts of the webpage and browser your Javascript coding can manipulate. Once you understand what options Javascript provides, you can then start to learn jQuery, which will prove to be much easier with less coding. There are many plugins available which rely on jQuery to provide very amazing solutions. For instance if you need to provide a dynamic photo gallery on a website, <a target="_blank" href="http://www.twospy.com/galleriffic/">Gallerific</a> is a very powerful and flexible library which can be used with jQuery to implement a very elegant image gallery solution.</p>
+<p>You won't need to understand anything more than the basics of XML or YAML to begin working with Ruby on Rails. If you want, you can also learn Ruby before you learn the Rails framework, so that you know the difference between coding which involves Rails libraries, and which are standard Ruby commands, but this isn't completely necessary.</p>
+<p>[previous]<br />
+[parent]<br />
+[next]</p>

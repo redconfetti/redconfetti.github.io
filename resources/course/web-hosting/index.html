@@ -1,0 +1,47 @@
+---
+layout: page
+status: publish
+published: true
+title: Web Hosting
+author:
+  display_name: redconfetti
+  login: redconfetti
+  email: jason@redconfetti.com
+  url: ''
+author_login: redconfetti
+author_email: jason@redconfetti.com
+wordpress_id: 37
+wordpress_url: http://rails.redconfetti.com/?page_id=37
+date: '2011-10-12 19:56:18 -0700'
+date_gmt: '2011-10-13 02:56:18 -0700'
+categories: []
+tags: []
+comments: []
+---
+<h2>Data Centers</h2>
+<p><img class="alignright size-medium wp-image-38" title="DC 5 - HostDime Data Center" src="http://rails.redconfetti.com/wp-content/uploads/2011/10/dc_5_large-300x200.jpg" alt="" width="300" height="200" />A website is hosted on a web server, accessible via a network such as the Internet or a private local area network through an Internet address known as a <a href="http://en.wikipedia.org/wiki/Uniform_Resource_Locator" target="_blank">Uniform Resource Locator (URL)</a>. All publicly accessible websites collectively constitute the World Wide Web. A majority of web servers are located in facilities known as data centers, which providing the space, power, air cooled environment, and bandwidth needed to optimally run a web server with optimal uptime.</p>
+<h2>Hosting Types</h2>
+<p>There are several types of hosting you can choose from when deciding to setup a website. These include shared hosting, dedicated hosting, colocation, virtual private servers (VPS), or cloud hosting.</p>
+<h3>Dedicated Hosting</h3>
+<p>Dedicated hosting is where you pay a hosting company to provide a web server machine to you for the duration of the time you are paying for the service. They build the machine, install the operating system you want (Linux or Windows) and set it up in the data center for you. Typically they also setup their monitoring system to periodically check and make sure your server is still up and running. Another upside to dedicated hosting is that you have full control over the server, instead of limited access to one account like you do with shared hosting.</p>
+<p>Dedicated hosting costs at least $80 or more per a month, and is only really necessary for businesses which are hosting multiple websites, or a single website which receives a great amount of traffic and/or requires the ultimate amount of uptime. If your website is a core function of your business (such as an online shopping cart system), then you may definitely want to upgrade to dedicated or VPS hosting to ensure optimal uptime of your website(s).</p>
+<h3>Colocation</h3>
+<p>If you're wanting dedicated hosting, but at a slightly lower cost, or you have a special web server hardware setup, then you'll want to consider colocation. Like dedicated hosting the data center provides the space, power, and bandwidth needed, but you provide the web server yourself. The slightly lower cost may be beneficial, but it can also be difficult in resolving an issue when the data center staff are unfamiliar with your servers hardware and if they do not have compatible parts in stock to repair the server in the event of an issue.</p>
+<h3>Shared Hosting</h3>
+<p>Shared hosting is where you pay a hosting company for an account on a web server that is already setup and likely hosting many other websites. This is why it's called shared hosting, because you are sharing the server with other websites. This type of hosting is much cheaper than dedicated hosting, at a cost of $6 - $20 per a month depending on the plan you sign up for.</p>
+<p>Unfortunately however this type of hosting has its downsides. If another website on the server receives a huge amount of traffic all at once, it could slow down or even stop the server from serving your own websites requests. At the same time a shared server may be under utilized by the other websites, so you might have a well responsive website for a fraction of the cost. It's a gamble though, and typically hosting companies like to keep shared servers well utilized to optimize profitability. Because of this shared hosting is only recommended for personal websites, or small organizations where uptime is not critical to the day-to-day operations of the business.</p>
+<h3>Virtual Private Server</h3>
+<p>A <a href="http://en.wikipedia.org/wiki/Virtual_private_server" target="_blank">virtual private server</a> is like a mix between dedicated and shared hosting. Like dedicated hosting, you have full access to the server. You can choose the operating system, management system (such as <a href="http://cpanel.net/" target="_blank">cPanel</a>), or install all the software you want/need from scratch via an <a href="http://en.wikipedia.org/wiki/Secure_shell" target="_blank">Secure Shell (SSH)</a> login to the command line of the server. Like shared hosting, your hosting environment is just one of many on the actual server hardware, however the software running on the server which provides a virtualized server environment is typically designed to limit other VPS servers running from the same machine from hogging the resources (CPU cycles, memory) of the server. This results in a more stable hosting environment than shared hosting, but at a fraction of the cost of a dedicated server.</p>
+<p>While a Virtual Private Server may be more stable than shared hosting, it is also more limited in the resources available to it than a dedicated server, and thus is best suited for individuals or small organizations which receive light traffic, and yet still require optimal uptime for their website.</p>
+<p>A VPS is the hosting type recommended for individuals which want to host their first Ruby on Rails project. You have total control over the server, so you can install any gems needed, or configure the server however you need. I highly recommend <a href="http://www.linode.com/" target="_blank">Linode</a> as a VPS hosting provider. Their service has the best uptime I've ever seen, the tools they provide to manage your VPS are superior, and their documentation is really great also. For instance here is a <a href="http://library.linode.com/frameworks/ruby-on-rails-apache/ubuntu-10.10-maverick" target="_blank">guide</a> on setting up a VPS to host a Ruby on Rails application using the Passenger mod with the Apache web server under Ubuntu 10.10 Maverick.</p>
+<h3>Cloud Hosting</h3>
+<p>The 'cloud' in cloud hosting is used as a metaphor to represent the Internet, based on the cloud drawing typically used in network diagrams to represent the Internet. The term is currently a buzz word in the IT world, and the definition of what it is has become somewhat vague.</p>
+<p>Unlike the previous types of hosting outlined above, cloud hosting is not provided by a single machine, but instead by a suite of various computing resources which are virtualized and accessed as a service.</p>
+<p>For instance, the <a href="http://en.wikipedia.org/wiki/Amazon_S3" target="_blank">Amazon S3 (Simple Storage Service)</a> provides simple file hosting. A special API is used to upload images to an Amazon S3 account in special containers known as 'buckets', and then these files/images may be linked to using the appropriate URL for each file. Some websites are setup to host certain assets such as images or file downloads with S3, while still hosting the web pages from a standard web server.</p>
+<p>One reason why websites choose to use Amazon S3 instead of hosting these assets from the same web server is because it allows web pages to load faster, as most web browsers will only download three files at a time from a single web server. Additionally the Amazon S3 service provides scalability, meaning that no matter how much traffic or space is needed for your files, Amazon S3 has the infrastructure to handle the hosting. This means that a website administrator won't have to worry about migrating all the files to another high capacity server at some point in the future. The service is also provided with high availability, low latency, at a commodity cost.</p>
+<p>Cloud services may be used individually, or configured to work together to provide an environment much like a VPS. The upside is scalability and high availability, however the cost may exceed that of a VPS depending on your needs. Using cloud hosting services together can require some amount of setup and configuration, and thus companies such as <a href="http://www.rightscale.com/" target="_blank">RightScale</a> or <a href="http://www.engineyard.com/" target="_blank">Engine Yard</a> have stepped in to combine Amazon cloud services into a single solution. An open source platform known as <a href="http://en.wikipedia.org/wiki/Scalr" target="_blank">Scalr</a> is also available as a low cost solution. Cloud services are of course also provided by companies other than Amazon such as <a href="http://www.rackspace.com/cloud/" target="_blank">Rackspace</a>.</p>
+<p>Cloud hosting is recommended for organizations which require optimal uptime, and likely expect to grow beyond the capabilities of even the most powerful dedicated servers in the near future.</p>
+<p>&nbsp;</p>
+<p>[previous]<br />
+[parent]<br />
+[next]</p>

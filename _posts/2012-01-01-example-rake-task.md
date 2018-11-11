@@ -1,5 +1,6 @@
 ---
 layout: post
+published: true
 title: Example Rake Task
 date: '2012-01-01 18:26:28 -0800'
 categories:
@@ -15,7 +16,12 @@ comments:
   date_gmt: '2012-01-02 21:32:34 -0800'
   content: Thanks for the shout out!
 ---
-Here is example rake task code which you can use and modify the next time you're setting up new Rake tasks for a Rails app from scratch. The example includes the syntax for setting the default task, running multiple tasks in order, and a task which includes multiple arguments. This coding syntax works with Rails 3.1.
+
+Here is example rake task code which you can use and modify the next time
+you're setting up new Rake tasks for a Rails app from scratch. The example
+includes the syntax for setting the default task, running multiple tasks in
+order, and a task which includes multiple arguments. This coding syntax works
+with Rails 3.1.
 
 ``` ruby
 # /lib/tasks/mytask.rake
@@ -56,4 +62,7 @@ namespace :mytask do
 end
 ```
 
-Special thanks to Jason Seifer for his [Rake Tutorial](http://jasonseifer.com/2010/04/06/rake-tutorial) which made this possible.
+Special thanks to Jason Seifer for his [Rake Tutorial][1] which made this
+possible.
+
+[1]: http://jasonseifer.com/2010/04/06/rake-tutorial

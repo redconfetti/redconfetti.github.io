@@ -1,21 +1,16 @@
 # Site settings
 title: rubycoloredglasses
-description: > # this means to ignore newlines until "baseurl:"
+description: > # this means to ignore newlines until "url:"
   I'm Jason, a web applications developer in the San Francisco Bay area.
-url: 'http://www.rubycoloredglasses.com'
-baseurl: '/'
+url: 'https://www.rubycoloredglasses.com'
+baseurl: ''
 timezone: America/Los_Angeles
-# google_analytics: 'UA-XXXXXX-X'
-# disqus_shortname: 'your-disqus-name'
 
 author:
   name: 'Jason Miller'
   email: jason@redconfetti.com
-  # twitter_username: redconfetti
   linkedin_username: redconfetti
-  # facebook_username: redconfetti
   github_username:  redconfetti
-  delicious_username: redconfetti
   spotify:
     username: redconfetti
     playlist_id: 03bKMoeCxREu1jKjPvCXwD
@@ -41,5 +36,5 @@ kramdown:
   # do not replace newlines by <br>s
   hard_wrap: false
 
-gems: ['jekyll-paginate', 'jekyll-sitemap']
+plugins: ['jekyll-paginate', 'jekyll-sitemap']
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']

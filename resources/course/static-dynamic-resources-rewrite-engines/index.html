@@ -1,0 +1,39 @@
+---
+layout: page
+status: publish
+published: true
+title: Static and Dynamic Resources, and Rewrite Engines
+author:
+  display_name: redconfetti
+  login: redconfetti
+  email: jason@redconfetti.com
+  url: ''
+author_login: redconfetti
+author_email: jason@redconfetti.com
+wordpress_id: 51
+wordpress_url: http://rails.redconfetti.com/?page_id=51
+date: '2011-10-12 22:03:18 -0700'
+date_gmt: '2011-10-13 05:03:18 -0700'
+categories: []
+tags: []
+comments: []
+---
+<h2><span class="Apple-style-span" style="font-size: 13px; font-weight: normal;">When requesting a single webpage there may be several requests and responses for each resource. A resource being requested may be an HTML coded web page, which then leads to several images which must be requested and loaded inside of the page, as well as other files such as Javascript or CSS libraries needed by the page. This sequence of requests-response transactions which take place between an HTTP client (browser) and an HTTP web server is known as an HTTP session.</span></h2>
+<h3>Static Resources</h3>
+<p>Static resources, such as files containing pure HTML coding, are accessed from the server in the same form as they are on the server itself. For example, many web hosting companies provide access to the files on the server via a File Transfer Protocol (FTP) server program that is also running on the web server. The account owner uses an FTP client program such as <a href="http://filezilla-project.org/" target="_blank">FileZilla</a> or Dreamweaver to access and upload files to the directory where the website files reside. The FTP account may provide a directory called 'public_html' or 'public', which represents the web root for the public website. Files put directly into this folder will be available directly from the root of the website.</p>
+<p>The reason why the folder which contains the website files is a subdirectory of the root folder for the account is so that files which you do not want to be accessed via your website publicly can be uploaded to your account outside of the public_html folder.</p>
+<p>For a website using 'www.example.com', a file named 'index.html' can be placed in this directory and will be accessible just by going to http://www.example.com/ . This occurs because the web server is configured to provide any files named 'index.html', as the root webpage for the site. Such a file must be overwritten via FTP with a newer version before the content of that webpage changes for the public. If a folder is created in the 'public_html' directory named 'news', and then a file is placed in that directory named 'updates.html', the URL to access the file would be http://www.example.com/news/updates.html</p>
+<h3>Dynamic Resources</h3>
+<p>Resources provided by a web server may also be dynamic, which means that the contents of the resource/page are generated on-the-fly by coding placed on the server. This type of coding is known as <a href="http://en.wikipedia.org/wiki/Server-side_scripting" target="_blank">server side scripting</a> because it is executed on the server and influences the response from the web server before it reaches the clients web browser. This is in contrast with Javascript coding which is a <a href="http://en.wikipedia.org/wiki/Client_side_scripting" target="_blank">client side scripting</a> language that is executed inside of the web browser, commonly used to modify or animate elements of the web page in the browser in real time. HTML and CSS coding are also interpreted by the browser on the client side, but are not technically considered scripting. HTML is a markup language used to describe elements which are rendered on a page, and cascading style sheets (CSS) is a language used to describe the style/presentation of those elements defined by the HTML.</p>
+<p>One of the most popular server side coding options available is <a href="http://en.wikipedia.org/wiki/PHP" target="_blank">PHP</a>. Most hosting companies configure their servers to scan files for PHP coding when the files have filenames ending in '.php' instead of the typical '.html' file extension. When found, this PHP coding is executed and dynamically generates certain portions of the page which are provided in the response. This scanning by the web server is also referred to as 'parsing'. This allows PHP coding to be placed in the middle of a file that is predominantly coded in HTML. The HTML coding is provided as is, but the PHP portions of the page are executed and replaced with any text output by the PHP coding.</p>
+<p>Although dynamic coding is typically used to output text content such as HTML, CSS, or Javascript coding in a dynamic function, it's possible for scripts to also return images if an image library is in use for a specific purpose. This is less likely, but still possible, which is why I've referred to them as static or dynamic resources instead of static or dynamic web pages.</p>
+<h2>Rewrite Engines</h2>
+<p>More advanced website applications do not operate within this paradigm where the URL of a specific resource corresponds directly with specific directories or files on the web server. For instance the Wordpress blogging system relies on an extension of the Apache web server known as <a href="http://en.wikipedia.org/wiki/Rewrite_engine" target="_blank">mod_rewrite</a> to direct all requests directly to the main index.php file located in the root of the directory which stores the Wordpress system files. The index.php file is programmed to compare the request, such as '/2010/02/how-to-tie-your-shoe' to a list of routing rules which determine which internal resource within the Wordpress system should be served, such as a page or blog post.</p>
+<p>This method makes it so that the website URL for each page is within complete control of the web application instead of the web server it is running under. This method allows website developers to specify URL's for each section of the site which enhance the <a href="http://en.wikipedia.org/wiki/Search_engine_optimization" target="_blank">search engine optimization</a> for those pages. For example a system not using a rewrite engine might provide pages dynamically using the following address:</p>
+<p>http://www.example.com/index.php?p=5</p>
+<p>In the above URL 'p=5' is telling the index.php file to provide page ID '5' in the response. Search engines do not prefer to follow links with parameters such as this, as they know all the content is being dynamically fed via scripting driven by a database. They prefer to index pages which were created manually and placed into directories with URL's ending like /about/ or /about/index.html. Rewrite engines make it possible to map such URL's directly to pages which are dynamically generated via your database driven blog, or <a href="http://en.wikipedia.org/wiki/Content_management_system" target="_blank">content management system</a>.</p>
+<p>The example page provided by a system using a rewrite engine might provide the page via this URL:</p>
+<p>http://www.example.com/seo-friendly-page-title-goes-here/</p>
+<p>[previous]<br />
+[parent]<br />
+[next]</p>

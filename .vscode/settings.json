@@ -1,0 +1,8 @@
+{
+  "editor.formatOnSave": true,
+  "prettier.semi": false,
+  "editor.rulers": [
+    80,
+    120
+  ]
+}

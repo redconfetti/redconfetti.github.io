@@ -1,0 +1,79 @@
+---
+layout: page
+status: publish
+published: true
+title: Creating Rails Project
+author:
+  display_name: redconfetti
+  login: redconfetti
+  email: jason@redconfetti.com
+  url: ''
+author_login: redconfetti
+author_email: jason@redconfetti.com
+wordpress_id: 139
+wordpress_url: http://rails.redconfetti.com/?page_id=139
+date: '2011-10-15 23:27:34 -0700'
+date_gmt: '2011-10-16 06:27:34 -0700'
+categories: []
+tags: []
+comments: []
+---
+<p>The first step in creating your Rails project is to open the command line.</p>
+<p>The 'rails' command is used to generate a new Ruby on Rails application. It's also used for many other functions when you are inside of the root directory of the application that has been generated.</p>
+<p>If you run the command 'rails --help', you will be shown the options which you can use with the 'rails' command.</p>
+<pre class="brush:shell">
+$ rails --help
+
+Usage:
+  rails new APP_PATH [options]
+
+Options:
+      [--old-style-hash]         # Force using old style hash (:foo => 'bar') on Ruby >= 1.9
+      [--skip-gemfile]           # Don't create a Gemfile
+  -d, [--database=DATABASE]      # Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+                                 # Default: sqlite3
+  -O, [--skip-active-record]     # Skip Active Record files
+      [--skip-bundle]            # Don't run bundle install
+  -T, [--skip-test-unit]         # Skip Test::Unit files
+  -r, [--ruby=PATH]              # Path to the Ruby binary of your choice
+                                 # Default: /opt/local/bin/ruby
+  -S, [--skip-sprockets]         # Skip Sprockets files
+      [--dev]                    # Setup the application with Gemfile pointing to your Rails checkout
+  -j, [--javascript=JAVASCRIPT]  # Preconfigure for selected JavaScript library
+                                 # Default: jquery
+  -J, [--skip-javascript]        # Skip JavaScript files
+  -m, [--template=TEMPLATE]      # Path to an application template (can be a filesystem path or URL)
+      [--edge]                   # Setup the application with Gemfile pointing to Rails repository
+  -G, [--skip-git]               # Skip Git ignores and keeps
+  -b, [--builder=BUILDER]        # Path to a application builder (can be a filesystem path or URL)
+
+Runtime options:
+  -q, [--quiet]    # Supress status output
+  -s, [--skip]     # Skip files that already exist
+  -f, [--force]    # Overwrite files that already exist
+  -p, [--pretend]  # Run but do not make any changes
+
+Rails options:
+  -v, [--version]  # Show Rails version number and quit
+  -h, [--help]     # Show this help message and quit
+
+Description:
+    The 'rails new' command creates a new Rails application with a default
+    directory structure and configuration at the path you specify.
+
+Example:
+    rails new ~/Code/Ruby/weblog
+
+    This generates a skeletal Rails installation in ~/Code/Ruby/weblog.
+    See the README in the newly created application to get going.
+</pre>
+<p>You'll see that there is a section which outlines the database options you can specify. </p>
+<pre class="brush:shell">
+-d, [--database=DATABASE]      # Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
+</pre>
+<p>When creating a new Rails application you can create it so that it's ready to be configured with various database servers. For the purpose of our tutorial, we will be using the MySQL server. We will create our application with the name 'snetwork', configured for a MySQL database, using the following command:</p>
+<pre class="brush:shell">
+rails new snetwork -d mysql
+</pre>
+<p>[previous]<br />
+[next]</p>

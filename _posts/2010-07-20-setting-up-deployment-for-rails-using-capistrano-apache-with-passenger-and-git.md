@@ -12,7 +12,9 @@ tags:
 - passenger
 comments: []
 ---
-I don't have time right now to learn how to setup Capistrano. I just want a recipe that works and does the job. Here are my notes.
+
+I don't have time right now to learn how to setup Capistrano. I just want a
+recipe that works and does the job. Here are my notes.
 
 1) First install the Capistrano gem
 
@@ -20,23 +22,27 @@ I don't have time right now to learn how to setup Capistrano. I just want a reci
 sudo gem install capistrano
 ```
 
-2) Next you need to go into the directory of your Ruby on Rails application and capify it:
+2) Next you need to go into the directory of your Ruby on Rails application
+and capify it:
 
 ``` shell
 capify .
 ```
 
-3) Next I recommend this article (I'll rip off the deploy.rb soon and post it here)
+3) Next I recommend this article (I'll rip off the deploy.rb soon and post it
+here)
 
-<a href="http://www.zorched.net/2008/06/17/capistrano-deploy-with-git-and-passenger/" target="_blank">http://www.zorched.net/2008/06/17/capistrano-deploy-with-git-and-passenger/</a>
+[Capistrano Deploy with Git and Passenger]
 
-4) Once you've configured your deploy.rb, run this command to have it setup the directories on the remote server (releases, shared, logs, etc).
+4) Once you've configured your deploy.rb, run this command to have it setup
+the directories on the remote server (releases, shared, logs, etc).
 
 ``` shell
 cap deploy:setup
 ```
 
-5) Next run this command to get the list of other capistrano commands you can run:
+5) Next run this command to get the list of other capistrano commands you can
+run:
 
 ``` shell
 cap -T
@@ -69,3 +75,4 @@ cap invoke               # Invoke a single command on the remote servers.
 cap shell                # Begin an interactive Capistrano session.
 ```
 
+[Capistrano Deploy with Git and Passenger]: http://www.zorched.net/2008/06/17/capistrano-deploy-with-git-and-passenger/

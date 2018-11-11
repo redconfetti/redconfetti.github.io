@@ -1,13 +1,16 @@
 ---
 layout: post
-title: MySQL Gem Installation on Mac 10.5.8 - 64 bit ??
+title: MySQL Gem Installation on Mac 10.5.8 - 64 bit??
 date: '2010-07-16 17:26:14 -0700'
 categories:
 - Ruby on Rails
-tags: []
-comments: []
 ---
-I'm setting up a new Ruby on Rails application, and tried to run the first migration for the creation of the new database. This failed because I didn't have the MySQL gem installed. I'm using a 64 bit processor (Intel Core 2 Duo) so I installed the 64 bit MySQL for 10.5.8 (Leopard, I haven't upgraded to Snow Leopard yet).
+
+I'm setting up a new Ruby on Rails application, and tried to run the first
+migration for the creation of the new database. This failed because I didn't
+have the MySQL gem installed. I'm using a 64 bit processor (Intel Core 2 Duo)
+so I installed the 64 bit MySQL for 10.5.8 (Leopard, I haven't upgraded to
+Snow Leopard yet).
 
 When trying to run the installation command I received an error:
 
@@ -59,16 +62,24 @@ necessary libraries and/or headers.  Check the mkmf.log file for more
 details.  You may need configuration options.
 ```
 
-Since the error is reporting that it can't find mysql.h (header file), I take it that the MySQL installer didn't include the header files. From the command line if I go to /usr/local/mysql/include I see the mysql.h right in there.
+Since the error is reporting that it can't find mysql.h (header file), I take
+it that the MySQL installer didn't include the header files. From the command
+line if I go to /usr/local/mysql/include I see the mysql.h right in there.
 
-I removed the preference panel option by opening the System Preferences, then holding CTRL and clicking on the MySQL option. This gave me an option to click on to remove it. I then deleted /usr/local/mysql and /usr/local/mysql-5.1.48-osx10.5-x86_64
+I removed the preference panel option by opening the System Preferences, then
+holding CTRL and clicking on the MySQL option. This gave me an option to click
+on to remove it. I then deleted /usr/local/mysql and
+/usr/local/mysql-5.1.48-osx10.5-x86_64
 
 ``` shell
 sudo rm -rf /usr/local/mysql
 sudo rm -rf /usr/local/mysql-5.1.48-osx10.5-x86_64/
 ```
 
-Someone else mentioned something about using the 32-bit version of MySQL, so I downloaded it and installed it instead (hoping it doesn't conflict with the processor I'm using). It installed and started up just fine. I ran the command to install the MySQL Gem again:
+Someone else mentioned something about using the 32-bit version of MySQL, so I
+downloaded it and installed it instead (hoping it doesn't conflict with the
+processor I'm using). It installed and started up just fine. I ran the command
+to install the MySQL Gem again:
 
 ``` shell
 $ sudo gem install mysql -- --with-mysql-dir=/usr/local/mysql

@@ -8,9 +8,18 @@ tags:
 - javascript
 - code games
 ---
-A few weeks ago I heard about this [FightCode](http://fightcodegame.com/) website that lets you program robots that compete against other coders who code their own robots. It uses Javascript, so it should be accessible to many web developers. They even have a [Facebook page](http://www.facebook.com/fightcodegame) you can like.
 
-![Fight Code logo](/images/posts/fight-code.png "Fight Code logo")
+A few weeks ago I heard about this [FightCode][1] website that lets you
+program robots that compete against other coders who code their own robots. It
+uses Javascript, so it should be accessible to many web developers. They even
+have a [Facebook page][2] you can like.
 
-Recently a co-worker also mentioned a new programming game called [NodeWar](http://nodewar.com/). It appears to be under development still, but could prove to be awesome.
+![Fight Code logo][3]
 
+Recently a co-worker also mentioned a new programming game called [NodeWar][4].
+It appears to be under development still, but could prove to be awesome.
+
+[1]: http://fightcodegame.com/
+[2]: http://www.facebook.com/fightcodegame
+[3]: /images/posts/fight-code.png
+[4]: http://nodewar.com/

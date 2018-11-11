@@ -1,4 +1,4 @@
-/* TEAM */           
+/* TEAM */
 Your title: Jason Miller
 Site: http://www.rubycoloredglasses.com/
 Twitter: redconfetti
@@ -8,7 +8,7 @@ Location: Berkeley, California, United States of America
 Name: Josh Gerdes
 
 /* SITE */
-Last update: 2016/02/10
+Last update: 2017/11/23
 Standards: HTML5, CSS3
 Components: Jekyll
 Software: Sublime Text, Photoshop

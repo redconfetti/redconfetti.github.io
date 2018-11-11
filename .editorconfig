@@ -9,3 +9,11 @@ indent_size = 2
 
 [*.{js,rb,erb,html}]
 charset = utf-8
+
+[*.md]
+max_line_length = 80
+trim_trailing_whitespace = false
+
+[search.json]
+indent_style = tab
+indent_size = 2
