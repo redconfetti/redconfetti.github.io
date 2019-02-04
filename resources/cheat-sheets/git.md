@@ -239,6 +239,19 @@ git reset --hard HEAD^
 git reset --soft HEAD^
 ```
 
+# Git Show
+```shell
+# view changes in commit, using SHA hash
+git show 6d3b08115028d013d676bc03ece72db3e6e06225
+
+# show last commit
+git show
+git show HEAD
+
+# show files involved in last commit
+git show HEAD --name-only
+```
+
 # Git Stash
 ``` shell
 # save current unstaged changes to stash
@@ -323,9 +336,6 @@ git cherry-pick 04567899ae36651daf3dfa117a1088d594632370
 
 # create a commit that reverts a previous commit
 git revert 04567899ae36651daf3dfa117a1088d594632370
-
-# view changes in commit, using SHA hash
-git show 6d3b08115028d013d676bc03ece72db3e6e06225
 
 # List tags sorted in descending order, include first 5 in output
 git tag -l -n1 --sort=-v:refname | head -n 5
