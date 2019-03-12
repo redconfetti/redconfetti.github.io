@@ -117,9 +117,28 @@ You can automate the provisioning of your Cloud9 environment by using
 
 See [Automating AWS Cloud9](https://dzone.com/articles/automating-aws-cloud9)
 
+# Cloud 9
+
+[Amazon Cloud9]
+
+## Types of Storage
+
+[Instance Store vs Elastic Block Store (EBS)](https://aws.amazon.com/premiumsupport/knowledge-center/instance-store-vs-ebs/)
+
+## Backup Methods
+
+[How to Back Up Amazon EC2 Instances](https://www.cloudberrylab.com/resources/blog/backup-aws-ec2-instance/)
+
+EC2 Backup Method 2: Creating a New AMI
+
+EC2 instances reply on Elastic Block Store (EBS) for their file system. You can
+configure Amazon to automatically create snapshots of your EBS file system
+periodically (daily, weekly, etc).
+
+Alternatively you can also create an [Amazon Machine Image (AMI)]
+
 # Other Services
 
-- [Amazon Cloud9]
 - [Amazon Lambda]
 - [Amazon Elastic Load Balancing]
 - [Amazon Simple Storage Service (S3)]
@@ -163,3 +182,4 @@ See [Automating AWS Cloud9](https://dzone.com/articles/automating-aws-cloud9)
 [kubernetes]: https://en.wikipedia.org/wiki/Kubernetes
 [amazon elastic container registry (ecr)]: https://aws.amazon.com/ecr/
 [docker]: https://aws.amazon.com/docker/
+[Amazon Machine Image (AMI)]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instances-and-amis.html
