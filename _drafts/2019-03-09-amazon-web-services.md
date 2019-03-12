@@ -110,6 +110,13 @@ Anyone that has used Docker knows that you need a container registry to store
 your container images, so AWS also offers
 [Amazon Elastic Container Registry (ECR)].
 
+# Cloud Formation
+
+You can automate the provisioning of your Cloud9 environment by using
+[Amazon Cloudformation].
+
+See [Automating AWS Cloud9](https://dzone.com/articles/automating-aws-cloud9)
+
 # Other Services
 
 - [Amazon Cloud9]
@@ -149,6 +156,7 @@ your container images, so AWS also offers
 [amazon elastic container service (ecs)]: https://aws.amazon.com/ecs/
 [amazon relational database service (rds)]: https://aws.amazon.com/rds/
 [amazon elastic load balancing]: https://aws.amazon.com/elasticloadbalancing/
+[amazon cloudformation]: https://aws.amazon.com/cloudformation/
 [dockerizing a ruby on rails application]: https://semaphoreci.com/community/tutorials/dockerizing-a-ruby-on-rails-application
 [amazon fargate]: https://aws.amazon.com/fargate/
 [amazon elastic container service for kubernetes (eks)]: https://aws.amazon.com/eks/
