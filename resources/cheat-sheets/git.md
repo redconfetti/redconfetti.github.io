@@ -20,6 +20,7 @@ title: Git
 * [Git Remove](#git-remove)
 * [Git Reset](#git-reset)
 * [Git Stash](#git-stash)
+* [Git Update-Index](#git-update-index)
 * [Tagging](#tagging)
 * [Patching](#patching)
 * [Misc](#misc)
@@ -271,6 +272,18 @@ git stash drop stash@{0}
 
 # clear all stored stashes
 git stash clear
+```
+
+# Git Update-Index
+```shell
+# Apply Executable Permissions to a File
+git update-index --chmod=+x path/to/file
+
+# Stage a file and change permissions at the same time (Git v2.9)
+git add --chmod=+x path/to/file
+
+# View Files with Permissions
+git ls-files --stage
 ```
 
 # Patching
