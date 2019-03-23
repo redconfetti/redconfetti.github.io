@@ -121,6 +121,10 @@ See [Automating AWS Cloud9](https://dzone.com/articles/automating-aws-cloud9)
 
 [Amazon Cloud9]
 
+Uses [Amazon Virtual Private Cloud (VPC)] to communicate with the EC2 instance.
+A virtual private cloud (VPC) is a virtual network dedicated to your AWS account.
+It is logically isolated from other virtual networks in the AWS Cloud.
+
 ## Types of Storage
 
 [Instance Store vs Elastic Block Store (EBS)](https://aws.amazon.com/premiumsupport/knowledge-center/instance-store-vs-ebs/)
@@ -176,6 +180,7 @@ Alternatively you can also create an [Amazon Machine Image (AMI)]
 [amazon relational database service (rds)]: https://aws.amazon.com/rds/
 [amazon elastic load balancing]: https://aws.amazon.com/elasticloadbalancing/
 [amazon cloudformation]: https://aws.amazon.com/cloudformation/
+[amazon virtual private cloud (vpc)]: https://aws.amazon.com/vpc/
 [dockerizing a ruby on rails application]: https://semaphoreci.com/community/tutorials/dockerizing-a-ruby-on-rails-application
 [amazon fargate]: https://aws.amazon.com/fargate/
 [amazon elastic container service for kubernetes (eks)]: https://aws.amazon.com/eks/
