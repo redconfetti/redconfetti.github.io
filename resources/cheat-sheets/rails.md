@@ -46,3 +46,19 @@ rails new my_app --webpack=vue
 # Display Rails routing table
 rake routes
 ```
+
+## ActiveRecord
+
+```
+# Get name of table associated with model
+Model.table_name
+# Get field/column names from database table
+Model.column_names
+```
+
+## Capistrano
+
+```
+# View available Capistrano tasks
+bundle exec cap -vT
+```
