@@ -2,31 +2,33 @@
 layout: page
 title: Git
 ---
+
 [Back to Cheat Sheets](/resources/cheat-sheets/)
 
 [Other Git Tips](http://mislav.uniqpath.com/2010/07/git-tips/)
 
 # Table of Contents
 
-* [Man Pages](#man-pages)
-* [Git Branching](#git-branching)
-* [Git Checkout](#git-checkout)
-* [Git Commit](#git-commit)
-* [Git Diff](#git-diff)
-* [Git Log](#git-log)
-* [Git Push](#git-push)
-* [Git Rebase](#git-rebase)
-* [Git Remote](#git-remote)
-* [Git Remove](#git-remove)
-* [Git Reset](#git-reset)
-* [Git Stash](#git-stash)
-* [Git Update-Index](#git-update-index)
-* [Tagging](#tagging)
-* [Patching](#patching)
-* [Misc](#misc)
+- [Man Pages](#man-pages)
+- [Git Branching](#git-branching)
+- [Git Checkout](#git-checkout)
+- [Git Commit](#git-commit)
+- [Git Diff](#git-diff)
+- [Git Log](#git-log)
+- [Git Push](#git-push)
+- [Git Rebase](#git-rebase)
+- [Git Remote](#git-remote)
+- [Git Remove](#git-remove)
+- [Git Reset](#git-reset)
+- [Git Stash](#git-stash)
+- [Git Update-Index](#git-update-index)
+- [Tagging](#tagging)
+- [Patching](#patching)
+- [Misc](#misc)
 
 # Man Pages
-``` shell
+
+```shell
 # Manuals
 # You can view the manual pages on any of the commands below by using
 # 'man git-' followed by the verbs supported by Git such as 'log' or 'commit'
@@ -35,7 +37,11 @@ man git-commit
 ```
 
 # Git Branching
-``` shell
+
+```shell
+# view local branches with verbose output (includes remote tracking)
+git branch -vv
+
 # view remote branches
 git branch -r
 
@@ -56,10 +62,15 @@ git branch -m old_name new_name
 git push origin :old_name # delete old remote branch
 git push origin new_name # create new branch on remote
 git branch --set-upstream-to=origin/new_name
+
+# set upstream tracking for branch
+git branch -u origin/feature_branch
+git branch -set-upstream-to=origin/feature_branch
 ```
 
 # Git Checkout
-``` shell
+
+```shell
 # alternative way to clear all changes
 git checkout .
 
@@ -86,7 +97,8 @@ git checkout -b local_branch_name johndoe/remote_branch_name
 ```
 
 # Git Commit
-``` shell
+
+```shell
 # update the last commit message
 git commit --amend -m "New message"
 
@@ -95,6 +107,7 @@ git commit --amend --reset-author
 ```
 
 See [Auto-squashing Git Commits][1] | [StackOverflow][2]
+
 ```
 # append staged changes into previous commit
 git add .
@@ -103,7 +116,8 @@ git rebase --interactive --autosquash 4321dcba^
 ```
 
 # Git Diff
-``` shell
+
+```shell
 # show unstaged changes since last commit
 git diff
 
@@ -136,7 +150,8 @@ git diff --since=1.week.ago --until=1.minute.ago
 ```
 
 # Git Log
-``` shell
+
+```shell
 # search for all commits (any branch) by message
 git log --all --grep="contents of message"
 
@@ -183,13 +198,15 @@ git mylog
 ```
 
 # Git Merge-Base
-``` shell
+
+```shell
 # Find the point at which a branch forked from another branch
 git merge-base --fork-point master feature_branch
 ```
 
 # Git Push
-``` shell
+
+```shell
 # push to remote with upstream tracking specified
 git push -u origin qa
 
@@ -201,7 +218,8 @@ git push origin :remote_branch_name
 ```
 
 # Git Rebase
-``` shell
+
+```shell
 # interactive rebase from remote master
 git rebase -i origin/master
 
@@ -210,26 +228,35 @@ git rebase -i HEAD~4
 ```
 
 # Git Remote
-``` shell
+
+```shell
 # view configured remote repositories
 git remote -v
+
+# view information about a remote
+git remote show origin
 
 # add remote repository
 git remote add johndoe https://github.com/johndoe/myproject.git
 
 # remove remote repository
 git remote rm johndoe
+
+# deletes stale references from local repository
+git remote prune origin
 ```
 
 # Git Remove
-``` shell
+
+```shell
 # remove file from repository, without actually deleting
 # good for files you only want locally, and have added to .gitignore
 git rm --cached mylogfile.log
 ```
 
 # Git Reset
-``` shell
+
+```shell
 # clear all changes
 git reset --hard
 
@@ -241,6 +268,7 @@ git reset --soft HEAD^
 ```
 
 # Git Show
+
 ```shell
 # view changes in commit, using SHA hash
 git show 6d3b08115028d013d676bc03ece72db3e6e06225
@@ -254,7 +282,8 @@ git show HEAD --name-only
 ```
 
 # Git Stash
-``` shell
+
+```shell
 # save current unstaged changes to stash
 git stash
 
@@ -275,6 +304,7 @@ git stash clear
 ```
 
 # Git Update-Index
+
 ```shell
 # Apply Executable Permissions to a File
 git update-index --chmod=+x path/to/file
@@ -287,7 +317,8 @@ git ls-files --stage
 ```
 
 # Patching
-``` shell
+
+```shell
 # create patch based on single commit
 git format-patch -1 73699d42 --stdout > mycommit.patch
 
@@ -306,7 +337,8 @@ git am file.patch
 ```
 
 # Tagging
-``` shell
+
+```shell
 # Tag with annotation
 git tag -a v1.1 -m "version 1.1 (CodeName: Jason)"
 
@@ -334,6 +366,7 @@ git fetch origin --tags
 ```
 
 # Misc
+
 ```shell
 # show log of commits affecting specific file
 git whatchanged path/to/file
