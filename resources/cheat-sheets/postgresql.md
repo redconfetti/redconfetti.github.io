@@ -62,6 +62,7 @@ select id from tablename limit 5; \watch 5
 
 -- list databases
 \l
+\list
 
 -- connect to database
 \c my_database
@@ -75,4 +76,3 @@ select id from tablename limit 5; \watch 5
 -- quit psql client
 \q
 ```
-
