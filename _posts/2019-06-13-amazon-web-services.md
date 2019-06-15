@@ -3,8 +3,8 @@ layout: post
 published: true
 title: Amazon Web Services
 description: An Introduction
-image_url: /images/posts/2019-03-09-aws-cloud9.png
-date: 2019-03-09 20:37:00 -0800
+image_url: /images/posts/2019-06-13-aws-cloud9.png
+date: 2019-06-13 20:37:00 -0800
 categories:
   - amazon web services
 tags:
@@ -187,4 +187,4 @@ Alternatively you can also create an [Amazon Machine Image (AMI)]
 [kubernetes]: https://en.wikipedia.org/wiki/Kubernetes
 [amazon elastic container registry (ecr)]: https://aws.amazon.com/ecr/
 [docker]: https://aws.amazon.com/docker/
-[Amazon Machine Image (AMI)]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instances-and-amis.html
+[amazon machine image (ami)]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instances-and-amis.html
