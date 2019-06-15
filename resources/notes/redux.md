@@ -1,0 +1,1091 @@
+---
+layout: page
+title: Redux
+---
+
+Taken from [Lynda - How Redux Works](https://www.lynda.com/React-js-tutorials/How-Redux-works/540345/569712-4.html)
+
+# What is Redux
+
+## The History of Redux
+
+Dan Abramov invented the idea for Redux during a React Europe Conference
+presentation in 2015. Andrew Clark abandoned Flummox, another Flux
+implementation, to work with Abramov to complete Redux.
+
+## Flux
+
+A design pattern developed by Facebook. An alternative to MVC, MVP, or MVVM.
+
+Models manage the data within an application. Models are presented in Views.
+Models can feed data to multiple views. When a user interacts with a view,
+the model may become modified. This can change the data in other views. This
+can have unexpected consequences in large complex systems.
+
+Flux was developed by Facebook, a pattern where data flows in one direction.
+
+Action -> Dispatcher -> Store -> View
+
+Flux is a design pattern, not a library. Libraries that apply this design
+pattern include Reflux, Flummox, Fluxxor, Alt, Redux, Marty.js, McFly, DeLorean,
+Lux, Fluxy, and Material Flux.
+
+Due to simplicity and ease of use, Redux has won out in the community.
+
+## How Redux Works
+
+Redux isn't exactly Flux, it's Flux-like. Data still flows in one direction,
+but there is only one store (not multiple). The "single source of truth".
+
+Moularity is achieved by using functions to manage specific leafs and branches
+of the state tree.
+
+Using functions for modularity comes from The Functional Programming paradigm.
+
+## Functional Programming
+
+- Pure functions - Do not cause side affects. Receive input, and return result.
+  Do not modify arguments, global variables, or other state.
+- Immutability - No variables are changed, instead new ones are created.
+- Composition - Ability to put functions together in a way that one
+  functions output becomes the next functions input.
+
+### Example
+
+Let's say we want to make a call to `getPercent(1,4)` and have it return
+the string '25%'.
+
+- getPercent(1,4)
+  - convertToDecimal() - returns `0.25`
+  - decimalToPercent() - returns '25'
+  - addPercentSign() - returns '25%'
+
+```javascript
+import { compose } from "redux"
+
+const getPercent = compose(
+  addPercentSign,
+  decimalToPercent,
+  convertToDecimal
+)
+
+getPercent(1, 4)
+```
+
+In Redux composition is used in the store. The reducer functions that we create
+to manage parts of the state tree are composed. The action and state is piped
+through each of these reducers until a state is eventually mutated.
+
+## Plan a Redux App
+
+### Actions
+
+In a Redux application, you want to define your actions.
+
+- ADD_DAY
+- REMOVE_DAY
+- SET_GOAL
+- ADD_ERROR
+- CLEAR_ERROR
+- FETCH_RESORT_NAMES
+- CANCEL_FETCHING
+- CHANGE_SUGGESTIONS
+- CLEAR_SUGGESTIONS
+
+We want to put these in a file called constants.
+
+```javascript
+// src/constants.js
+const constants = {
+  ADD_DAY: "ADD_DAY",
+  REMOVE_DAY: "REMOVE_DAY",
+  SET_GOAL: "SET_GOAL",
+  ADD_ERROR: "ADD_ERROR",
+  CLEAR_ERROR: "CLEAR_ERROR",
+  FETCH_RESORT_NAMES: "FETCH_RESORT_NAMES",
+  CANCEL_FETCHING: "CANCEL_FETCHING",
+  CHANGE_SUGGESTIONS: "CHANGE_SUGGESTIONS",
+  CLEAR_SUGGESTIONS: "CLEAR_SUGGESTIONS"
+}
+
+export default constants
+```
+
+This is done to make sure that any typos result in an error when working with
+these strings that represent the different actions.
+
+### State
+
+- `allSkyDays -> []`
+- `skyDay -> {resort, date, powder, backcountry}`
+- `goal -> number`
+- `errors -> []`
+- `resortNames.fetching -> boolean`
+- `resortNames.suggestions -> []`
+
+```javascript
+// initialState.json
+{
+  "allSkiDays": [
+    {
+      "resort": "Kirkwood",
+      "date": "2016-12-7",
+      "powder": true,
+      "backcountry": false
+    },
+    {
+      "resort": "Squaw Valley",
+      "date": "2016-12-8",
+      "powder": false,
+      "backcountry": false
+    },
+    {
+      "resort": "Mt Tallac",
+      "date": "2016-12-9",
+      "powder": false,
+      "backcountry": true
+    }
+  ],
+  "goal": 10,
+  "errors": [],
+  "resortNames": {
+    "fetching": false,
+    "suggestions": ["SquawValley","Snowbird","Stowe","Steamboat"]
+  }
+}
+```
+
+### Reducers
+
+We will name the reducer the same thing as the key.
+
+# Understanding Reducers
+
+## Run Redux with babel-node
+
+```shell
+npm init
+npm install babel-cli --save-dev
+npm install babel-preset-latest --save-dev
+npm install babel-preset-stage-0 --save-dev
+
+mkdir -p src
+mkdir -p src/store
+touch .babelrc
+touch src/index.js
+touch src/constants.js
+touch src/initialState.json
+touch src/store/reducers.js
+```
+
+```javascript
+// .babelrc
+{
+  "presets": ["latest", "stage-0"]
+}
+```
+
+`./src/index.js` will automatically get run with the 'npm start' command.
+
+```javascript
+// package.json
+{
+  "name": "ski-day-counter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "constants.js",
+  "scripts": {
+    "start": "./node_modules/.bin/babel-node ./src/"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
+```
+
+```javascript
+// src/index.js
+import C from "./constants"
+import { allSkiDays, goal } from "./initialState.json"
+
+console.log(`
+
+  Sky Day Counter
+  ================
+  The goal is ${goal} days
+  Initially there are ${allSkiDays.length} ski days in state
+
+  Constants (actions)
+  -------------------
+  ${Object.keys(C).join("\n     ")}
+
+`)
+```
+
+## Build Your First Reducer
+
+Reducers are pure functions that are designed to manage specific part of your
+state object.
+
+```javascript
+// src/store/reducers.js
+import C from "../constants"
+
+export const goal = (state = 10, action) => {
+  if (action.type === C.SET_GOAL) {
+    return parseInt(action.payload)
+  } else {
+    return state
+  }
+}
+```
+
+```javascript
+// src/index.js
+import C from "./constants"
+import { goal } from "./store/reducers"
+
+const state = 10
+const action = {
+  type: C.SET_GOAL,
+  payload: 15
+}
+
+const nextState = goal(state, action)
+
+console.log(`
+
+  initial goal: ${state}
+  action: ${JSON.stringify(action)}
+  new goal: ${nextState}
+
+`)
+```
+
+```
+   initial goal: 10
+   action: {"type":"SET_GOAL", "payload":15}
+   new goal: 15
+```
+
+## Create object reducers
+
+```javascript
+// src/index.js
+import C from "./constants"
+import { skiDay } from "./store/reducers"
+
+const state = null
+const action = {
+  type: C.ADD_DAY,
+  payload: {
+    resort: "Heavenly",
+    date: "2016-12-16",
+    powder: true,
+    backcountry: false
+  }
+}
+
+const nextState = skiDay(state, action)
+
+console.log(`
+
+  initial state: ${state}
+  action: ${JSON.stringify(action)}
+  new State: ${JSON.stringify(nextState)}
+
+`)
+```
+
+```javascript
+// src/store/reducers.js
+import C from "../constants"
+
+export const goal = (state = 10, action) => {
+  if (action.type === C.SET_GOAL) {
+    return parseInt(action.payload)
+  } else {
+    return state
+  }
+}
+
+export const skiDay = (state = null, action) => {
+  if (action.type === C.ADD_DAY) {
+    return action.payload
+  } else {
+    return state
+  }
+}
+```
+
+_Output_
+
+```
+  initial state: null
+  action: {"type":"ADD_DAY", "payload":{"resort":"Heavenly","date":"2016-12-16","powder":true,"backcountry":false}}
+  new state: {"resort":"Heavenly","date":"2016-12-16","powder":true,"backcountry":false}
+```
+
+### Refactor for oneline conditionals
+
+```javascript
+// src/store/reducers.js
+import C from "../constants"
+
+export const goal = (state = 10, action) =>
+  action.type === C.SET_GOAL ? parseInt(action.payload) : state
+
+export const skiDay = (state = null, action) =>
+  action.type === C.ADD_DAY ? action.payload : state
+```
+
+## Create Array Reducers
+
+### Adding Errors
+
+```javascript
+// src/index.js
+import C from "./constants"
+import { errors } from "./store/reducers"
+
+const state = [
+  "user not authorized",
+  "server feed not found"
+]
+const action = {
+  type: C.ADD_ERROR,
+  payload: "cannot connect to server
+}
+
+const nextState = errors(state, action)
+
+console.log(`
+
+  initial state: ${state}
+  action: ${JSON.stringify(action)}
+  new State: ${JSON.stringify(nextState)}
+
+`)
+```
+
+```javascript
+// src/store/reducers.js
+import C from "../constants"
+
+export const goal = (state = 10, action) => {
+  if (action.type === C.SET_GOAL) {
+    return parseInt(action.payload)
+  } else {
+    return state
+  }
+}
+
+export const skiDay = (state = null, action) => {
+  if (action.type === C.ADD_DAY) {
+    return action.payload
+  } else {
+    return state
+  }
+}
+
+export const error = (state = [], action) => {
+  switch (action.type) {
+    case C.ADD_ERROR:
+      // we don't want to mutate the actual state, we need to return a new object
+      // state.push(action.payload)
+      return [...state, action.payload]
+    default:
+      return state
+  }
+}
+```
+
+_Output_
+
+```
+  initial state: user not authorized, server feed not found
+  action: {"type":"ADD_ERROR", "payload":"cannot connect to server"}
+  new state: ["user not authorized","server feed not found","cannot connect to server"]
+```
+
+### Clearing Errors
+
+```javascript
+// src/index.js
+import C from "./constants"
+import { errors } from "./store/reducers"
+
+const state = ["user not authorized", "server feed not found"]
+const action = {
+  type: C.CLEAR_ERROR,
+  payload: 0
+}
+
+const nextState = errors(state, action)
+
+console.log(`
+
+  initial state: ${state}
+  action: ${JSON.stringify(action)}
+  new State: ${JSON.stringify(nextState)}
+
+`)
+```
+
+```javascript
+// src/store/reducers.js
+import C from "../constants"
+
+// ...
+
+export const error = (state = [], action) => {
+  switch (action.type) {
+    case C.ADD_ERROR:
+      // we don't want to mutate the actual state, we need to return a new object
+      // state.push(action.payload)
+      return [...state, action.payload]
+    case C.CLEAR_ERROR:
+      return state.filter((message, i) => i !== action.payload)
+    default:
+      return state
+  }
+}
+```
+
+_Output_
+
+```
+  initial state: user not authorized, server feed not found
+  action: {"type":"CLEAR_ERROR", "payload":0}
+  new state: ["server feed not found"]
+```
+
+## Composing Reducers
+
+### Adding a Day
+
+```javascript
+// src/index.js
+import C from "./constants"
+import { allSkiDays } from "./store/reducers"
+
+const state = [
+  {
+    resort: "Kirkwood",
+    date: "2016-12-15",
+    powder: true,
+    backcountry: false
+  }
+]
+const action = {
+  type: C.ADD_DAY,
+  payload: {
+    resort: "Boreal",
+    date: "2016-12-16",
+    powder: false,
+    backcountry: false
+  }
+}
+
+const nextState = allSkiDays(state, action)
+
+console.log(`
+
+  initial state: ${JSON.stringify(state)}
+  action: ${JSON.stringify(action)}
+  new State: ${JSON.stringify(nextState)}
+
+`)
+```
+
+```javascript
+// src/store/reducers.js
+import C from "../constants"
+
+export const skiDay = (state = null, action) =>
+  action.type === C.ADD_DAY ? action.payload : state
+
+// ...
+
+export const allSkiDays = (state = [], action) => {
+  switch (action.type) {
+    case C.ADD_DAY:
+      return [...state, skiDay(null, action)]
+    default:
+      state
+  }
+}
+```
+
+_Output_
+
+```
+  initial state: [{"resort":"Kirkwood","date":"2016-12-15","powder":true,"backcountry":false}]
+  action: {"type":"ADD_DAY","payload":{"resort":"Boreal","date":"2016-12-16","powder":false,"backcountry":false}}
+  new State: [
+    {"resort":"Kirkwood","date":"2016-12-15","powder":true,"backcountry":false},
+    {"resort":"Boreal","date":"2016-12-16","powder":false,"backcountry":false}
+  ]
+```
+
+### Avoiding a Duplicate Day
+
+```javascript
+// src/store/reducers.js
+import C from "../constants"
+
+export const skiDay = (state = null, action) =>
+  action.type === C.ADD_DAY ? action.payload : state
+
+// ...
+
+export const allSkiDays = (state = [], action) => {
+  switch (action.type) {
+    case C.ADD_DAY:
+      const hasDay = state.some(skiDay => skiDay.date === action.payload.date)
+      return hasDay ? state : [...state, skiDay(null, action)]
+    default:
+      state
+  }
+}
+```
+
+_Output_
+
+```
+  initial state: [{"resort":"Kirkwood","date":"2016-12-15","powder":true,"backcountry":false}]
+  action: {"type":"ADD_DAY","payload":{"resort":"Boreal","date":"2016-12-16","powder":false,"backcountry":false}}
+  new State: [{"resort":"Kirkwood","date":"2016-12-15","powder":true,"backcountry":false},{"resort":"Boreal","date":"2016-12-16","powder":false,"backcountry":false}]
+```
+
+### Removing a Day
+
+```javascript
+// src/index.js
+import C from "./constants"
+import { allSkiDays } from "./store/reducers"
+
+const state = [
+  {
+    resort: "Kirkwood",
+    date: "2016-12-15",
+    powder: true,
+    backcountry: false
+  },
+  {
+    resort: "Boreal",
+    date: "2016-12-16",
+    powder: false,
+    backcountry: false
+  }
+]
+const action = {
+  type: C.REMOVE_DAY,
+  payload: "2016-12-15"
+}
+
+const nextState = allSkiDays(state, action)
+
+console.log(`
+
+  initial state: ${JSON.stringify(state)}
+  action: ${JSON.stringify(action)}
+  new State: ${JSON.stringify(nextState)}
+
+`)
+```
+
+```javascript
+// src/store/reducers.js
+import C from "../constants"
+
+export const skiDay = (state = null, action) =>
+  action.type === C.ADD_DAY ? action.payload : state
+
+// ...
+
+export const allSkiDays = (state = [], action) => {
+  switch (action.type) {
+    case C.ADD_DAY:
+      return [...state, skiDay(null, action)]
+    case C.REMOVE_DAY:
+      return state.filter(skiDay => skiDay.date !== action.payload)
+    default:
+      return state
+  }
+}
+```
+
+_Output_
+
+```
+  initial state: [{"resort":"Kirkwood","date":"2016-12-15","powder":true,"backcountry":false},{"resort":"Boreal","date":"2016-12-16","powder":false,"backcountry":false}]
+  action: {"type":"REMOVE_DAY","payload":"2016-12-15"}
+  new State: [{"resort":"Boreal","date":"2016-12-16","powder":false,"backcountry":false}]
+```
+
+## Combine Reducers
+
+We're going to make use of a method called `combineReducers` provided by Redux.
+
+```javascript
+import C from "../constants"
+import { combineReducers } from "redux"
+
+export const goal = (state = 10, action) =>
+  action.type === C.SET_GOAL ? parseInt(action.payload) : state
+
+export const skiDay = (state = null, action) =>
+  action.type === C.ADD_DAY ? action.payload : state
+
+export const errors = (state = [], action) => {
+  switch (action.type) {
+    case C.ADD_ERROR:
+      return [...state, action.payload]
+    case C.CLEAR_ERROR:
+      return state.filter((message, i) => i !== action.payload)
+    default:
+      return state
+  }
+}
+
+export const allSkiDays = (state = [], action) => {
+  switch (action.type) {
+    case C.ADD_DAY:
+      const hasDay = state.some(skiDay => skiDay.date === action.payload.date)
+      return hasDay
+        ? state
+        : [...state, skiDay(null, action)].sort(
+            (a, b) => new Date(b.date) - new Date(a.date)
+          )
+    case C.REMOVE_DAY:
+      return state.filter(skiDay => skiDay.date !== action.payload)
+    default:
+      return state
+  }
+}
+
+export const fetching = (state = false, action) => {
+  switch (action.type) {
+    case C.FETCH_RESORT_NAMES:
+      return true
+    case C.CANCEL_FETCHING:
+      return false
+    case C.CHANGE_SUGGESTIONS:
+      return false
+    default:
+      return state
+  }
+}
+
+export const suggestions = (state = [], action) => {
+  switch (action.type) {
+    case C.CLEAR_SUGGESTIONS:
+      return []
+    case C.CHANGE_SUGGESTIONS:
+      return action.payload
+    default:
+      return state
+  }
+}
+
+const resortNames = combineReducers({
+  fetching,
+  suggestions
+})
+
+const singleReducer = combineReducers({
+  allSkiDays,
+  goal,
+  errors,
+  resortNames
+})
+
+export default singleReducer
+```
+
+We can use less code to accomplish the same thing like so:
+
+```javascript
+import C from "../constants"
+import { combineReducers } from "redux"
+
+// ...
+
+export default combineReducers({
+  allSkiDays,
+  goal,
+  errors,
+  resortNames: combineReducers({
+    fetching,
+    suggestions
+  })
+})
+```
+
+Now let's test this out in our `index.js`
+
+```javascript
+// index.js
+import C from "./constants"
+import appReducer from "./store/reducers"
+import initialState from "./initialState.json"
+
+let state = initialState
+
+console.log(`
+
+  Initial State
+  ==============
+  goal: ${state.goal}
+  resorts: ${JSON.stringify(state.allSkiDays)}
+  fetching: ${state.resortNames.fetching}
+  suggestions: ${state.resortNames.suggestions}
+
+`)
+
+state = appReducer(state, {
+  type: C.SET_GOAL,
+  payload: 2
+})
+
+state = appReducer(state, {
+  type: C.ADD_DAY,
+  payload: {
+    resort: "Mt Shasta",
+    date: "2016-10-28",
+    powder: false,
+    backcountry: true
+  }
+})
+
+state = appReducer(state, {
+  type: C.CHANGE_SUGGESTIONS,
+  payload: ["Mt Tallac", "Mt Hood", "Mt Shasta"]
+})
+
+console.log(`
+
+  Next State
+  ==============
+  goal: ${state.goal}
+  resorts: ${JSON.stringify(state.allSkiDays)}
+  fetching: ${state.resortNames.fetching}
+  suggestions: ${state.resortNames.suggestions}
+
+`)
+```
+
+_Output_
+
+```
+  Initial State
+  ==============
+  goal: 10
+  resorts: [{"resort":"Kirkwood","date":"2016-12-7","powder":true,"backcountry":false},{"resort":"Squaw Valley","date":"2016-12-8","powder":false,"backcountry":false},{"resort":"Mt Tallac","date":"2016-12-9","powder":false,"backcountry":true}]
+  fetching: false
+  suggestions: Squaw Valley,Snowbird,Stowe,Steamboat
+
+
+  Next State
+  ==============
+  goal: 2
+  resorts: [{"resort":"Mt Tallac","date":"2016-12-9","powder":false,"backcountry":true},{"resort":"Squaw Valley","date":"2016-12-8","powder":false,"backcountry":false},{"resort":"Kirkwood","date":"2016-12-7","powder":true,"backcountry":false},{"resort":"Mt Shasta","date":"2016-10-28","powder":false,"backcountry":true}]
+  fetching: false
+  suggestions: Mt Tallac,Mt Hood,Mt Shasta
+```
+
+# The Store
+
+## Create a static build with webpack
+
+We need to install webpack and the webpack dev server
+
+```bash
+npm install webpack --save-dev
+npm install webpack-dev-server --save-dev
+```
+
+We need to use loaders, which are the instructions that webpack follows
+when transpiling our code and creating the bundle.
+
+We need to install the Babel loader that converts our ES6 into ES5
+compatible JavaScript.
+
+```shell
+npm install babel-loader --save-dev
+npm install babel-core --save-dev
+npm install json-loader --save-dev
+```
+
+We need to create a webpack configuration file - `webpack.config.js`.
+
+```javascript
+// webpack.config.js
+module.exports = {
+  entry: "./src/index.js"
+}
+```
+
+This tells Webpack which file to start with to perform the
+bundling on.
+
+We have an HTML file under `dist/index.html`. This is the file
+which the browser will run.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta charset="utf-8" />
+    <title>Ski Day Counter</title>
+  </head>
+  <body>
+    <div id="react-container"></div>
+    <script src="assets/bundle.js"></script>
+  </body>
+</html>
+```
+
+As you can see it references `assets/bundle.js`, which is the file
+we want Webpack to bundle our Javascript into.
+
+We can specify this in our webpack configuration.
+
+```javascript
+// webpack.config.js
+module.exports = {
+  entry: "./src/index.js",
+  output: {
+    path: "dist/assets",
+    filename: "bundle.js",
+    publicPath: "assets"
+  }
+}
+```
+
+Next we can configure how the Webpack-Dev should operate.
+
+```javascript
+// webpack.config.js
+module.exports = {
+  entry: "./src/index.js",
+  output: {
+    path: "dist/assets",
+    filename: "bundle.js",
+    publicPath: "assets"
+  },
+  devServer: {
+    inline: true,
+    contentBase: "./dist",
+    port: 3000
+  }
+}
+```
+
+The [inline mode](https://webpack.js.org/configuration/dev-server/#devserverinline)
+causes a script to be inserted in the bundle to take care of live reloading.
+Build messages will appears in the browser console.
+
+There is also an iframe mode, where the page is iframed under a notification bar
+with messages about the build.
+
+Next we can configure Webpack to use the Babel loader.
+
+```javascript
+// webpack.config.js
+module.exports = {
+  entry: "./src/index.js",
+  output: {
+    path: "dist/assets",
+    filename: "bundle.js",
+    publicPath: "assets"
+  },
+  devServer: {
+    inline: true,
+    contentBase: "./dist",
+    port: 3000
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        loader: ["babel"],
+        query: {
+          presets: ["latest", "stage-0"]
+        }
+      }
+    ]
+  }
+}
+```
+
+If we import a module that has any ES6 or other emerging JavaScript syntax,
+it will be included in the bundle.js as ES5 compatible JavaScript. We
+want to run the Babel loader on any file that ends in `.js`. This is what
+the 'test' regular expression does. We're also choosing to exclude
+anything loaded from the 'node_modules' folder.
+
+We also originally setup presets for our Babel-node command.
+We want to make sure we include the same presets for Babel
+in our Webpack config.
+
+```javascript
+// .babelrc
+{
+  "presets": ["latest", "stage-0"]
+}
+```
+
+Note: [Stage presents are being deprecated](https://babeljs.io/blog/2018/07/27/removing-babels-stage-presets)
+with Babel v7.
+
+Lastly, we need to add a loader for including JSON files in our bundle.
+
+```javascript
+// webpack.config.js
+module.exports = {
+  entry: "./src/index.js",
+  output: {
+    path: "dist/assets",
+    filename: "bundle.js",
+    publicPath: "assets"
+  },
+  devServer: {
+    inline: true,
+    contentBase: "./dist",
+    port: 3000
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        loader: ["babel"],
+        query: {
+          presets: ["latest", "stage-0"]
+        }
+      },
+      {
+        test: /\.json$/,
+        exclude: /(node_modules)/,
+        loader: "json-loader"
+      }
+    ]
+  }
+}
+```
+
+In our `package.json` you can see that all our dependencies have been
+put under 'devDependencies'. You'll remember that we configured
+the default script for `npm start` was to use 'babel-node' to run
+our app.
+
+```javascript
+// package.json
+{
+  "name": "ski-day-counter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node ./src"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.6",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "json-loader": "^0.5.4",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
+```
+
+Instead we're going to change this to use the Webpack-Dev-Server instead.
+
+```javascript
+  "scripts": {
+    "start": "./node_modules/.bin/webpack-dev-server"
+  },
+```
+
+All executables installed by NPM are placed in `./node_modules/.bin`.
+Webpack-Dev-Server will automatically start the Express server for us on port 3000.
+
+```shell
+$ npm start
+
+> ski-day-counter@1.0.0 start /Users/jasonmiller/Projects/redux/exercises/Ch03/03_01/start
+> webpack-dev-server
+
+ http://localhost:3000/
+webpack result is served from /assets
+content is served from ./dist
+Hash: 2afa1e19c1068e8225ac
+Version: webpack 1.15.0
+Time: 782ms
+    Asset    Size  Chunks             Chunk Names
+bundle.js  286 kB       0  [emitted]  main
+chunk    {0} bundle.js (main) 265 kB [rendered]
+    [0] multi main 40 bytes {0} [built]
+    [1] (webpack)-dev-server/client?http://localhost:3000 4.16 kB {0} [built]
+...
+...
+   [96] ./~/redux/lib/compose.js 927 bytes {0} [built]
+   [97] ./src/initialState.json 381 bytes {0} [built]
+webpack: Compiled successfully.
+```
+
+## Create a store
+
+## Subscribe to the store
+
+## Unsubscribe from the store
+
+## Create middleware
+
+# Action Creators
+
+## What are action creators?
+
+## Challenge: Build action creators
+
+## Async actions with redux-thunk
+
+## Using the server
+
+## Autocomplete thunk
+
+# Incorporating React
+
+## React app overview
+
+## Map props to React components
+
+## Map dispatch to React components
+
+## Map router params to React components
+
+## Challenge: Connecting the goal component
+
+## Create containers for form components
+
+# Conclusion
+
+## Next steps
