@@ -1054,6 +1054,105 @@ webpack: Compiled successfully.
 
 ## Create a store
 
+We've combined all our reducers into a single appReducer. With Redux
+we don't have to use this because the store will do this for us.
+
+The 'createStore' function provided by Redux is used to build
+instance of Redux stores.
+
+```javascript
+// src/index.js
+import C from "./constants"
+import appReducer from "./store/reducers"
+import initialState from "./initialState.json"
+import { createStore } from "redux"
+
+const store = createStore(appReducer)
+
+console.log("initial state", store.getState())
+```
+
+By default, just using the appReducer, our initial state will
+be created by using all of the default variables we defined
+in every reducer. For instance our goal value defaults to '10'
+and our allSkiDays was set to an empty array.
+
+Once every reducer is invoked once, the default value for that
+reducer will be stored as the initial state.
+
+The store also provides the `dispatch` method used to dispatch
+actions that mutate the state.
+
+```javascript
+// src/index.js
+import C from "./constants"
+import appReducer from "./store/reducers"
+import initialState from "./initialState.json"
+import { createStore } from "redux"
+
+const store = createStore(appReducer)
+
+console.log("initial state", store.getState())
+
+store.dispatch({
+  type: C.ADD_DAY,
+  payload: {
+    resort: "Mt Shasta",
+    date: "2016-10-28",
+    powder: false,
+    backcountry: true
+  }
+})
+
+console.log("next state", store.getState())
+```
+
+Now we run our server, access our browser via http://localhost:3000/, and we look at the console.
+
+```
+$ npm start
+```
+
+The `createStore` method will also accept an object to use for initialState.
+
+```javascript
+const store = createStore(appReducer, initialState)
+```
+
+After making this modification to `index.js` and saving the file,
+our Webpack-Dev-Server will reload the page and we'll see the new outcome.
+
+_Console Output_
+
+```
+initial state
+  {allSkiDays: Array(3), goal: 10, errors: Array(0), resortNames: {…}}
+    allSkiDays: Array(3)
+      0: {resort: "Kirkwood", date: "2016-12-7", powder: true, backcountry: false}
+      1: {resort: "Squaw Valley", date: "2016-12-8", powder: false, backcountry: false}
+      2: {resort: "Mt Tallac", date: "2016-12-9", powder: false, backcountry: true}
+      length: 3
+      __proto__: Array(0)
+    errors: []
+    goal: 10
+    resortNames: {fetching: false, suggestions: Array(4)}
+    __proto__: Object
+
+next state
+  {allSkiDays: Array(4), goal: 10, errors: Array(0), resortNames: {…}}
+    allSkiDays: Array(4)
+      0: {resort: "Mt Tallac", date: "2016-12-9", powder: false, backcountry: true}
+      1: {resort: "Squaw Valley", date: "2016-12-8", powder: false, backcountry: false}
+      2: {resort: "Kirkwood", date: "2016-12-7", powder: true, backcountry: false}
+      3: {resort: "Mt Shasta", date: "2016-10-28", powder: false, backcountry: true}
+      length: 4
+      __proto__: Array(0)
+    errors: []
+    goal: 10
+    resortNames: {fetching: false, suggestions: Array(4)}
+    __proto__: Object
+```
+
 ## Subscribe to the store
 
 ## Unsubscribe from the store
