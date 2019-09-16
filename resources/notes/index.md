@@ -3,7 +3,13 @@ layout: page
 title: Notes
 ---
 
-* [ECMAScript 2015](/resources/notes/es-2015/)
-* [ReactJS](/resources/notes/react-js/)
-* [NodeJs](/resources/notes/nodejs/)
-* [Javascript Fundamental for ES6](/resources/notes/es6.md)
+# JavaScript
+
+- [Javascript Reference](/resources/notes/javascript/index.html)
+- [ECMAScript 2015](/resources/notes/es2015/index.html)
+- [NodeJs](/resources/notes/nodejs/index.html)
+- [Javascript Fundamental for ES6](/resources/notes/es6/index.html)
+
+## React
+
+- [ReactJS](/resources/notes/react-js/index.html)
