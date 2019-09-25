@@ -116,8 +116,8 @@ these strings that represent the different actions.
 
 ### State
 
-- `allSkyDays -> []`
-- `skyDay -> {resort, date, powder, backcountry}`
+- `allSkiDays -> []`
+- `skiDay -> {resort, date, powder, backcountry}`
 - `goal -> number`
 - `errors -> []`
 - `resortNames.fetching -> boolean`
@@ -214,7 +214,7 @@ import { allSkiDays, goal } from "./initialState.json"
 
 console.log(`
 
-  Sky Day Counter
+  Ski Day Counter
   ================
   The goal is ${goal} days
   Initially there are ${allSkiDays.length} ski days in state
@@ -352,13 +352,10 @@ export const skiDay = (state = null, action) =>
 import C from "./constants"
 import { errors } from "./store/reducers"
 
-const state = [
-  "user not authorized",
-  "server feed not found"
-]
+const state = ["user not authorized", "server feed not found"]
 const action = {
   type: C.ADD_ERROR,
-  payload: "cannot connect to server
+  payload: "cannot connect to server"
 }
 
 const nextState = errors(state, action)
@@ -1155,13 +1152,467 @@ next state
 
 ## Subscribe to the store
 
+It's possible to subscribe to the store so that your callback methods are
+called anytime the state changes.
+
+```javascript
+import C from "./constants"
+import appReducer from "./store/reducers"
+import { createStore } from "redux"
+
+const store = createStore(appReducer)
+
+store.subscribe(() => console.log(store.getState()))
+
+store.dispatch({
+  type: C.ADD_DAY,
+  payload: {
+    resort: "Mt Shasta",
+    date: "2016-10-28",
+    powder: false,
+    backcountry: true
+  }
+})
+
+store.dispatch({
+  type: C.SET_GOAL,
+  payload: 2
+})
+```
+
+Console Output:
+
+```
+{allSkiDays: Array(1), goal: 10, errors: Array(0), resortNames: {…}}
+  allSkiDays: Array(1)
+    0: {resort: "Mt Shasta", date: "2016-10-28", powder: false, backcountry: true}
+    length: 1
+    __proto__: Array(0)
+  errors: []
+  goal: 10
+  resortNames: {fetching: false, suggestions: Array(0)}
+  __proto__: Object
+
+{allSkiDays: Array(1), goal: 2, errors: Array(0), resortNames: {…}}
+  allSkiDays: Array(1)
+    0: {resort: "Mt Shasta", date: "2016-10-28", powder: false, backcountry: true}
+    length: 1
+    __proto__: Array(0)
+  errors: []
+  goal: 2
+  resortNames: {fetching: false, suggestions: Array(0)}
+  __proto__: Object
+```
+
+We can even use a subscriber to store data to local storage.
+
+```javascript
+store.subscribe(() => {
+  const state = JSON.stringify(store.getState())
+  localStorage["redux-store"] = state
+})
+```
+
+We can then load this data from local storage when our application loads.
+
+```javascript
+import C from "./constants"
+import appReducer from "./store/reducers"
+import { createStore } from "redux"
+
+const initialState = localStorage["redux-store"]
+  ? JSON.parse(localStorage["redux-store"])
+  : {}
+
+const store = createStore(appReducer, initialState)
+
+window.store = store
+
+store.subscribe(() => {
+  const state = JSON.stringify(store.getState())
+  localStorage["redux-store"] = state
+})
+
+store.dispatch({
+  type: C.SET_GOAL,
+  payload: 2
+})
+```
+
+It's possible to add your store to `window`, which might be helpful for
+debugging, but you don't want to leave that in place in production.
+
+```javascript
+const store = createStore(appReducer, initialState)
+window.store = store
+```
+
+Console:
+
+```
+> store.getState();
+< {allSkiDays: Array(0), goal: 10, errors: Array(0), resortNames: {…}}
+```
+
+You can view the data in localStorage as well, as a JSON string.
+
+Console:
+
+```
+> localStorage
+< Storage {redux-store: "{"allSkiDays":[],"goal":2,"errors":[],"resortNames":{"fetching":false,"suggestions":[]}}", loglevel:webpack-dev-server: "INFO", length: 2}
+```
+
+You can clear localStorage by using `localStorage.clear()`.
+
+```javascript
+> localStorage.clear()
+< undefined
+> localStorage
+< Storage {length: 0}
+```
+
+Now the key is gone. When we refresh, and it makes the first mutation to the
+state, the current state is saved to localStorage, and loaded when the page
+refreshes.
+
 ## Unsubscribe from the store
 
+It's also possible to turn off store subscriptions using `unsubscribe()`.
+
+Let's say we have this subscription to load the state every time it's modified,
+and we're using a loop (ever 250 milliseconds, 4 times a second) to change
+the goal to a random number.
+
+```javascript
+import C from "./constants"
+import appReducer from "./store/reducers"
+import { createStore } from "redux"
+
+const store = createStore(appReducer)
+
+store.subscribe(() => console.log(`   Goal: ${store.getState().goal}`))
+
+setInterval(() => {
+  store.dispatch({
+    type: C.SET_GOAL,
+    payload: Math.floor(Math.random() * 100)
+  })
+}, 250)
+```
+
+When you call `store.subscribe()`, it returns a function that can be used to
+unsubscribe.
+
+```javascript
+import C from "./constants"
+import appReducer from "./store/reducers"
+import { createStore } from "redux"
+
+const store = createStore(appReducer)
+
+const unsubscribeGoalLogger = store.subscribe(() =>
+  console.log(`   Goal: ${store.getState().goal}`)
+)
+
+setInterval(() => {
+  store.dispatch({
+    type: C.SET_GOAL,
+    payload: Math.floor(Math.random() * 100)
+  })
+}, 250)
+
+setTimeout(() => {
+  unsubscribeGoalLogger()
+}, 3000)
+```
+
+The output in the console should be like so, running for only 3 seconds:
+
+```
+  Goal: 40
+  Goal: 45
+  Goal: 58
+  Goal: 86
+  Goal: 13
+  Goal: 91
+  Goal: 35
+  Goal: 98
+  Goal: 9
+  Goal: 48
+  Goal: 41
+  Goal: 47
+```
+
 ## Create middleware
+
+Middleware gives you control over how actions are dispatched. You can add
+functionality before or after the action is dispatched. We can delay actions, or
+skip them altogether.
+
+Here's a simple way of establishing our store.
+
+```javascript
+// store/index.js
+import C from "../constants"
+import appReducer from "./reducers"
+import { createStore } from "redux"
+
+export default (initialState = {}) => {
+  return createStore(appReducer, initialState)
+}
+```
+
+Middleware uses a [Higher-Order Function](https://en.wikipedia.org/wiki/Higher-order_function),
+that is, a function that takes a function as an argument, or returns a function.
+
+Let's make a method to log messages to the console. The store is going to be
+injected into this function.
+
+```javascript
+const consoleMessages = function(store) {
+  return function(next) {
+    return function(action) {
+      // ...
+    }
+  }
+}
+```
+
+We can write this more simply like so using ES6 syntax:
+
+```javascript
+const consoleMessages = store => next => action => {
+  // ...
+}
+```
+
+Because each arrow function only have one argument, the parenthesis aren't
+necessary. This function only dispatches the action. This makes sure
+that we are not breaking the stores current dispatch pipeline.
+
+We can add functionality before or after the dispatching of the action as
+needed with this function, thus modifying the pipeline... thus middleware.
+
+```javascript
+const consoleMessages = store => next => action => {
+  let result
+  result = next(action)
+  return result
+}
+```
+
+Let's create a console group before we dispatch the action. Console groups allow
+us to group all of the logs associated with this action into a collapsible
+group in the console.
+
+We replace the `createStore` method in our exported default method with a call
+to `applyMiddleware`. It returns a store with our middleware applied, which we
+want to send the `createStore` function to, which we want to pass our
+`appReducer` and `initialState` to.
+
+```javascript
+// src/store/index.js
+import appReducer from "./reducers"
+import { createStore, applyMiddleware } from "redux"
+
+const consoleMessages = store => next => action => {
+  let result
+
+  console.groupCollapsed(`dispatching action => ${action.type}`)
+  console.log("ski days", store.getState().allSkiDays.length)
+
+  result = next(action)
+
+  let { allSkiDays, goal, errors, resortNames } = store.getState()
+
+  console.log(`
+
+    ski days: ${allSkiDays.length}
+    goal: ${goal}
+    fetching: ${resortNames.fetching}
+    suggestions: ${resortNames.suggestions}
+    errors: ${errors.length}
+
+  `)
+  console.groupEnd()
+
+  return result
+}
+
+export default (initialState = {}) => {
+  return applyMiddleware(consoleMessages)(createStore)(appReducer, initialState)
+}
+```
+
+Let's use this with our main code.
+
+```javascript
+// src/index.js
+import C from "./constants"
+import storeFactory from "./store"
+
+const initialState = localStorage["redux-store"]
+  ? JSON.parse(localStorage["redux-store"])
+  : {}
+
+const saveState = () => {
+  const state = JSON.stringify(store.getState())
+  localStorage["redux-store"] = state
+}
+
+const store = storeFactory(initialState)
+
+store.subscribe(saveState)
+
+store.dispatch({
+  type: C.ADD_DAY,
+  payload: {
+    resort: "Mt Shasta",
+    date: "2016-10-28",
+    powder: true,
+    backcountry: true
+  }
+})
+
+store.dispatch({
+  type: C.ADD_DAY,
+  payload: {
+    resort: "Squaw Valley",
+    date: "2016-3-28",
+    powder: true,
+    backcountry: false
+  }
+})
+
+store.dispatch({
+  type: C.ADD_DAY,
+  payload: {
+    resort: "The Canyons",
+    date: "2016-1-2",
+    powder: false,
+    backcountry: true
+  }
+})
+```
+
+Our console output:
+
+```
+dispatching action => ADD_DAY
+  ski days 0
+
+    ski days: 1
+    goal: 2
+    fetching: false
+    suggestions:
+    errors: 0
+
+dispatching action => ADD_DAY
+  ski days 1
+
+    ski days: 2
+    goal: 2
+    fetching: false
+    suggestions:
+    errors: 0
+
+dispatching action => ADD_DAY
+  ski days 2
+
+    ski days: 3
+    goal: 2
+    fetching: false
+    suggestions:
+    errors: 0
+```
 
 # Action Creators
 
 ## What are action creators?
+
+With Redux the store is only intended to manage state data. It should not
+contain application logic such as generating unique ids, reading or writing
+data to a persistence layer, changing global variables, or fetching data from
+a REST endpoint via AJAX request.
+
+Your application should use the store, the store should not be your application.
+
+So where should our logic go?
+
+Action creators are functions that create and return actions, allowing us to
+encapsulate the logic of our application using functions not objects.
+
+```javascript
+// src/index.js
+import storeFactory from "./store"
+import { addDay } from "./actions"
+
+const store = storeFactory()
+
+store.dispatch(addDay("Heavenly", "2016-12-22"))
+```
+
+If you need to add application specific logic, you could do it within the
+action creator.
+
+```javascript
+// src/actions.js
+import C from "./constants"
+
+export function addDay(resort, date, powder = false, backcountry = false) {
+  // Add app logic here if needed
+
+  return {
+    type: C.ADD_DAY,
+    payload: { resort, date, powder, backcountry }
+  }
+}
+```
+
+Let's add an action creator for removing a day.
+
+```javascript
+// src/actions.js
+import C from "./constants"
+
+export function addDay(resort, date, powder = false, backcountry = false) {
+  // Add app logic here if needed
+
+  return {
+    type: C.ADD_DAY,
+    payload: { resort, date, powder, backcountry }
+  }
+}
+
+export const removeDay = function(date) {
+  return {
+    type: C.REMOVE_DAY,
+    payload: date
+  }
+}
+
+export const setGoal = goal => ({
+  type: C.SET_GOAL,
+  payload: goal
+})
+```
+
+Let's add those to our main script.
+
+```javascript
+// src/index.js
+import storeFactory from "./store"
+import { addDay, removeDay, setGoal } from "./actions"
+
+const store = storeFactory()
+
+store.dispatch(addDay("Heavenly", "2016-12-22"))
+
+store.dispatch(removeDay("2016-12-22"))
+
+store.dispatch(setGoal(55))
+```
 
 ## Challenge: Build action creators
 
