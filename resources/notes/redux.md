@@ -1614,13 +1614,217 @@ store.dispatch(removeDay("2016-12-22"))
 store.dispatch(setGoal(55))
 ```
 
-## Challenge: Build action creators
-
 ## Async actions with redux-thunk
 
-## Using the server
+Your logic often has to deal with asynchronicity, such as asynchronous requests
+to a server. We need to be able to work with action creators that will wait
+for a response before dispatching an action.
+
+Redux-Thunk is middleware that we can add to our store. Thunks are higher-order
+functions that give you control over when and how often actions are dispatched.
+
+Redux-thunk looks at every action that is dispatched, and if it's a function, it calls that function.
+
+```bash
+npm install redux-thunk --save
+```
+
+```javascript
+// src/store/index.js
+
+import C from "../constants"
+import appReducer from "./reducers"
+import thunk from "redux-thunk"
+import { createStore, applyMiddleware } from "redux"
+const consoleMessages = store => next => action => {
+  let result
+  // ...
+  return result
+}
+
+export default (initialState = {}) => {
+  return applyMiddleware(thunk, consoleMessages)(createStore)(
+    appReducer,
+    initialState
+  )
+}
+```
+
+Just like other action creators, Thunks are functions.
+
+We're going to dispatch this just like any other action creator. The difference
+is that Thunks don't return the action object directly, they return another
+function.
+
+We can call dispatch actions as often as we like from within a Thunk, and we can
+also delay the dispatch.
+
+Because Thunks get the dispatch function, we have control over when and how
+often we're going to dispatch actions. We can also use `getState()` to check
+the state before dispatching actions.
+
+```javascript
+// src/store/reducers.js
+
+// ...
+export const fetching = (state = false, action) => {
+  switch (action.type) {
+    case C.FETCH_RESORT_NAMES:
+      return true
+    case C.CANCEL_FETCHING:
+      return false
+    case C.CHANGE_SUGGESTIONS:
+      return false
+    default:
+      return state
+  }
+}
+// ...
+```
+
+```javascript
+// src/actions.js
+
+export const randomGoals = () => (dispatch, getState) => {
+  if (!getState().resortNames.fetching) {
+    dispatch({
+      type: C.FETCH_RESORT_NAMES
+    })
+
+    setTimeout(() => {
+      dispatch({
+        type: C.CANCEL_FETCHING
+      })
+    }, 1500)
+  }
+}
+```
+
+So in this case, if we're not currently fetching resort names, then we'll start
+the process of fetching them. After a second and a half, it will dispatch the
+action to cancel the fetching.
+
+```javascript
+// src/index.js
+
+import storeFactory from "./store"
+import { randomGoals } from "./actions"
+
+const store = storeFactory()
+
+store.dispatch(randomGoals())
+```
+
+Terminal Output:
+
+```
+dispatching action => FETCH_RESORT_NAMES
+dispatching action => CANCEL_FETCHING
+```
+
+What if we dispatched our `randomGoals()` twice?
+
+Terminal Output:
+
+```
+dispatching action => FETCH_RESORT_NAMES
+dispatching action => CANCEL_FETCHING
+```
+
+This is because the state of 'fetching' became true.
 
 ## Autocomplete thunk
+
+Let's imagine that we have an API end-point running on an Express back-end,
+accessible from `/resorts/{search string}`. For example, a request to
+`/resorts/hea` returns `["Heavenly Ski Resort", "Heavens Sonohara"]`.
+
+We want to use this to provide suggestions of resorts to choose from in a
+search field.
+
+In order to make an AJAX request to the suggestions server, we'll use a library
+called isomorphic-fetch.
+
+```bash
+$ npm install isomorphic-fetch -save
+```
+
+This library is an implementation of the
+[whatwg fetch specification](https://fetch.spec.whatwg.org/) that works in
+NodeJS and the browser. This is a standard for fetching resources from APIs.
+
+```javascript
+// src/index.js
+
+import storeFactory from "./store"
+import { suggestResortNames } from "./actions"
+
+const store = storeFactory()
+
+store.dispatch(suggestResortNames("hea"))
+```
+
+```javascript
+// src/actions.js
+import C from './constants'
+import fetch from 'isomorphic-fetch'
+
+export function addDay(resort, date, powder=false, backcountry=false) {
+  return {
+    type: C.ADD_DAY,
+    payload: { resort, date, powder, backcountry }
+  }
+}
+
+// ...
+
+export const suggestResortNames = value => (dispatch) {
+  dispatch({
+    type: C.FETCH_RESORT_NAMES
+  })
+
+  fetch('http://localhost:3333/resorts/' + value)
+    .then(response => response.json())
+    .then(suggestions => {
+      dispatch({
+        type: C.CHANGE_SUGGESTIONS,
+        payload: suggestions
+      })
+    })
+    .catch(error => {
+      dispatch({
+        addError(error.message)
+      })
+      dispatch({
+        type: C.CANCEL_FETCHING
+      })
+    })
+}
+```
+
+Our function returned by the thunk `suggestResortNames` could accept both the
+`dispatch` and `getState` methods, but it only needs the `dispatch` function.
+
+Console Output:
+
+```
+dispatching action => FETCH_RESORT_NAMES
+dispatching action => CHANGE_SUGGESTIONS
+```
+
+A half second after the first line, the `CHANGE_SUGGESTIONS` shows up after
+the suggestions are received from the API and added to the state.
+
+You can stop the server you're running and refresh the page, and this will
+result in the errors.
+
+Console Output:
+
+```
+dispatching action => FETCH_RESORT_NAMES
+dispatching action => ADD_ERROR
+dispatching action => CANCEL_FETCHING
+```
 
 # Incorporating React
 
