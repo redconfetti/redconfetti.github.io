@@ -7,15 +7,15 @@ title: ES2015
 
 # Table of Contents
 
-- Overview
-- Variables and Parameters
-- Classes
-- Functional Programming
-- Built-In Objects
-- Asynchronous Development in ES6
-- Objects in ES6
-- Modules
-- Using ES6 Today
+- [Overview](#overview)
+- [Variables and Parameters](#variables-and-parameters)
+- [Classes](#classes)
+- [Functional Programming](#functional-programming)
+- [Built-In Objects](#built-in-objects)
+- [Asynchronous Development in ES6](#asynchronous-development-in-es6)
+- [Objects in ES6](#objects-in-es6)
+- [Modules](#modules)
+- [Using ES6 Today](#using-es6-today)
 
 # Overview
 
