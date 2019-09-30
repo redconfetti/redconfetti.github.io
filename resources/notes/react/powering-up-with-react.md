@@ -3,7 +3,7 @@ layout: page
 title: React
 ---
 
-[CodeSchool Course]
+[CodeSchool Course - Powering Up With React]
 
 # Level 1. First Component
 
@@ -148,7 +148,7 @@ class StoryBox extends React.Component {
 
 // first arg: Invokes the StoryBox component (no quotes needed)
 // second arg: The target container where component will be rendered to
-ReactDOM.render(<StormBox />, document.getElementById("story-app"))
+ReactDOM.render(<StoryBox />, document.getElementById("story-app"))
 ```
 
 ## Referencing the Component
@@ -165,7 +165,7 @@ This is JSX syntax, so the case used with the component name is important.
 ```jsx
 /* components.js */
 
-ReactDOM.render(<StormBox />, document.getElementById("story-app"))
+ReactDOM.render(<StoryBox />, document.getElementById("story-app"))
 ```
 
 The page must contain a DIV with the correct ID.
@@ -1620,7 +1620,7 @@ Here's a review of the two most important things we learned in this section.
 - [Pluralsight - React.js on Rails: Building a Full Stack Web App](https://www.pluralsight.com/courses/reactjs-on-rails-building-full-stack-web-app)
 - [Pluralsight - Webpack Fundamentals](https://www.pluralsight.com/courses/webpack-fundamentals)
 
-[codeschool course]: http://campus.codeschool.com/courses/powering-up-with-react/level/1/section/1/first-component
+[codeschool course - powering up with react]: http://campus.codeschool.com/courses/powering-up-with-react/level/1/section/1/first-component
 [javascript road trip]: http://javascript-roadtrip.codeschool.com/
 [es2015]: http://es2015.codeschool.com/
 [react component - the component lifecycle]: https://reactjs.org/docs/react-component.html#the-component-lifecycle

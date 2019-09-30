@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Redux
+title: How Redux Works
 ---
 
 Taken from [Lynda - How Redux Works](https://www.lynda.com/React-js-tutorials/How-Redux-works/540345/569712-4.html)

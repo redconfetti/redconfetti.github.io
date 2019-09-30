@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Javascript
+title: Javascript Reference
 ---
 
 # Advanced
