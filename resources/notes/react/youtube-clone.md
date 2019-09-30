@@ -30,6 +30,7 @@ $ cd Projects
 $ mkdir youtube-api
 $ cd youtube-api
 $ create-react-app ./
+$ npm install
 ```
 
 ### Install Dependencies
@@ -56,12 +57,83 @@ npm start
 
 ### Remove Source Folder
 
-We're going to start over by removing the `src` folder and creating a new one.
+We're going to start over by removing the `src` folder and recreate it with
+our files from scratch.
 
 ```shell
 rm -rf src
 mkdir src
+cd src
+touch index.js
+touch app.js
+mkdir components
 ```
+
+### Create Index and App
+
+```javascript
+// src/index.js
+import React from "react"
+import ReactDOM from "react-dom"
+
+import App from "./app"
+
+ReactDOM.render(<App />, document.querySelector("#root"))
+```
+
+```javascript
+// src/app.js
+import React from "react"
+
+class App extends React.Component {
+  render() {
+    return <h1>YouTube Clone App</h1>
+  }
+}
+
+export default App
+```
+
+Here we create our App class as a Class based component. Another type of
+component you can create is a functional component.
+
+Developers use class based components usually if there is any complexity to
+the component ("smart components"). Class components support lifecycle methods,
+and can manage the state.
+
+Functional components, also known as "Dummy components", are basic JavaScript
+functions that process the input and return the component to be rendered.
+
+The above class component could be rewritten using the code below, however
+this won't have the same level of support as a class based component.
+
+```javascript
+const App = () => {
+  return <h1>YouTube Clone App</h1>
+}
+```
+
+### App Binding to Root Element
+
+In our `public/index.html` file you'll see that in the body of the page there
+is a DIV defined with id of "root". All of our application will be rendered
+within this root division.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ... -->
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+There is no need to modify this HTML file from this point forward. Everything
+will be defined within the `src/components/` folder.
 
 [create-react-app]: https://www.npmjs.com/package/create-react-app
 [build a youtube clone application using react]: https://www.youtube.com/watch?v=VPVzx1ZOVuw
