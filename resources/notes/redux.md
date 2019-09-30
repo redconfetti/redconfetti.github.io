@@ -1830,13 +1830,316 @@ dispatching action => CANCEL_FETCHING
 
 ## React app overview
 
+Thus far we've used Redux to construct the client data layer for our
+application. It's now time to implement the user interface layer for our new
+store.
+
+- src
+  - components
+    - containers
+    - ui
+    - index.js
+  - store
+    - index.js
+    - reducers.js
+  - stylesheets
+    - index.scss
+    - Menu.scss
+    - ShowErrors.scss
+    - SkiDayList.scss
+  - actions.js
+  - constants.js
+  - index.js
+  - initialState.json
+  - routes.js
+
+React-Redux helps us integrate our store with our React components.
+
+```javascript
+// src/index.js
+import C from "./constants"
+import React from "react"
+import { render } from "react-dom"
+import routes from "./routes"
+import sampleData from "./initialState"
+
+const initialState = localStorage["redux-store"]
+  ? JSON.parse(localStorage["redux-store"])
+  : sampleData
+
+const saveState = () =>
+  (localStorage["redux-store"] = JSON.stringify(store.getState()))
+
+window.React = React
+
+render(routes, document.getElementById("react-container"))
+```
+
+Let's bring our store in.
+
+```javascript
+// src/index.js
+import C from "./constants"
+import React from "react"
+import { render } from "react-dom"
+import routes from "./routes"
+import sampleData from "./initialState"
+import storeFactory from "./store"
+
+const initialState = localStorage["redux-store"]
+  ? JSON.parse(localStorage["redux-store"])
+  : sampleData
+
+const saveState = () =>
+  (localStorage["redux-store"] = JSON.stringify(store.getState()))
+
+const store = storeFactory(initialState)
+store.subscribe(saveState)
+
+// to aid with interacting from JS console
+window.React = React
+window.store = store
+
+render(routes, document.getElementById("react-container"))
+```
+
+We need to be able to pass the store down to our component tree. React Redux
+has a compnent we can use called Provider that does this.
+
+```javascript
+import { Provider } from "react-redux"
+```
+
+You can wrap the Provider component around any component tree, and it will
+place the store in Context. Context is a feature that will allow any child
+React component to interact with the store if needed.
+
+```javascript
+render(
+  <Provider store={store}>{routes}</Provider>,
+  document.getElementById("react-container")
+)
+```
+
+This will place the store in context so that it's accessible by any of the child
+components listed under routes.
+
 ## Map props to React components
+
+We're going to wire up the ski day count.
+
+In the folder structure outlined above, the components in `src/components` are
+organized under either the `containers` folder or `ui` folder.
+
+The `ui` folder contains user interface components, which are pure react
+components. They communicate solely through properties. They pass data back
+up to their parents through two-way data binding, and they receive data from
+properties as well.
+
+The `container` folder contains wrappers used to feed data to our components.
+
+For example, the following container component is a stateless functional
+component that wraps around the SkiDayCount component. Currently the variables
+being passed are hardcoded. We want this map data from our store to the
+properties of the SkiDayCount component.
+
+```javascript
+// src/components/containers/skiDayCount.js
+import SkiDayCount from "../ui/SkiDayCount"
+
+export default () => <SkiDayCount total={100} powder={25} backcountry={10} />
+```
+
+To do this we'll use `connect` provided by `react-redux` that creates a
+component that grabs the store out of state, and can map state from the store
+to properties in a child component.
+
+We need to define a function that receives the state and returns an object
+that contains keys for the properties of the `SkiDayCount` component,
+and values that represent the values we want passed into the component. This
+is defined below in `mapStateToProps`.
+
+The `connect` function is a higher order function. It takes our
+`mapStateToProps` function as an argument, and it returns a
+function that expects the component we wish to wrap as it's first argument
+(SkiDayCount).
+
+```javascript
+// src/components/containers/skiDayCount.js
+import SkiDayCount from "../ui/SkiDayCount"
+import { connect } from "react-redux"
+
+const mapStateToProps = state => {
+  return {
+    total: state.allSkiDays.length,
+    powder: state.allSkiDays.filter(day => day.powder).length,
+    backcountry: state.allSkiDays.filter(day => day.backcountry).length
+  }
+}
+
+const Container = connect(mapStateToProps)(SkiDayCount)
+export default Container
+```
 
 ## Map dispatch to React components
 
+Next we want to work with a component that displays errors.
+
+If the user chooses to close the error, a 'CLEAR_ERROR' action should be
+dispatched.
+
+Below we have our ShowErrors component. We need to replace the errors with
+our action errors from the data store, and also pass a function to the
+component for the `onClearError` property that will dispatch the 'CLEAR_ERROR'
+action.
+
+```javascript
+// src/components/ShowErrors.js
+import ShowErrors from "../ui/ShowErrors"
+
+export default () => (
+  <ShowErrors
+    errors={["sample error"]}
+    onClearError={index => console.log("todo: clear error at", index)}
+  />
+)
+```
+
+```javascript
+// src/components/ShowErrors.js
+import ShowErrors from "../ui/ShowErrors"
+import { clearError } from "../../actions"
+import { connect } from "react-redux"
+
+const mapStateToProps = state => {
+  return {
+    errors: state.errors
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onClearError(index) {
+      dispatch(clearError(index))
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ShowErrors)
+```
+
+We want to make sure that any errors that occur get recorded in state.
+Anytime an error occurs, we want to add this to the state.
+
+```javascript
+// src/index.js
+import C from "./constants"
+import React from "react"
+import { render } from "react-dom"
+import routes from "./routes"
+import sampleData from "./initialState"
+import storeFactory from "./store"
+import { Provider } from "react-redux"
+import { addError } from "./actions"
+
+// ...
+
+const handleError = error => {
+  store.dispatch(addError(error))
+}
+
+// ...
+
+window.addEventListener("error", handleError)
+```
+
+If we add a call at the bottom of our file now, such as `foo = bar`,
+we get `Uncaught ReferenceError: bar is not defined` added to our
+errors.
+
+Console:
+
+```
+dispatching action => ADD_ERROR
+Uncaught ReferenceError: bar is not defined(...)
+```
+
+Now any errors that occur with our application are displayed in the UI.
+
 ## Map router params to React components
 
-## Challenge: Connecting the goal component
+In our routes we go to `/list-days/` to view all the ski days. If instead we go
+to `/list-days/backcountry` we want a filter applied that only shows the
+backcountry days, or if we go to `/list-days/powder` we want to only see the
+powder days.
+
+So for our ListSkiDays component we're going to need to pass not only the
+list of days, but also the router parameter that represents the filter.
+
+Also, if the user double clicks on any of the days, we should remove that
+day from the list.
+
+Here is how our container is configured, with sample list data and a console
+log statement when an item is double clicked.
+
+```javascript
+// src/components/containers/SkiDayList.js
+import SkiDayList from "../ui/SkiDayList"
+
+const sample = [
+  {
+    resort: "Stowe",
+    date: "2017-1-28",
+    powder: false,
+    backcountry: false
+  },
+  {
+    resort: "Tuckerman's Ravine",
+    date: "2017-1-31",
+    powder: false,
+    backcountry: true
+  },
+  {
+    resort: "Mad River Glen",
+    date: "2017-2-12",
+    powder: true,
+    backcountry: false
+  }
+]
+
+export default props => (
+  <SkiDayList
+    days={sample}
+    filter={props.params.filter}
+    onRemoveDay={date => console.log("remove day on", date)}
+  />
+)
+```
+
+An arrow function will return whatever is on the other side of the arrow, so
+
+```javascript
+// src/components/containers/SkiDayList.js
+import SkiDayList from "../ui/SkiDayList"
+import { connect } from "react-redux"
+import { removeDay } from "../../actions"
+
+const mapStateToProps = (state, props) => ({
+  days: state.allSkiDays,
+  filter: props.params.filter
+})
+
+const mapDispatchToProps = dispatch => ({
+  onRemoveDay(date) {
+    dispatch(removeDay(date))
+  }
+})
+
+export default connect(mapStateToProps.mapDispatchToProps)(SkiDayList)
+```
 
 ## Create containers for form components
 
