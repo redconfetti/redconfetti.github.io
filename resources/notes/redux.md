@@ -5,15 +5,15 @@ title: How Redux Works
 
 Taken from [Lynda - How Redux Works](https://www.lynda.com/React-js-tutorials/How-Redux-works/540345/569712-4.html)
 
-# What is Redux
+## What is Redux
 
-## The History of Redux
+### The History of Redux
 
 Dan Abramov invented the idea for Redux during a React Europe Conference
 presentation in 2015. Andrew Clark abandoned Flummox, another Flux
 implementation, to work with Abramov to complete Redux.
 
-## Flux
+### Flux
 
 A design pattern developed by Facebook. An alternative to MVC, MVP, or MVVM.
 
@@ -32,7 +32,7 @@ Lux, Fluxy, and Material Flux.
 
 Due to simplicity and ease of use, Redux has won out in the community.
 
-## How Redux Works
+### How Redux Works
 
 Redux isn't exactly Flux, it's Flux-like. Data still flows in one direction,
 but there is only one store (not multiple). The "single source of truth".
@@ -42,7 +42,7 @@ of the state tree.
 
 Using functions for modularity comes from The Functional Programming paradigm.
 
-## Functional Programming
+### Functional Programming
 
 - Pure functions - Do not cause side affects. Receive input, and return result.
   Do not modify arguments, global variables, or other state.
@@ -50,7 +50,7 @@ Using functions for modularity comes from The Functional Programming paradigm.
 - Composition - Ability to put functions together in a way that one
   functions output becomes the next functions input.
 
-### Example
+#### Example
 
 Let's say we want to make a call to `getPercent(1,4)` and have it return
 the string '25%'.
@@ -76,9 +76,9 @@ In Redux composition is used in the store. The reducer functions that we create
 to manage parts of the state tree are composed. The action and state is piped
 through each of these reducers until a state is eventually mutated.
 
-## Plan a Redux App
+### Plan a Redux App
 
-### Actions
+#### Actions
 
 In a Redux application, you want to define your actions.
 
@@ -114,7 +114,7 @@ export default constants
 This is done to make sure that any typos result in an error when working with
 these strings that represent the different actions.
 
-### State
+#### State
 
 - `allSkiDays -> []`
 - `skiDay -> {resort, date, powder, backcountry}`
@@ -155,13 +155,13 @@ these strings that represent the different actions.
 }
 ```
 
-### Reducers
+#### Reducers
 
 We will name the reducer the same thing as the key.
 
-# Understanding Reducers
+## Understanding Reducers
 
-## Run Redux with babel-node
+### Run Redux with babel-node
 
 ```shell
 npm init
@@ -226,7 +226,7 @@ console.log(`
 `)
 ```
 
-## Build Your First Reducer
+### Build Your First Reducer
 
 Reducers are pure functions that are designed to manage specific part of your
 state object.
@@ -266,13 +266,13 @@ console.log(`
 `)
 ```
 
-```
-   initial goal: 10
-   action: {"type":"SET_GOAL", "payload":15}
-   new goal: 15
+```text
+  initial goal: 10
+  action: {"type":"SET_GOAL", "payload":15}
+  new goal: 15
 ```
 
-## Create object reducers
+### Create object reducers
 
 ```javascript
 // src/index.js
@@ -322,15 +322,15 @@ export const skiDay = (state = null, action) => {
 }
 ```
 
-_Output_
+Console Output:
 
-```
+```text
   initial state: null
   action: {"type":"ADD_DAY", "payload":{"resort":"Heavenly","date":"2016-12-16","powder":true,"backcountry":false}}
   new state: {"resort":"Heavenly","date":"2016-12-16","powder":true,"backcountry":false}
 ```
 
-### Refactor for oneline conditionals
+#### Refactor for oneline conditionals
 
 ```javascript
 // src/store/reducers.js
@@ -343,9 +343,9 @@ export const skiDay = (state = null, action) =>
   action.type === C.ADD_DAY ? action.payload : state
 ```
 
-## Create Array Reducers
+### Create Array Reducers
 
-### Adding Errors
+#### Adding Errors
 
 ```javascript
 // src/index.js
@@ -401,15 +401,15 @@ export const error = (state = [], action) => {
 }
 ```
 
-_Output_
+Console Output:
 
-```
+```text
   initial state: user not authorized, server feed not found
   action: {"type":"ADD_ERROR", "payload":"cannot connect to server"}
   new state: ["user not authorized","server feed not found","cannot connect to server"]
 ```
 
-### Clearing Errors
+#### Clearing Errors
 
 ```javascript
 // src/index.js
@@ -453,17 +453,17 @@ export const error = (state = [], action) => {
 }
 ```
 
-_Output_
+Console Output:
 
-```
+```text
   initial state: user not authorized, server feed not found
   action: {"type":"CLEAR_ERROR", "payload":0}
   new state: ["server feed not found"]
 ```
 
-## Composing Reducers
+### Composing Reducers
 
-### Adding a Day
+#### Adding a Day
 
 ```javascript
 // src/index.js
@@ -518,9 +518,9 @@ export const allSkiDays = (state = [], action) => {
 }
 ```
 
-_Output_
+Console Output:
 
-```
+```text
   initial state: [{"resort":"Kirkwood","date":"2016-12-15","powder":true,"backcountry":false}]
   action: {"type":"ADD_DAY","payload":{"resort":"Boreal","date":"2016-12-16","powder":false,"backcountry":false}}
   new State: [
@@ -529,7 +529,7 @@ _Output_
   ]
 ```
 
-### Avoiding a Duplicate Day
+#### Avoiding a Duplicate Day
 
 ```javascript
 // src/store/reducers.js
@@ -551,15 +551,15 @@ export const allSkiDays = (state = [], action) => {
 }
 ```
 
-_Output_
+Console Output:
 
-```
+```text
   initial state: [{"resort":"Kirkwood","date":"2016-12-15","powder":true,"backcountry":false}]
   action: {"type":"ADD_DAY","payload":{"resort":"Boreal","date":"2016-12-16","powder":false,"backcountry":false}}
   new State: [{"resort":"Kirkwood","date":"2016-12-15","powder":true,"backcountry":false},{"resort":"Boreal","date":"2016-12-16","powder":false,"backcountry":false}]
 ```
 
-### Removing a Day
+#### Removing a Day
 
 ```javascript
 // src/index.js
@@ -617,15 +617,15 @@ export const allSkiDays = (state = [], action) => {
 }
 ```
 
-_Output_
+Console Output:
 
-```
+```text
   initial state: [{"resort":"Kirkwood","date":"2016-12-15","powder":true,"backcountry":false},{"resort":"Boreal","date":"2016-12-16","powder":false,"backcountry":false}]
   action: {"type":"REMOVE_DAY","payload":"2016-12-15"}
   new State: [{"resort":"Boreal","date":"2016-12-16","powder":false,"backcountry":false}]
 ```
 
-## Combine Reducers
+### Combine Reducers
 
 We're going to make use of a method called `combineReducers` provided by Redux.
 
@@ -777,9 +777,9 @@ console.log(`
 `)
 ```
 
-_Output_
+Console Output:
 
-```
+```text
   Initial State
   ==============
   goal: 10
@@ -796,9 +796,9 @@ _Output_
   suggestions: Mt Tallac,Mt Hood,Mt Shasta
 ```
 
-# The Store
+## The Store
 
-## Create a static build with webpack
+### Create a static build with webpack
 
 We need to install webpack and the webpack dev server
 
@@ -1049,7 +1049,7 @@ chunk    {0} bundle.js (main) 265 kB [rendered]
 webpack: Compiled successfully.
 ```
 
-## Create a store
+### Create a store
 
 We've combined all our reducers into a single appReducer. With Redux
 we don't have to use this because the store will do this for us.
@@ -1104,10 +1104,12 @@ store.dispatch({
 console.log("next state", store.getState())
 ```
 
-Now we run our server, access our browser via http://localhost:3000/, and we look at the console.
+Now we run our server, access our browser via [http://localhost:3000/], and we look at the console.
 
-```
-$ npm start
+[http://localhost:3000/]: http://localhost:3000/
+
+```shell
+npm start
 ```
 
 The `createStore` method will also accept an object to use for initialState.
@@ -1119,9 +1121,9 @@ const store = createStore(appReducer, initialState)
 After making this modification to `index.js` and saving the file,
 our Webpack-Dev-Server will reload the page and we'll see the new outcome.
 
-_Console Output_
+Console Output:
 
-```
+```text
 initial state
   {allSkiDays: Array(3), goal: 10, errors: Array(0), resortNames: {…}}
     allSkiDays: Array(3)
@@ -1150,7 +1152,7 @@ next state
     __proto__: Object
 ```
 
-## Subscribe to the store
+### Subscribe to the store
 
 It's possible to subscribe to the store so that your callback methods are
 called anytime the state changes.
@@ -1182,7 +1184,7 @@ store.dispatch({
 
 Console Output:
 
-```
+```text
 {allSkiDays: Array(1), goal: 10, errors: Array(0), resortNames: {…}}
   allSkiDays: Array(1)
     0: {resort: "Mt Shasta", date: "2016-10-28", powder: false, backcountry: true}
@@ -1249,7 +1251,7 @@ window.store = store
 
 Console:
 
-```
+```text
 > store.getState();
 < {allSkiDays: Array(0), goal: 10, errors: Array(0), resortNames: {…}}
 ```
@@ -1258,7 +1260,7 @@ You can view the data in localStorage as well, as a JSON string.
 
 Console:
 
-```
+```text
 > localStorage
 < Storage {redux-store: "{"allSkiDays":[],"goal":2,"errors":[],"resortNames":{"fetching":false,"suggestions":[]}}", loglevel:webpack-dev-server: "INFO", length: 2}
 ```
@@ -1276,7 +1278,7 @@ Now the key is gone. When we refresh, and it makes the first mutation to the
 state, the current state is saved to localStorage, and loaded when the page
 refreshes.
 
-## Unsubscribe from the store
+### Unsubscribe from the store
 
 It's also possible to turn off store subscriptions using `unsubscribe()`.
 
@@ -1329,7 +1331,7 @@ setTimeout(() => {
 
 The output in the console should be like so, running for only 3 seconds:
 
-```
+```text
   Goal: 40
   Goal: 45
   Goal: 58
@@ -1344,7 +1346,7 @@ The output in the console should be like so, running for only 3 seconds:
   Goal: 47
 ```
 
-## Create middleware
+### Create middleware
 
 Middleware gives you control over how actions are dispatched. You can add
 functionality before or after the action is dispatched. We can delay actions, or
@@ -1498,7 +1500,7 @@ store.dispatch({
 
 Our console output:
 
-```
+```text
 dispatching action => ADD_DAY
   ski days 0
 
@@ -1527,9 +1529,9 @@ dispatching action => ADD_DAY
     errors: 0
 ```
 
-# Action Creators
+## Action Creators
 
-## What are action creators?
+### What are action creators
 
 With Redux the store is only intended to manage state data. It should not
 contain application logic such as generating unique ids, reading or writing
@@ -1614,7 +1616,7 @@ store.dispatch(removeDay("2016-12-22"))
 store.dispatch(setGoal(55))
 ```
 
-## Async actions with redux-thunk
+### Async actions with redux-thunk
 
 Your logic often has to deal with asynchronicity, such as asynchronous requests
 to a server. We need to be able to work with action creators that will wait
@@ -1717,7 +1719,7 @@ store.dispatch(randomGoals())
 
 Terminal Output:
 
-```
+```text
 dispatching action => FETCH_RESORT_NAMES
 dispatching action => CANCEL_FETCHING
 ```
@@ -1726,14 +1728,14 @@ What if we dispatched our `randomGoals()` twice?
 
 Terminal Output:
 
-```
+```text
 dispatching action => FETCH_RESORT_NAMES
 dispatching action => CANCEL_FETCHING
 ```
 
 This is because the state of 'fetching' became true.
 
-## Autocomplete thunk
+### Autocomplete thunk
 
 Let's imagine that we have an API end-point running on an Express back-end,
 accessible from `/resorts/{search string}`. For example, a request to
@@ -1745,8 +1747,8 @@ search field.
 In order to make an AJAX request to the suggestions server, we'll use a library
 called isomorphic-fetch.
 
-```bash
-$ npm install isomorphic-fetch -save
+```shell
+npm install isomorphic-fetch -save
 ```
 
 This library is an implementation of the
@@ -1807,7 +1809,7 @@ Our function returned by the thunk `suggestResortNames` could accept both the
 
 Console Output:
 
-```
+```text
 dispatching action => FETCH_RESORT_NAMES
 dispatching action => CHANGE_SUGGESTIONS
 ```
@@ -1820,15 +1822,15 @@ result in the errors.
 
 Console Output:
 
-```
+```text
 dispatching action => FETCH_RESORT_NAMES
 dispatching action => ADD_ERROR
 dispatching action => CANCEL_FETCHING
 ```
 
-# Incorporating React
+## Incorporating React
 
-## React app overview
+### React app overview
 
 Thus far we've used Redux to construct the client data layer for our
 application. It's now time to implement the user interface layer for our new
@@ -1924,7 +1926,7 @@ render(
 This will place the store in context so that it's accessible by any of the child
 components listed under routes.
 
-## Map props to React components
+### Map props to React components
 
 We're going to wire up the ski day count.
 
@@ -1981,7 +1983,7 @@ const Container = connect(mapStateToProps)(SkiDayCount)
 export default Container
 ```
 
-## Map dispatch to React components
+### Map dispatch to React components
 
 Next we want to work with a component that displays errors.
 
@@ -2062,14 +2064,14 @@ errors.
 
 Console:
 
-```
+```text
 dispatching action => ADD_ERROR
 Uncaught ReferenceError: bar is not defined(...)
 ```
 
 Now any errors that occur with our application are displayed in the UI.
 
-## Map router params to React components
+### Map router params to React components
 
 In our routes we go to `/list-days/` to view all the ski days. If instead we go
 to `/list-days/backcountry` we want a filter applied that only shows the
@@ -2141,8 +2143,8 @@ const mapDispatchToProps = dispatch => ({
 export default connect(mapStateToProps.mapDispatchToProps)(SkiDayList)
 ```
 
-## Create containers for form components
+### Create containers for form components
 
-# Conclusion
+## Conclusion
 
-## Next steps
+### Next steps

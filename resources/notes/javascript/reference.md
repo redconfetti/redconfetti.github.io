@@ -3,7 +3,7 @@ layout: page
 title: Javascript Reference
 ---
 
-# Advanced
+## Advanced
 
 Here are some advanced Javascript subjects
 
@@ -14,7 +14,7 @@ Here are some advanced Javascript subjects
 - [Debugging](https://www.w3schools.com/js/js_debugging.asp)
 - [Best Practices](https://www.w3schools.com/js/js_best_practices.asp)
 
-# ECMAScript 2015 (ES6)
+## ECMAScript 2015 (ES6)
 
 Here are new concepts introduced with ES6:
 
