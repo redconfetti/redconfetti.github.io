@@ -526,7 +526,178 @@ class SearchBar extends React.Component {
 export default SearchBar
 ```
 
-Leaving off at [35:38](https://www.youtube.com/watch?v=VPVzx1ZOVuw&t=35m38s)
+To make the searchTerm string available to other components, we need to pass in
+a function via a prop called `onFormSubmit`.
+
+```javascript
+// src/App.js
+
+// ...
+<SearchBar onFormSubmit={this.handleSubmit} />
+// ...
+```
+
+Within our SearchBar components we can then update our `handleSubmit` function
+so that it is able to call this function.
+
+```javascript
+// src/components/SearchBar.js
+import React from "react"
+
+import { Paper, TextField } from "@material-ui/core"
+
+class SearchBar extends React.Component {
+  state = {
+    searchTerm: ""
+  }
+
+  handleChange = event => this.setState({ searchTerm: event.target.value })
+
+  handleSubmit = event => {
+    const { searchTerm } = this.state
+    const { onFormSubmit } = this.props
+
+    onFormSubmit(searchTerm)
+
+    event.preventDefault()
+  }
+
+  render() {
+    return (
+      <Paper elevation={6} style={{ padding: "25px" }}>
+        <form onSubmit={this.handleSubmit}>
+          <TextField
+            fullWidth
+            label="Search..."
+            onChange={this.handleChange}
+          ></TextField>
+        </form>
+      </Paper>
+    )
+  }
+}
+
+export default SearchBar
+```
+
+So now the SearchBar component will run the method we inject into it and pass
+it the `searchTerm`.
+
+We've also updated the `handleSubmit` function so that it receives the event
+and makes a call to `event.preventDefault()` to stop the form submit from
+refreshing the page.
+
+Next we're going to define our `handleSubmit` method that we're passing into
+the SearchBar component within our `App.js`.
+
+As you can see we're using the `async` keyword before our function, and the
+`await` keyword before the call to the YouTube API call.
+
+This is a new feature of ES2017 that makes it possible to make asynchronous
+calls using a standard synchronous functional definition instead of having to
+rely on promise chain.
+
+- [MDN web docs - async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+- [How to use Async Await in JavaScript](https://medium.com/javascript-in-plain-english/async-await-javascript-5038668ec6eb)
+
+```javascript
+// src/App.js
+import React from "react"
+
+import { Grid } from "@material-ui/core"
+
+import { SearchBar, VideoDetail } from "./components"
+
+import youtube from "./api/youtube"
+
+class App extends React.Component {
+  handleSubmit = async searchTerm => {
+    const response = await youtube.get("search", {
+      params: {
+        q: searchTerm
+      }
+    })
+
+    console.log(response)
+  }
+
+  render() {
+    return (
+      <Grid justify="center" container spacing={10}>
+        <Grid item xs={12}>
+          <Grid container spacing={10}>
+            <Grid item xs={12}>
+              <SearchBar onFormSubmit={this.handleSubmit} />
+            </Grid>
+            <Grid item xs={8}>
+              <VideoDetail />
+            </Grid>
+            <Grid item xs={4}>
+              {/* VIDEO LIST */}
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    )
+  }
+}
+
+export default App
+```
+
+#### Fixing Axios Call
+
+It turns out that this doesn't work, we end up getting an HTTP 400 error from
+the YouTube API because Axios is not passing our default parameters.
+
+First let's cut those `params` from our youtube.js file.
+
+```javascript
+// src/api/youtube.js
+import axios from "axios"
+
+export default axios.create({
+  baseURL: "https://www.googleapis.com/youtube/v3"
+})
+```
+
+And then paste them into the call from `src/App.js`.
+
+```javascript
+handleSubmit = async searchTerm => {
+  const response = await youtube.get("search", {
+    params: {
+      part: "snippet",
+      maxResults: 5,
+      key: "[Api Key]",
+      q: searchTerm
+    }
+  })
+
+  console.log(response)
+}
+```
+
+If you look at the console you'll see that the 'data' object in the API response
+contains the 'items' returned by the search. We can narrow down our console
+log statement to this.
+
+```javascript
+handleSubmit = async searchTerm => {
+  const response = await youtube.get("search", {
+    params: {
+      part: "snippet",
+      maxResults: 5,
+      key: "[Api Key]",
+      q: searchTerm
+    }
+  })
+
+  console.log(response.data.items)
+}
+```
+
+Left off at [45:08](https://www.youtube.com/watch?v=VPVzx1ZOVuw&t=45m08s)
 
 [destructuring assignment syntax]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 [react docs for handling events]: https://reactjs.org/docs/handling-events.html
