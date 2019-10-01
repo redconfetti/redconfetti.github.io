@@ -49,15 +49,59 @@ You can also go to [jsconsole](https://jsconsole.com/)
 
 ## Let
 
-Let gives us true block-scoped variables in JavaScript. Let is the new `var`.
+Let allows us to define variables. We've always done this with the `var` keyword.
+However `var` has limitations when it comes to scope.
+
+With `var` there is only global scope, and function scope. Global scope is where
+a variable is placed globally. Functional scope limits the scope of the variable
+within the function.
+
+However there isn't block scope with `var`. In this code below, it looks like
+`var x = 3;` might be scoped only to the block it's defined in (within the if
+statement), but this isn't the case.
 
 ```javascript
-let x = 2
-let y = ((3)[(x, y)] = [y, x])
-
-expect(x).toBe(3)
-expect(y).toBe(2)
+var doWork = function(flag) {
+  if (flag) {
+    var x = 3
+  }
+  return x
+}
 ```
+
+This variable of `x` is actually made available throughout the function.
+
+Let provides us with true block scoping.
+
+```javascript
+var doWork = function(flag) {
+  if (flag) {
+    let x = 3
+  }
+  return x
+}
+```
+
+This code using `let` will return an error because `x` is not defined, even if
+the `flag` argument is `true`.
+
+```javascript
+describe("how let works" function(){
+  it("will provide block scoping, unlike var", function(){
+    var doWork = function(flag) {
+      if(flag) {
+        var x = 3;
+      }
+      return x;
+    };
+
+    var result = doWork(true);
+    expect(result).toBe(3);
+  };
+});
+```
+
+## Const
 
 ## Rest Parameters
 
