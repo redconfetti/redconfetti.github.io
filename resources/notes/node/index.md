@@ -3,23 +3,23 @@ layout: page
 title: Node.js
 ---
 
-# Intro
+## Intro
 
 Allows you to build scalable network applications using JavaScript on the
 server-side. Uses V8 JavaScript Runtime, which powers Chrome / Chromium. NodeJS is
 a wrapper for this engine.
 
-## What can you build with NodeJS?
+### What can you build with NodeJS
 
-* Websocket Server (e.g. Chat Room)
-* Fast File Upload client
-* Ad Server
-* Any Real-Time Data Apps
+- Websocket Server (e.g. Chat Room)
+- Fast File Upload client
+- Ad Server
+- Any Real-Time Data Apps
 
 NodeJS is not a framework, it is very low level, and it is not multi-threaded. It
 is a single threaded server.
 
-## Blocking vs Non-Blocking Code
+### Blocking vs Non-Blocking Code
 
 With blocking code the previous command must be completed before the next command
 can run. Non-blocking code is structured so that it uses callbacks to determine the
@@ -56,7 +56,7 @@ http
 This code uses an event loop that checks for an HTTP request until one is
 encountered.
 
-## Why JavaScript?
+### Why JavaScript
 
 > "Javascript has certain characteristics that make it very different than other
 > dynamic languages, namely that it has no concept of threads. Its model of
@@ -64,9 +64,9 @@ encountered.
 
 Known Events:
 
-* request
-* connection
-* close
+- request
+- connection
+- close
 
 When these events are encountered, the associated callback functions are called. You could consider these callback functions our Event Queue.
 
@@ -85,7 +85,7 @@ http
   .listen(8080) // listen for connections on this port
 ```
 
-## Blocking Call to the File System
+### Blocking Call to the File System
 
 ```javascript
 var fs = require("fs")
@@ -93,7 +93,7 @@ var contents = fs.readFileSync("index.html")
 console.log(contents)
 ```
 
-## Non-Blocking Call to the File System
+### Non-Blocking Call to the File System
 
 ```javascript
 var fs = require("fs")
@@ -102,7 +102,7 @@ fs.readFile("index.html", function(error, contents) {
 })
 ```
 
-## Read File and Serve as HTML
+### Read File and Serve as HTML
 
 ```javascript
 var http = require("http")
@@ -118,7 +118,7 @@ http
   .listen(8080)
 ```
 
-# Events
+## Events
 
 The DOM triggers events such as click, hover, or submit. You can register callbacks
 via jQuery when these events occur.
@@ -127,7 +127,7 @@ Many objects in NodeJS emit events. The net.Server object inherits from the
 EventEmitter class, and emits the ‘request’ event. fs.readStream also inherits from
 EventEmitter, and emits the ‘data’ event as data is read from the file.
 
-## Custom Event Emitters
+### Custom Event Emitters
 
 We can register our own emitter to do something like log errors, warnings, or info
 events.
@@ -154,7 +154,7 @@ chat.on("message", function(message) {
 chat.emit("message", "hello, how are you doing")
 ```
 
-## Multiple Events
+### Multiple Events
 
 It is possible to register multiple callbacks for a single request emitter. When
 the request is received, the response will be sent to the requestor, and the
@@ -187,7 +187,7 @@ $ curl http://localhost:8080/
 Hello, this is dog
 ```
 
-## HTTP Echo Server
+### HTTP Echo Server
 
 In the last lesson, we registered an event for http server to respond to requests,
 using the request event callback.
@@ -202,7 +202,7 @@ http.createServer(function(request, response) { ... });
 The ‘request’ event makes a call to this function, passing the two parameters into
 the function.
 
-### Alternative Syntax
+#### Alternative Syntax
 
 This alternative syntax is typically how you add event listeners in Node.
 
@@ -217,7 +217,7 @@ server.on('request', function(request, response) { … });
 server.on('close', function() { … });
 ```
 
-# Streams
+## Streams
 
 For efficiency, we need to be able to access data chunk-by-chunk, piece-by-piece,
 and sending the data as it receives each chunk. By processing and sending each
@@ -321,7 +321,7 @@ your existing functionality that depends on the API.
 For instance, the File System has a Stability rating of 3 - Stable, with the Stream
 API rated as 2 - Unstable.
 
-## Reading and Writing a File
+### Reading and Writing a File
 
 ```javascript
 var fs = require("fs")
@@ -352,7 +352,7 @@ http
 ```
 
 ```shell
-$ curl --upload-file readme.md http://localhost:8080
+curl --upload-file readme.md http://localhost:8080
 ```
 
 We can pipe any read stream into any write stream. In this example we can read from
@@ -372,7 +372,7 @@ of the same web application.
 It’s also not possible to provide file upload progress to the user as it’s being
 uploaded.
 
-## File Uploading Progress
+### File Uploading Progress
 
 ```bash
 $ curl --upload-file file.jpg http://localhost:8080
@@ -396,7 +396,7 @@ http
       var chunk = null
       while (null !== (chunk = request.read())) {
         uploadedBytes += chunk.length
-        var progress = uploadedBytes / fileBytes * 100
+        var progress = (uploadedBytes / fileBytes) * 100
         response.write("progress: " + parseInt(progress, 10) + "%\n")
       }
     })
@@ -416,7 +416,7 @@ is being established immediately after the request object has registered the
 As soon as the request object is ready to read chunks of data from, it starts to
 process each chunk and provide the progress back to the client making the request.
 
-## Output to Standard Output
+### Output to Standard Output
 
 ```javascript
 var fs = require("fs")
@@ -424,7 +424,7 @@ var file = fs.createReadStream("fruits.txt")
 file.pipe(process.stdout)
 ```
 
-# Modules
+## Modules
 
 We’ve loaded modules using ‘require’ in past lessons.
 
@@ -436,26 +436,23 @@ var fs = require("fs")
 How does ‘require’ return the libraries?
 How does it find these files?
 
-_custom_hello.js_
-
 ```javascript
+// custom_hello.js
 var hello = function() {
   console.log("hello!")
 }
 module.exports = hello
 ```
 
-_custom_goodbye.js_
-
 ```javascript
+// custom_goodbye.js
 exports.goodbye = function() {
   console.log("bye!")
 }
 ```
 
-_app.js_
-
 ```javascript
+// app.js
 var hello = require('./custom_hello');
 Var gb = require('./custom_goodbye');
 hello();
@@ -472,11 +469,10 @@ We can optionally require the module and then call the method directly.
 require("./custom_goodbye").goodbye()
 ```
 
-## Export Multiple Functions
-
-_my_module.js_
+### Export Multiple Functions
 
 ```javascript
+// my_module.js
 var foo = function() { … }
 var bar = function() { … }
 var baz = function() { … }
@@ -485,9 +481,8 @@ exports.foo = foo
 exports.bar = bar
 ```
 
-_app.js_
-
 ```javascript
+// app.js
 var myMod = require("./my_module")
 myMod.foo()
 myMod.bar()
@@ -496,11 +491,10 @@ myMod.bar()
 Because we did not export the ‘baz’ function, it is private, and only accessible
 from within the module.
 
-## Making HTTP Requests
-
-_app.js_
+### Making HTTP Requests
 
 ```javascript
+// app.js
 var http = require("http")
 
 var message = "Here's looking at you, kid."
@@ -520,13 +514,12 @@ request.write(message) // begins request
 request.end() // finishes request
 ```
 
-## Encapsulating the Function
+### Encapsulating the Function
 
 We can make this simpler by wrapping it in a function call.
 
-_make_request.js_
-
 ```javascript
+// make_request.js
 var http = require("http")
 var makeRequest = function(message) {
   var options = {
@@ -547,16 +540,15 @@ var makeRequest = function(message) {
 module.exports = makeRequest
 ```
 
-_app.js_
-
 ```javascript
+// app.js
 var makeRequest = require("./make_request")
 
 makeRequest("Here's looking at you, kid")
 makeRequest("Hello, this is dog")
 ```
 
-## Node Package Manager (NPM)
+### Node Package Manager (NPM)
 
 Where does require look for modules?
 
@@ -573,10 +565,10 @@ var make_request = require("make_request")
 
 Looks for node_modules directory:
 
-* In the current directory
-* In the parent directory
-* In the parent’s parent directory
-* Etc.
+- In the current directory
+- In the parent directory
+- In the parent’s parent directory
+- Etc.
 
 Each directory inside of ‘node_modules’ is a package that represents a module.
 
@@ -585,14 +577,14 @@ Packages come from NPM (Node Package Manager).
 NPM comes with node, there is a module repository, and it handles dependencies
 automatically, and makes it easy to public modules.
 
-http://www.npmjs.org/
+[Node Package Manager](http://www.npmjs.org/)
 
-## Installing a NPM Module
+### Installing a NPM Module
 
 Inside of /home/my_app:
 
-```bash
-$ npm install request
+```shell
+npm install request
 ```
 
 This will install the ‘request’ package inside of /home/my_app/node_modules/request
@@ -603,19 +595,19 @@ This will install the ‘request’ package inside of /home/my_app/node_modules/
 var request = require("request")
 ```
 
-## Local vs Global
+### Local vs Global
 
 Sometimes you may want to install packages globally, instead of only within a
 specific application.
 
-```bash
-$ npm install coffee-script -g
+```shell
+npm install coffee-script -g
 ```
 
 This package comes with an executable that we can use from the command line:
 
-```bash
-$ coffee app.coffee
+```shell
+coffee app.coffee
 ```
 
 A globally installed NPM module cannot be required.
@@ -628,19 +620,18 @@ var coffee = require("coffee-script")
 We still have to install the coffee-script module locally for the application to
 require it into our program.
 
-## Finding Modules
+### Finding Modules
 
 You can find libraries that are useful in the NPM registry website, in Github, or you can search from the command line:
 
-```bash
-$ npm search request
+```shell
+npm search request
 ```
 
-## Defining Your Dependencies
-
-_my_app/package.json_
+### Defining Your Dependencies
 
 ```javascript
+// my_app/package.json
 {
   "name": "My App",
   "version": "1",
@@ -650,8 +641,8 @@ _my_app/package.json_
 }
 ```
 
-```bash
-$ npm install
+```shell
+npm install
 ```
 
 When you get a node project, the node_modules folder won’t be present. You’ll have
@@ -660,7 +651,7 @@ to run ‘npm install’ to install the needed packages.
 Inside of my_app/node_modules/connect, you'll notice that each package has it's own
 set of dependencies as well. NPM installs those dependencies as well.
 
-## Semantic Versioning
+### Semantic Versioning
 
 `"connect": "1.8.7"`
 
@@ -668,23 +659,25 @@ Major version is 1, Minor is 8, Patch is 7.
 
 A major version change may completely change the API. A minor version is less likely, and a patch shouldn’t.
 
-* “connect”: “~1” - Will fetch any version greater to or equal to 1.0.0, yet less than 2.0.0
-* “connect”: “~1.8” - Will fetch versions greater than 1.8.0, less than 1.9.0
-* “connect”: “~1.8.7” - Will fetch versions greater than 1.8.7, less than 1.9.0
+- “connect”: “~1” - Will fetch any version greater to or equal to 1.0.0, yet less than 2.0.0
+- “connect”: “~1.8” - Will fetch versions greater than 1.8.0, less than 1.9.0
+- “connect”: “~1.8.7” - Will fetch versions greater than 1.8.7, less than 1.9.0
 
-See http://semver.org/ for more information
+See [SemVer.org] for more information
 
-# Express
+[semver.org]: http://semver.org/
+
+## Express
 
 Node is very low level. You’ll want to build a web framework if you’re working on a very large web application. Or you can use an existing framework such as Express.
 
 "Sinatra inspired web development framework for Node.js -- insanely fast, flexible, and simple"
 
-* Easy route URLs to callbacks
-* Middleware (from Connect)
-* Environment based configuration
-* Redirection helpers
-* File Uploads
+- Easy route URLs to callbacks
+- Middleware (from Connect)
+- Environment based configuration
+- Redirection helpers
+- File Uploads
 
 ```bash
 # install module and add to package.json
@@ -703,13 +696,12 @@ app.get("/", function(request, response) {
 app.listen(8080)
 ```
 
-## Express Routes
+### Express Routes
 
 We want to create an endpoint that receives a certain twitter users name, obtains that users tweets from Twitter, and returns them.
 
-_app.js_
-
 ```javascript
+// app.js
 var request = require("request")
 var url = require("url")
 
@@ -730,20 +722,20 @@ app.get("/tweets/:username", function(req, response) {
 The Twitter API requires users to authenticate, so there will be more code required
 to do this.
 
-```bash
-$ curl -s http://localhost:8080/tweets/eallam/
+```shell
+curl -s http://localhost:8080/tweets/eallam/
 
-$ npm install prettyjson -g
-$ curl -s http://localhost:8080/tweets/eallam/ | prettyjson
+npm install prettyjson -g
+curl -s http://localhost:8080/tweets/eallam/ | prettyjson
 ```
 
-## Express Templates
+### Express Templates
 
-```bash
-$ npm install --save ejs
+```shell
+npm install --save ejs
 ```
 
-_my_app/package.json_
+#### my_app/package.json
 
 ```bash
 "dependencies": {
@@ -752,7 +744,7 @@ _my_app/package.json_
 }
 ```
 
-_my_app/app.js_
+#### my_app/app.js
 
 ```javascript
 app.get('/tweets/:username', function(req, response) {
@@ -765,18 +757,18 @@ app.get('/tweets/:username', function(req, response) {
 }
 ```
 
-_my_app/views/tweets.ejs_
+#### my_app/views/tweets.ejs
 
 ```html
 <h1>Tweets for @<%= name %></h1>
 <ul>
   <% tweets.forEach(function(tweet) { %>
-    <li><%= tweet.text %></li>
+  <li><%= tweet.text %></li>
   <% }); %>
 </ul>
 ```
 
-# Socket IO
+## Socket IO
 
 Node works very well for providing real time communication, which is perfect for
 running a chat server.
@@ -789,13 +781,12 @@ is known as a full duplex connection. We cannot rely on every web browser to
 support WebSockets, so we have to use a library as a fallback for when the browser
 does not support socket connections.
 
-```bash
-$ npm install --save socket.io
+```shell
+npm install --save socket.io
 ```
 
-_app.js_
-
 ```javascript
+// app.js
 var express = require("express")
 var app = express()
 var server = require("http").createServer(app)
@@ -814,20 +805,19 @@ Here we are passing the server object to the socket.io library so that it can us
 the server to listen for requests. We are registering a connection event with
 logger, and then also configuring a path for the request to be received by.
 
-## Socket.io for Websockets
+### Socket.io for Websockets
 
 ```html
 <script src="/socket.io/socket.io.js"></script>
 <script>
-  var socket = io.connect('http://localhost:8080');
+  var socket = io.connect("http://localhost:8080")
 </script>
 ```
 
-## Sending Message to Client
-
-_app.js_
+### Sending Message to Client
 
 ```javascript
+// app.js
 io.on("connection", function(client) {
   console.log("Client connected…")
   // emit the message event on the client
@@ -835,15 +825,14 @@ io.on("connection", function(client) {
 })
 ```
 
-_index.html_
-
 ```html
+<!-- index.html -->
 <script src="/socket.io/socket.io.js"></script>
 <script>
-  var socket = io.connect('http://localhost:8080');
-  socket.on('messages', function(data) {
-    alert(data.hello);
-  });
+  var socket = io.connect("http://localhost:8080")
+  socket.on("messages", function(data) {
+    alert(data.hello)
+  })
 </script>
 ```
 
@@ -852,16 +841,17 @@ $ node app.js
   Info  - socket.io started
 ```
 
-http://localhost:8080/
+[http://localhost:8080/]
+
+[http://localhost:8080/]: http://localhost:8080/
 
 Alert pops up with the hello in the browser, and the console logs that the client
 connected.
 
-## Sending Messages to Server
-
-_app.js_
+### Sending Messages to Server
 
 ```javascript
+// app.js
 io.on("connection", function(client) {
   client.on("messages", function(data) {
     console.log(data)
@@ -869,15 +859,14 @@ io.on("connection", function(client) {
 })
 ```
 
-_index.html_
-
 ```html
+<!-- index.html -->
 <script>
-  var socket = io.connect('http://localhost:8080');
-  $('#chat_form').submit(function(e) {
-    var message = $('#chat_input').val();
-    socket.emit('messages', message);
-  });
+  var socket = io.connect("http://localhost:8080")
+  $("#chat_form").submit(function(e) {
+    var message = $("#chat_input").val()
+    socket.emit("messages", message)
+  })
 </script>
 ```
 
@@ -886,7 +875,7 @@ $ node app.js
   Info  - socket.io started
 ```
 
-## Broadcasting Messages
+### Broadcasting Messages
 
 We’re trying to create a chat room, not simply send and receive messages. Luckily there is a broadcast method supported by Socket.io
 
@@ -896,9 +885,8 @@ socket.broadcast.emit("message", "Hello")
 
 This will send the message to all the other connected sockets (chat room clients).
 
-_app.js_
-
 ```javascript
+// app.js
 io.on("connection", function(client) {
   client.on("messages", function(data) {
     client.broadcast.emit("messages", data)
@@ -906,16 +894,17 @@ io.on("connection", function(client) {
 })
 ```
 
-_index.html_
-
 ```html
+<!-- index.html -->
 <script>
-  var socket = io.connect('http://localhost:8080');
-  socket.on('messages', function(data) { insertMessage(data) });
+  var socket = io.connect("http://localhost:8080")
+  socket.on("messages", function(data) {
+    insertMessage(data)
+  })
 </script>
 ```
 
-## Saving Data On The Socket
+### Saving Data On The Socket
 
 We don’t know who is who on this server, so we need to make some possible way of
 registering usernames.
@@ -933,12 +922,12 @@ that to the server via the ‘join’ event.
 
 ```html
 <script>
-  var server = io.connect('http://localhost:8080');
-  server.on('connect', function(data) {
-    $('#status').html('Connected to chattr');
-    nickname = prompt("What is your nickname?");
-    server.emit('join', nickname);
-  });
+  var server = io.connect("http://localhost:8080")
+  server.on("connect", function(data) {
+    $("#status").html("Connected to chattr")
+    nickname = prompt("What is your nickname?")
+    server.emit("join", nickname)
+  })
 </script>
 ```
 
@@ -946,9 +935,8 @@ This ensures that the name is available both to the server, and to the client. N
 we need to make the messages listener so that before we broadcast the message we
 get the nickname of the client and use that when emitting the message.
 
-_app.js_
-
 ```javascript
+// app.js
 io.on("connection", function(client) {
   client.on("join", function(name) {
     client.nickname = name
