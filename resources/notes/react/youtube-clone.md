@@ -881,9 +881,329 @@ const VideoDetail = ({ video }) => {
 export default VideoDetail
 ```
 
-There we have our video detail component.
+There we have our video detail component, let's focus on the video list.
 
-Left off at [55:15](https://www.youtube.com/watch?v=VPVzx1ZOVuw&t=55m15s)
+### Video List
+
+Let's start by creating a new component to render the video items in the list,
+which we will call `VideoItem`.
+
+```javascript
+// src/components/VideoItem.js
+import React from "react"
+
+import { Grid, Paper, Typography } from "@material-ui/core"
+
+const VideoItem = () => {
+  return <h1>Video Item</h1>
+}
+
+export default VideoItem
+```
+
+```javascript
+// src/components/VideoList.js
+import React from "react"
+
+import { Grid } from "@material-ui/core"
+
+const VideoList = () => {
+  return <h1>VideoList</h1>
+}
+
+export default VideoList
+```
+
+```javascript
+// src/components/index.js
+export { default as SearchBar } from "./SearchBar"
+export { default as VideoDetail } from "./VideoDetail"
+export { default as VideoList } from "./VideoList"
+```
+
+After establishing these, we'll a the `VideoList` component into the import
+statement within `App.js`, and update the remaining empty Grid item so that it
+contains `<VideoList />>`.
+
+```javascript
+// src/App.js
+import React from "react"
+
+import { Grid } from "@material-ui/core"
+
+import { SearchBar, VideoDetail, VideoList } from "./components"
+
+import youtube from "./api/youtube"
+
+class App extends React.Component {
+  // ...
+
+  render() {
+    const { selectedVideo } = this.state
+    return (
+      <Grid justify="center" container spacing={10}>
+        <Grid item xs={12}>
+          <Grid container spacing={10}>
+            <Grid item xs={12}>
+              <SearchBar onFormSubmit={this.handleSubmit} />
+            </Grid>
+            <Grid item xs={8}>
+              <VideoDetail video={selectedVideo} />
+            </Grid>
+            <Grid item xs={4}>
+              <VideoList />>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    )
+  }
+}
+```
+
+Now our VideoList component is rendering.
+
+### Iterating Over Items
+
+Within our VideoList we need to iterate over the list of items obtained from
+the YouTube API and render a separate VideoItem for each one.
+
+First let's pass our list of videos to the VideoList component via the props.
+We'll do this by destructuring `this.state` within the `render()` function
+so that both `selectedVideo` and `videos` are both present. We'll then
+pass `videos` to the `VideoList` component.
+
+```javascript
+// src/App.js
+
+// ...
+
+class App extends React.Component {
+  // ...
+
+  render() {
+    const { selectedVideo, videos } = this.state
+    return (
+      <Grid justify="center" container spacing={10}>
+        <Grid item xs={12}>
+          <Grid container spacing={10}>
+            <Grid item xs={12}>
+              <SearchBar onFormSubmit={this.handleSubmit} />
+            </Grid>
+            <Grid item xs={8}>
+              <VideoDetail video={selectedVideo} />
+            </Grid>
+            <Grid item xs={4}>
+              <VideoList videos={videos} />
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    )
+  }
+}
+```
+
+Now within the `VideoList`, we'll destucture the `videos` property from `props`,
+and then use the `Array.map()` method to generate an array of `VideoItem`
+components that represent each item. This will require that we also import
+our `VideoItem` component within `VideoList.js`.
+
+```javascript
+// src/components/VideoList.js
+import React from "react"
+
+import { Grid } from "@material-ui/core"
+
+import VideoItem from "./VideoItem"
+
+const VideoList = ({ videos }) => {
+  const listOfVideos = videos.map(video => <VideoItem />)
+  return listOfVideos
+}
+
+export default VideoList
+```
+
+You go to the browser and test your app now, a search should result in
+'Video Item' shown 5 times on the right side of the screen.
+
+Do remember though that when you're mapping over a collection you need to
+provide a unique key for each item. The `Array.map` function will provide an
+index integer as the second argument so we can simply use that.
+
+We've also added the video itself as another prop.
+
+```javascript
+const listOfVideos = videos.map((video, id) => (
+  <VideoItem key={id} video={video} />
+))
+```
+
+### Expanding the Video Items
+
+Within the `VideoItem` component,
+
+```javascript
+// src/components/VideoItem.js
+import React from "react"
+
+import { Grid, Paper, Typography } from "@material-ui/core"
+
+const VideoItem = ({ video }) => {
+  return (
+    <Grid item xs={12}>
+      <Paper style={{ display: "flex", alignItems: "center" }}>
+        <img
+          style={{ marginRight: "20px" }}
+          alt="thumbnail"
+          src={video.snippet.thumbnails.medium.url}
+        />
+        <Typography variant="subtitle1">
+          <b>{video.snippet.title}</b>
+        </Typography>
+      </Paper>
+    </Grid>
+  )
+}
+
+export default VideoItem
+```
+
+This displays the medium thumbnail images for each item, with the title shown
+to the right of each thumbnail.
+
+### Further Styling
+
+Let's return the VideoList within a Grid container.
+
+```javascript
+// src/components/VideoList.js
+import React from "react"
+
+import { Grid } from "@material-ui/core"
+
+import VideoItem from "./VideoItem"
+
+const VideoList = ({ videos }) => {
+  const listOfVideos = videos.map((video, id) => (
+    <VideoItem key={id} video={video} />
+  ))
+  return (
+    <Grid container spacing={10}>
+      {listOfVideos}
+    </Grid>
+  )
+}
+
+export default VideoList
+```
+
+This adds a bit of spacing to our items displayed in the list.
+
+### Linking Items to the Selected Video
+
+Now we're going to make it so that when someone selects a video from the list
+it loads in the `selectedVideo` state in our `App` component.
+
+This requires that we simply pass a function to the `VideoItem` component named
+as the `onVideoSelect` prop, and then make that a prop that `VideoList` receives
+as a prop from `App.js`.
+
+```javascript
+// src/components/VideoList.js
+import React from "react"
+
+import { Grid } from "@material-ui/core"
+
+import VideoItem from "./VideoItem"
+
+const VideoList = ({ videos, onVideoSelect }) => {
+  const listOfVideos = videos.map((video, id) => (
+    <VideoItem onVideoSelect={onVideoSelect} key={id} video={video} />
+  ))
+  return (
+    <Grid container spacing={10}>
+      {listOfVideos}
+    </Grid>
+  )
+}
+
+export default VideoList
+```
+
+Now let's define this function in `App.js`.
+
+```javascript
+// src/App.js
+
+// ...
+
+class App extends React.Component {
+  // ...
+
+  onVideoSelect = video => {
+    this.setState({ selectedVideo: video })
+  }
+
+  render() {
+    const { selectedVideo, videos } = this.state
+    return (
+      <Grid justify="center" container spacing={10}>
+        <Grid item xs={12}>
+          <Grid container spacing={10}>
+            <Grid item xs={12}>
+              <SearchBar onFormSubmit={this.handleSubmit} />
+            </Grid>
+            <Grid item xs={8}>
+              <VideoDetail video={selectedVideo} />
+            </Grid>
+            <Grid item xs={4}>
+              <VideoList videos={videos} onVideoSelect={this.onVideoSelect} />
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    )
+  }
+}
+```
+
+Now lastly we need to bind this prop to the onClick event. You'll see that
+we've added `onVideoSelect` as a property being destructured from the props
+argument passed to our component. We're also bound our click event to the
+`Paper` element that displays the thumbnail.
+
+```javascript
+// src/components/VideoItem.js
+import React from "react"
+
+import { Grid, Paper, Typography } from "@material-ui/core"
+
+const VideoItem = ({ video, onVideoSelect }) => {
+  return (
+    <Grid item xs={12}>
+      <Paper
+        style={{ display: "flex", alignItems: "center" }}
+        onClick={() => onVideoSelect(video)}
+      >
+        <img
+          style={{ marginRight: "20px" }}
+          alt="thumbnail"
+          src={video.snippet.thumbnails.medium.url}
+        />
+        <Typography variant="subtitle1">
+          <b>{video.snippet.title}</b>
+        </Typography>
+      </Paper>
+    </Grid>
+  )
+}
+
+export default VideoItem
+```
+
+And now we're done.
 
 [destructuring assignment syntax]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 [react docs for handling events]: https://reactjs.org/docs/handling-events.html
