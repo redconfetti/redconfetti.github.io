@@ -138,7 +138,7 @@ within this root division.
 There is no need to modify this HTML file from this point forward. Everything
 will be defined within the `src` folder moving forward.
 
-## API
+## API Access
 
 Under the 'src/api' folder, create a file called `youtube.js`.
 
@@ -697,7 +697,193 @@ handleSubmit = async searchTerm => {
 }
 ```
 
-Left off at [45:08](https://www.youtube.com/watch?v=VPVzx1ZOVuw&t=45m08s)
+Now we have all the data we need to create our YouTube video list.
+
+## Displaying Search Results
+
+### Adding results to state
+
+Within our App.js, we can now establish the definition of the default state
+within our App class, and we can also use `this.setState()` within our
+`handleSubmit` function so that it sets the 'videos' to equal the YouTube
+search results we obtained, and it sets the 'selectedVideo' to the first video
+in the search results collection.
+
+```javascript
+// src/App.js
+// ...
+class App extends React.Component {
+  state = {
+    videos: [],
+    selectedVideo: null
+  }
+
+  handleSubmit = async searchTerm => {
+    const response = await youtube.get("search", {
+      params: {
+        part: "snippet",
+        maxResults: 5,
+        key: "[App Key]",
+        q: searchTerm
+      }
+    })
+
+    this.setState({
+      videos: response.data.items,
+      selectedVideo: response.data.items[0]
+    })
+  }
+
+  // render (){ ... }
+}
+// ...
+```
+
+### Populating Video Detail
+
+Now we can pass the `selectedVideo` information to the `VideoDetail` component.
+
+```javascript
+// src/App.js
+
+// ...
+class App extends React.Component {
+  // state = ...
+  // handleSubmit = ...
+
+  render() {
+    const { selectedVideo } = this.state
+    return (
+      <Grid justify="center" container spacing={10}>
+        <Grid item xs={12}>
+          <Grid container spacing={10}>
+            <Grid item xs={12}>
+              <SearchBar onFormSubmit={this.handleSubmit} />
+            </Grid>
+            <Grid item xs={8}>
+              <VideoDetail video={selectedVideo} />
+            </Grid>
+            <Grid item xs={4}>
+              {/* VIDEO LIST */}
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    )
+  }
+}
+
+// ...
+```
+
+Now we can open the `VideoDetail` component and build it out to use the object
+we're passing via the props.
+
+First off we added an import of `Paper` and `Typography` from the Material-UI
+library. With a function based components the props are passed as the first
+argument to the function, so we're using variable destructuring to bring in
+only the 'video' property from the props passed in.
+
+We're using a `React.Fragment` wrapper to wrap the two Paper component.
+
+```javascript
+// src/components/VideoDetail.js
+import React from "react"
+
+import { Paper, Typography } from "@material-ui/core"
+
+const VideoDetail = ({ video }) => {
+  return (
+    <React.Fragment>
+      <Paper elevation={6} style={{ height: "70%" }}></Paper>
+      <Paper elevation={6} style={{ padding: "15px" }}></Paper>
+    </React.Fragment>
+  )
+}
+
+export default VideoDetail
+```
+
+Within the first Paper element, we're going to place an iframe that will display
+the video.
+
+Note that the `videoSrc` constant we define uses backticks around the string
+so that the interpolation of the `videoId` is supported.
+
+```javascript
+// src/components/VideoDetail.js
+import React from "react"
+
+import { Paper, Typography } from "@material-ui/core"
+
+const VideoDetail = ({ video }) => {
+  if (!video) return <div>Loading...</div>
+  const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`
+  return (
+    <React.Fragment>
+      <Paper elevation={6} style={{ height: "70%" }}>
+        <iframe
+          frameBorder="0"
+          height="100%"
+          width="100%"
+          title="Video Player"
+          src={videoSrc}
+        />
+      </Paper>
+      <Paper elevation={6} style={{ padding: "15px" }}></Paper>
+    </React.Fragment>
+  )
+}
+
+export default VideoDetail
+```
+
+Now if you go check the app by doing a search, the video will load.
+
+### Video Text
+
+Below the video we want to display the information about the video. The
+Typography component can support paragraphs, headers, etc.
+
+```javascript
+// src/components/VideoDetail.js
+import React from "react"
+
+import { Paper, Typography } from "@material-ui/core"
+
+const VideoDetail = ({ video }) => {
+  if (!video) return <div>Loading...</div>
+  const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`
+  return (
+    <React.Fragment>
+      <Paper elevation={6} style={{ height: "70%" }}>
+        <iframe
+          frameBorder="0"
+          height="100%"
+          width="100%"
+          title="Video Player"
+          src={videoSrc}
+        />
+      </Paper>
+      <Paper elevation={6} style={{ padding: "15px" }}>
+        <Typography variant="h4">
+          {video.snippet.title} - {video.snippet.channelTitle}
+        </Typography>
+        <Typography variant="subtitle1">
+          {video.snippet.channelTitle}
+        </Typography>
+        <Typography variant="subtitle2">{video.snippet.description}</Typography>
+      </Paper>
+    </React.Fragment>
+  )
+}
+
+export default VideoDetail
+```
+
+There we have our video detail component.
+
+Left off at [55:15](https://www.youtube.com/watch?v=VPVzx1ZOVuw&t=55m15s)
 
 [destructuring assignment syntax]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 [react docs for handling events]: https://reactjs.org/docs/handling-events.html
