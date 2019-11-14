@@ -195,6 +195,9 @@ git log --since=2000-01-01 --until=2012-12-21
 # setup and use alias for complex git commands
 git config --global alias.mylog "log --pretty=format:'%h %s [%an]' --graph"
 git mylog
+
+# find deleted file in history
+git log --all --full-history -- <path-to-file>
 ```
 
 # Git Merge-Base
