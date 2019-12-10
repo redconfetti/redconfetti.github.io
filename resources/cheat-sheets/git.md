@@ -195,6 +195,9 @@ git log --since=2000-01-01 --until=2012-12-21
 # setup and use alias for complex git commands
 git config --global alias.mylog "log --pretty=format:'%h %s [%an]' --graph"
 git mylog
+
+# find deleted file in history
+git log --all --full-history -- <path-to-file>
 ```
 
 # Git Merge-Base
@@ -339,6 +342,12 @@ git am file.patch
 # Tagging
 
 ```shell
+# update local tags from remote
+git fetch origin --tags
+
+# list tags
+git show-ref --tags --abbrev
+
 # Tag with annotation
 git tag -a v1.1 -m "version 1.1 (CodeName: Jason)"
 
@@ -360,9 +369,6 @@ git tag -a v1.23 04567899ae -f
 
 # force push all local tags
 git push origin --tags -f
-
-# update local tags from remote
-git fetch origin --tags
 ```
 
 # Misc
