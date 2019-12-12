@@ -69,9 +69,9 @@ Shift viewport
 
 ### Modification
 
-- x - Delete character under cursor
-- X - Delete character before cursor (to the left)
-- dw - Delete current word
+- x - Delete (Cut) character under cursor
+- X - Delete (Cut) character before cursor (to the left)
+- dw - Delete (Cut) current word
 - dd - Delete current line
 - dl - Deletes the current character
 - dh - Deletes character before cursor (to the left)
@@ -80,6 +80,15 @@ Shift viewport
 - d0 - Deletes from cursor to beginning of line
 - d\$ - Deletes from cursor to end of the line
 - D - Deletes from cursor to end of the line
+- y - Yank (copy) current character
+- yy - Yank (copy) current line
+- yw - Yank (copy) current word
+- y0 - Yank (copy) from cursor to beginning of line
+- y\$ - Yank (copy) from cursor to end of the line
+- p - Paste last deleted/yanked content after cursor
+- P - Paste last deleted/yanked content before cursor
+- u - Undo
+- CTRL-R - Redo
 - . - Issues the previous command
 
 ## Line Mode
