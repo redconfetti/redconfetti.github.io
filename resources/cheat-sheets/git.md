@@ -7,7 +7,7 @@ title: Git
 
 [Other Git Tips](http://mislav.uniqpath.com/2010/07/git-tips/)
 
-# Table of Contents
+## Table of Contents
 
 - [Man Pages](#man-pages)
 - [Git Branching](#git-branching)
@@ -26,7 +26,7 @@ title: Git
 - [Patching](#patching)
 - [Misc](#misc)
 
-# Man Pages
+## Man Pages
 
 ```shell
 # Manuals
@@ -36,7 +36,7 @@ man git-log
 man git-commit
 ```
 
-# Git Branching
+## Git Branching
 
 ```shell
 # view local branches with verbose output (includes remote tracking)
@@ -68,7 +68,7 @@ git branch -u origin/feature_branch
 git branch -set-upstream-to=origin/feature_branch
 ```
 
-# Git Checkout
+## Git Checkout
 
 ```shell
 # alternative way to clear all changes
@@ -96,7 +96,7 @@ git checkout frombranch thedir/thefile.txt anotherdir/anotherfile.txt
 git checkout -b local_branch_name johndoe/remote_branch_name
 ```
 
-# Git Commit
+## Git Commit
 
 ```shell
 # update the last commit message
@@ -108,14 +108,14 @@ git commit --amend --reset-author
 
 See [Auto-squashing Git Commits][1] | [StackOverflow][2]
 
-```
+```shell
 # append staged changes into previous commit
 git add .
 git commit --fixup=4321dcba
 git rebase --interactive --autosquash 4321dcba^
 ```
 
-# Git Diff
+## Git Diff
 
 ```shell
 # show unstaged changes since last commit
@@ -149,7 +149,7 @@ git diff master my-feature-branch
 git diff --since=1.week.ago --until=1.minute.ago
 ```
 
-# Git Log
+## Git Log
 
 ```shell
 # search for all commits (any branch) by message
@@ -200,14 +200,14 @@ git mylog
 git log --all --full-history -- <path-to-file>
 ```
 
-# Git Merge-Base
+## Git Merge-Base
 
 ```shell
 # Find the point at which a branch forked from another branch
 git merge-base --fork-point master feature_branch
 ```
 
-# Git Push
+## Git Push
 
 ```shell
 # push to remote with upstream tracking specified
@@ -220,7 +220,7 @@ git push origin my_branch_name
 git push origin :remote_branch_name
 ```
 
-# Git Rebase
+## Git Rebase
 
 ```shell
 # interactive rebase from remote master
@@ -230,7 +230,7 @@ git rebase -i origin/master
 git rebase -i HEAD~4
 ```
 
-# Git Remote
+## Git Remote
 
 ```shell
 # view configured remote repositories
@@ -242,6 +242,9 @@ git remote show origin
 # add remote repository
 git remote add johndoe https://github.com/johndoe/myproject.git
 
+# change remote repository for existing remote
+git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
+
 # remove remote repository
 git remote rm johndoe
 
@@ -249,7 +252,7 @@ git remote rm johndoe
 git remote prune origin
 ```
 
-# Git Remove
+## Git Remove
 
 ```shell
 # remove file from repository, without actually deleting
@@ -257,7 +260,7 @@ git remote prune origin
 git rm --cached mylogfile.log
 ```
 
-# Git Reset
+## Git Reset
 
 ```shell
 # clear all changes
@@ -270,7 +273,7 @@ git reset --hard HEAD^
 git reset --soft HEAD^
 ```
 
-# Git Show
+## Git Show
 
 ```shell
 # view changes in commit, using SHA hash
@@ -284,7 +287,7 @@ git show HEAD
 git show HEAD --name-only
 ```
 
-# Git Stash
+## Git Stash
 
 ```shell
 # save current unstaged changes to stash
@@ -306,7 +309,7 @@ git stash drop stash@{0}
 git stash clear
 ```
 
-# Git Update-Index
+## Git Update-Index
 
 ```shell
 # Apply Executable Permissions to a File
@@ -319,7 +322,7 @@ git add --chmod=+x path/to/file
 git ls-files --stage
 ```
 
-# Patching
+## Patching
 
 ```shell
 # create patch based on single commit
@@ -339,7 +342,7 @@ git apply --stat file.patch
 git am file.patch
 ```
 
-# Tagging
+## Tagging
 
 ```shell
 # update local tags from remote
@@ -371,7 +374,7 @@ git tag -a v1.23 04567899ae -f
 git push origin --tags -f
 ```
 
-# Misc
+## Misc
 
 ```shell
 # show log of commits affecting specific file

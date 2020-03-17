@@ -19,3 +19,7 @@ title: Notes
 ### Redux
 
 - [How Redux Works](/resources/notes/redux/)
+
+### Vue
+
+- [Intro to Vue.js](/resources/notes/vue/intro/)

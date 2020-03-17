@@ -2,11 +2,12 @@
 layout: page
 title: NPM
 ---
+
 [Back to Cheat Sheets](/resources/cheat-sheets/)
 
 ## Common Commands
 
-``` shell
+```shell
 # Update Node Package Manager
 npm install -g npm
 
@@ -62,13 +63,23 @@ npm version preminor
 npm version premajor
 ```
 
+## Node Version Manager (NVM)
+
+```shell
+# list remote versions
+nvm ls-remote
+
+# list locally installed versions
+nvm list
+```
+
 ## Creating a Node Module
 
 Using npm init you can completely setup a packages.json file that defines your module.
 
 In the "main" Javascript file specified, index.js, you can define properties on the "export" object and these properties will be accessible from your package.
 
-``` javascript
+```javascript
 # index.js
 exports.printMsg = function() {
   console.log("This is a message from the demo package");
@@ -77,7 +88,7 @@ exports.printMsg = function() {
 
 Javascript using module dependency
 
-``` javascript
+```javascript
 var demo = require('npm-demo-pkg');
 demo.printMsg()# // outputs "This is a message from the demo package" to console
 ```
@@ -102,26 +113,26 @@ When you are specifying the version of a package that you want in your packages.
 
 Update Latest Patch Versions Only
 
-* 1.4
-* ~1.4.2
-* 1.4.x
+- 1.4
+- ~1.4.2
+- 1.4.x
 
 Update Latest Minor Versions Only
 
-* 1
-* 1.x
-* ^1.4.0
+- 1
+- 1.x
+- ^1.4.0
 
 Update to Latest Major Version
 
-* \* (asterisk)
-* x
+- \* (asterisk)
+- x
 
 ## Scoped Packages
 
 A scoped package has a name that begins with your username like so:
 
-``` javascript
+```javascript
 {
   "name": "@username/project-name"
 }
@@ -129,29 +140,29 @@ A scoped package has a name that begins with your username like so:
 
 You can initialize your package using the --scoped argument like so:
 
-``` shell
+```shell
 npm init --scope=username
 ```
 
 If you create scoped packages all the time, you can configure NPM to do this by default in your ~/.npmrc file.
 
-``` shell
+```shell
 npm config set scope username
 ```
 
 Scoped packages are private by default. NPMjs.com requires that you be a paid member to host your own private packages with them. Public scoped packages are free however without requiring a membership. You can publish a package, and set it as public for all future publishes, using this command:
 
-``` shell
+```shell
 npm publish --access=public
 ```
 
 To use a scoped package, you simply include the username before the package name like so:
 
-``` shell
+```shell
 npm install @username/project-name --save
 ```
 
-``` javascript
+```javascript
 // in your project require the package like so
-var projectName = require("@username/project-name")
+var projectName = require("@username/project-name");
 ```
