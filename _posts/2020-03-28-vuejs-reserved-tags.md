@@ -174,7 +174,3 @@ component names.
     - tspan
     - use
     - view
-
-This includes SVG elements (such as `path`) as well as HTML elements.
-See [isSVG](https://github.com/vuejs/vue/blob/dev/dist/vue.js#L5603,L5610) and
-[isHTMLTag](https://github.com/vuejs/vue/blob/a59e05c2/dist/vue.js#L5589,L5601)
