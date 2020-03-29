@@ -28,10 +28,11 @@ worker: bundle exec sidekiq -e $RAILS_ENV -C config/sidekiq.yml -i {{UNIQUE_INT}
 This was derived from the instructions in the
 [How to run Background processes][0] guide.
 
-Cloud66 manages the worker processes cnofigured in this manner using the [BluePill gem][2].
+Cloud66 manages the worker processes cnofigured in this manner using the
+[BluePill gem][2].
 
-You can log into your server using the [CX toolbelt][1] and use the following commands to inspect
-the status of the worker processes.
+You can log into your server using the [CX toolbelt][1] and use the following
+commands to inspect the status of the worker processes.
 
 ```shell
 # check status of running processes

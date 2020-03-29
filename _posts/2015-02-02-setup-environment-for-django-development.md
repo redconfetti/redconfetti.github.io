@@ -11,11 +11,16 @@ tags:
 - pip
 ---
 
-Although this website is primarily devoted to Ruby / Rails development, I've found it necessary to learn Python for a new position I might take in the upcoming year. Here is my guide for setting up your local workstation for Python / Django development on a Mac OS X workstation.
+Although this website is primarily devoted to Ruby / Rails development, I've
+found it necessary to learn Python for a new position I might take in the
+upcoming year. Here is my guide for setting up your local workstation for Python
+/ Django development on a Mac OS X workstation.
 
 ## Homebrew
 
-The first step is to ensure that you have Homebrew installed, which is a package manager for Mac OS X that installs various software packages that are ported for Mac OS X.
+The first step is to ensure that you have Homebrew installed, which is a package
+manager for Mac OS X that installs various software packages that are ported for
+Mac OS X.
 
 To install Homebrew run the following from your Terminals command line:
 
@@ -23,19 +28,32 @@ To install Homebrew run the following from your Terminals command line:
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Once this is installed you should run 'brew doctor' and make sure that it's setup properly. Usually I find that I have to make sure that `/usr/local/bin` is the first path shown in `/etc/paths`. You can edit this using nano from the command line.
+Once this is installed you should run 'brew doctor' and make sure that it's
+setup properly. Usually I find that I have to make sure that `/usr/local/bin` is
+the first path shown in `/etc/paths`. You can edit this using nano from the
+command line.
 
 ``` bash
 $ sudo nano /etc/paths
 ```
 
-You'll likely also have to run `brew update`. Once `brew doctor` reports 'Your system is ready to brew', you can move forward.
+You'll likely also have to run `brew update`. Once `brew doctor` reports 'Your
+system is ready to brew', you can move forward.
 
-For development it's important to install software packages that are provided by Homebrew, so that all the executables and libraries you are using are provided by Homebrew, and thus not conflicting with system libraries. Homebrew installs executables in /usr/local/bin, which is configured to be your primary path. This ensures that when you try to run a command it uses the Homebrew executable and libraries rather than the default executables and libraries provided by Mac OS X.
+For development it's important to install software packages that are provided
+by Homebrew, so that all the executables and libraries you are using are
+provided by Homebrew, and thus not conflicting with system libraries. Homebrew
+installs executables in /usr/local/bin, which is configured to be your primary
+path. This ensures that when you try to run a command it uses the Homebrew
+executable and libraries rather than the default executables and libraries
+provided by Mac OS X.
 
 ## Python
 
-The next step is to install Python. By default Python v2.7.6 is already available for Mac OS X (Yosemite), however certain programs may rely on this version of Python to run on your system. By installing Python via Homebrew, it will depend on other dependencies installed by Homebrew.
+The next step is to install Python. By default Python v2.7.6 is already
+available for Mac OS X (Yosemite), however certain programs may rely on this
+version of Python to run on your system. By installing Python via Homebrew, it
+will depend on other dependencies installed by Homebrew.
 
 This command will install both python version 2 and 3.
 
@@ -43,7 +61,8 @@ This command will install both python version 2 and 3.
 $ brew install python python3
 ```
 
-After this is finished you can use 'which' to see which Python executables are present in your environment by default.
+After this is finished you can use 'which' to see which Python executables are
+present in your environment by default.
 
 ``` bash
 $ brew install python python3
@@ -59,7 +78,11 @@ As you can see, the Homebrew versions of Python will be used when you use these 
 
 ## VirtualEnv and VirtualEnvWrapper
 
-Python comes with a package manager called Pip that installs Python libraries from the [PyPI (Python Package Index)](https://pypi.python.org/pypi){:target="_blank"}. By default, this library installs packages globally for the version of Python you are using. For instance for Python v2, you would use 'pip', and for Python v3, you would use 'pip3' to install Python packages.
+Python comes with a package manager called Pip that installs Python libraries
+from the [PyPI (Python Package Index)](https://pypi.python.org/pypi). By
+default, this library installs packages globally for the version of Python you
+are using. For instance for Python v2, you would use 'pip', and for Python v3,
+you would use 'pip3' to install Python packages.
 
 ``` bash
 $ which pip
@@ -69,9 +92,14 @@ $ which pip3
 /usr/local/bin/pip3
 ```
 
-These packages are installed globally, and available across all your projects. This can be convenient, but it can also become a problem. For instance, one project might require one version of Django, while another project requires another one be installed as the primary version.
+These packages are installed globally, and available across all your projects.
+This can be convenient, but it can also become a problem. For instance, one
+project might require one version of Django, while another project requires
+another one be installed as the primary version.
 
-In the Ruby community this is where RVM or rbenv have been used to isolate the environment in use when you're running a specific Ruby application, with an isolated RubyGem gem set.
+In the Ruby community this is where RVM or rbenv have been used to isolate the
+environment in use when you're running a specific Ruby application, with an
+isolated RubyGem gem set.
 
 In the Python community the preferred tool is VirtualEnv and VirtualEnvWrapper. These are both Python tools that will need to be installed globally.
 

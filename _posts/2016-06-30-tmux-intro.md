@@ -21,9 +21,9 @@ separate virtual terminals (windows), as well as split the screen into separate
 "panes". Splitting the screen into panes can also be done with GNU screen, but
 it's not as well supported. See [reasons to use tmux instead of screen](http://superuser.com/questions/236158/tmux-vs-screen).
 
-# Installation
+## Installation
 
-## Installing for Mac
+### Installing for Mac
 
 Use [Homebrew](http://brew.sh/) to install tmux on a Mac OS X machine.
 
@@ -31,13 +31,13 @@ Use [Homebrew](http://brew.sh/) to install tmux on a Mac OS X machine.
 brew install tmux
 ```
 
-## Installing for Linux
+### Installing for Linux
 
 ``` shell
 sudo apt-get install tmux
 ```
 
-# First Use
+## First Use
 
 After you run `tmux` for the first time, you'll notice that you are returned to
 a typical shell prompt, however there is now a green bar at the bottom of your
@@ -50,7 +50,7 @@ the window.
 Sessions are like different work spaces. You can detach from a work space and
 then drop into another session that you setup previously.
 
-## Panes
+### Panes
 
 Many commands supported by tmux involve using a keystroke known as the 'prefix'.
 By default this keystroke is CTRL + B, however you can configure tmux to use
@@ -73,7 +73,7 @@ toggle between full screen and original size.
 
 To close a pane you can simply use the `exit` command from the shell.
 
-## Windows
+### Windows
 
 Use `PREFIX - c` to open up a new window. You'll now see that the status bar
 at the bottom of the screen reflects the new windows existence. You can switch
@@ -85,11 +85,11 @@ viewing in the status bar, and a dash (-) next to the last window you were
 viewing. `PREFIX - l` will allow you to switch between the current and last
 window.
 
-## Sessions
+### Sessions
 
 A session will run in tmux until you end it. You can detach from a session by
 using `PREFIX - d`. You can list sessions using `tmux list-sessions` or
-`tmux ls`. 
+`tmux ls`.
 
 You can re-attach to the tmux session by using `tmux attach`. If you have
 multiple sessions runing, you can use `tmux attach -t 0`, where `-t`
@@ -100,7 +100,7 @@ Alternatively you can name sessions when you start them using
 `tmux new -s session_name`, and then use `tmux attach -t session_name` to
 reconnect to the session.
 
-# Further Reading
+## Further Reading
 
 * [tmux cheatsheet](/resources/cheat-sheets/linux/#tmux)
 * [Thoughtbot - A tmux Crash Course](https://robots.thoughtbot.com/a-tmux-crash-course)

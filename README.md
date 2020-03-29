@@ -6,17 +6,20 @@ Source code for [rubycoloredglasses](http://www.rubycoloredglasses.com/)
 
 ### Install RVM
 
-```
+```bash
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
 ```
 
-You will have to change into the directory to initialize the gemset. If the version of Ruby required is not installed, you'll be prompted to install it (e.g. `rvm install ruby-2.2.1`)
+You will have to change into the directory to initialize the gemset. If the
+version of Ruby required is not installed, you'll be prompted to install it
+(e.g. `rvm install ruby-2.2.1`)
 
 ### Install Gems
 
-This blog requires that you install the Bundler gem, and then run `bundle install` to install all needed gem dependencies.
+This blog requires that you install the Bundler gem, and then run
+`bundle install` to install all needed gem dependencies.
 
-```
+```bash
 gem install bundler
 bundle install
 ```
@@ -31,19 +34,28 @@ This blog is powered by [Jekyll](https://jekyllrb.com/docs/home/)
 * [Github Pages](https://help.github.com/categories/github-pages-basics/)
 * [About Github Pages and Jekyll](https://help.github.com/articles/about-github-pages-and-jekyll/)
 
-The configuration for the site are stored in [config.yml](./_config.yml). See [Jekyll Docs - Configuration](https://jekyllrb.com/docs/configuration/)
+The configuration for the site are stored in [config.yml](./_config.yml).
+See [Jekyll Docs - Configuration](https://jekyllrb.com/docs/configuration/)
 
 ### Server
 
-You can run `jekyll serve` in the terminal, and then visit [http://127.0.0.1:4000/](http://127.0.0.1:4000/) to preview the site as you work on it.
+You can run `jekyll serve` in the terminal, and then visit
+[http://127.0.0.1:4000/](http://127.0.0.1:4000/) to preview the site as you
+work on it.
 
 ### Plugins
 
 #### Simple-Jekyll-Search
 
-Search page is powered by [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
+Search page is powered by [Simple-Jekyll-Search]
 
-Due to lack of Jekyll plugin support with Github pages, [search.json](./search.json) had to be configured with supported [Liquid Template Filters](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#standard-filters) to ensure that the generated JSON used for the search is valid.
+Due to lack of Jekyll plugin support with Github pages,
+[search.json](./search.json) had to be configured with supported
+[Liquid Template Filters] to ensure that the generated JSON used for the search
+is valid.
+
+[Liquid Template Filters]: https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#standard-filters
+[Simple-Jekyll-Search]: https://github.com/christian-fei/Simple-Jekyll-Search
 
 ## Style Guide
 
@@ -51,14 +63,16 @@ Due to lack of Jekyll plugin support with Github pages, [search.json](./search.j
 
 * [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 * [HTML to Markdown Converter](https://domchristie.github.io/to-markdown/)
+* [MarkdownLint Rules](https://github.com/markdownlint/markdownlint/blob/1e78c892/docs/RULES.md)
+  (see config in .markdownlint.json)
 
 ### Code Highlighting
 
-Code highlighting is supported by the [Rouge gem](https://github.com/jneen/rouge).
+Code highlighting is supported by the [Rouge gem].
 
-It's recommended that you use [Markdown](https://guides.github.com/features/mastering-markdown/) syntax to wrap code examples.
+It's recommended that you use [Markdown] syntax to wrap code examples.
 
-```
+```ruby
 \`\`\`ruby
 def some_method
   puts "this is some method"
@@ -66,7 +80,11 @@ end
 \`\`\`
 ```
 
-See [Rouge Wiki - List of supported languages and lexers](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers) for reference.
+See [Rouge Wiki - List of supported languages and lexers] for reference.
+
+[Rouge gem]: https://github.com/jneen/rouge
+[Rouge Wiki - List of supported languages and lexers]: https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers
+[Markdown]: https://guides.github.com/features/mastering-markdown/
 
 ## Presentations
 
