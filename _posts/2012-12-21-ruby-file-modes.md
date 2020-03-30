@@ -13,4 +13,5 @@ When working with files, you can open them in one of several modes.
 File.new("/file/path.txt", "w")
 ```
 
-You can find the description of these modes in the [IO documentation](http://ruby-doc.org/core-1.9.3/IO.html).
+You can find the description of these modes in the
+[IO documentation](http://ruby-doc.org/core-1.9.3/IO.html).

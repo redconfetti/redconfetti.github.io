@@ -19,7 +19,7 @@ jQuery Corners is compatible with Firefox, Internet Explorer 6+, Safari
 
 All it takes is a simple jQuery style selector call such as the following:
 
-```
+```html
 <script>
   $(document).ready( function() {
     $('.rounded').corners();
@@ -36,6 +36,5 @@ You can also experiment further with documented options to change the radius
 there is a background image specified inside of the object with rounded
 corners.
 
-Available for download at http://plugins.jquery.com/project/corners
-
-Documentation provided at http://www.atblabs.com/jquery.corners.html
+- [Download jQuery Corners](http://plugins.jquery.com/project/corners)
+- [jQuery Corners Documentation](http://www.atblabs.com/jquery.corners.html)
