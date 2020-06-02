@@ -8,11 +8,17 @@ tags:
 - gem
 comments: []
 ---
-In the past gems were created manually, or generated using the <a href="http://rubygems.org/gems/echoe" target="_blank">echoe gem</a> (last release Sept 21, 2011), or the <a href="https://github.com/appoxy/jeweler" target="_blank">Jeweler gem</a> (last release November 7, 2011).
+In the past gems were created manually, or generated using the [echoe gem] (last
+release Sept 21, 2011), or the [Jeweler gem] (last release November 7, 2011).
 
-Since then it appears that the most automated way to create a gem is by using Bundler, via the '<a href="http://gembundler.com/v1.2/bundle_gem.html" target="_blank">bundle gem</a>' command.
+Since then it appears that the most automated way to create a gem is by using
+Bundler, via the `bundle gem` [command].
 
-``` ruby
+[echoe gem]: http://rubygems.org/gems/echoe
+[jeweler gem]: https://github.com/appoxy/jeweler
+[command]: http://gembundler.com/v1.2/bundle_gem.html
+
+```ruby
 $ bundle gem my_tools
       create  my_tools/Gemfile
       create  my_tools/Rakefile

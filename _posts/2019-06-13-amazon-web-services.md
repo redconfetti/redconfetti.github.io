@@ -91,12 +91,12 @@ You can setup an EC2 instance for only a couple hours, days, or weeks, and only
 be charged for the resources you used. A typical VPS service is billed monthly
 or yearly, so short term use isn't economically viable.
 
-# Dedicated Hosts
+## Dedicated Hosts
 
 Some organizations require dedicated hosting for security compliance, or even
 for software licensing.
 
-# Container Services
+## Container Services
 
 [Amazon Elastic Container Service (ECS)] provides support to host applications
 that have been configured to run in a [Docker] container. You can choose to
@@ -110,14 +110,14 @@ Anyone that has used Docker knows that you need a container registry to store
 your container images, so AWS also offers
 [Amazon Elastic Container Registry (ECR)].
 
-# Cloud Formation
+## Cloud Formation
 
 You can automate the provisioning of your Cloud9 environment by using
 [Amazon Cloudformation].
 
 See [Automating AWS Cloud9](https://dzone.com/articles/automating-aws-cloud9)
 
-# Cloud 9
+## Cloud 9
 
 [Amazon Cloud9]
 
@@ -141,7 +141,7 @@ periodically (daily, weekly, etc).
 
 Alternatively you can also create an [Amazon Machine Image (AMI)]
 
-# Other Services
+## Other Services
 
 - [Amazon Lambda]
 - [Amazon Elastic Load Balancing]

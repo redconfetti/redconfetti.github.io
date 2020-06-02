@@ -22,6 +22,7 @@ formatting my code examples, tables, strikethrough text formatting, and
 [emojii][Github Markdown - Emojii].
 
 I've made use of the following cheat sheets for Markdown syntax:
+
 * [Github Markdown Cheatsheet]
 * [Daring Fireball - Markdown: Syntax]
 * [Adam-P Markdown Cheatsheet]
@@ -33,7 +34,8 @@ breaks into the URL of the link without breaking the link.
 ## Alternative Syntax
 
 Typically link syntax is provided like so:
-``` markdown
+
+```markdown
 [Google](http://www.google.com/)
 ```
 
@@ -63,6 +65,7 @@ throughout the page out of order, which bothers me in some obsessive-compulsive
 sort of way.
 
 Instead you can use the link text itself.
+
 ``` markdown
 Check out [Spotify] for cool music
 

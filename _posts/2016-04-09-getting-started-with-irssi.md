@@ -10,26 +10,26 @@ tags:
 Often open source projects or organizations use an IRC channel on FreeNode to
 provide support to users and/or developers. I'm trying to retain familiarity
 with the command line, rather than become completely dependent on GUI
-applications, so I've decided to use [IRSSI](https://irssi.org/) instead of 
+applications, so I've decided to use [IRSSI](https://irssi.org/) instead of
 [Pidgin](https://www.pidgin.im/) or [Adium](https://adium.im/) (Mac OS X).
 
 ## Installation
 
 Installing IRSSI is easy on Ubuntu, simply use:
 
-```
+```shell
 apt-get install irssi
 ```
 
 You can also install it using Homebrew on Mac OSX:
 
-```
+```shell
 brew install irssi
 ```
 
 After it's done installing, simply run the program
 
-```
+```shell
 irssi
 ```
 
@@ -47,7 +47,7 @@ If your terminal program doesn't support this, or uses these key combinations
 to switch between it's own tabs (like Ubuntu terminal does), then you should
 use the `/window` command instead.
 
-```
+```irc
 /WINDOW NEW                    - Create new split window
 /WINDOW NEW HIDE               - Create new hidden window
 /WINDOW CLOSE                  - Close split or hidden window
@@ -63,7 +63,7 @@ use the `/window` command instead.
 ## Commands
 
 For those that are new to IRC, it's a good idea to become familiar with
-the [common commands](http://www.ircbeginner.com/ircinfo/ircc-commands.html) 
+the [common commands](http://www.ircbeginner.com/ircinfo/ircc-commands.html)
 that IRC programs support. Here are a few:
 
 * `/join #channel_name` - Joins a channel
@@ -95,20 +95,20 @@ You can use these commands to get started immediately:
 
 Set your nick name and real name
 
-```
+```irc
 /set nick <nick>
 /set real_name <Real Name>
 ```
 
 Connecting to FreeNode
 
-```
+```irc
 /connect irc.freenode.net 8001
 ```
 
 Join Channel
 
-```
+```irc
 /join #ubuntu
 ```
 
@@ -117,7 +117,7 @@ Join Channel
 The FreeNode IRC network allows you to register your nickname and associate
 it with your email address. This is done by using the following commands:
 
-```
+```irc
 /msg nickserv REGISTER <password> <email>
 ```
 
@@ -127,23 +127,23 @@ account and obtain instructions to verify yourself.
 To make sure that your email address isn't revealed to other users, use the
 following command to ensure that it is hidden.
 
-```
+```irc
 /msg NickServ SET HIDEMAIL ON
 ```
 
 You can verify your information with the NickServ by using:
 
-```
+```irc
 /msg nickserv info
 ```
 
 ## Automatic Configuration
 
-Configure IRSSI with Freenode network, then register the Freenode server you 
+Configure IRSSI with Freenode network, then register the Freenode server you
 will connect to via an SSL connection, then configure the automatically joined
 channel (#ubuntu in this example).
 
-```
+```irc
 /network add Freenode
 /server add -auto -ssl -ssl_verify -ssl_capath /etc/ssl/certs -network Freenode irc.freenode.net 7000
 /channel add -auto #ubuntu Freenode
@@ -153,6 +153,6 @@ channel (#ubuntu in this example).
 After you've successfully registered your FreeNode nick name, you can run this
 command to configure IRSSI to login automatically after connecting to FreeNode.
 
-```
+```irc
 /network add -autosendcmd "/msg nickserv identify <password> ;wait 2000" Freenode
 ```

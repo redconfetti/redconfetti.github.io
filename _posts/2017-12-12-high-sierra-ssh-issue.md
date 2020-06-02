@@ -14,7 +14,8 @@ tags:
 
 A coworker of mine was reporting an issue with SSH after updating to Mac OS X
 High Sierra.
-```
+
+```shell
 $ ssh server-alias-hostname
 Unable to negotiate with 192.168.1.5 port 22: no matching cipher found. Their offer: blowfish-cbc,aes256-cbc
 ```
@@ -26,7 +27,7 @@ It turns out that the system is configured to use certain ciphers within
 `~/.ssh/config` to make sure that the ciphers supported by your local client
 match one of the ones offered by the remote server.
 
-```
+```SSH Config
 # ~/.ssh/config
 Host *
   SendEnv LANG LC_*

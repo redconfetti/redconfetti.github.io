@@ -9,13 +9,22 @@ tags:
 - metaclass
 comments: []
 ---
-I ran into an instance of meta programming in Ruby today, in the <a href="http://exceptionalruby.com/" target="_blank">Exceptional Ruby</a> book I'm reading for work. It seems that the theme this week is "you don't know Ruby as well as you could".
+I ran into an instance of meta programming in Ruby today, in the
+[Exceptional Ruby] book I'm reading for work. It seems that the theme this week
+is "you don't know Ruby as well as you could".
 
-I might be wrong in my understanding here, but this is what I understand thus far:
+[exceptional ruby]: http://exceptionalruby.com/
 
-Ruby stores methods for an object in it's class, not the object itself. Objects only really store their attributes/variables in memory. However there exists some unseen entity known as the metaclass which belongs to each object, and it can possibly store methods which belong to that object, but not necessarily to that objects class.
+I might be wrong in my understanding here, but this is what I understand thus
+far:
 
-``` ruby
+Ruby stores methods for an object in it's class, not the object itself. Objects
+only really store their attributes/variables in memory. However there exists some
+unseen entity known as the metaclass which belongs to each object, and it can
+possibly store methods which belong to that object, but not necessarily to that
+objects class.
+
+```ruby
 class Person
   def speak
     puts "Hello There!"
@@ -44,7 +53,11 @@ end
 NoMethodError: undefined method `bark' for #
 ```
 
-The reference to 'class << john' opens a code block where methods are defined in the metaclass for 'john', and not the 'Person' class.
+The reference to 'class << john' opens a code block where methods are defined
+in the metaclass for 'john', and not the 'Person' class.
 
-A more thorough understanding of this is explored in this blog post - <a href="http://yehudakatz.com/2009/11/15/metaprogramming-in-ruby-its-all-about-the-self/" target="_blank">Metaprogramming in Ruby: It&rsquo;s All About the Self</a>
+A more thorough understanding of this is explored in this blog post - 
+[Metaprogramming in Ruby: It's All About the Self]
+
+[Metaprogramming in Ruby: It's All About the Self]: http://yehudakatz.com/2009/11/15/metaprogramming-in-ruby-its-all-about-the-self/
 

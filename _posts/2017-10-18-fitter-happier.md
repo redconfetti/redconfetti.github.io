@@ -12,7 +12,7 @@ tags:
 - voice synthesis
 ---
 
-```
+```shell
 say -v fred "Fitter"
 say -v fred "happier"
 say -v fred "More productive"

@@ -19,11 +19,12 @@ application.
 
 I've wondered if there is a better way of integrating a NodeJS driven
 task/asset pipeline system with a Rails application. I was excited to see that
-the Rails team has adopted integration of [Webpack][Webpack] (an alternative to Browserify) via the
-[Webpacker gem](https://github.com/rails/webpacker/).
+the Rails team has adopted integration of [Webpack][Webpack] (an alternative to
+Browserify) via the [Webpacker gem](https://github.com/rails/webpacker/).
 
-Rails 5.1 supports an option to generate your application using [AngularJS](https://angularjs.org/),
-[Vue.js](https://vuejs.org/), or [React](https://reactjs.org/).
+Rails 5.1 supports an option to generate your application using
+[AngularJS](https://angularjs.org/), [Vue.js](https://vuejs.org/), or
+[React](https://reactjs.org/).
 
 ``` shell
 # Install with Webpack for Vue
@@ -36,17 +37,20 @@ rails new my_app --webpack=angular
 rails new my_app --webpack=react
 ```
 
-You'll notice that the command examples above do not suggest that you use the `--api` option. This isn't recommended
-because Webpacker still expects to include your JavaScript compiled assets into Rails generated pages, using helpers
-intended for use in your applications ERB driven layout. We have to remember that Vue, Angular, or React are not
-always used to support single page applications.
+You'll notice that the command examples above do not suggest that you use the
+`--api` option. This isn't recommended because Webpacker still expects to
+include your JavaScript compiled assets into Rails generated pages, using
+helpers intended for use in your applications ERB driven layout. We have to
+remember that Vue, Angular, or React are not always used to support single page
+applications.
 
 I've tried to follow some really good articles on this such as:
+
 * [Embracing Change Rails 5.1 Adopts Yarn Webpack and the JS Ecosystem][1]
 * [Webpacker README][2]
 * [Rails 5 &amp; Vue: How to Stop Worrying and Love the Frontend][3]
 
-# Yarn
+## Yarn
 
 [Yarn] is an improved alternative to the NPM package manager. It makes use of
 packages provided by the NPM registry, and recognizes the same `package.json`
