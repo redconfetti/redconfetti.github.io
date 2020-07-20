@@ -48,6 +48,7 @@ full list in [Linguist - languages.yml][6]).
 * apache
 * applescript
 * asp
+* bash
 * brainfuck
 * c
 * cfm
@@ -59,7 +60,6 @@ full list in [Linguist - languages.yml][6]).
 * csharp
 * css
 * csv
-* bash
 * diff
 * elixir
 * erb - HTML + Embedded Ruby
@@ -78,20 +78,20 @@ full list in [Linguist - languages.yml][6]).
 * nginx
 * objectivec
 * pascal
-* PHP
 * Perl
-* python
+* PHP
 * profile - python profiler output
+* python
 * rust
 * salt, saltstate - Salt
 * shell, sh, zsh, bash - Shell scripting
 * sql
 * scss
+* smalltalk
 * sql
 * svg
 * swift
 * rb, jruby, ruby - Ruby
-* smalltalk
 * vim, viml - Vim Script
 * volt
 * vhdl
