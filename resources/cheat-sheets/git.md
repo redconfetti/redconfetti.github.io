@@ -63,6 +63,9 @@ git push origin :old_name # delete old remote branch
 git push origin new_name # create new branch on remote
 git branch --set-upstream-to=origin/new_name
 
+# push branch to remote and set as upstream
+git push --set-upstream remote branch-name
+
 # set upstream tracking for branch
 git branch -u origin/feature_branch
 git branch -set-upstream-to=origin/feature_branch
