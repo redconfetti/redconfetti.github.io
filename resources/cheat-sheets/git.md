@@ -69,6 +69,9 @@ git push --set-upstream remote branch-name
 # set upstream tracking for branch
 git branch -u origin/feature_branch
 git branch -set-upstream-to=origin/feature_branch
+
+# detect which branches contain a specific commit
+git branch --contains 7688c3c
 ```
 
 ## Git Checkout
