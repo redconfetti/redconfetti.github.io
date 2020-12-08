@@ -9,7 +9,8 @@ tags:
 - devise
 ---
 
-I recently setup a custom controller to edit/update my Admin accounts, which are authenticated using [Plataformatec's Devise gem][1].
+I recently setup a custom controller to edit/update my Admin accounts, which are
+authenticated using [Plataformatec's Devise gem][1].
 
 I found [an article in the Devise Wiki][2] that mentions using some sort of
 'update_without_password' method to update the model without requiring the

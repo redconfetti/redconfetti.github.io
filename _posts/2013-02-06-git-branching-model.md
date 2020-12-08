@@ -16,7 +16,7 @@ versioned releases provided to the 'release branch' that may or may not have
 been tested and put through a quality assurance process, and finally only
 major updates (not releases) merged into the 'master' branch and tagged with
 the appropriate version number.
-
+<!--more-->
 My team doesn't make small updates here and there on the develop branch. We
 have our own feature branches, which have all the small micro commits made to
 them locally with whatever notes we choose to make for each. Once we're done

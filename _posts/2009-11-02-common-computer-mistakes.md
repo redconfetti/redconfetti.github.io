@@ -18,8 +18,9 @@ company, [HostDime].
 I've often cringed due to the negligence of individuals and/or companies
 regarding the following items. Here are some tips to save you from large
 losses.
+<!--more-->
 
-# Data Backups
+## Data Backups
 
 People often assume that they can accumulate all their photos, music, videos,
 documents, and other very important business related files on their computers
@@ -44,7 +45,7 @@ files from the file server to another backup drive just the same. This will
 keep you from having to go from computer to computer backing up the files,
 since they are all in one location on the file server.
 
-# Operating System / Recovery Discs
+## Operating System / Recovery Discs
 
 This applies more to those with personal computers, but also to businesses. If
 you purchase a computer, it will come with either installation discs for the
@@ -69,7 +70,7 @@ company you bought your computer from, or purchase new operating system discs
 and registration keys for the full retail price (or OEM price if you know how
 to search and buy it cheaper).
 
-# Domain Name Registration
+## Domain Name Registration
 
 A common issue I encounter with some website owners is that they hire some
 individual to setup their website, and then the relationship goes sour and the
@@ -98,7 +99,7 @@ complete website solution to you (website design, development, and hosting).
 The one thing you don't want them having control over is your domain however,
 because unlike the design of your website, the domain cannot be replaced.
 
-# Website Backups
+## Website Backups
 
 It can be very convenient for your website designer/developer to host your
 website for you. This gives them more control over the website, they are

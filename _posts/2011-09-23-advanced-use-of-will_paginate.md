@@ -22,6 +22,8 @@ def index
 end
 ```
 
+<!--more-->
+
 ``` html
 <!-- /app/views/contact/index.html.erb -->
 <%= will_paginate @contacts %>

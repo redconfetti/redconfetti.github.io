@@ -27,11 +27,13 @@ I went through the long process of [uninstalling all my gems][1], running an
 update on RubyGems using 'gem update --system' and then reinstalling them
 again via 'bundle install'. Still the gems were uninstalled, yet the
 specification errors were still occurring.
+<!--more-->
 
 I tried to run 'gem cleanup' or 'gem pristine --all' to get rid of the error.
 Eventually I was able to resolve the issue, but I don't remember exactly how I
 did it. Then today I go to work on another workstation, and the same thing
-occurs. It turns out that the invalid strings just need to be [removed from the specification files][2].
+occurs. It turns out that the invalid strings just need to be
+[removed from the specification files][2].
 
 As the errors pointed to files in /opt/local/lib/ruby/gems/1.8/specifications/
 (I'm using [MacPorts](http://www.macports.org/)), running these commands

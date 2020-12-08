@@ -27,14 +27,17 @@ upload.errors.inspect:
 #["/tmp/stream20111205-28441-10oj2ck-0.csv is not recognized by the 'identify' command.", "/tmp/stream20111205-28441-10oj2ck-0.csv is not recognized by the 'identify' command."]}>, @base=#>
 ```
 
+<!--more-->
+
 Further investigation helped me identify this 'identify' command as an
 executable provided by ImageMagick. I ran this command on the temporary file
 which was located in /tmp, and I got an error such as the one that follows on
 both my local machine and in production. The odd thing was that the file
 upload worked locally, but was failing remotely.
 
-```
+```bash
 $ identify test-import20111205-1909-1xsbr19-0.csv
+
 identify: no decode delegate for this image format 'test-import20111205-1909-1xsbr19-0.csv' @ error/constitute.c/ReadImage/532.
 ```
 

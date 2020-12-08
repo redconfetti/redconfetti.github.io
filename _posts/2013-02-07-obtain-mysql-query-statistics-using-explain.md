@@ -16,8 +16,9 @@ the table.
 You can obtain information on which keys are being used with a query by using
 the [EXPLAIN][1] statement before your SELECT statement. Here are some
 examples of it's [output][2].
+<!--more-->
 
-```
+```sql
 mysql> EXPLAIN SELECT * FROM USERS WHERE area_id = 2;
 +----+-------------+---------+------+---------------+------+---------+------+------+-------------+
 | id | select_type | table   | type | possible_keys | key  | key_len | ref  | rows | Extra       |
@@ -37,4 +38,3 @@ mysql> EXPLAIN SELECT * FROM USERS WHERE group_id = 16515319;
 
 [1]: http://dev.mysql.com/doc/refman/5.0/en/explain.html
 [2]: http://dev.mysql.com/doc/refman/5.0/en/explain-output.html
-

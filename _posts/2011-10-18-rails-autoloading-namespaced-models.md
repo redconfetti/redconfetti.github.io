@@ -24,8 +24,9 @@ so I created folders for each class and put their files under each folder.
 This seemed to resolve some errors, but then I was receiving errors when I
 would try to instantiate a new object from one of the defined classes in the
 Rails console:
+<!--more-->
 
-```
+```ruby
 NoMethodError: undefined method `new' for RetsMap::Sys_Local::Res_property::Class_1:Module
 ```
 
@@ -34,7 +35,7 @@ RetsMap::Sys_Local::Res_property::Class_1 inherits from
 RetsMap::Sys_Local::Res_property. I then tried to see why I was receiving this
 mention of 'Module' at the end of my 'Class_1' by starting with RetsMap::Base.
 
-``` shell
+```ruby
 irb(main):001:0> RetsMap.class
 => Module
 
@@ -51,7 +52,7 @@ Module, I figured that I needed to start there. I moved the file which defined
 the class from /app/models/rets_map/base/ folder to
 /app/models/rets_map/base.rb and this caused the class to load as a class.
 
-``` shell
+```ruby
 irb(main):005:0> RetsMap.class
 => Module
 

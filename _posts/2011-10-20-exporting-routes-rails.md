@@ -21,6 +21,8 @@ app:
 rake routes
 ```
 
+<!--more-->
+
 In this case I want to export all the routes into a format which I can post to
 our wiki as a table. This will require a custom script, but I'm not sure how
 Rails 3 internally stores routes.
@@ -40,7 +42,7 @@ So it appears that what I'm looking for is in
 I've modified this task and added it to my application under
 /lib/tasks/routes.rake like so:
 
-``` ruby
+```ruby
 namespace :routes do
 
   desc 'Print out all defined routes in CSV format. Target specific controller with CONTROLLER=x.'
@@ -81,6 +83,6 @@ end
 I can create a CSV file on my desktop, which contains all my routes by simply
 running this command now:
 
-``` shell
-$ rake routes:csv > ~/Desktop/rake-routes.csv
+```shell
+rake routes:csv > ~/Desktop/rake-routes.csv
 ```

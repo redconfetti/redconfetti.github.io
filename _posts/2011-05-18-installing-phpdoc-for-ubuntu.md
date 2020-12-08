@@ -21,19 +21,20 @@ path so that it's available from the command line using 'phpdoc'.
 I downloaded the source of PhpDocumentor directly from SourceForge, and it had
 phpdoc available in the folder, but I'm not sure which folder to put it in so
 that it's in my path for the command line.
+<!--more-->
 
 Finally I just reset the 'data_dir' setting back to the default by using this
 command:
 
-``` shell
-$ sudo pear config-set data_dir /usr/share/php/data
+```bash
+sudo pear config-set data_dir /usr/share/php/data
 ```
 
 Next I installed the package again via PEAR, just like I should have originally
 done.
 
-``` shell
-$ sudo pear upgrade PhpDocumentor
+```bash
+sudo pear upgrade PhpDocumentor
 ```
 
 This worked like a charm.

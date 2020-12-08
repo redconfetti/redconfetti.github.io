@@ -22,6 +22,7 @@ For instance you could either test for a link with the content 'Edit' on the
 page, or you could add an ID or class to the link and test for the presence of
 that link with that class. I found that I'd rather do both just to ensure that
 the button is or is not present in a certain circumstance.
+<!--more-->
 
 ``` ruby
 assert_select "a.btn", { :count => 0, :text => "Edit"}, "Edit button shouldn't be present for sent request"

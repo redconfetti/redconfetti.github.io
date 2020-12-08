@@ -18,6 +18,8 @@ sudo apt-get install ruby ruby1.8-dev
 sudo apt-get install apache2 apache2-mpm-prefork apache2-prefork-dev libcurl4-openssl-dev
 ```
 
+<!--more-->
+
 Next download Ruby Gems, extract the package, install Ruby Gems, and then
 create a symbolic link from /usr/bin/gem1.8 to /usr/bin/gem
 

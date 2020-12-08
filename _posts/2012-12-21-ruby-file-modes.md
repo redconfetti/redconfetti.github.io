@@ -7,6 +7,7 @@ categories:
 tags:
 - file
 ---
+
 When working with files, you can open them in one of several modes.
 
 ``` ruby

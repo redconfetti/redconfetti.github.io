@@ -10,6 +10,7 @@ tags:
 - unit-testing
 comments: []
 ---
+
 I remember when I was first exposed to the concept of test driven development
 (TDD), it seemed like you were writing a test that did the same thing as the
 function itself. This really left me perplexed as to why everyone was raving
@@ -24,7 +25,7 @@ class SomeClass
   end
 end
 ```
-
+<!--more-->
 All this method does is return the date in 'YYYY-MM-DD' format. This might be
 used to name a log file, or in an [ActiveRecord finder method] call.
 

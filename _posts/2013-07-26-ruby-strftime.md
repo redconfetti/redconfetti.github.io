@@ -8,9 +8,13 @@ tags:
 - dates
 - times
 ---
-Instead of piecing together Ruby strftime strings to use for various formats each time, I'm making this post to store common variations for me to reference later.
 
-I used the legend posted by [annaswims](http://apidock.com/users/annaswims) on [ApiDock.com](http://apidock.com/rails/ActiveSupport/TimeWithZone/strftime) to piece these together. Thanks Anna.
+Instead of piecing together Ruby strftime strings to use for various formats
+each time, I'm making this post to store common variations for me to reference later.
+
+I used the legend posted by [annaswims](http://apidock.com/users/annaswims) on
+[ApiDock.com](http://apidock.com/rails/ActiveSupport/TimeWithZone/strftime) to
+piece these together. Thanks Anna.
 
 ``` ruby
 # Pretty Abbreviated

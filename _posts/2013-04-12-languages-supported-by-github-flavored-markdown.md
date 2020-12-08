@@ -10,7 +10,7 @@ tags:
 - markdown
 ---
 
-__NOTE:__ This post updated on 11/26/2017
+__NOTE:__ This post updated on 12/08/2020
 
 I'm currently configuring the [Yard documentation][1] tool for use with
 Ruby/Rails projects. I could see that it's possible to create a
@@ -23,6 +23,7 @@ your generated documentation set. This is perfect for changelogs, readme
 files, and other high level documentation. After installing the Redcarpet gem,
 you can name these files with the '.md' extension to use
 [Markdown formatting][3] on your documentation.
+<!--more-->
 
 After further investigation I discovered that Yard supports
 [Github Flavored Markdown][4], with support for syntax highlighting of a
@@ -30,8 +31,8 @@ number of different languages. This is accomplished by wrapping your code with
 lines that consist of three backticks, with the first line suffixed by the
 language name.
 
-``` markdown
-``` ruby
+```markdown
+```ruby
 this = "Ruby Code"
 puts "This is #{this}"
 ```

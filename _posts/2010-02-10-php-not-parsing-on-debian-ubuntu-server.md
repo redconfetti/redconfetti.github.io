@@ -19,21 +19,23 @@ made sure the module was installed, restarted Apache2, etc. Nothing worked.
 It turns out that the default php5.conf configuration for Debian / Ubuntu's
 packages are using an incorrect syntax. Edit /etc/apache2/mods-available/php5
 conf to reflect:
+<!--more-->
 
-```
+```apache
 <FilesMatch \.php$>
   SetHandler application/x-httpd-php
 </FilesMatch>
 ```
+
 ...instead of...
 
-```
+```apache
 AddType application/x-httpd-php .php
 ```
 
 Special thanks to this Apache wiki article for pointing this out:
 
-http://wiki.apache.org/httpd/DebianPHP
+[http://wiki.apache.org/httpd/DebianPHP](http://wiki.apache.org/httpd/DebianPHP)
 
 I'm just posting this solution here for all the other nerds having the same
 issue that aren't finding this article in Google.

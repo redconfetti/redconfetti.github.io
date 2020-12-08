@@ -13,7 +13,7 @@ tags:
 - permalinks
 ---
 
-# My Dilema
+## My Dilema
 
 Okay. I've worked on making a Wordpress plugin once. It's pretty easy to make
 a plugin which replaces a tag such as `[another-plugin-tag parameter="value"]`
@@ -22,11 +22,13 @@ to replace `[iframe http://www.google.com/ 800 600]` with an iframe tag.
 
 Something I've found difficult to find however is how you can create custom
 pages as soon as the plugin is activated, which are accessible using a
-permalink such as http://www.wordpress-site.com/myplugin/search/ which can
+permalink such as `http://www.wordpress-site.com/myplugin/search/` which can
 submit a form to another URL such as
-http://www.wordpress-site.com/myplugin/results/ and then provide the results
-with a URL such as http://www.wordpress-site.com/myplugin/results/id/3/ or
+`http://www.wordpress-site.com/myplugin/results/` and then provide the results
+with a URL such as `http://www.wordpress-site.com/myplugin/results/id/3/` or
 anything else pretty like that.
+
+<!--more-->
 
 And I'm not talking about searching for posts or pages or anything. I'm
 talking about extending Wordpress to have functionality which is not blog
@@ -35,7 +37,7 @@ related, while still being a plugin.
 I installed the 'Contact Form 7' plugin to see how it submitted the form, and
 then I realized it uses Ajax. Great. I don't want Ajax.
 
-# A Hint of a Solution
+## A Hint of a Solution
 
 I searched online looking for something to explain this, because certainly
 someone else must have been scratching their head like I have. No guides
@@ -62,7 +64,7 @@ submissions. This was also obviously hard because 'post' is the term used to
 refer to the blog post records, so a search on Google for 'Wordpress post
 request' didn't return something relevant.
 
-# To Be Continued
+## To Be Continued
 
 I'm going to continue to investigate how to build the type of plugin which
 provides custom URL's, without requiring the existence of pages for these

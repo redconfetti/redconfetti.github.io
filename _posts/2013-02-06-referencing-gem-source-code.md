@@ -22,7 +22,7 @@ Instead, it's useful to simply unpack a gem into your Rails application so
 that it loads from the vendor/gems directory. I'm currently using the
 following command to unpack the RefineryCMS gems into my Rails app for
 reference.
-
+<!--more-->
 ``` shell
 gem unpack refinerycms --version 2.0.9 --target vendor/gems
 gem unpack refinerycms-core --version 2.0.9 --target vendor/gems

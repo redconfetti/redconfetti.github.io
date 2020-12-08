@@ -22,6 +22,7 @@ So I installed the latest sound driver from Dell.com for the integrated sound
 card and still after rebooting it sucked. Also when I start the computer up in
 the morning, I would have to wait like 3 minutes at least for all the startup
 programs to load. Nothing else would open until this was done.
+<!--more-->
 
 So anyway, I searched for a solution to this issue and found this post:
 

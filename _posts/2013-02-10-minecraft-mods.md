@@ -23,6 +23,7 @@ I'm currently using Minecraft version 1.4.7. I just downloaded the latest
 build/snapshot (possibly unstable yet likely compatible) from
 [Minecraft-Console][1] by simo415 on Github. A prerequisite to this mod
 running is [modloader][2], which states that it's only for version 1.4.7.
+<!--more-->
 
 I'm using a Mac. I downloaded the [modloader][3] source files, then followed
 the instructions to unpack the contents of the minecraft JAR file into a

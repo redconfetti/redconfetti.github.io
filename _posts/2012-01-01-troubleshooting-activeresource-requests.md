@@ -23,6 +23,7 @@ I found this thread on StackOverflow:
 solution I found helpful was this one on
 [overriding ActiveResource::Connection][4] so that it outputs the debug output.
 This worked for me even with Rails 3.1.
+<!--more-->
 
 Just in case this article with the code disappears, here is the initializer
 code you can use to view the HTTP session data from the console. I've added an

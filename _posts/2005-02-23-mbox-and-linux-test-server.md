@@ -24,6 +24,7 @@ I got the web server running on my little Linux test server. I was hosting
 [redconfetti.net] on the server that this website is hosted on for a while,
 but recently I moved the DNS hosting onto my server, along with
 redconfetti.net.
+<!--more-->
 
 I currently have various videos hosted off this server. They are available
 from the old redconfetti.net site - [Misc Videos]

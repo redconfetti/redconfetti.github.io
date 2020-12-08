@@ -21,6 +21,7 @@ recommended that I read [Exceptional Ruby], a book devoted to the subject of
 proper exception handling.
 
 [Exceptional Ruby]: http://exceptionalruby.com/
+<!--more-->
 
 I didn't understand that Ruby exceptions bubble up to the previously calling
 scripts, and thus can be captured and handled further up the stack. My boss

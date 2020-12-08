@@ -17,6 +17,7 @@ include Appname::Application.routes.url_helpers
 Make sure you replace 'Appname' with the name of your app, which should be the
 same name as the root folder for your application. You can also obtain it from
 /config/application.rb where it is defined like so:
+<!--more-->
 
 ``` ruby
 module Appname
@@ -45,4 +46,3 @@ partial_results_html = template.render_to_string(
 ```
 
 [1]: http://jguimont.com/post/5582583230/how-to-render-a-full-page-template-in-a-rake-task-with
-

@@ -19,6 +19,7 @@ ActiveRecord object.
 Lets say you are working on a form for a blog post that needs a multi-select
 field of statically defined adjectives, with the one or many adjectives saved
 to one field for the post.
+<!--more-->
 
 ``` ruby
 def self.adjectives
@@ -56,7 +57,7 @@ In the view file for your form, insert the following tag to create a select
 tag which loads all the options with the previously selected ones saved to the
 post field in a single field, serialized in YAML format.
 
-```
+```erb
 <%= select_tag 'post[positive_adjectives]', options_for_select(Post.adjectives, @post.positive_adjectives), { :multiple => true, :size => 10 } %>
 ```
 

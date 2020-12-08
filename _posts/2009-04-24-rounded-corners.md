@@ -16,6 +16,7 @@ Answer! jQuery Corners
 
 jQuery Corners is compatible with Firefox, Internet Explorer 6+, Safari
 (including iPhone), Google Chrome, and Opera 9.0.
+<!--more-->
 
 All it takes is a simple jQuery style selector call such as the following:
 

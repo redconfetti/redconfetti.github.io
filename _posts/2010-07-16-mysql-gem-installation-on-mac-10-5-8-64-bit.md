@@ -38,7 +38,10 @@ necessary libraries and/or headers.  Check the mkmf.log file for more
 details.  You may need configuration options.
 ```
 
-I looked online for a solution to this, and found that you have to point to the directory where MySQL is installed. I tried:
+<!--more-->
+
+I looked online for a solution to this, and found that you have to point to the
+directory where MySQL is installed. I tried:
 
 ``` shell
 sudo gem install mysql -- --with-mysql-dir=/usr/local/mysql
@@ -103,4 +106,3 @@ No definition for error_sqlstate
 ```
 
 Finally it installed just fine.
-

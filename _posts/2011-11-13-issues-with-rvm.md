@@ -25,6 +25,7 @@ this I ran into issues where software I've tried to install was using one
 utility or library provided natively by Mac OS X, while using some other
 utility or library I've installed separately, conflict due to differences and
 stop certain software from building properly upon install.
+<!--more-->
 
 I also took note that since I'm using MacPorts, I should
 [configure my $HOME/.rvmrc][4] file so that RVM uses my MacPort libraries when
@@ -142,4 +143,3 @@ the Ruby 1.9.2 installation.
 [3]: https://rvm.beginrescueend.com/
 [4]: https://rvm.beginrescueend.com/integration/macports/
 [5]: https://rvm.beginrescueend.com/packages/readline/
-

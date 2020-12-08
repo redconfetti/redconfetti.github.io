@@ -20,8 +20,9 @@ deprecated.
 
 I'm using Phusion Passenger with Apache 2, so I inserted the following
 configuration into my VirtualHost entry for the site.
+<!--more-->
 
-```
+```apache
 Alias /info /home/myapp/current/public
 
 <Location /info>
@@ -44,7 +45,7 @@ end
 ```
 
 This worked fine in development mode. I just made sure to pull up the pages
-using http://localhost:3000/info/
+using [http://localhost:3000/info/](http://localhost:3000/info/)
 
 I had tested this in production before building out the application further,
 and it seemed to work fine. Later on when I deployed after many updates, I
@@ -86,7 +87,7 @@ page from the main site.
 I found that the following configuration worked perfectly, with the symbolic
 link still needing to be present.
 
-```
+```apache
 Alias /info /home/myapp/current/public
 
 <Location /info>
@@ -161,8 +162,8 @@ RAILS_RELATIVE_URL_ROOT="/info" bundle exec rake assets:precompile
 I wanted to test this, but I can't seem to update to Rails 3.2, or install a
 new Rails app using edge Rails.
 
-```
-rails new testapp --edge
+```bash
+$ rails new testapp --edge
 .
 .
 .

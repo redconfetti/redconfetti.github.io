@@ -23,6 +23,7 @@ only really store their attributes/variables in memory. However there exists som
 unseen entity known as the metaclass which belongs to each object, and it can
 possibly store methods which belong to that object, but not necessarily to that
 objects class.
+<!--more-->
 
 ```ruby
 class Person
@@ -56,8 +57,7 @@ NoMethodError: undefined method `bark' for #
 The reference to 'class << john' opens a code block where methods are defined
 in the metaclass for 'john', and not the 'Person' class.
 
-A more thorough understanding of this is explored in this blog post - 
+A more thorough understanding of this is explored in this blog post -
 [Metaprogramming in Ruby: It's All About the Self]
 
 [Metaprogramming in Ruby: It's All About the Self]: http://yehudakatz.com/2009/11/15/metaprogramming-in-ruby-its-all-about-the-self/
-

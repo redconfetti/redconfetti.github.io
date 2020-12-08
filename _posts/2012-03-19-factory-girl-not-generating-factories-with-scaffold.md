@@ -28,6 +28,7 @@ Added to config/application.rb:
 
 Each time I would try to create a new scaffold, it would use shoulda to
 generate the test unit file, but would generate a YAML fixture.
+<!--more-->
 
 ``` shell
 invoke active_record

@@ -29,6 +29,8 @@ config.generators do |g|
 end
 ```
 
+<!--more-->
+
 I've been anxious however in deciding which testing tools to learn and use
 with my project. If I choose the wrong one, then all the scaffold generated
 test code will be generated for the test framework I might choose to quit

@@ -16,7 +16,7 @@ resolve the issues, much like I had when I upgraded to Snow Leopard.
 I found [this article][2] that provided steps for migrating MacPorts for Lion,
 but I kept getting this error when I tried to uninstall all the packages:
 
-```
+```shell
 warning: Failed to execute portfile from registry for apache2
 @2.2.17_1+preforkmpm too many nested evaluations (infinite loop?)
 Warning: Failed to execute portfile from registry for apache2
@@ -26,6 +26,8 @@ Warning: Failed to execute portfile from registry for apache2
 Warning: Failed to execute portfile from registry for apache2
 @2.2.17_1+preforkmpm too many nested evaluations (infinite loop?)
 ```
+
+<!--more-->
 
 I searched and searched for a solution, and even tried to uninstall apache2
 @2.2.17_1+preformkmpm, but it told me that apache2 @2.2.17_1+preformkmpm

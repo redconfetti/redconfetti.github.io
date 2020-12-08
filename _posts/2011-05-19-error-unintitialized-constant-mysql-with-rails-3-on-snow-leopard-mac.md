@@ -22,6 +22,7 @@ development:
 
 I had to do this because I created the Rails app without specifying that I
 didn't  want sqlite3. I then ran rake db:create and I got this error:
+<!--more-->
 
 ``` shell
 rake aborted!

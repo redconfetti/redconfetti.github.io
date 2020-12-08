@@ -17,6 +17,7 @@ work was using it.
 I had read much about the horrors if using fixtures, with the most memorable
 opinion of them being that they were 'brittle'. This, and many other complaints,
 caused me to skip using fixtures and jump directly to using FactoryGirl.
+<!--more-->
 
 FactoryGirl has been pretty great. The one issue I've found however is that the
 methods for creating associations between parent and child records, and

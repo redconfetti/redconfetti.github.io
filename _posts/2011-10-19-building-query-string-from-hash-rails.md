@@ -19,9 +19,11 @@ of my method like so:
 params = ActionController::Routing::Route.new.build_query_string(options)
 ```
 
+<!--more-->
+
 Under Rails 3 I receive this error:
 
-```
+```ruby
 wrong number of arguments (0 for 7)
 ```
 

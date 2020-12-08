@@ -9,7 +9,10 @@ tags:
 - documentation
 comments: []
 ---
-Some people want to download the documentation for the languages they're using. This is needed when an internet connection isn't available (like using a laptop on a plane), or even for the sake of speed.
+
+Some people want to download the documentation for the languages they're using.
+This is needed when an internet connection isn't available (like using a laptop
+on a plane), or even for the sake of speed.
 
 Here are two sources of downloadable documentation.
 

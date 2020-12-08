@@ -21,19 +21,22 @@ of Ubuntu.
 I thought that perhaps Selenium wasn't compatible with version 3 of Firefox,
 but this isn't the case. The Selenium website says ['Firefox 2+' for browsers
 running on Linux][Selenium OS Support].
+<!--more-->
 
 The error I was receiving when I would run a test was:
-```
+
+```bash
 10:46:19.778 INFO - Preparing Firefox profile...
 Error: no display specified
 ```
 
 After a bunch of research and Googling online, it turned out I just needed to
 run this before I started my Selenium server:
-```
+
+```bash
 export DISPLAY=:0
 ```
 
 I hope this saves someone else some time.
 
-[Selenium OS Support]: (http://seleniumhq.org/about/platforms.html#operating-systems
+[Selenium OS Support]: http://seleniumhq.org/about/platforms.html#operating-systems

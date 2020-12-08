@@ -19,11 +19,12 @@ basically a VNC server.
 The issue is that once I disconnected a monitor from the computer and set it
 up next to my router (plugged directly in), and restarted it, VNC would only
 work with a maximum resolution of 640x480.
+<!--more-->
 
 In a [forum] someone pointed out that this configuration added to
 `/etc/X11/xorg.conf` would save the day:
 
-```
+```inf
 Section "Device"
   Identifier "VNC Device"
   Driver "vesa"

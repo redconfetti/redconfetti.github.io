@@ -40,6 +40,8 @@ top of each model called Annotate Models Plugin.
 #  subscription_id        :integer(11)
 ```
 
+<!--more-->
+
 You can install the plugin using the following command from the root of your
 Rails application.
 

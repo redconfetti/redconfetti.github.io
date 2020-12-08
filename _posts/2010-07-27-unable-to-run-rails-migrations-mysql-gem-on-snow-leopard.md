@@ -18,6 +18,8 @@ uninitialized constant MysqlCompat::MysqlRes
 (See full trace by running task with --trace)
 ```
 
+<!--more-->
+
 I've tried to troubleshoot by reinstalling the MySQL gem, and the 64 bit
 version of the MySQL server. I'm no longer receiving this error above.
 

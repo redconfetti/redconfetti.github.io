@@ -23,6 +23,7 @@ had setup with a hierarchy which utilized inheritance and namespacing.
 Under Rails 2.3.8 I had a file, `/app/models/rets_map/rets_map_base.rb`. The
 error I was receiving from the rake task involved some sort of issue loading
 the class from this file.
+<!--more-->
 
 As an experiment I renamed the file as 'base.rb' so that it's path was
 `/app/models/rets_map/base.rb`. I figured that Rails 3.1.0 expected this

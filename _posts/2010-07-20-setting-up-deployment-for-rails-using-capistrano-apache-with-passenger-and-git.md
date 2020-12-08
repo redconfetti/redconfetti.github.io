@@ -16,32 +16,34 @@ comments: []
 I don't have time right now to learn how to setup Capistrano. I just want a
 recipe that works and does the job. Here are my notes.
 
-1) First install the Capistrano gem
+1. First install the Capistrano gem
 
-``` shell
+```bash
 sudo gem install capistrano
 ```
 
-2) Next you need to go into the directory of your Ruby on Rails application
+1. Next you need to go into the directory of your Ruby on Rails application
 and capify it:
 
-``` shell
+```bash
 capify .
 ```
 
-3) Next I recommend this article (I'll rip off the deploy.rb soon and post it
+<!--more-->
+
+1. Next I recommend this article (I'll rip off the deploy.rb soon and post it
 here)
 
 [Capistrano Deploy with Git and Passenger]
 
-4) Once you've configured your deploy.rb, run this command to have it setup
+1. Once you've configured your deploy.rb, run this command to have it setup
 the directories on the remote server (releases, shared, logs, etc).
 
-``` shell
+```bash
 cap deploy:setup
 ```
 
-5) Next run this command to get the list of other capistrano commands you can
+1. Next run this command to get the list of other capistrano commands you can
 run:
 
 ``` shell

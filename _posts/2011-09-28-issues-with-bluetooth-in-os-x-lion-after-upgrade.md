@@ -19,6 +19,7 @@ After upgrading to Lion the one thing that has been most frustrating is that
 my Bluetooth headset doesn't work anymore. It syncs up with my MacBook Pro,
 but it doesn't send audio from the mic nor does it playback audio. I'm using a
 [VXI BlueParrott B250-XT][1].
+<!--more-->
 
 I'm referring to the instructions on [this page][2] to resolve the issue which
 are:
@@ -41,7 +42,7 @@ Device Configuration -> Checked:
   * Delete global bluetooth preference file (/L/P/com.apple.Bluetooth.plist)
   * Remove all favorite devices
   * Unconfigure all 'configured' devices
-  * Restart the Bluetooth daemon ('blued') process<br />
+  * Restart the Bluetooth daemon ('blued') process
 
 This all did not resolve my issue. I then thought to myself, well...the device
 is pairing and connecting. Perhaps it's a sound issue. I then proceeded to

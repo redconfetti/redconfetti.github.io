@@ -6,4 +6,8 @@ categories:
 - Uncategorized
 tags: []
 ---
-I'm sorry Taryn. My friend just pointed [your site](http://rubyglasses.blogspot.com/) out to me. I swear it was a coincidence. I like your background by the way.
+
+I'm sorry Taryn. My friend just pointed [your site] out to me. I swear it was a
+coincidence. I like your background by the way.
+
+[your site]: http://rubyglasses.blogspot.com/

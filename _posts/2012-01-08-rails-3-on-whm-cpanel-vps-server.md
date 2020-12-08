@@ -24,6 +24,7 @@ performance or intermittent downtime causes you to loose business (or even the
 respect of your visitors). In such cases I recommend a VPS, because you
 control who you're hosting and thus can ensure optimal uptime and performance.
 I highly recommend [Linode][2] as a VPS provider.
+<!--more-->
 
 I've been using the shared hosting for PHP/Wordpress sites, and a VPS to host
 the Ruby on Rails applications I've been working on. Really this is expensive,
@@ -157,7 +158,7 @@ filename of the public key file without the '.pub' extension.
 For instance I've added a repository called 'marketsim', and then added
 'marketsim' to the 'writable' setting for the gitosis-admin group.
 
-```
+```ini
 [gitosis]
 
 [group gitosis-admin]
@@ -174,7 +175,7 @@ daemon = no
 Alternatively I could create a new group with writable access to the
 'marketsim' repository.
 
-```
+```ini
 [gitosis]
 
 [group gitosis-admin]
@@ -202,7 +203,8 @@ to that repository, I've push the changes via a commit to the remote
 gitosis-admin repository.
 
 NOTE: You may receive the warning:
-```
+
+```bash
 remote: WARNING:gitosis.gitweb.set_descriptions:Cannot find 'yourrepo' in '/home/git/repositories'
 ```
 
@@ -210,7 +212,7 @@ Ignore this and continue.
 
 Now I'm going to initialize my new repository and push it to the remote server.
 
-``` shell
+```shell
 $ cd marketsim
 $ git init .
 $ git add .
@@ -240,7 +242,7 @@ deployment script can install the gems needed for your application. You'll
 need to install this as 'root' so that the 'bundle' script is available under
 /usr/bin/bundle.
 
-```
+```bash
 $ ssh root@vps.web-app-host.com
 root@vps [~]# gem install bundler
 Fetching: bundler-1.0.21.gem (100%)
@@ -335,7 +337,7 @@ over-writes the Apache configuration when the EasyApache system is used to
 rebuild Apache, PHP, and other modules, place this configuration in
 `/usr/local/apache/conf/includes/pre_main_global.conf`.
 
-```
+```apache
 # /usr/local/apache/conf/includes/pre_main_global.conf
 
 LoadModule passenger_module /usr/lib/ruby/gems/1.8/gems/passenger-3.0.11/ext/apache2/mod_passenger.so
@@ -343,7 +345,8 @@ PassengerRoot /usr/lib/ruby/gems/1.8/gems/passenger-3.0.11
 PassengerRuby /usr/bin/ruby
 ```
 
-Next make a backup of the httpd.conf, run the configuration distiller script, rebuild, and then restart Apache.
+Next make a backup of the httpd.conf, run the configuration distiller script,
+rebuild, and then restart Apache.
 
 ``` shell
 cp /usr/local/apache/conf/httpd.conf /usr/local/apache/conf/httpd.conf.bak-modrails

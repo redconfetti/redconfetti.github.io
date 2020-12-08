@@ -8,7 +8,9 @@ tags:
 - rvm
 comments: []
 ---
-I know this is documented on the <a href="https://rvm.io/workflow/rvmrc/" target="_blank">official RVM website</a>, but I hate having to look it up over and over again each time I want to create a new RVMRC file.
+
+I know this is documented on the [official RVM website][1], but I hate having to
+look it up over and over again each time I want to create a new RVMRC file.
 
 ``` shell
 $ mkdir -p ~/projects/rails2test
@@ -30,9 +32,14 @@ y[es], n[o], v[iew], c[ancel]> y
 
 ```
 
-I'm needing to setup a Rails 2.3.8 system, so I can test my gem for compatibility between it and Rails 3.0.9.
+<!--more-->
 
-I stumbled onto <a href="http://ecmanaut.blogspot.com/2011/09/running-old-rails-238-with-rvm.html" target="_blank">an article</a> with suggestions for how to install RubyGems for Rails 2.3.8. This seems to run with errors, but the last command seemed to complete without errors other than 'README' not found:
+I'm needing to setup a Rails 2.3.8 system, so I can test my gem for
+compatibility between it and Rails 3.0.9.
+
+I stumbled onto [an article][2] with suggestions for how to install RubyGems
+for Rails 2.3.8. This seems to run with errors, but the last command seemed to
+complete without errors other than 'README' not found:
 
 ``` shell
 $ rvm all do gem install -v 1.4.2 rubygems-update
@@ -44,3 +51,6 @@ Rails 2.3.8
 $ ruby --version
 ruby 1.8.7 (2012-02-08 patchlevel 358) [i686-darwin10.8.0]
 ```
+
+[1]: https://rvm.io/workflow/rvmrc/
+[2]: http://ecmanaut.blogspot.com/2011/09/running-old-rails-238-with-rvm.html

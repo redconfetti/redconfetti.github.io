@@ -20,6 +20,7 @@ them.
 
 To add someone back to your Facebook news feed, simply scroll to the bottom of
 the page and click on the 'Edit Options' link for your news feed.
+<!--more-->
 
 ![Edit post options]
 

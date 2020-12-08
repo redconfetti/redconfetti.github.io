@@ -19,6 +19,7 @@ me get a head start on how to break the contents of the file up into rows and
 columns. I'm not passing the file directly from a form to the controller
 method, but I'm opening the file that has already been saved after being
 uploaded via AJAX.
+<!--more-->
 
 I couldn't find out how I would get the file itself into an object that I can
 pass to the parser like so:

@@ -29,6 +29,7 @@ definition inside of the .bash_profile file in your home directory. This example
 uses '/usr/local/bin/mate -w' to specify that the Textmate editor be used.
 You may configure this value to reflect the path for Vim, Nano, or any other
 text editor you wish to use.
+<!--more-->
 
 ```shell
 export EDITOR="/usr/local/bin/mate -w"

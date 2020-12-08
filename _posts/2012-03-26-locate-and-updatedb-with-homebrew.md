@@ -24,6 +24,7 @@ alias updatedb='sudo /usr/libexec/locate.updatedb'
 I used to use MacPorts to ensure that my command line environment on my Mac
 was almost exclusively using MacPort provided binaries, not the built in
 binaries and libraries that are packaged with Mac OS X.
+<!--more-->
 
 I had heard of Homebrew, but MacPorts seemed to work fine for me. Then I
 realized that Homebrew does the same thing, but installs software in
@@ -38,7 +39,7 @@ needing to inspect the code for.
 
 I installed the 'findutils' package that includes 'locate' via Homebrew.
 
-```
+```bash
 $ brew install findutils
 
 ==> Downloading http://ftpmirror.gnu.org/findutils/findutils-4.4.2.tar.gz
@@ -87,7 +88,7 @@ __UPDATE:__
 
 This wasn't successful however. I started to get an error:
 
-```
+```bash
 $ updatedb
 
 /usr/bin/sort: string comparison failed: Illegal byte sequence
@@ -102,4 +103,3 @@ OS X.
 
 [1]: http://tedwise.com/2010/08/28/homebrew-vs-macports/
 [2]: http://superuser.com/questions/109590/whats-the-equivalent-of-linuxs-updatedb-command-for-the-mac
-

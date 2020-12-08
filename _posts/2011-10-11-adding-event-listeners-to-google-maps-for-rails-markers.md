@@ -26,6 +26,7 @@ map, which are displayed to the left of the map, were highlighted using CSS
 after being clicked on, and page also scrolled down to the item selected on
 the map. To reproduce this we need to tie events to the markers using Google
 Maps for Rails (gmaps4rails).
+<!--more-->
 
 After some searching and testing I found this to be the solution. The
 'content_for :scripts' container ensures that the Javascript is inserted in
@@ -37,15 +38,15 @@ the Javascript which the gem outputs that initializes and loads the Google Map.
 <%= gmaps4rails(@json) %>
 
 <% content_for :scripts do %>
-	<script type="text/javascript" charset="utf-8">
-		Gmaps.map.callback = function() {
-			for (var i = 0; i <  Gmaps.map.markers.length; ++i) {
-				google.maps.event.addListener(Gmaps.map.markers[i].serviceObject, 'click', function(object) { 
-					alert('lat: '+object.latLng.Na+' long: '+object.latLng.Oa);
-				});
-			}
-		}
-	</script>
+  <script type="text/javascript" charset="utf-8">
+    Gmaps.map.callback = function() {
+      for (var i = 0; i <  Gmaps.map.markers.length; ++i) {
+        google.maps.event.addListener(Gmaps.map.markers[i].serviceObject, 'click', function(object) { 
+          alert('lat: '+object.latLng.Na+' long: '+object.latLng.Oa);
+        });
+      }
+    }
+  </script>
 <% end %>
 ```
 
@@ -54,7 +55,7 @@ of the objects, which is included in the ID of each element on the page. I
 updated my controller to use the following so that the MySQL ID would be
 available in the JSON:
 
-``` html
+```html
 @json = @properties.to_gmaps4rails do |property|
   "\"id\": \"#{property[0].id}\""
 end
@@ -63,21 +64,21 @@ end
 I then needed to figure out how to pass this ID to the function that is passed
 to the 'google.maps.event.addListener'. I did this like so:
 
-``` html
+```html
 <%= gmaps4rails(@json) %>
 
 <% content_for :scripts do %>
-	<script type="text/javascript" charset="utf-8">
-		Gmaps.map.callback = function() {
-			for (var i = 0; i <  Gmaps.map.markers.length; ++i) {
-				var marker = Gmaps.map.markers[i].serviceObject
-				marker.marker_id = Gmaps.map.markers[i].id;
-				google.maps.event.addListener(marker, 'click', function() {
-					alert('marker id: '+this.marker_id);
-				});
-			}
-		}
-	</script>
+  <script type="text/javascript" charset="utf-8">
+    Gmaps.map.callback = function() {
+      for (var i = 0; i <  Gmaps.map.markers.length; ++i) {
+        var marker = Gmaps.map.markers[i].serviceObject
+        marker.marker_id = Gmaps.map.markers[i].id;
+        google.maps.event.addListener(marker, 'click', function() {
+          alert('marker id: '+this.marker_id);
+        });
+      }
+    }
+  </script>
 <% end %>
 ```
 

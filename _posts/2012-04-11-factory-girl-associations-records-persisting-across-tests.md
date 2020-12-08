@@ -49,6 +49,7 @@ it, but errors you didn't expect it to directly catch, like the dreaded
 and alert you that you broke something, even though your test wasn't built to
 catch those. This is nice because you might change something in a model, and
 then all of a sudden something in a view is broken.
+<!--more-->
 
 Earlier today I had a new functional test I wrote fail because it was
 expecting a view to render an index of child records that Factory Girl wasn't

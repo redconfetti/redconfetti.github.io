@@ -9,9 +9,16 @@ tags:
 - extension
 comments: []
 ---
-I've found that there is trouble working with a Spree extension when your gem set does not include the gems included with the Spree gem itself. I discovered this after generating a Spree extension, confining the extension to it's own gem set using RVM, and then running 'bundle install' based on the Gemfile/gemspec configuration of just the extension itself.
 
-To overcome this, I recommend making a folder named 'spree', then configuring that folder to use a shared 'Spree' gem set.
+I've found that there is trouble working with a Spree extension when your gem
+set does not include the gems included with the Spree gem itself. I discovered
+this after generating a Spree extension, confining the extension to it's own gem
+set using RVM, and then running 'bundle install' based on the Gemfile/gemspec
+configuration of just the extension itself.
+
+To overcome this, I recommend making a folder named 'spree', then configuring
+that folder to use a shared 'Spree' gem set.
+<!--more-->
 
 ``` shell
 $ mkdir spree
@@ -32,18 +39,21 @@ Do you wish to trust this .rvmrc file? (/Users/jason/Sites/spree/.rvmrc)
 y[es], n[o], v[iew], c[ancel]> yes
 ```
 
-Next, install the Rails and Spree gems, generate a Rails application, install Spree into that application. You will use this application to explore Spree, experiment with it, etc. It's main purpose is to install the gems that are dependencies of the Spree gem.
+Next, install the Rails and Spree gems, generate a Rails application, install
+Spree into that application. You will use this application to explore Spree,
+experiment with it, etc. It's main purpose is to install the gems that are
+dependencies of the Spree gem.
 
-``` shell
-$ gem install rails -v 3.2.9
-$ gem install spree -v 1.3.0
-$ rails _3.2.9_ new my_store
-$ spree install my_store
+```bash
+gem install rails -v 3.2.9
+gem install spree -v 1.3.0
+rails _3.2.9_ new my_store
+spree install my_store
 ```
 
 In the same directory, generate the Spree extension.
 
-``` shell
+```bash
 $ spree extension myextension
       create  spree_myextension
       create  spree_myextension/app
@@ -76,13 +86,22 @@ $ spree extension myextension
         ********************************************************************************
 ```
 
-Now that the extension is created, you'll need to make a minor modification to the configuration of the extensions Gemfile by forcing it to use the 'edge' branch version of the 'spree_auth_devise' gem. This requires simply adding the ", :branch => 'edge'" to the end of the existing definition in the Gemfile for the extension. This step ensures that you do not receive any errors during the next step.
+Now that the extension is created, you'll need to make a minor modification to
+the configuration of the extensions Gemfile by forcing it to use the 'edge'
+branch version of the 'spree_auth_devise' gem. This requires simply adding the
+", :branch => 'edge'" to the end of the existing definition in the Gemfile for
+the extension. This step ensures that you do not receive any errors during the
+next step.
 
 ``` shell
 gem 'spree_auth_devise', :git => "git://github.com/spree/spree_auth_devise", :branch => 'edge'
 ```
 
-Now you will need to generate the dummy Rails application which is used by your Rspec tests. As you are generating an extension that is meant to integrate with an existing Rails application environment, with the Spree gem installed, this is needed to ensure that you can rely on the Rails and Spree libraries being present during the tests.
+Now you will need to generate the dummy Rails application which is used by your
+Rspec tests. As you are generating an extension that is meant to integrate with
+an existing Rails application environment, with the Spree gem installed, this is
+needed to ensure that you can rely on the Rails and Spree libraries being
+present during the tests.
 
 ``` shell
 $ bundle exec rake test_app
@@ -91,9 +110,21 @@ Generating dummy Rails application...
 Setting up dummy database...
 ```
 
-Now, you can troubleshoot issues you run into while developing the extension by dropping into the dummy applications Rails console. The dummy application is located under 'spree_myextension/spec/dummy'. You should keep this application configured so that it's configured as a stock Rails application with Spree installed, with your Rspec tests generating test data in the database on the fly.
+Now, you can troubleshoot issues you run into while developing the extension by
+dropping into the dummy applications Rails console. The dummy application is
+located under 'spree_myextension/spec/dummy'. You should keep this application
+configured so that it's configured as a stock Rails application with Spree
+installed, with your Rspec tests generating test data in the database on the fly.
 
-At most you should modify this Rails application so that it has the necessary modifications which you have documented for the user to make upon installing your extension, as well as the initializers or other files that your gem has [generators](http://guides.rubyonrails.org/generators.html) for.
+At most you should modify this Rails application so that it has the necessary
+modifications which you have documented for the user to make upon installing
+your extension, as well as the initializers or other files that your gem has
+[generators] for.
 
-Lastly you can initialize the new extension to sync up with a Git repository. I recommend using [Bitbucket](https://bitbucket.org/) if you're not developing a public extension, as they host unlimited private repositories for teams of up to 5 users.
+Lastly you can initialize the new extension to sync up with a Git repository. I
+recommend using [Bitbucket] if you're not developing a
+public extension, as they host unlimited private repositories for teams of up
+to 5 users.
 
+[Bitbucket]: https://bitbucket.org/
+[generators]: http://guides.rubyonrails.org/generators.html

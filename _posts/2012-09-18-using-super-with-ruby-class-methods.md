@@ -8,9 +8,14 @@ tags:
 - superclass
 comments: []
 ---
-One of the awesome things about Ruby is that you can over-ride methods you define, or even over-write methods that are built into Ruby.
 
-This may not be unique with Ruby, but you can also over-ride super class methods in your defined subclass and use 'super' to execute the logic defined in the super class version of that method.
+One of the awesome things about Ruby is that you can over-ride methods you
+define, or even over-write methods that are built into Ruby.
+
+This may not be unique with Ruby, but you can also over-ride super class methods
+in your defined subclass and use 'super' to execute the logic defined in the
+super class version of that method.
+<!--more-->
 
 ``` ruby
 class ScumbagSteve
