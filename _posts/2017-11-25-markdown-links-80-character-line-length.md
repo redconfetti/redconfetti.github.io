@@ -20,6 +20,7 @@ With this migration I converted all my articles from HTML to
 [Github Flavored Markdown (GFM)], which resulted in much better support for
 formatting my code examples, tables, strikethrough text formatting, and
 [emojii][Github Markdown - Emojii].
+<!--more-->
 
 I've made use of the following cheat sheets for Markdown syntax:
 

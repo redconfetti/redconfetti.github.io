@@ -7,6 +7,7 @@ categories:
 tags:
 - phantomjs
 ---
+
 I was tasked with installing PhantomJS 2.0 on an Ubuntu 14.04 VPS running with
 2 GB of RAM. Online discussions on
 [Github](https://github.com/ariya/phantomjs/issues/13051) and
@@ -27,6 +28,7 @@ make[1]: *** [sub-Target-pri-make_first-ordered] Error 2
 make[1]: Leaving directory `/home/app/src/phantomjs-2.0.0/src/qt/qtwebkit/Source/WebCore'
 make: *** [sub-Source-WebCore-WebCore-pro-make_first-ordered] Error 2
 ```
+<!--more-->
 
 To overcome this error I checked the build.sh script and found that the script
 would discover the number of CPU cores you're running on a machine and thus run

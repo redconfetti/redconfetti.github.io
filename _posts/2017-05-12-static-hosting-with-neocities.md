@@ -25,6 +25,7 @@ that works with [Jekyll](https://jekyllrb.com/).
 
 [cPanel/WHM server]: https://cpanel.com/
 [Ruby Colored Glasses]: http://www.rubycoloredglasses.com/
+<!--more-->
 
 ## Neocities
 

@@ -7,17 +7,35 @@ categories:
 tags:
 - postgresql
 ---
-I've always used either SQLite (the default) with new Rails projects, or I've used MySQL because I've been using it ever since 2002 when I started doing web development with PHP. Recently however I was challenged with deploying an application to Heroku as part of a code challenge I'm taking part in. Unfortunately, Heroku doesn't support SQLite, and recommends PostgreSQL. Rather than waste time trying to create a MySQL app and running into problems, I'm going to go the easy route and use PostgreSQL.
 
-The first step I had to take was installing [PostgreSQL using Homebrew](http://www.moncefbelyamani.com/how-to-install-postgresql-on-a-mac-with-homebrew-and-lunchy/). I figured it would default to using 'root' as the super user locally without a password, just like MySQL. Postgres is actually setup owned by your local user account though. This makes sense given that usually a daemon is setup to run as a certain user. Unix admins should create a 'postgres' user, login to that account, then initialize and run the database as that user.
+I've always used either SQLite (the default) with new Rails projects, or I've
+used MySQL because I've been using it ever since 2002 when I started doing web 
+development with PHP. Recently however I was challenged with deploying an
+application to Heroku as part of a code challenge I'm taking part in.
+Unfortunately, Heroku doesn't support SQLite, and recommends PostgreSQL. Rather
+than waste time trying to create a MySQL app and running into problems, I'm
+going to go the easy route and use PostgreSQL.
+<!--more-->
 
-I find that it's useful to control when the Postgres server is running using the [Lunchy gem](https://github.com/mperham/lunchy). It makes it easy to start and stop daemons such as this that are installed via Homebrew.
+The first step I had to take was installing [PostgreSQL using Homebrew]. I
+figured it would default to using 'root' as the super user locally without a
+password, just like MySQL. Postgres is actually setup owned by your local user
+account though. This makes sense given that usually a daemon is setup to run as
+a certain user. Unix admins should create a 'postgres' user, login to that
+account, then initialize and run the database as that user.
+
+I find that it's useful to control when the Postgres server is running using the
+[Lunchy gem]. It makes it easy to start and stop daemons such as this that are
+installed via Homebrew.
 
 ``` shell
 $ gem install lunchy
 $ lunchy start postgres
 $ lunchy stop postgres
 ```
+
+[Lunchy gem]: https://github.com/mperham/lunchy
+[PostgreSQL using Homebrew]: http://www.moncefbelyamani.com/how-to-install-postgresql-on-a-mac-with-homebrew-and-lunchy/
 
 ## Creating a User for your Rails App
 

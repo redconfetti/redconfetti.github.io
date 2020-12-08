@@ -10,16 +10,17 @@ I recently was running into issues with Vagrant where I'd start the virtual
 machine using the 'vagrant up' command, but I'd receive an error when trying to
 use `vagrant ssh`.
 
-{% highlight shell %}
+```bash
 $ vagrant ssh
 ssh_exchange_identification: Connection closed by remote host
-{% endhighlight %}
+```
+<!--more-->
 
 I'm using a Vagrant/Ansible configuration based on [roots/trellis](https://github.com/roots/trellis/){:target="_blank"}.
 
 I tried to look into the issue further by running the command with verbose output.
 
-``` shell
+```bash
 vagrant ssh -- -vvv
 ```
 

@@ -25,6 +25,7 @@ messages.
 
 Thereafter AWS was relaunched offering Amazon Elastic Compute Cloud (EC2) and
 Amazon Simple Storage Service (S3).
+<!--more-->
 
 ## Elastic Compute Cloud (EC2)
 

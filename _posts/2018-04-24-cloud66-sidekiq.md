@@ -24,6 +24,7 @@ fine.
 ```yaml
 worker: bundle exec sidekiq -e $RAILS_ENV -C config/sidekiq.yml -i {{UNIQUE_INT}}
 ```
+<!--more-->
 
 This was derived from the instructions in the
 [How to run Background processes][0] guide.

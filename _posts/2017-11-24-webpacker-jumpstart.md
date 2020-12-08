@@ -21,6 +21,7 @@ I've wondered if there is a better way of integrating a NodeJS driven
 task/asset pipeline system with a Rails application. I was excited to see that
 the Rails team has adopted integration of [Webpack][Webpack] (an alternative to
 Browserify) via the [Webpacker gem](https://github.com/rails/webpacker/).
+<!--more-->
 
 Rails 5.1 supports an option to generate your application using
 [AngularJS](https://angularjs.org/), [Vue.js](https://vuejs.org/), or

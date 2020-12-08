@@ -7,17 +7,32 @@ categories:
 tags:
 - bundler
 ---
-I'm currently starting work on a Ruby gem, '<a title="Github profile for Annotate Gemfile" href="https://github.com/redconfetti/annotate_gemfile" target="_blank">annotate_gemfile</a>', that will grab the title, description, homepage URL, or source URL for every defined gem, and then add them as an annotation / commented for each gem definition in the Gemfile.
 
-As part of this exploration, I'm digging into the source for Bundler to try an understand how it imports details on the gems from the Gemfile, how it queries for details on each from <a href="http://rubygems.org/" target="_blank">RubyGems</a>. Here are some discoveries I'm making.
+I'm currently starting work on a Ruby gem,
+[Github profile for Annotate Gemfile], that will grab the title, description,
+homepage URL, or source URL for every defined gem, and then add them as an
+annotation / commented for each gem definition in the Gemfile.
 
+As part of this exploration, I'm digging into the source for Bundler to try an
+understand how it imports details on the gems from the Gemfile, how it queries
+for details on each from [RubyGems]. Here are some discoveries I'm making.
+<!--more-->
+
+[Github profile for Annotate Gemfile]: https://github.com/redconfetti/annotate_gemfile
+[RubyGems]: http://rubygems.org/
 # Bundler.definition
 
 
-This appears to return an initialized object with the Gemfile definitions loaded. <a href="https://github.com/bundler/bundler/blob/master/lib/bundler.rb#L146" target="_blank">Bundler.definition</a> returns an instance of Bundler::Definition for the <a href="https://github.com/bundler/bundler/blob/master/lib/bundler.rb#L240" target="_blank">default Gemfile</a> and default lock file (Gemfile.lock). <a href="https://github.com/bundler/bundler/blob/master/lib/bundler/definition.rb#L8" target="_blank">Readable attributes</a> of this "definition" are platforms, sources, ruby_version, and dependencies.
+This appears to return an initialized object with the Gemfile definitions
+loaded. [Bundler.definition] returns an instance of Bundler::Definition for the
+[default Gemfile] and default lock file (Gemfile.lock). [Readable attributes] of
+this "definition" are platforms, sources, ruby_version, and dependencies.
 
+[Bundler.definition]: https://github.com/bundler/bundler/blob/master/lib/bundler.rb#L146
+[default Gemfile]: https://github.com/bundler/bundler/blob/master/lib/bundler.rb#L240
+[Readable attributes]: https://github.com/bundler/bundler/blob/master/lib/bundler/definition.rb#L8
 
-``` ruby
+```ruby
 >> Bundler.definition.platforms
 => ["ruby"]
 
@@ -33,7 +48,12 @@ This appears to return an initialized object with the Gemfile definitions loaded
 
 ## Platforms
 
-Bundler allows the specification for gems to be installed only on certain <a href="http://bundler.io/man/gemfile.5.html#PLATFORMS-platforms-" target="_blank">Ruby platforms</a>. Options include different minor versions of Ruby (1.8, 1.9, 2.0) as well as differences between types of Ruby (MRI Ruby, Rubinius, jRuby, various Windows Ruby versions).
+Bundler allows the specification for gems to be installed only on certain
+[Ruby platforms]. Options include different minor versions of Ruby (1.8, 1.9,
+2.0) as well as differences between types of Ruby (MRI Ruby, Rubinius, jRuby,
+various Windows Ruby versions).
+
+[Ruby platforms]: http://bundler.io/man/gemfile.5.html#PLATFORMS-platforms-
 
 ## Sources
 
@@ -41,8 +61,13 @@ There appear to be three source types supported by Bundler.
 
 ### RubyGems
 
-A <a style="font-style: normal;" href="https://github.com/bundler/bundler/blob/master/lib/bundler/source/rubygems.rb" target="_blank">Bundler::Source::RubyGems</a> object represents a RubyGems server. The default one is RubyGems.org. If you check your Gemfile, you'll see a 'source' directive that points to the URL for the gem server with <a href="http://www.rubygems.org/" target="_blank">http://rubygems.org/</a> as the URL.
+A [Bundler::Source::RubyGems] object represents a RubyGems server. The default
+one is RubyGems.org. If you check your Gemfile, you'll see a 'source' directive
+that points to the URL for the gem server with [http://www.rubygems.org/] as the
+URL.
 
+[http://www.rubygems.org/]: http://www.rubygems.org/
+[Bundler::Source::RubyGems]: https://github.com/bundler/bundler/blob/master/lib/bundler/source/rubygems.rb
 
 ``` ruby
 1.9.3p448 :044 > Bundler.definition.sources[1].class
@@ -71,9 +96,11 @@ The 'dependency_names' are the names of gems which rely on this RubyGem source s
 
 ### Path
 
+A [Bundler::Source::Path]object represents a local gem path. This source is from
+the local path of the Gemfile I'm developing. The 'name' appears to be the name
+of the dependency that relies on the "path" source.
 
-A <a style="font-style: normal;" href="https://github.com/bundler/bundler/blob/master/lib/bundler/source/path.rb" target="_blank">Bundler::Source::Path</a> object represents a local gem path. This source is from the local path of the Gemfile I'm developing. The 'name' appears to be the name of the dependency that relies on the "path" source.
-
+[Bundler::Source::Path]: https://github.com/bundler/bundler/blob/master/lib/bundler/source/path.rb
 
 ``` ruby
 1.9.3p448 :045 > Bundler.definition.sources[0].class
@@ -94,8 +121,10 @@ A <a style="font-style: normal;" href="https://github.com/bundler/bundler/blob/m
 
 ### Git
 
-A <a style="font-style: normal;" href="https://github.com/bundler/bundler/blob/master/lib/bundler/source/git.rb" target="_blank">Bundler::Source::Git</a> object represents a Git repository that provides the source code for a defined gem dependency.
+A [Bundler::Source::Git] object represents a Git repository that provides the
+source code for a defined gem dependency.
 
+[Bundler::Source::Git]: https://github.com/bundler/bundler/blob/master/lib/bundler/source/git.rb
 
 ``` ruby
 2.0.0p247 :018 > Bundler.definition.sources[0].class
@@ -123,12 +152,17 @@ A <a style="font-style: normal;" href="https://github.com/bundler/bundler/blob/m
  => nil
 ```
 
-As you can see, the 'name' attribute defines the gem that is dependent on this specific Git repository.
+As you can see, the 'name' attribute defines the gem that is dependent on this
+specific Git repository.
 
 ## Ruby Version
 
-Your Gemfile may include a specific Ruby version, which is expressed as a <a href="https://github.com/bundler/bundler/blob/master/lib/bundler/ruby_version.rb">Bundler::RubyVersion</a> object in the definition. Heroku <a href="https://devcenter.heroku.com/articles/ruby-versions" target="_blank">requires the Ruby version</a> for projects you are deploying to their platform.
+Your Gemfile may include a specific Ruby version, which is expressed as a
+[Bundler::RubyVersion] object in the definition. Heroku
+[requires the Ruby version] for projects you are deploying to their platform.
 
+[Bundler::RubyVersion]: https://github.com/bundler/bundler/blob/master/lib/bundler/ruby_version.rb
+[requires the Ruby version]: https://devcenter.heroku.com/articles/ruby-versions
 
 ``` ruby
 # Gemfile
@@ -141,8 +175,10 @@ ruby '2.0.0'
 
 ## Dependencies
 
-This is the meat of the Gemfile, the dependencies which are represented as <a href="https://github.com/bundler/bundler/blob/master/lib/bundler/dependency.rb" target="_blank">Bundler::Dependency</a> objects.
+This is the meat of the Gemfile, the dependencies which are represented as
+[Bundler::Dependency] objects.
 
+[Bundler::Dependency]: https://github.com/bundler/bundler/blob/master/lib/bundler/dependency.rb
 
 ``` ruby
 1.9.3p448 :003 > Bundler.definition.dependencies[0]
@@ -158,7 +194,8 @@ This is the meat of the Gemfile, the dependencies which are represented as <a hr
  => <Bundler::Dependency type=:development name="rspec" requirements="~> 2.14.1">
 ```
 
-It appears that dependencies do not specify a source if they are provided from a Ruby Gems server. Only if they are sourced from a Path or Git repository.
+It appears that dependencies do not specify a source if they are provided from a
+Ruby Gems server. Only if they are sourced from a Path or Git repository.
 
 
 ``` ruby
@@ -188,6 +225,3 @@ It appears that dependencies do not specify a source if they are provided from a
 2.0.0p247 :025 > Bundler.definition.dependencies[10].source.class
  => Bundler::Source::Git
 ```
-
- 
-

@@ -22,12 +22,13 @@ defaults:
       path: ''
       type: 'posts'
     values:
-        layout: 'post'
+      layout: 'post'
 
 # Build settings
 destination: _site
 paginate: 10
 permalink: /:year/:month/:title/
+excerpt_separator: <!--more-->
 highlighter: rouge
 markdown: kramdown
 kramdown:

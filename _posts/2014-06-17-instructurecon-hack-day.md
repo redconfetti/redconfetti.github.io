@@ -20,6 +20,7 @@ can ask questions, talk to Canvas developers, etc.
 
 Here are some things I've clarified with their developers thus far, thanks to
 Eric Berry and Brian Palmer ([codekitchen](https://github.com/codekitchen).
+<!--more-->
 
 ## LTI Template Builder
 

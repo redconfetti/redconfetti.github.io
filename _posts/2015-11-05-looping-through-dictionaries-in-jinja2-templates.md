@@ -26,6 +26,7 @@ shell script.
 
 Well it turns out that this isn't do easy for someone not very familiar with
 Jinja2 templates or Python objects.
+<!--more-->
 
 At first I figured that I would simply loop through each element inside of the
 'wordpress_sites' dictionary like so:

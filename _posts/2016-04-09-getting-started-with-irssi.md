@@ -12,6 +12,7 @@ provide support to users and/or developers. I'm trying to retain familiarity
 with the command line, rather than become completely dependent on GUI
 applications, so I've decided to use [IRSSI](https://irssi.org/) instead of
 [Pidgin](https://www.pidgin.im/) or [Adium](https://adium.im/) (Mac OS X).
+<!--more-->
 
 ## Installation
 

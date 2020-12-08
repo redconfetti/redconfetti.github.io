@@ -28,7 +28,7 @@ After making this update I got the following error:
 > Error: vue-loader was used without the corresponding plugin. Make sure to
 > include VueLoaderPlugin in your webpack config. at Object.module.exports
 > (/Users/jason/Projects/my_app/node_modules/vue-loader/lib/index.js:36:29)
-
+<!--more-->
 I was able to identify that I needed to make some configuration changes after
 [updatiing Vue-Loader from v14 to v15].
 

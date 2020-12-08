@@ -23,7 +23,7 @@ The closest solution I could find was mentioned in this article:
 
 This article was oriented towards League of Legends, so I had to modify the
 commands used to enable this for steam.
-
+<!--more-->
 ## Disable Protection
 
 You still have to reboot the Mac while holding Command + R during start up.

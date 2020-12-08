@@ -13,6 +13,7 @@ I also have the 'apple-gcc42' Homebrew package installed to provide GCC 4.2.
 
 Still however, when I would try to install a version of Ruby via RVM, I would
 get this error:
+<!--more-->
 
 ``` shell
 $ rvm install ruby-1.9.3

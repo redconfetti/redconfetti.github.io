@@ -22,7 +22,7 @@ uploading the files to the web hosting server using FTP. I later expanded on
 this by learning CSS and JavaScript. For the longest time I used
 [Macromedia Dreamweaver] (now owned by Adobe), because it was the closest thing
 to a web-standard compliant WYSIWYG editor, with a text/code editor that
-supported code coloring. In 2002 I multiplied the power I yielded in
+supported code coloring.<!--more--> In 2002 I multiplied the power I yielded in
 developing functional websites by learning how to use server-side PHP coding
 with the MySQL database. This was my humble beginning as a full-stack developer.
 

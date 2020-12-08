@@ -16,6 +16,7 @@ recently, and after doing so I was unable to connect to the device like I
 expected.
 
 Here is how you can recover / un-brick the device.
+<!--more-->
 
 ## Install tftpd
 

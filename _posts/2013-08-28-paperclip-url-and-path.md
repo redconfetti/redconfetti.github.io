@@ -8,11 +8,16 @@ tags:
 - paperclip
 - s3
 ---
-I'm trying to configure my application so that it stores files in S3 by default when my application is running in the Production Rails environment, with local file storage and a customized file path for development and test environments. Here is my configuration.
+I'm trying to configure my application so that it stores files in S3 by default
+when my application is running in the Production Rails environment, with local
+file storage and a customized file path for development and test environments.
+Here is my configuration.
 
+<!--more-->
 ## Paperclip Defaults
 
-You can view the default options by opening the Rails console and inspecting Paperclip::Attachment.default_options. I'm using Paperclip 3.5.1.
+You can view the default options by opening the Rails console and inspecting
+Paperclip::Attachment.default_options. I'm using Paperclip 3.5.1.
 
 ``` ruby
 pry(main)> Paperclip::Attachment.default_options
@@ -43,7 +48,10 @@ pry(main)> Paperclip::Attachment.default_options
 
 ## Overriding Defaults
 
-You can override the defaults in config/initializers/paperclip.rb using the following example which <a href="http://rubydoc.info/gems/paperclip/Paperclip/Storage/S3" target="_blank">configures Paperclip to use S3</a> in production, with the ImageMagick path we use on the production server (running <a href="http://www.ubuntu.com/" target="_blank">Ubuntu</a> instead of MacOSX):
+You can override the defaults in config/initializers/paperclip.rb using the
+following example which [configures Paperclip to use S3] in production, with the
+ImageMagick path we use on the production server (running [Ubuntu] instead of
+MacOSX):
 
 ``` ruby
 if Rails.env.production?
@@ -71,4 +79,10 @@ unless Rails.env.production?
 end
 ```
 
-*Remember that the :path and :url have to align so that the file path and URL path match and the file is served by your web server. It's best to modify the path only if the local filesystem prefix is different than the 'public' folder in the root of your Rails application directory.*
+*Remember that the :path and :url have to align so that the file path and URL
+path match and the file is served by your web server. It's best to modify the
+path only if the local filesystem prefix is different than the 'public' folder
+in the root of your Rails application directory.*
+
+[configures Paperclip to use S3]: http://rubydoc.info/gems/paperclip/Paperclip/Storage/S3
+[Ubuntu]: http://www.ubuntu.com/

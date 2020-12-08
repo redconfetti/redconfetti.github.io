@@ -21,6 +21,7 @@ Unable to negotiate with 192.168.1.5 port 22: no matching cipher found. Their of
 ```
 
 You can view a list of supported ciphers by running `ssh -Q cipher`.
+<!--more-->
 
 It turns out that the system is configured to use certain ciphers within
 `/etc/ssh/ssh_config`. You can adjust your local configuration within

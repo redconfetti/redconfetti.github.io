@@ -19,6 +19,7 @@ this extension to adapt to new practices.
 
 [Spree]: https://github.com/spree/spree
 [developer documentation]: http://guides.spreecommerce.com/developer/
+<!--more-->
 
 ### From Accessible Attributes to Strong Parameters
 

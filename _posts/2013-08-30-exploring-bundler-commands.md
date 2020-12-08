@@ -9,11 +9,14 @@ tags:
 - bundler
 - Thor
 ---
-You may be used to using 'bundle install' or 'bundle exec' often, but here are some commands you might have forgotten about or never heard of.
+
+You may be used to using 'bundle install' or 'bundle exec' often, but here are
+some commands you might have forgotten about or never heard of.
 
 ## Bundle Init
 
-You don't have to create your own Gemfile manually for new Ruby based projects. Bundle Init creates a new one for you.
+You don't have to create your own Gemfile manually for new Ruby based projects.
+Bundle Init creates a new one for you.
 
 ``` shell
 $ bundle init
@@ -21,10 +24,12 @@ Writing new Gemfile to /Users/myuser/Projects/hey_guys/Gemfile
 $ ls -la Gemfile
 -rw-r--r--  1 myuser  mygroup  64 Aug 29 17:40 Gemfile
 ```
+<!--more-->
 
 # Bundle Console
 
-For purer Ruby projects, this is useful. Start an IRB session in the context of the current bundle.
+For purer Ruby projects, this is useful. Start an IRB session in the context of
+the current bundle.
 
 ``` shell
 $ bundle console
@@ -38,7 +43,11 @@ Resolving dependencies...
 # Bundle Open
 
 
-After you have configured your [default text editor](/2012/11/changing-the-default-text-editor/), which could be Vim, Emacs, Textmate, or Sublime, you can use 'bundle open' to quickly open your editor with the root directory for the gems source code loaded.
+After you have configured your [default text editor], which could be Vim, Emacs,
+Textmate, or Sublime, you can use 'bundle open' to quickly open your editor with
+the root directory for the gems source code loaded.
+
+[default text editor]: ./2012/11/changing-the-default-text-editor/
 
 ``` shell
 $ bundle open rake
@@ -65,7 +74,13 @@ Initializating git repo in /Users/redconfetti/Sites/annotate_gemfile/smash_pumpk
 
 # Bundle Inject
 
-Bundle Inject is an undocumented feature added on [November 29, 2012, in version 1.3.0.pre](https://github.com/bundler/bundler/blob/master/CHANGELOG.md#130pre-nov-29-2012), implemented by Engine Yard likely for their own automation. This command allows you to add gems to your Gemfile from the command line. [Great jorb Engine Yard](http://www.youtube.com/watch?v=8C4ayBHTES0)!
+Bundle Inject is an undocumented feature added on
+[November 29, 2012, in version 1.3.0.pre], implemented by Engine Yard likely for
+their own automation. This command allows you to add gems to your Gemfile from
+the command line. [Great jorb Engine Yard]!
+
+[November 29, 2012, in version 1.3.0.pre]: https://github.com/bundler/bundler/blob/master/CHANGELOG.md#130pre-nov-29-2012
+[Great jorb Engine Yard]: http://www.youtube.com/watch?v=8C4ayBHTES0
 
 ``` shell
 $ bundle inject
@@ -73,7 +88,14 @@ $ bundle inject
 bundle inject requires at least 2 arguments: "bundle inject GEM VERSION ...".
 ```
 
-Bundler defines this command, as well as the others, in [Bundler::CLI](https://github.com/bundler/bundler/blob/master/lib/bundler/cli.rb#L807). This file defines the command line interface for bundle commands (bundle install, bundle update, bundle exec, bundle gem,etc) using [Thor](https://github.com/erikhuda/thor#description). Thor command support standard command line style [options and flags](http://whatisthor.com/#options-and-flags).
+Bundler defines this command, as well as the others, in [Bundler::CLI]. This
+file defines the command line interface for bundle commands (bundle install,
+bundle update, bundle exec, bundle gem,etc) using [Thor]. Thor command support
+standard command line style [options and flags].
+
+[Bundler::CLI]: https://github.com/bundler/bundler/blob/master/lib/bundler/cli.rb#L807
+[Thor]: https://github.com/erikhuda/thor#description
+[options and flags]: http://whatisthor.com/#options-and-flags
 
 Here is an example of the default intended use of the command.
 
@@ -93,7 +115,9 @@ The resulting definition added to my Gemfile was very descriptive.
 gem 'poltergeist', '= 1.3.0'
 ```
 
-I explored the code and it doesn't appear that there are options to include special arguments such as the branch or git repository. It does however support multiple gem argument sets like so:
+I explored the code and it doesn't appear that there are options to include
+special arguments such as the branch or git repository. It does however support
+multiple gem argument sets like so:
 
 ``` shell
 $ bundle inject poltergeist 1.3.0 pry 0.9.12.2

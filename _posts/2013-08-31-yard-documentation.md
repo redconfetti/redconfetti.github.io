@@ -7,11 +7,17 @@ categories:
 tags:
 - Yard
 ---
-Here are my own notes for using <a href="https://github.com/lsegal/yard" target="_blank">Yard</a> to provide the Ruby API documentation and other notes for your application.
+
+Here are my own notes for using [Yard] to provide the Ruby API documentation and
+other notes for your application.
+
+[Yard]: https://github.com/lsegal/yard
+<!--more-->
 
 ## Installation
 
-First add the Yard gem to your Gemfile, preferably in the development group if applicable.
+First add the Yard gem to your Gemfile, preferably in the development group if
+applicable.
 
 ``` ruby
 group :development do
@@ -24,7 +30,8 @@ end
 
 ## Running
 
-You can use Yard to generate documentation by just running 'Yard' from the root of your application.
+You can use Yard to generate documentation by just running 'Yard' from the root
+of your application.
 
 ``` shell
 $ yard
@@ -49,9 +56,15 @@ $ yard server
 
 ## Configuration
 
-You can run the 'yardoc' command with options that cause it to parse certain directories for documentation. With Rails applications it appears that this isn't necessary. Rather than add options or flags after the yard command each time, you can configure a [.yardopts file](https://github.com/lsegal/yard/blob/master/.yardopts) with the arguments you would normally use from the command line.
+You can run the 'yardoc' command with options that cause it to parse certain
+directories for documentation. With Rails applications it appears that this
+isn't necessary. Rather than add options or flags after the yard command each
+time, you can configure a [.yardopts file] with the arguments you would normally
+use from the command line.
 
-Yard will make use of your README.md file as the index page for the documentation, but to include other files you could configure a .yardopts file like so:
+Yard will make use of your README.md file as the index page for the
+documentation, but to include other files you could configure a .yardopts file
+like so:
 
 ``` shell
 -
@@ -61,7 +74,9 @@ CHANGELOG.md
 
 This makes it possible for the CHANGELOG to show up under the 'File List' section.
 
-I prefer to have my own hierarchy of markdown files in /doc, with generated documentation in /doc/app. This way I can completed delete the doc/app folder without affecting my other markup files in the root of /doc.
+I prefer to have my own hierarchy of markdown files in /doc, with generated
+documentation in /doc/app. This way I can completed delete the doc/app folder
+without affecting my other markup files in the root of /doc.
 
 ``` shell
 --output-dir doc/app
@@ -71,4 +86,8 @@ CHANGELOG.md
 README.md
 ```
 
-Here is a good example of a more elaborately [configured .yardopts file](https://github.com/lsegal/yard/blob/master/.yardopts). You can also run 'yardoc --help' to discover other options to add to the file.
+Here is a good example of a more elaborately [configured .yardopts file]. You
+can also run 'yardoc --help' to discover other options to add to the file.
+
+[.yardopts file]: https://github.com/lsegal/yard/blob/master/.yardopts
+[configured .yardopts file]: https://github.com/lsegal/yard/blob/master/.yardopts

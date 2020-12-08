@@ -1429,21 +1429,35 @@ i {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
-	text-align: left; }
-	.post-list li {
-		margin: 0 0 2.2em 0; }
-		.post-list li:last-child hr {
-			display: none; }
+  text-align: left;
+}
+
+.post-list li {
+  margin: 0 0 2.2em 0;
+}
+
+.post-list li:last-child hr {
+  display: none;
+}
 
 .post-list__post-title {
 	margin-top: 0;
 	margin-bottom: .2em;
 	font-size: 1.5em;
-	line-height: 1.3em; }
-	.post-list__post-title a {
-		color: #333333; }
-		.post-list__post-title a:hover {
-			color: #b9301c; }
+  line-height: 1.3em;
+}
+
+.post-list li .excerpt h2 {
+  font-size: 1.3em;
+}
+
+.post-list__post-title a {
+  color: #333333;
+}
+
+.post-list__post-title a:hover {
+  color: #b9301c;
+}
 
 .post-list__meta {
 	display: block;

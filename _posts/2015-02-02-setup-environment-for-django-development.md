@@ -15,6 +15,7 @@ Although this website is primarily devoted to Ruby / Rails development, I've
 found it necessary to learn Python for a new position I might take in the
 upcoming year. Here is my guide for setting up your local workstation for Python
 / Django development on a Mac OS X workstation.
+<!--more-->
 
 ## Homebrew
 

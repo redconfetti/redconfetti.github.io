@@ -21,6 +21,7 @@ In my case, I'm linking to an end-point that serves a named CSV file. Without
 any sort of over-ride, I was finding that the default fallback behavior defined
 by the [otherwise() method] was occurring. In my case this was a 404 page
 template that loaded.
+<!--more-->
 
 After much searching, the following solution was found. All you have to do is
 simply add a target attribute to the anchor tag with the value "_self".

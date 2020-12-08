@@ -18,7 +18,7 @@ I got this error in the console.
 ```bash
 vue.runtime.esm.js:638 [Vue warn]: Do not use built-in or reserved HTML elements as component id: path
 ```
-
+<!--more-->
 It turns out that HTML and SVG tags are reserved and cannot be used as VueJS
 component names.
 

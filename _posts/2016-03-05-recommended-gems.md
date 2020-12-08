@@ -9,7 +9,7 @@ tags:
 ---
 
 Here are some Gems we recommend that you checkout.
-
+<!--more-->
 * Authentication / Authorization
   * [devise](https://github.com/plataformatec/devise) - Flexible authentication
     solution for Rails with Warden

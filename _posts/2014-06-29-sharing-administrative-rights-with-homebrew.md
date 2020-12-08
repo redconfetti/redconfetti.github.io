@@ -18,6 +18,7 @@ I installed the ports from, with 'admin' group ownership.
 Recently I created another account on my machine, logged into it, and ran
 'brew doctor' just to make sure everything was in excellent order, and I ran
 into these errors:
+<!--more-->
 
 ``` shell
 $ brew doctor

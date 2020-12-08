@@ -26,6 +26,7 @@ auto-pruning feature, but it still is using 128 GB currently.
 $ du -sh .bitcoin/
 128G  .bitcoin/
 ```
+<!--more-->
 
 ## Install the software-properties-common Package
 

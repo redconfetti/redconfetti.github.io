@@ -18,6 +18,7 @@ files have totally incorrect permissions such as 777 for all files and folders.
 
 Go into the directory main directory at the top of the file/folder hierarchy
 and run the following commands to resolve this:
+<!--more-->
 
 ```bash
 find . -type d -exec chmod 0755 {} \;

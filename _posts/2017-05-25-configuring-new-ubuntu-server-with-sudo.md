@@ -19,6 +19,7 @@ a service like [Linode] or [Digital Ocean], and you know the root password.
 
 [Linode]: http://www.linode.com
 [Digital Ocean]: http://www.digitalocean.com
+<!--more-->
 
 ## Local Configuration
 
