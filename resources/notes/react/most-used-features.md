@@ -3,6 +3,7 @@ layout: page
 title: React Hooks - Most Used Features
 ---
 
+{% raw %}
 Notes from [React Hooks - Most Used Features]
 
 [react hooks - most used features]: https://www.youtube.com/watch?v=-9M9CGSd69I
@@ -508,3 +509,4 @@ export default App
 ```
 
 Left off at [32:13](https://www.youtube.com/watch?v=-9M9CGSd69I&t=32m13s)
+{% endraw %}

@@ -3,6 +3,7 @@ layout: page
 title: Intro to Vue.js
 ---
 
+{% raw %}
 The [Vue Dev Tools for Chrome] extension is recommended.
 
 [vue dev tools for chrome]: https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en
@@ -476,3 +477,5 @@ to the DOM.
 
 This can be a simple solution, using a global event bus, but you’re probably
 better off using Vuex.
+
+{% endraw %}

@@ -3,6 +3,7 @@ layout: page
 title: Build a YouTube Clone Application Using React
 ---
 
+{% raw %}
 Notes from [Build a YouTube Clone Application Using React]
 
 Repository with code available at [redconfetti/react-youtube-clone]
@@ -74,7 +75,7 @@ mkdir api
 
 ### Create Index and App
 
-```javascript
+```jsx
 // src/index.js
 import React from "react"
 import ReactDOM from "react-dom"
@@ -84,7 +85,7 @@ import App from "./App"
 ReactDOM.render(<App />, document.querySelector("#root"))
 ```
 
-```javascript
+```jsx
 // src/app.js
 import React from "react"
 
@@ -110,7 +111,7 @@ functions that process the input and return the component to be rendered.
 The above class component could be rewritten using the code below, however
 this won't have the same level of support as a class based component.
 
-```javascript
+```jsx
 const App = () => {
   return <h1>YouTube Clone App</h1>
 }
@@ -154,7 +155,7 @@ and that it will be accessing 'Public data'.
 We're using Axios here to configure the API settings which include the key
 provided by Google to access the YouTube Data API v3.
 
-```javascript
+```jsx
 // src/api/youtube.js
 export default axios.create({
   baseURL: "https://www.googleapis.com/youtube/v3",
@@ -171,7 +172,7 @@ export default axios.create({
 Let's import the Grid component that we're going to use from Material-UI Core,
 and also our YouTube API request object.
 
-```javascript
+```jsx
 // src/App.js
 import React from "react"
 
@@ -200,7 +201,7 @@ Within this there is yet another container defined to represent our main space.
 It has the search bar at the top using 12 spaces, with the video details and
 video list items displayed beneath it.
 
-```javascript
+```jsx
 // src/App.js
 import React from "react"
 
@@ -240,7 +241,7 @@ real projects, but works for this demonstration.
 
 Let's add an import statement for the components we're about to create.
 
-```javascript
+```jsx
 import SearchBar from "./components/SearchBar"
 import VideoDetail from "./components/VideoDetail"
 // import VideoList from "./components/VideoList"
@@ -257,7 +258,7 @@ touch src/components/VideoDetail.js
 
 We're using a class based component because the state will be used.
 
-```javascript
+```jsx
 // src/components/SearchBar.js
 import React from "react"
 
@@ -275,7 +276,7 @@ export default SearchBar
 
 ### Video Detail Component
 
-```javascript
+```jsx
 // src/components/VideoDetail.js
 import React from "react"
 
@@ -290,7 +291,7 @@ Now that we've established the basic boilerplate for these components, let's add
 them to our App.js. Because we're not putting anything within these components,
 we add them using the self-closing XML syntax (`<SearchBar />`, `<VideoDetail />`).
 
-```javascript
+```jsx
 // src/App.js
 import React from "react"
 
@@ -329,7 +330,7 @@ If you'd like to define your components separately, but import them all at once,
 you can create an `index.js` file in `src/components` that exports them
 individually.
 
-```javascript
+```jsx
 // src/components/index.js
 export { default as SearchBar } from "./SearchBar"
 export { default as VideoDetail } from "./VideoDetail"
@@ -337,7 +338,7 @@ export { default as VideoDetail } from "./VideoDetail"
 
 Now we can redefine our import in `src/App.js` like so:
 
-```javascript
+```jsx
 import { SearchBar, VideoDetail } from "./components"
 ```
 
@@ -345,7 +346,7 @@ import { SearchBar, VideoDetail } from "./components"
 
 Let's import the components we're going to use from the Material-UI library.
 
-```javascript
+```jsx
 // src/components/SearchBar.js
 import React from "react"
 
@@ -377,7 +378,7 @@ If you check in your browser, you'll have a nice long search bar at the top.
 Now we want to add an event handler to the form that is executed when the search
 is submitted (`<form onSubmit={this.handleSubmit}>`).
 
-```javascript
+```jsx
 // src/components/SearchBar.js
 import React from "react"
 
@@ -405,7 +406,7 @@ export default SearchBar
 We can also add an 'onChange' method to the TextField. This will handle input
 changes to the text field.
 
-```javascript
+```jsx
 // src/components/SearchBar.js
 import React from "react"
 
@@ -443,7 +444,7 @@ When a normal function is declared like this, the function has it's own scope
 where `this` refers to the function itself. This is why there is a call to bind
 the class to `this` within the constructor.
 
-```javascript
+```jsx
 class Toggle extends React.Component {
   constructor(props) {
     super(props)
@@ -473,7 +474,7 @@ There is a simple work-around to this issue. You can simply declare the function
 using an arrow-function, as they do not have their own `this` defined in their
 scope.
 
-```javascript
+```jsx
 handleChange = event => {
   this.setState({
     searchTerm: event.target.value
@@ -483,7 +484,7 @@ handleChange = event => {
 
 We can also write this in a single line.
 
-```javascript
+```jsx
 handleChange = event => this.setState({ searchTerm: event.target.value })
 ```
 
@@ -491,7 +492,7 @@ Now we can also add our `handleSubmit` function also. As you can see this
 makes use of the [destructuring assignment syntax] added by ES6 to define
 a constant called `searchTerm` from the `searchTerm` property of `this.state`.
 
-```javascript
+```jsx
 // src/components/SearchBar.js
 import React from "react"
 
@@ -529,7 +530,7 @@ export default SearchBar
 To make the searchTerm string available to other components, we need to pass in
 a function via a prop called `onFormSubmit`.
 
-```javascript
+```jsx
 // src/App.js
 
 // ...
@@ -540,7 +541,7 @@ a function via a prop called `onFormSubmit`.
 Within our SearchBar components we can then update our `handleSubmit` function
 so that it is able to call this function.
 
-```javascript
+```jsx
 // src/components/SearchBar.js
 import React from "react"
 
@@ -600,7 +601,7 @@ rely on promise chain.
 - [MDN web docs - async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 - [How to use Async Await in JavaScript](https://medium.com/javascript-in-plain-english/async-await-javascript-5038668ec6eb)
 
-```javascript
+```jsx
 // src/App.js
 import React from "react"
 
@@ -652,7 +653,7 @@ the YouTube API because Axios is not passing our default parameters.
 
 First let's cut those `params` from our youtube.js file.
 
-```javascript
+```jsx
 // src/api/youtube.js
 import axios from "axios"
 
@@ -663,7 +664,7 @@ export default axios.create({
 
 And then paste them into the call from `src/App.js`.
 
-```javascript
+```jsx
 handleSubmit = async searchTerm => {
   const response = await youtube.get("search", {
     params: {
@@ -682,7 +683,7 @@ If you look at the console you'll see that the 'data' object in the API response
 contains the 'items' returned by the search. We can narrow down our console
 log statement to this.
 
-```javascript
+```jsx
 handleSubmit = async searchTerm => {
   const response = await youtube.get("search", {
     params: {
@@ -709,7 +710,7 @@ within our App class, and we can also use `this.setState()` within our
 search results we obtained, and it sets the 'selectedVideo' to the first video
 in the search results collection.
 
-```javascript
+```jsx
 // src/App.js
 // ...
 class App extends React.Component {
@@ -743,7 +744,7 @@ class App extends React.Component {
 
 Now we can pass the `selectedVideo` information to the `VideoDetail` component.
 
-```javascript
+```jsx
 // src/App.js
 
 // ...
@@ -786,7 +787,7 @@ only the 'video' property from the props passed in.
 
 We're using a `React.Fragment` wrapper to wrap the two Paper component.
 
-```javascript
+```jsx
 // src/components/VideoDetail.js
 import React from "react"
 
@@ -810,7 +811,7 @@ the video.
 Note that the `videoSrc` constant we define uses backticks around the string
 so that the interpolation of the `videoId` is supported.
 
-```javascript
+```jsx
 // src/components/VideoDetail.js
 import React from "react"
 
@@ -845,7 +846,7 @@ Now if you go check the app by doing a search, the video will load.
 Below the video we want to display the information about the video. The
 Typography component can support paragraphs, headers, etc.
 
-```javascript
+```jsx
 // src/components/VideoDetail.js
 import React from "react"
 
@@ -888,7 +889,7 @@ There we have our video detail component, let's focus on the video list.
 Let's start by creating a new component to render the video items in the list,
 which we will call `VideoItem`.
 
-```javascript
+```jsx
 // src/components/VideoItem.js
 import React from "react"
 
@@ -901,7 +902,7 @@ const VideoItem = () => {
 export default VideoItem
 ```
 
-```javascript
+```jsx
 // src/components/VideoList.js
 import React from "react"
 
@@ -914,7 +915,7 @@ const VideoList = () => {
 export default VideoList
 ```
 
-```javascript
+```jsx
 // src/components/index.js
 export { default as SearchBar } from "./SearchBar"
 export { default as VideoDetail } from "./VideoDetail"
@@ -925,7 +926,7 @@ After establishing these, we'll a the `VideoList` component into the import
 statement within `App.js`, and update the remaining empty Grid item so that it
 contains `<VideoList />>`.
 
-```javascript
+```jsx
 // src/App.js
 import React from "react"
 
@@ -973,7 +974,7 @@ We'll do this by destructuring `this.state` within the `render()` function
 so that both `selectedVideo` and `videos` are both present. We'll then
 pass `videos` to the `VideoList` component.
 
-```javascript
+```jsx
 // src/App.js
 
 // ...
@@ -1009,7 +1010,7 @@ and then use the `Array.map()` method to generate an array of `VideoItem`
 components that represent each item. This will require that we also import
 our `VideoItem` component within `VideoList.js`.
 
-```javascript
+```jsx
 // src/components/VideoList.js
 import React from "react"
 
@@ -1034,7 +1035,7 @@ index integer as the second argument so we can simply use that.
 
 We've also added the video itself as another prop.
 
-```javascript
+```jsx
 const listOfVideos = videos.map((video, id) => (
   <VideoItem key={id} video={video} />
 ))
@@ -1044,7 +1045,7 @@ const listOfVideos = videos.map((video, id) => (
 
 Within the `VideoItem` component,
 
-```javascript
+```jsx
 // src/components/VideoItem.js
 import React from "react"
 
@@ -1077,7 +1078,7 @@ to the right of each thumbnail.
 
 Let's return the VideoList within a Grid container.
 
-```javascript
+```jsx
 // src/components/VideoList.js
 import React from "react"
 
@@ -1110,7 +1111,7 @@ This requires that we simply pass a function to the `VideoItem` component named
 as the `onVideoSelect` prop, and then make that a prop that `VideoList` receives
 as a prop from `App.js`.
 
-```javascript
+```jsx
 // src/components/VideoList.js
 import React from "react"
 
@@ -1134,7 +1135,7 @@ export default VideoList
 
 Now let's define this function in `App.js`.
 
-```javascript
+```jsx
 // src/App.js
 
 // ...
@@ -1174,7 +1175,7 @@ we've added `onVideoSelect` as a property being destructured from the props
 argument passed to our component. We're also bound our click event to the
 `Paper` element that displays the thumbnail.
 
-```javascript
+```jsx
 // src/components/VideoItem.js
 import React from "react"
 
@@ -1202,6 +1203,7 @@ const VideoItem = ({ video, onVideoSelect }) => {
 
 export default VideoItem
 ```
+{% endraw %}
 
 And now we're done.
 

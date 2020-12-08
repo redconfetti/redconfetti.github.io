@@ -4,15 +4,11 @@ Source code for [rubycoloredglasses](http://www.rubycoloredglasses.com/)
 
 ## Installation
 
-### Install RVM
+### Install RBenv
 
-```bash
-\curl -sSL https://get.rvm.io | bash -s stable --ruby
-```
+Install [RBenv](https://github.com/rbenv/rbenv#installation)
 
-You will have to change into the directory to initialize the gemset. If the
-version of Ruby required is not installed, you'll be prompted to install it
-(e.g. `rvm install ruby-2.2.1`)
+After you've installed RBenv, run the command `rbenv install`.
 
 ### Install Gems
 
@@ -33,6 +29,7 @@ This blog is powered by [Jekyll](https://jekyllrb.com/docs/home/)
 * [Jekyll-Uno theme](https://github.com/joshgerdes/jekyll-uno)
 * [Github Pages](https://help.github.com/categories/github-pages-basics/)
 * [About Github Pages and Jekyll](https://help.github.com/articles/about-github-pages-and-jekyll/)
+* [Liquid Templates](https://shopify.github.io/liquid/)
 
 The configuration for the site are stored in [config.yml](./_config.yml).
 See [Jekyll Docs - Configuration](https://jekyllrb.com/docs/configuration/)
