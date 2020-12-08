@@ -2,6 +2,7 @@
 layout: post
 title: Looping through dictionaries in jinja2 templates
 date: "2015-11-05 02:10:32 -0800"
+comments: true
 categories:
   - Python
 tags:

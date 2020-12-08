@@ -5,6 +5,7 @@ title: Sidekiq with Cloud66
 description: Configuration Tip
 image_url: /images/posts/2018-04-24-cloud-66.png
 date: 2018-04-24 20:08:00 -0700
+comments: true
 categories:
 - rails
 tags:

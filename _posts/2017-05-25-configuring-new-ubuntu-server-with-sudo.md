@@ -2,6 +2,7 @@
 layout: post
 title: Configuring a New Ubuntu Server with Sudo
 date: 2017-05-25 21:08:00 -0700
+comments: true
 categories:
 - linux
 tags:

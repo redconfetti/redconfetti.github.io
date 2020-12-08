@@ -3,6 +3,7 @@ layout: post
 published: false
 title: Webpacker Jumpstart
 date: 2017-11-24 16:45:00 -0500
+comments: true
 categories:
 - rails
 tags:

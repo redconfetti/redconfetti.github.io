@@ -5,6 +5,7 @@ title: Markdown Links and 80 Character Line Length
 description: How to better format anchors/links within Markdown
 image_url: /images/posts/2017-11-25-markdown-links.png
 date: 2017-11-25 09:55:00 -0500
+comments: true
 categories:
 - Development
 tags:

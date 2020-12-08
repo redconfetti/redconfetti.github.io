@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Intro to Tmux
+date: 2016-06-30 10:05:00 -0700
+comments: true
 categories:
 - Linux
 tags:

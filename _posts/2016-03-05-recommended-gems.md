@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Recommended Gems
+comments: true
 categories:
 - Ruby
 tags:

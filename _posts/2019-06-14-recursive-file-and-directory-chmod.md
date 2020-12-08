@@ -5,6 +5,7 @@ title: Fixing file and directory permissions recursively
 description: Command to fix file and directory permissions
 image_url: /images/posts/2019-06-14-linux.jpg
 date: 2019-06-14 21:27:00 -0800
+comments: true
 categories:
   - linux
   - unix

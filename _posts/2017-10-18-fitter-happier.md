@@ -5,6 +5,7 @@ title: Fitter Happier
 description: Commands for voice synthesis from within the Mac OSX command line. Reciting lines from Exit Music (for a film)
 image_url: /images/posts/ok-computer.jpg
 date: 2017-08-07 12:00:00 -0700
+comments: true
 categories:
 - macosx
 tags:

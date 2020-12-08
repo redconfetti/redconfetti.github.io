@@ -5,6 +5,7 @@ title: Fixing audio for Steam (Rust) on Mac OS X Mojave
 description: Hacking Steam to have Microphone Permissions
 image_url: /images/posts/2019-11-07-rust.jpg
 date: 2019-11-07 23:15:00 -0800
+comments: true
 categories:
   - macosx
 tags:

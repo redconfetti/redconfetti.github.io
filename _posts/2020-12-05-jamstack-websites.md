@@ -4,6 +4,7 @@ published: true
 title: A New Solution for Personal and Small Business Websites
 description: The Promise of the JAMstack Approach
 date: 2020-12-05 09:02:40 -0700
+comments: true
 categories:
   - jamstack
 tags:

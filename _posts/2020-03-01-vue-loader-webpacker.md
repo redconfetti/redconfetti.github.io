@@ -4,6 +4,7 @@ published: true
 title: Updating Vue-Loader to v15 with Webpacker
 description:
 date: 2020-03-01 11:37:00 -0800
+comments: true
 categories:
   - rails
 tags:

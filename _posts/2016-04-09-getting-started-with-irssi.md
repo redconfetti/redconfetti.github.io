@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Getting Started with IRSSI
+comments: true
 categories:
 - Linux
 tags:

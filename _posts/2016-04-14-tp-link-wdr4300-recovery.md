@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Unbricking TP-Link TL-WDR4300
+comments: true
 categories:
 - Linux
 tags:

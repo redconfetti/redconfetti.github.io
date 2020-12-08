@@ -5,6 +5,7 @@ title: Amazon Web Services
 description: An Introduction
 image_url: /images/posts/2019-06-13-aws-cloud9.png
 date: 2019-06-13 20:37:00 -0800
+comments: true
 categories:
   - amazon web services
 tags:

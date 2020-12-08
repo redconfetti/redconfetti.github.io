@@ -6,6 +6,8 @@ url: 'https://www.rubycoloredglasses.com'
 baseurl: ''
 timezone: America/Denver
 
+disqus_shortname: ruby-colored-glasses
+
 author:
   name: 'Jason Miller'
   # email: jason@redconfetti.com

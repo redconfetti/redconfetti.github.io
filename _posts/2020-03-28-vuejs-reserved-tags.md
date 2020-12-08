@@ -4,6 +4,7 @@ published: true
 title: VueJS - Built-In & Reserved Tags
 description: Explains which names are not allowed for use with VueJScomponents
 date: 2020-03-28 14:42:00 -0800
+comments: true
 categories:
   - vue
 tags:
