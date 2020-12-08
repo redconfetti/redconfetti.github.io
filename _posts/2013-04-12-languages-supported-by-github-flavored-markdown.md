@@ -2,6 +2,7 @@
 layout: post
 title: Languages Supported by Github Flavored Markdown
 date: '2013-04-12 20:57:57 -0700'
+comments: true
 categories:
 - Gems
 tags:

@@ -2,6 +2,7 @@
 layout: post
 title: Remote Pair Programming
 date: '2013-04-22 17:48:59 -0700'
+comments: true
 categories:
 - Development
 tags:
