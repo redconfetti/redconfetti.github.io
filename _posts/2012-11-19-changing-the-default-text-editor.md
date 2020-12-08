@@ -2,6 +2,7 @@
 layout: post
 title: Changing the Default Text Editor
 date: '2012-11-19 21:30:07 -0800'
+comments: true
 categories:
 - Mac OS X
 tags:
@@ -13,7 +14,6 @@ comments:
   author_email: ''
   author_url: http://www.rubycoloredglasses.com/2013/08/exploring-bundler-commands/
   date: '2013-09-01 18:38:44 -0700'
-  date_gmt: '2013-09-01 18:38:44 -0700'
 ---
 
 Certain command line utilities drop into an external text editor program to

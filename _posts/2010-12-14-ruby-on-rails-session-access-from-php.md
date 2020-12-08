@@ -2,6 +2,7 @@
 layout: post
 title: Ruby on Rails session - Access from PHP
 date: '2010-12-14 00:25:37 -0800'
+comments: true
 categories:
 - Ruby on Rails
 tags: []

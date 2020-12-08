@@ -2,6 +2,7 @@
 layout: post
 title: Objective C Notes
 date: '2014-01-09 07:46:44 -0800'
+comments: true
 categories:
 - Mac OS X
 tags: []

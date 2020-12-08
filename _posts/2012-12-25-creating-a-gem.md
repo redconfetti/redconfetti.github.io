@@ -2,6 +2,7 @@
 layout: post
 title: Creating a Gem
 date: '2012-12-25 09:50:03 -0800'
+comments: true
 categories:
 - Gems
 tags:

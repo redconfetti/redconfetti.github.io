@@ -2,6 +2,7 @@
 layout: post
 title: Metaclass
 date: '2012-09-19 19:19:03 -0700'
+comments: true
 categories:
 - Ruby
 tags:

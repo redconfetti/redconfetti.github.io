@@ -2,6 +2,7 @@
 layout: post
 title: History of Internationalization in Software
 date: '2013-05-29 18:09:34 -0700'
+comments: true
 categories:
 - Development
 tags:

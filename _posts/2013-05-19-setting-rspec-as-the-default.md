@@ -2,6 +2,7 @@
 layout: post
 title: Setting Rspec as the Default
 date: '2013-05-19 05:19:49 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags:

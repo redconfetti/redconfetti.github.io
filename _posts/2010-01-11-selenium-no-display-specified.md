@@ -5,7 +5,7 @@ published: true
 title: Selenium - no display specified
 author: maxwell keyes
 date: '2010-01-11 14:51:10 -0800'
-date_gmt: '2010-01-11 18:51:10 -0800'
+comments: true
 categories:
 - computing tips
 tags: []

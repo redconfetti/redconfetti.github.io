@@ -2,6 +2,7 @@
 layout: post
 title: Building a Query String from a Hash with Rails 3
 date: '2011-10-19 14:35:09 -0700'
+comments: true
 categories:
 - Controller
 ---

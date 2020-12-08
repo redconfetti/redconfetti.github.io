@@ -2,6 +2,7 @@
 layout: post
 title: Exporting Routes in Rails 3
 date: '2011-10-20 14:36:54 -0700'
+comments: true
 categories:
 - Model
 - Rake

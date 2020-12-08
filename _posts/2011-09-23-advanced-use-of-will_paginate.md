@@ -2,6 +2,7 @@
 layout: post
 title: Advanced Use of Will_Paginate
 date: '2011-09-23 18:08:56 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags:

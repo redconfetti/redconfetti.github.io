@@ -3,7 +3,7 @@ layout: post
 published: true
 title: Selenium RC, Firefox 3, and Ubuntu
 date: '2010-07-29 18:46:26 -0700'
-date_gmt: '2010-07-29 22:46:26 -0700'
+comments: true
 categories:
 - web development
 tags:

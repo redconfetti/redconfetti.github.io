@@ -2,6 +2,7 @@
 layout: post
 title: Devise_For with Skip
 date: '2013-07-11 22:26:51 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags:

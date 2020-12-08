@@ -2,6 +2,7 @@
 layout: post
 title: Setting up Ubuntu for Rails App via Passenger
 date: '2011-10-29 22:11:11 -0700'
+comments: true
 categories:
 - Hosting
 ---

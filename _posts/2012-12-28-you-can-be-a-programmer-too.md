@@ -2,6 +2,7 @@
 layout: post
 title: You can be a programmer too!
 date: '2012-12-28 02:52:52 -0800'
+comments: true
 categories:
 - Ruby on Rails
 - Development

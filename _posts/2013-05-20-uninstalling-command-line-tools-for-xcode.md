@@ -2,6 +2,7 @@
 layout: post
 title: Uninstalling Command Line Tools for Xcode
 date: '2013-05-20 20:51:42 -0700'
+comments: true
 categories:
 - Mac OS X
 tags:

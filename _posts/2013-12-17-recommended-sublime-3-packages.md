@@ -2,6 +2,7 @@
 layout: post
 title: Recommended Sublime 3 Packages
 date: '2013-12-17 17:39:00 -0800'
+comments: true
 categories:
 - Development
 tags:

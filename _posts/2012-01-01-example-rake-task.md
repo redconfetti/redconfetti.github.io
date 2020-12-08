@@ -3,6 +3,7 @@ layout: post
 published: true
 title: Example Rake Task
 date: '2012-01-01 18:26:28 -0800'
+comments: true
 categories:
 - Ruby on Rails
 tags:
@@ -13,7 +14,6 @@ comments:
   author_email: me@jasonseifer.com
   author_url: http://jasonseifer.com
   date: '2012-01-02 17:32:34 -0800'
-  date_gmt: '2012-01-02 21:32:34 -0800'
   content: Thanks for the shout out!
 ---
 

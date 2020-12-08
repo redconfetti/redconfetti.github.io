@@ -2,6 +2,7 @@
 layout: post
 title: Return FALSE or Raise Error?
 date: '2012-12-20 18:35:44 -0800'
+comments: true
 categories:
 - Ruby
 tags:

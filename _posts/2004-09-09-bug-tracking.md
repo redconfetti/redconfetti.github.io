@@ -4,6 +4,7 @@ published: true
 title: PHP/MySQL Bug Tracking
 author: maxwell keyes
 date: '2004-09-09 15:51:00 -0500'
+comments: true
 categories:
 - php
 tags:

@@ -2,6 +2,7 @@
 layout: post
 title: Invalid Gemspec Error Regarding Invalid Date Format
 date: '2012-02-22 18:30:45 -0800'
+comments: true
 categories:
 - Ruby on Rails
 tags:

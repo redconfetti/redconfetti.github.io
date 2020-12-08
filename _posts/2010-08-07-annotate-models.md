@@ -2,6 +2,7 @@
 layout: post
 title: Annotate Models
 date: '2010-08-07 22:02:30 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags:

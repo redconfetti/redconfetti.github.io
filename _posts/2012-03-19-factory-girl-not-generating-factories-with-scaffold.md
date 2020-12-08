@@ -2,6 +2,7 @@
 layout: post
 title: Factory Girl Not Generating Factories with Scaffold
 date: '2012-03-19 14:18:44 -0700'
+comments: true
 categories:
 - Testing
 tags:

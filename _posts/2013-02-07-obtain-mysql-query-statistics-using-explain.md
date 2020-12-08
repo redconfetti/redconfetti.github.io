@@ -2,6 +2,7 @@
 layout: post
 title: Obtain MySQL Query Statistics using Explain
 date: '2013-02-07 00:56:31 -0800'
+comments: true
 categories:
 - Model
 tags:

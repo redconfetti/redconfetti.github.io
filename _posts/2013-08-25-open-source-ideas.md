@@ -2,6 +2,7 @@
 layout: post
 title: Open Source Ideas
 date: '2013-08-25 22:47:39 -0700'
+comments: true
 categories:
 - Uncategorized
 tags: []

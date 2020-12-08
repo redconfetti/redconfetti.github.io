@@ -2,6 +2,7 @@
 layout: post
 title: Getting File object for Paperclip Attachment via S3
 date: '2011-09-22 15:34:10 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags:

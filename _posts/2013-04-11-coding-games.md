@@ -3,6 +3,7 @@ layout: post
 title: Coding Games
 date: '2013-04-11 20:30:59 -0700'
 comments: true
+comments: true
 categories:
 - Development
 tags:

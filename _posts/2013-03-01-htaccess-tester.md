@@ -2,6 +2,7 @@
 layout: post
 title: htaccess tester
 date: '2013-03-01 08:43:17 -0800'
+comments: true
 categories:
 - Hosting
 tags:

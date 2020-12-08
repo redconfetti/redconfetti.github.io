@@ -2,6 +2,7 @@
 layout: post
 title: Rspec Executable Not Found
 date: '2012-11-28 01:14:27 -0800'
+comments: true
 categories:
 - Gems
 tags:

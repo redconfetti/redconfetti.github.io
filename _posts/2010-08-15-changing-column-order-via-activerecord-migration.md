@@ -2,6 +2,7 @@
 layout: post
 title: Changing Column Order via ActiveRecord Migration
 date: '2010-08-15 22:09:40 -0700'
+comments: true
 categories:
 - Ruby on Rails
 ---

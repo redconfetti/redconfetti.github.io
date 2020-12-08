@@ -4,7 +4,7 @@ status: publish
 published: true
 title: Formtastic use of semantic_form_remote_for
 date: '2011-10-20 15:29:02 -0700'
-date_gmt: '2011-10-20 22:29:02 -0700'
+comments: true
 categories:
 - prerequisites
 

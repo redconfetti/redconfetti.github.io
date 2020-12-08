@@ -3,7 +3,7 @@ layout: post
 published: true
 title: Rounded Corners
 date: '2009-04-24 17:11:18 -0700'
-date_gmt: '2009-04-24 21:11:18 -0700'
+comments: true
 categories:
 - web development
 ---

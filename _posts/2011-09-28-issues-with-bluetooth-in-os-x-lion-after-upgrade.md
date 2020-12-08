@@ -5,7 +5,7 @@ published: true
 title: Issues with Bluetooth in OS X Lion after Upgrade
 author: maxwell keyes
 date: '2011-09-28 19:08:39 -0700'
-date_gmt: '2011-09-28 23:08:39 -0700'
+comments: true
 categories:
 - computing tips
 ---

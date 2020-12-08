@@ -2,6 +2,7 @@
 layout: post
 title: Mobile Application Performance Monitoring and Management
 date: '2013-05-28 19:45:57 -0700'
+comments: true
 categories:
 - Uncategorized
 tags:

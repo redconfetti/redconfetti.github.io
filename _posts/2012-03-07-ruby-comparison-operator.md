@@ -2,6 +2,7 @@
 layout: post
 title: Ruby Comparison Operator =~
 date: '2012-03-07 18:26:34 -0800'
+comments: true
 categories:
 - Ruby
 tags:

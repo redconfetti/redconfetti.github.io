@@ -2,6 +2,7 @@
 layout: post
 title: Refinery Extension Not Named After Model
 date: '2013-06-18 06:01:25 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags:

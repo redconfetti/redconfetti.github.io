@@ -2,6 +2,7 @@
 layout: post
 title: Rails 3 Autoloading with Namespaced Models
 date: '2011-10-18 15:50:03 -0700'
+comments: true
 categories:
 - Model
 ---

@@ -2,6 +2,7 @@
 layout: post
 title: Customize your IRB
 date: '2013-03-22 17:36:54 -0700'
+comments: true
 categories:
 - Ruby
 tags:

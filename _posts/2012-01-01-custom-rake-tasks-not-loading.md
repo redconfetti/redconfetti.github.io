@@ -2,6 +2,7 @@
 layout: post
 title: Custom Rake Tasks Not Loading
 date: '2012-01-01 18:57:34 -0800'
+comments: true
 categories:
 - Ruby on Rails
 tags:

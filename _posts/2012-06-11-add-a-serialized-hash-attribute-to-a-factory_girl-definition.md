@@ -2,6 +2,7 @@
 layout: post
 title: Add a Serialized Hash Attribute to a Factory_Girl Definition
 date: '2012-06-11 20:25:13 -0700'
+comments: true
 categories:
 - Testing
 tags:

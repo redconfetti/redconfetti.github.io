@@ -2,6 +2,7 @@
 layout: post
 title: Form Fields not Displaying with Formtastic
 date: '2011-10-18 10:48:34 -0700'
+comments: true
 categories:
 - View
 ---

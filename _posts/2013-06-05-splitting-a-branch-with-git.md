@@ -2,6 +2,7 @@
 layout: post
 title: Splitting a Branch with Git
 date: '2013-06-05 19:18:38 -0700'
+comments: true
 categories:
 - Uncategorized
 tags:

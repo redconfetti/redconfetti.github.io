@@ -2,6 +2,7 @@
 layout: post
 title: POW RVM ZSH
 date: "2013-07-15 00:07:38 -0700"
+comments: true
 categories:
   - Ruby on Rails
 tags:

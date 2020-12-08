@@ -2,6 +2,7 @@
 layout: post
 title: Project / Task Management Applications
 date: '2013-07-07 23:11:31 -0700'
+comments: true
 categories:
 - Development
 tags:

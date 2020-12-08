@@ -2,6 +2,7 @@
 layout: post
 title: Strong Parameters with Spree Extensions
 date: '2014-04-20 01:05:29 -0700'
+comments: true
 categories:
 - Ruby on Rails
 - Gems

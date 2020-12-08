@@ -2,6 +2,7 @@
 layout: post
 title: Generators Not Working in Rails 2.3.8
 date: '2012-05-16 01:14:15 -0700'
+comments: true
 categories:
 - Gems
 tags: []

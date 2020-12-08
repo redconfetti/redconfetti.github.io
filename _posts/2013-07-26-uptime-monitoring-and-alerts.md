@@ -2,6 +2,7 @@
 layout: post
 title: Uptime Monitoring and Alerts
 date: '2013-07-26 00:34:25 -0700'
+comments: true
 categories:
 - Uncategorized
 tags: []

@@ -2,6 +2,7 @@
 layout: post
 title: When Testing Seems Pointless
 date: '2012-12-19 02:51:53 -0800'
+comments: true
 categories:
 - Testing
 tags:

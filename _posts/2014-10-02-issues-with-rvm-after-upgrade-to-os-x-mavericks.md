@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Issues with RVM after upgrade to OS X Mavericks
+comments: true
 categories:
 - Mac OS X
 - Ruby

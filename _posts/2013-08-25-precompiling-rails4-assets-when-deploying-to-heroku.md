@@ -2,6 +2,7 @@
 layout: post
 title: Precompiling Rails 4 Assets When Deploying to Heroku
 date: '2013-08-25 00:13:01 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags:

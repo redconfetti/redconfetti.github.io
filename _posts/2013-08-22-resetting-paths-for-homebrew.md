@@ -2,6 +2,7 @@
 layout: post
 title: Resetting Paths for Homebrew
 date: '2013-08-22 19:31:38 -0700'
+comments: true
 categories:
 - Mac OS X
 tags:

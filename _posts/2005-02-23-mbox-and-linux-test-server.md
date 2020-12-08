@@ -3,6 +3,7 @@ layout: post
 published: true
 title: MBox and Linux Test Server
 date: '2005-02-23 18:25:01 -0500'
+comments: true
 categories:
 - web development
 tags:

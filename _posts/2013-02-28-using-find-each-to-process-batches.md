@@ -2,6 +2,7 @@
 layout: post
 title: Using Find Each to Process Batches
 date: '2013-02-28 20:49:14 -0800'
+comments: true
 categories:
 - Ruby on Rails
 tags:

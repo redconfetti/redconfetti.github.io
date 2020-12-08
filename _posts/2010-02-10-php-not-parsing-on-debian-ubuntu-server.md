@@ -5,7 +5,7 @@ published: true
 title: PHP Not Parsing on Debian / Ubuntu server with Apache2
 author: maxwell keyes
 date: '2010-02-10 21:03:59 -0800'
-date_gmt: '2010-02-11 01:03:59 -0800'
+comments: true
 categories:
 - web development
 ---

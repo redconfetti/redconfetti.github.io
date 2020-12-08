@@ -2,6 +2,7 @@
 layout: post
 title: Why Ruby Was Named After a Gemstone
 date: '2013-06-03 16:54:30 -0700'
+comments: true
 categories:
 - Ruby
 tags:

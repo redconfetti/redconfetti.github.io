@@ -2,6 +2,7 @@
 layout: post
 title: Using Rspec to Test Controllers
 date: '2012-12-13 01:46:41 -0800'
+comments: true
 categories:
 - Testing
 tags:

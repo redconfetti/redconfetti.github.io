@@ -2,6 +2,7 @@
 layout: post
 title: Ruby Class Name
 date: '2014-03-20 21:32:23 -0700'
+comments: true
 categories:
 - Ruby
 tags: []

@@ -3,6 +3,7 @@ layout: post
 published: true
 title: PHP Compilation
 date: '2005-02-28 05:22:01 -0500'
+comments: true
 categories:
 - web development
 tags:

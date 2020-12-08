@@ -3,12 +3,8 @@ layout: post
 title: "Über-Securing Ubuntu 12.04 LTS with Mod-Security + Ruby on Rails 3.2.13"
 author_name: Marshall Sontag
 author_email: marshallsontag@gmail.com
-excerpt: "I recently setup a linode server for a new client who wanted the best security
-  practices installed.\r\n\r\nMost linux security guides instruct you to disable password
-  authentication and enable SSH key authentication for SSH and use iptables to allow
-  or block certain ports. But I found this incredible guide that takes it several
-  steps further to prevent IP spoofing, DDOS attacks and much more."
 date: '2013-06-01 08:29:51 -0700'
+comments: true
 categories:
 - Hosting
 tags:

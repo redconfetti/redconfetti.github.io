@@ -3,7 +3,7 @@ layout: post
 published: true
 title: Cubase Installation Failure
 date: '2012-05-23 03:48:01 -0700'
-date_gmt: '2012-05-23 07:48:01 -0700'
+comments: true
 categories:
 - computing tips
 tags:

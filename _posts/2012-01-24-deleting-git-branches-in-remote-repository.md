@@ -2,6 +2,7 @@
 layout: post
 title: Deleting Git Branches in Remote Repository
 date: '2012-01-24 18:08:06 -0800'
+comments: true
 categories:
 - Development
 tags:
