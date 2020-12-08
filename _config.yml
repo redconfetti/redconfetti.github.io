@@ -8,7 +8,7 @@ timezone: America/Denver
 
 author:
   name: 'Jason Miller'
-  email: jason@redconfetti.com
+  # email: jason@redconfetti.com
   linkedin_username: redconfetti
   github_username:  redconfetti
   twitter_username: redconfetti
