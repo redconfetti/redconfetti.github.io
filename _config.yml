@@ -41,4 +41,4 @@ kramdown:
   hard_wrap: false
 
 plugins: ['jekyll-paginate', 'jekyll-sitemap']
-exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png', 'bower_components']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']

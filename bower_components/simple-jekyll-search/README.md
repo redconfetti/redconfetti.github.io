@@ -13,15 +13,9 @@ idea from this [blog post](https://alexpearce.me/2012/04/simple-jekyll-searching
 
 ---
 
-
-
 ### Promotion: check out [Pomodoro.cc](https://pomodoro.cc/)
 
-
 # [Demo](http://christian-fei.github.io/Simple-Jekyll-Search/)
-
-
-
 
 # Install
 
@@ -30,9 +24,6 @@ bower install --save simple-jekyll-search
 # or
 npm install --save simple-jekyll-search
 ```
-
-
-
 
 # Getting started
 
