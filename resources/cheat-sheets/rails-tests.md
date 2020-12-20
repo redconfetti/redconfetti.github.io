@@ -1,10 +1,14 @@
 ---
 layout: page
-title: Rails Tests
+title: Rails Testing
 ---
 [Back to Cheat Sheets](/resources/cheat-sheets/)
 
-These may be helpful to some, but truthfully I highly recommend learning how to use [Rspec](http://rspec.info/) instead. The tests are much easier to read and write. You can use [Rspec Rails](https://github.com/rspec/rspec-rails) for Ruby on Rails projects, and have the ability to test your controllers separate from your views. It even has tests for routes, just in case you might need them.
+These may be helpful to some, but truthfully I highly recommend learning how to
+use [Rspec](http://rspec.info/) instead. The tests are much easier to read and
+write. You can use [Rspec Rails](https://github.com/rspec/rspec-rails) for Ruby
+on Rails projects, and have the ability to test your controllers separate from
+your views. It even has tests for routes, just in case you might need them.
 
 ``` shell
 # Run Test Unit Test

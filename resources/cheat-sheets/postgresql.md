@@ -4,10 +4,10 @@ title: PostgreSQL
 ---
 [Back to Cheat Sheets](/resources/cheat-sheets/)
 
-These commands are specific to Postgres installed on a Mac using [Homebrew](http://brew.sh/). I recommend using [Lunchy](https://github.com/mperham/lunchy) to manage the daemons running on Mac OSX machines.
+These commands are specific to Postgres installed on a Mac using
+[Homebrew](http://brew.sh/). See also [PostgreSQL SELECT Docs].
 
-See also [PostgreSQL SELECT Docs](http://www.postgresql.org/docs/9.1/static/sql-select.html){:target="_blank"}
-
+[PostgreSQL SELECT Docs]: http://www.postgresql.org/docs/9.1/static/sql-select.html
 ## Command Line Commands
 
 ``` shell

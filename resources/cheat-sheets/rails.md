@@ -4,9 +4,9 @@ title: Ruby on Rails
 ---
 [Back to Cheat Sheets](/resources/cheat-sheets/)
 
-# Generate New Rails App
+## Generate New Rails App
 
-```
+```bash
 # Generate for API only
 rails new my_app --api
 
@@ -40,16 +40,16 @@ rails new my_app --webpack=WEBPACK
 rails new my_app --webpack=vue
 ```
 
-# Rake Tasks
+## Rake Tasks
 
-```
+```ruby
 # Display Rails routing table
 rake routes
 ```
 
 ## ActiveRecord
 
-```
+```ruby
 # Get name of table associated with model
 Model.table_name
 # Get field/column names from database table
@@ -58,7 +58,7 @@ Model.column_names
 
 ## Capistrano
 
-```
+```bash
 # View available Capistrano tasks
 bundle exec cap -vT
 ```

@@ -4,7 +4,7 @@ title: RubyGems
 ---
 [Back to Cheat Sheets](/resources/cheat-sheets/)
 
-``` shell
+```bash
 # List installed Gems
 gem list
 
