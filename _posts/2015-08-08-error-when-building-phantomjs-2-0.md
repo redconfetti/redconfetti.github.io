@@ -2,6 +2,7 @@
 layout: post
 title: Error when building PhantomJS 2.0
 date: '2015-08-08 01:34:12 -0700'
+comments: true
 categories:
 - Uncategorized
 tags:

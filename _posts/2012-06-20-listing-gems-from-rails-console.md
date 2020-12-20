@@ -2,6 +2,7 @@
 layout: post
 title: Listing Gems from Rails Console
 date: '2012-06-20 21:59:03 -0700'
+comments: true
 ---
 
 Got this from [Stack Overflow], figured it could come in handy at some point in

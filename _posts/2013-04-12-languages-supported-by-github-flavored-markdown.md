@@ -87,7 +87,6 @@ full list in [Linguist - languages.yml][6]).
 * rust
 * salt, saltstate - Salt
 * shell, sh, zsh, bash - Shell scripting
-* sql
 * scss
 * sql
 * svg

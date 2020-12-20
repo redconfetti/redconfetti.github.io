@@ -2,6 +2,7 @@
 layout: post
 title: Redirect_to not working
 date: '2011-09-27 16:37:59 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags:

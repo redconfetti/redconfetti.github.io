@@ -2,6 +2,7 @@
 layout: post
 title: List Sorted Methods in Ruby
 date: '2012-06-11 18:06:48 -0700'
+comments: true
 categories:
 - Ruby
 tags: []

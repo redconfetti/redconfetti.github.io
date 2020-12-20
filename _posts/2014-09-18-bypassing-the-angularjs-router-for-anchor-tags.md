@@ -2,6 +2,7 @@
 layout: post
 title: Bypassing the AngularJS router for anchor tags
 date: '2014-09-18 19:19:44 -0700'
+comments: true
 categories:
 - AngularJS
 tags:

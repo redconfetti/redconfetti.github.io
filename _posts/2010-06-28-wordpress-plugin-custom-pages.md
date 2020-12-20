@@ -4,7 +4,7 @@ status: publish
 published: true
 title: Wordpress Plugin - Custom Pages?
 date: '2010-06-28 22:39:15 -0700'
-date_gmt: '2010-06-29 02:39:15 -0700'
+comments: true
 categories:
 - web development
 tags:

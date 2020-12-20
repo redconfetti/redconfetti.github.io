@@ -2,6 +2,7 @@
 layout: post
 title: Sharing Administrative Rights with Homebrew
 date: '2014-06-29 18:52:42 -0700'
+comments: true
 categories:
 - Mac OS X
 tags:

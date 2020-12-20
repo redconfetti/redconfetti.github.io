@@ -2,6 +2,7 @@
 layout: post
 title: Ruby Strftime
 date: '2013-07-26 22:16:42 -0700'
+comments: true
 categories:
 - Ruby
 tags:

@@ -2,6 +2,7 @@
 layout: post
 title: InstructureCon Hack Day
 date: '2014-06-17 19:40:05 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags:

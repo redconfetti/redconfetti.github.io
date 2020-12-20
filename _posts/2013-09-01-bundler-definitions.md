@@ -2,6 +2,7 @@
 layout: post
 title: Bundler Definitions
 date: '2013-09-01 20:16:38 -0700'
+comments: true
 categories:
 - Gems
 tags:

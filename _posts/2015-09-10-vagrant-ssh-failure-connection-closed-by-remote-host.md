@@ -2,6 +2,7 @@
 layout: post
 title: Vagrant SSH Failure - Connection closed by remote host
 date: '2015-09-10 19:21:52 -0700'
+comments: true
 categories:
 - Development
 ---

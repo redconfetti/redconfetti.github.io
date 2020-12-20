@@ -2,6 +2,7 @@
 layout: post
 title: Duplicate associated records when using FactoryGirl
 date: '2012-09-09 23:26:46 -0700'
+comments: true
 categories:
 - Testing
 tags:

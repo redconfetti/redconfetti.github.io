@@ -2,6 +2,7 @@
 layout: post
 title: Configuring Rails 3.1.3 under Sub-URI
 date: '2012-01-04 02:02:40 -0800'
+comments: true
 categories:
 - Ruby on Rails
 tags:

@@ -5,7 +5,7 @@ published: true
 title: Dell Dimension 3000 - Audio is Choppy
 author: maxwell keyes
 date: '2010-01-13 18:49:45 -0800'
-date_gmt: '2010-01-13 22:49:45 -0800'
+comments: true
 categories:
 - computing tips
 ---

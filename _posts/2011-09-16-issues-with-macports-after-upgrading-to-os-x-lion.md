@@ -2,6 +2,7 @@
 layout: post
 title: Issues with MacPorts After Upgrading to OS X Lion
 date: '2011-09-16 18:10:00 -0700'
+comments: true
 categories:
 - Mac OS X
 tags:

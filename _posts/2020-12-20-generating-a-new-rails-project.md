@@ -26,6 +26,8 @@ to use these different components, because you spend most of your time
 configuring the new application rather than jumping into actually building
 the functionality.
 
+<!--more-->
+
 [Rspec]: https://rspec.info/
 [Cucumber]: https://github.com/cucumber/cucumber-rails
 [FactoryBot]: https://github.com/thoughtbot/factory_bot

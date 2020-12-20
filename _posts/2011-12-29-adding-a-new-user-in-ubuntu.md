@@ -2,6 +2,7 @@
 layout: post
 title: Adding a New User in Ubuntu
 date: '2011-12-29 18:08:48 -0800'
+comments: true
 categories:
 - Hosting
 ---

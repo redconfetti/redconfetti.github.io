@@ -2,6 +2,7 @@
 layout: post
 title: Rake Tasks
 date: '2010-07-16 17:37:56 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags: []

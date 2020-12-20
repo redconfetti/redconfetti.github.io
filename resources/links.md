@@ -7,8 +7,10 @@ Back to [Resources](/resources/)
 
 ## Code Courses
 
-* [CodeSchool] - Provides many high quality courses covering several paths
-(HTMl/CSS, Javascript, Ruby, Python, iOS, Git, and Databases)
+* [Pluralsight] - Purchased the course site formerly known as CodeSchool.
+  Provides courses for Software Development (HTMl/CSS, Javascript, Ruby, Python,
+  iOS, Git, and Databases), IT Ops, Data Professional, and Information and Cyber
+  Security
 * [Egghead]
 
 ## Sandboxes
@@ -19,7 +21,7 @@ for $18.90 monthly / $145.50 yearly
 * [Plunker] - Provides options for chat and collaboration
 with other remote developers
 * [CodePen]
-* [Repl.it﻿] - Create and share code examples, with
+* [Repl.it] - Create and share code examples, with
 execution and output, for many languages (Javascript, Ruby, Python, PHP, Go,
 etc.)
 
@@ -59,17 +61,9 @@ without plugins.
 ## Javascript
 
 * [React JS]
-* [Fightcode] - Program and fight robots using
-Javascript
 * [Brief history of JavaScript Modules]
 
-### AngularJS
-
-* [ng-newsletter - Build custom directives with AngularJS]
-* [Egghead.io] - Lessons on Javascript, CSS, AngularJS 1 & 2, React, NodeJS, and more
-* [Thinkster] - Lessons on AngularJS, React, Ionic, Firebase, and Swift
-
-[CodeSchool]: https://www.codeschool.com/
+[Pluralsight]: https://www.pluralsight.com/
 [Egghead]: https://egghead.io
 [JsFiddle]: https://jsfiddle.net/
 [Plunker]: http://plnkr.co/
@@ -91,7 +85,4 @@ Javascript
 [Brief history of JavaScript Modules]: https://medium.com/@sungyeol.choi/javascript-module-module-loader-module-bundler-es6-module-confused-yet-6343510e7bde
 [EMScripten]: http://kripken.github.io/emscripten-site/
 [React JS]: http://facebook.github.io/react/index.html
-[Fightcode]:http://fightcodegame.com/
-[ng-newsletter - Build custom directives with AngularJS]: http://www.ng-newsletter.com/posts/directives.html
-[Egghead.io]: https://egghead.io/lessons
 [Thinkster]: https://thinkster.io/

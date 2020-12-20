@@ -2,6 +2,7 @@
 layout: post
 title: Establishing New Ruby Environment in a Folder using RVM
 date: '2012-05-15 17:58:16 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags:

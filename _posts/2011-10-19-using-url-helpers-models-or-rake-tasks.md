@@ -2,6 +2,7 @@
 layout: post
 title: Using URL Helpers in Models or Rake Tasks
 date: '2011-10-19 16:41:51 -0700'
+comments: true
 categories:
 - Model
 ---

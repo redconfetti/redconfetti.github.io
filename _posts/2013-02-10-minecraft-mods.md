@@ -4,7 +4,7 @@ status: publish
 published: true
 title: Minecraft Mods
 date: '2013-02-10 02:30:53 -0800'
-date_gmt: '2013-02-10 06:30:53 -0800'
+comments: true
 categories:
 - gaming
 tags:

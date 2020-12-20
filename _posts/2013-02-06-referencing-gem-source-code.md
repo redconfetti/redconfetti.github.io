@@ -2,6 +2,7 @@
 layout: post
 title: Referencing Gem Source Code
 date: '2013-02-06 05:11:46 -0800'
+comments: true
 categories:
 - Ruby on Rails
 - Gems

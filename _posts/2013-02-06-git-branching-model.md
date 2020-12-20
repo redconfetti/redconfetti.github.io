@@ -2,6 +2,7 @@
 layout: post
 title: Git Branching Model
 date: '2013-02-06 19:57:45 -0800'
+comments: true
 categories:
 - Git
 ---

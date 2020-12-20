@@ -2,6 +2,7 @@
 layout: post
 title: Paperclip URL and Path
 date: '2013-08-28 20:04:13 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags:

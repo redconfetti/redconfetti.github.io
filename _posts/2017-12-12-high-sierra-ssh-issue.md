@@ -5,6 +5,7 @@ title: SSH issues with Mac OS X High Sierra
 description: How to resolve
 image_url: /images/posts/2017-12-12-macos-high-sierra.jpg
 date: 2017-12-12 11:08:00 -0700
+comments: true
 categories:
 - macosx
 tags:

@@ -2,6 +2,7 @@
 layout: post
 title: Using Super with Ruby class methods
 date: '2012-09-18 21:06:32 -0700'
+comments: true
 categories:
 - Ruby
 tags:

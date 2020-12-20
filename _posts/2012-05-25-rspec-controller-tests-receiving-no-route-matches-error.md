@@ -2,6 +2,7 @@
 layout: post
 title: RSpec Controller Tests Receiving 'No route matches' Error
 date: '2012-05-25 18:24:17 -0700'
+comments: true
 categories:
 - Gems
 tags:
@@ -13,7 +14,6 @@ comments:
   author_email: boni@twine.hu
   author_url: ''
   date: '2012-10-19 09:20:08 -0700'
-  date_gmt: '2012-10-19 09:20:08 -0700'
   content: Thank you!
 ---
 

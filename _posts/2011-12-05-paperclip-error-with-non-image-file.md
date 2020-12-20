@@ -2,6 +2,7 @@
 layout: post
 title: Paperclip error with non-image file
 date: '2011-12-05 16:43:25 -0800'
+comments: true
 categories:
 - Ruby on Rails
 tags:

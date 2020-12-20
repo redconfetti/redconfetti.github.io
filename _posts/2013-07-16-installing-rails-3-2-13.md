@@ -2,6 +2,7 @@
 layout: post
 title: Installing Rails 3.2.13
 date: '2013-07-16 03:00:40 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags:

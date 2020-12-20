@@ -2,6 +2,7 @@
 layout: post
 title: Spree Extension Development Environment using RVM
 date: '2012-12-25 10:30:38 -0800'
+comments: true
 categories:
 - Gems
 tags:

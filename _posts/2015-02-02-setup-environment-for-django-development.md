@@ -2,6 +2,7 @@
 layout: post
 title: Setup Environment for Django Development
 date: '2015-02-02 00:26:28 -0800'
+comments: true
 categories:
 - Python
 tags:

@@ -2,6 +2,7 @@
 layout: post
 title: History of the Canonical Gem Host for Ruby Gems
 date: '2012-05-14 18:41:23 -0700'
+comments: true
 categories:
 - Gems
 tags: []

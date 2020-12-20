@@ -5,7 +5,7 @@ published: true
 title: Adding Event Listeners to Google-Maps-for-Rails Markers
 author: maxwell keyes
 date: '2011-10-11 11:24:27 -0700'
-date_gmt: '2011-10-11 18:24:27 -0700'
+comments: true
 categories:
 - prerequisites
 ---

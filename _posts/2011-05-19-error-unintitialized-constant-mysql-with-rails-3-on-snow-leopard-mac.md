@@ -2,6 +2,7 @@
 layout: post
 title: 'Error: ''unintitialized constant MySQL'' with Rails 3 on Snow Leopard Mac'
 date: '2011-05-19 23:05:08 -0700'
+comments: true
 categories:
 - Ruby on Rails
 ---

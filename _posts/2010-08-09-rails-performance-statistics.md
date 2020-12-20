@@ -2,6 +2,7 @@
 layout: post
 title: Rails Performance Statistics
 date: '2010-08-09 02:26:40 -0700'
+comments: true
 categories:
 - Ruby on Rails
 ---

@@ -2,6 +2,7 @@
 layout: post
 title: Factory Girl Associations and Records Persisting Across Tests
 date: '2012-04-11 22:32:23 -0700'
+comments: true
 categories:
 - Testing
 tags:
@@ -15,7 +16,6 @@ comments:
   author_email: phil989@gmail.com
   author_url: http://www.pghale.com
   date: '2012-04-25 12:44:56 -0700'
-  date_gmt: '2012-04-25 16:44:56 -0700'
   content: "Thanks for the article - I'm experiencing just this problem.  It's
     a shame there isn't more of a resolution to the problem though....\n\nFor
     example. I have a controller test which tests that the 'index' action

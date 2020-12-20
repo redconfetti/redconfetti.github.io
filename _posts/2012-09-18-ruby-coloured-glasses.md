@@ -2,6 +2,7 @@
 layout: post
 title: Ruby Coloured Glasses
 date: '2012-09-18 19:46:48 -0700'
+comments: true
 categories:
 - Uncategorized
 tags: []

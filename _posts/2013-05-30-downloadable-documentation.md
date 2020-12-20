@@ -2,6 +2,7 @@
 layout: post
 title: Downloadable Documentation
 date: '2013-05-30 18:20:00 -0700'
+comments: true
 categories:
 - Ruby on Rails
 - Ruby

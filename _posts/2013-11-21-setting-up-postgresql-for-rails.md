@@ -2,6 +2,7 @@
 layout: post
 title: Setting up PostgreSQL for Rails
 date: '2013-11-21 20:14:34 -0800'
+comments: true
 categories:
 - Ruby on Rails
 tags:

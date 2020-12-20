@@ -2,6 +2,7 @@
 layout: post
 title: Yard Documentation
 date: '2013-08-31 21:50:47 -0700'
+comments: true
 categories:
 - Documentation
 tags:

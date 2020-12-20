@@ -2,6 +2,7 @@
 layout: post
 title: Technical Debt
 date: '2013-06-03 18:43:05 -0700'
+comments: true
 categories:
 - Uncategorized
 tags:

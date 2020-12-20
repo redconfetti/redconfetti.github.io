@@ -3,7 +3,7 @@ layout: post
 published: true
 title: Installing PHPdoc for Ubuntu for use with Command Line
 date: '2011-05-18 20:21:45 -0700'
-date_gmt: '2011-05-19 00:21:45 -0700'
+comments: true
 categories:
 - web development
 ---

@@ -2,6 +2,7 @@
 layout: post
 title: Use Ruby to Develop iOS or Mac OSX
 date: '2013-05-22 01:53:31 -0700'
+comments: true
 categories:
 - Mac OS X
 tags:

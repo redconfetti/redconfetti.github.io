@@ -2,6 +2,7 @@
 layout: post
 title: Obtaining Request Domain Name for Ruby on Rails
 date: '2010-10-12 01:19:16 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags: []

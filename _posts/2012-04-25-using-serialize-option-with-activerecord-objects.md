@@ -2,6 +2,7 @@
 layout: post
 title: Using Serialize Option with ActiveRecord Objects
 date: '2012-04-25 19:01:26 -0700'
+comments: true
 categories:
 - Model
 tags:

@@ -2,6 +2,7 @@
 layout: post
 title: Rails 3 and Subclasses Method
 date: '2012-03-26 18:38:14 -0700'
+comments: true
 categories:
 - Model
 tags:

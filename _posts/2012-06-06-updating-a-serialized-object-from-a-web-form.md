@@ -2,6 +2,7 @@
 layout: post
 title: Updating a Serialized Object from a Web form
 date: '2012-06-06 18:19:01 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags:

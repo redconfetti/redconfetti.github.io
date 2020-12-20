@@ -2,6 +2,7 @@
 layout: post
 title: Time Management
 date: '2013-07-30 05:25:04 -0700'
+comments: true
 categories:
 - Uncategorized
 tags:

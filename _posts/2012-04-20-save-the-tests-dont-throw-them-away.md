@@ -2,6 +2,7 @@
 layout: post
 title: Save the Tests, Don't Throw Them Away
 date: '2012-04-20 17:48:02 -0700'
+comments: true
 categories:
 - Testing
 tags:

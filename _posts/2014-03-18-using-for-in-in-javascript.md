@@ -2,6 +2,7 @@
 layout: post
 title: Using 'for in' in Javascript
 date: '2014-03-18 02:04:24 -0700'
+comments: true
 categories:
 - Javascript
 tags:

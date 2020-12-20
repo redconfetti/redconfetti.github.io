@@ -2,6 +2,7 @@
 layout: post
 title: Foreign Key References when Generating Model
 date: '2012-03-23 18:15:26 -0700'
+comments: true
 categories:
 - Model
 tags:

@@ -2,6 +2,7 @@
 layout: post
 title: MySQL Gem Installation on Mac 10.5.8 - 64 bit??
 date: '2010-07-16 17:26:14 -0700'
+comments: true
 categories:
 - Ruby on Rails
 ---

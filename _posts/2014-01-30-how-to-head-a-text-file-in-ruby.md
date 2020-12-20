@@ -2,6 +2,7 @@
 layout: post
 title: How to 'head' a text file in Ruby
 date: '2014-01-30 22:51:32 -0800'
+comments: true
 categories:
 - Ruby
 tags:

@@ -2,6 +2,7 @@
 layout: post
 title: 'ComputerName: not set'
 date: '2013-10-02 23:20:22 -0700'
+comments: true
 categories:
 - Mac OS X
 tags:

@@ -2,6 +2,7 @@
 layout: post
 title: Edit Devise User without Password
 date: '2012-03-20 16:38:43 -0700'
+comments: true
 categories:
 - Controller
 tags:

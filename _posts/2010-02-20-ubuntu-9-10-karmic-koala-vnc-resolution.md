@@ -3,7 +3,7 @@ layout: post
 published: true
 title: Ubuntu 9.10 Karmic Koala - VNC resolution limited without monitor
 date: '2010-02-20 07:29:28 -0800'
-date_gmt: '2010-02-20 11:29:28 -0800'
+comments: true
 categories:
 - Ubuntu
 tags: []

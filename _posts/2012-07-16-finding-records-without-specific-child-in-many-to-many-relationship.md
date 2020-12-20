@@ -2,6 +2,7 @@
 layout: post
 title: Finding Records without Specific Child in Many-to-Many Relationship
 date: '2012-07-16 21:57:49 -0700'
+comments: true
 categories:
 - Model
 tags:

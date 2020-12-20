@@ -2,6 +2,7 @@
 layout: post
 title: Undefined method 'ref' for ActiveSupport::Dependencies:Module
 date: '2010-07-27 10:19:01 -0700'
+comments: true
 categories:
 - Controller
 tags: []

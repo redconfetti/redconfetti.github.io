@@ -5,7 +5,7 @@ published: true
 title: Common Computer Mistakes
 author: maxwell keyes
 date: '2009-11-02 14:59:02 -0800'
-date_gmt: '2009-11-02 18:59:02 -0800'
+comments: true
 categories:
 - web development
 ---

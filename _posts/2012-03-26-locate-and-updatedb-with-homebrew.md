@@ -2,6 +2,7 @@
 layout: post
 title: Locate and Updatedb with Homebrew
 date: '2012-03-26 14:08:59 -0700'
+comments: true
 categories:
 - Mac OS X
 tags:

@@ -2,6 +2,7 @@
 layout: post
 title: Database Schema Information
 date: '2009-03-13 17:20:50 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags:

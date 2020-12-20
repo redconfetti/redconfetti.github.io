@@ -3,6 +3,7 @@ layout: post
 title: Setting up Deployment for Rails using Capistrano, Apache with Passenger and
   Git
 date: '2010-07-20 23:48:23 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags:

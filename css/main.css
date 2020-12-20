@@ -64,3 +64,23 @@ pre.highlight code,
 #results-container {
   margin: 40px 25px;
 }
+
+/* Fix Tables */
+table {
+  border: solid 1px #CCC;
+  margin: 10px 0;
+}
+
+table tr {
+  border: solid 2px #CCC;
+}
+
+table th {
+  font-weight: bold;
+  text-align: left;
+}
+
+table td, table th {
+  border: solid 2px #CCC;
+  padding: 10px;
+}

@@ -2,6 +2,7 @@
 layout: post
 title: Development Time
 date: '2013-02-28 02:02:05 -0800'
+comments: true
 categories:
 - Development
 tags:

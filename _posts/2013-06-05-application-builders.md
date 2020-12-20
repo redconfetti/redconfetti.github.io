@@ -2,6 +2,7 @@
 layout: post
 title: Application Builders
 date: '2013-06-05 07:11:12 -0700'
+comments: true
 categories:
 - Ruby on Rails
 tags:

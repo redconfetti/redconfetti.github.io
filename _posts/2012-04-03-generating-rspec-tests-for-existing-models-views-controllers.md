@@ -2,6 +2,7 @@
 layout: post
 title: Generating Test File Stubs for Existing Models, Views, and Controllers
 date: '2012-04-03 13:10:12 -0700'
+comments: true
 categories:
 - Testing
 tags:

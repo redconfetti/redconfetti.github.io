@@ -2,6 +2,7 @@
 layout: post
 title: Issues with RVM
 date: '2011-11-13 20:11:04 -0800'
+comments: true
 categories:
 - Ruby on Rails
 tags:

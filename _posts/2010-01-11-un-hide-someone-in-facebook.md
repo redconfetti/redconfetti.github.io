@@ -4,7 +4,7 @@ status: publish
 published: true
 title: Un-Hide Someone in Facebook
 date: '2010-01-11 17:40:15 -0800'
-date_gmt: '2010-01-11 21:40:15 -0800'
+comments: true
 categories:
 - computing tips
 ---

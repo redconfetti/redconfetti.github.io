@@ -2,6 +2,7 @@
 layout: post
 title: Rails 3 on WHM / cPanel VPS Server
 date: '2012-01-08 13:14:58 -0800'
+comments: true
 categories:
 - Ruby on Rails
 tags:

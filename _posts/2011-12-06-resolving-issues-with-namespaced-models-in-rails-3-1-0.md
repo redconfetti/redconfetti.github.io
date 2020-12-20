@@ -2,6 +2,7 @@
 layout: post
 title: Resolving issues with Namespaced Models in Rails 3.1.0
 date: '2011-12-06 19:09:51 -0800'
+comments: true
 categories:
 - Ruby on Rails
 tags:
