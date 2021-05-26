@@ -4,39 +4,6 @@ title: Docker
 ---
 [Back to Cheat Sheets](/resources/cheat-sheets/)
 
-## Docker-Machine
-
-Docker uses virtual machine(s) (VM) provided by [Virtualbox](https://www.virtualbox.org/) to run your Docker application(s). You can manage the VM's by using 'docker-machine'.
-
-``` shell
-# List Virtual Machines
-docker-machine ls
-
-# Start Docker Virtual Machine
-docker-machine start
-
-# Stop Docker Virtual Machine
-docker-machine stop
-
-# Display the shell initialization commands
-docker-machine env
-
-# Initialize shell for accessing VM. Run this if 'docker' command unable to connect to daemon.
-eval $(docker-machine env)
-
-# View Docker VM status
-docker-machine status
-
-# Get local IP for VM
-docker-machine ip
-
-# Upgrade Docker Machine
-docker-machine stop
-
-# docker-machine upgrade
-docker-machine upgrade
-```
-
 ## Docker
 
 ``` shell
@@ -111,6 +78,3 @@ docker tag [image_id] [repository_url]:[port]/[name]:[tag]
 # Push Docker image to remote repository
 docker push [repository_url]:[port]/[name]:[tag]
 ```
-
-
-
