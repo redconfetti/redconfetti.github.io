@@ -13,4 +13,10 @@ startx
 
 # Run Raspberry Pi Configuration Tool
 sudo raspi-config
+
+# Shutdown Immediately
+shutdown -h now
+
+# Reboot
+sudo reboot
 ```
