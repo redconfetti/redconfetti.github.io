@@ -76,7 +76,7 @@ To create a new application, I use the following command to generate an
 [API Application], using [Webpacker] to with a VueJS front-end.
 
 ```shell
-rails new my_application --api --webpack=vue
+rails new my_application --api --webpack=vue --database=sqlite3 --skip-test --skip-turbolinks --skip-sprockets
 ```
 
 [API Application]: https://guides.rubyonrails.org/api_app.html#creating-a-new-application
