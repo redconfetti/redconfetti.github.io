@@ -12,7 +12,11 @@ Back to [Resources](/resources/)
   iOS, Git, and Databases), IT Ops, Data Professional, and Information and Cyber
   Security
 * [Egghead]
+* [Thinkster]
 
+[Pluralsight]: https://www.pluralsight.com/
+[Egghead]: https://egghead.io
+[Thinkster]: https://thinkster.io/
 ## Sandboxes
 
 * [JsFiddle] - Free solution with collaboration features
@@ -25,10 +29,20 @@ with other remote developers
 execution and output, for many languages (Javascript, Ruby, Python, PHP, Go,
 etc.)
 
+[JsFiddle]: https://jsfiddle.net/
+[Plunker]: http://plnkr.co/
+[CodePen]: http://codepen.io/about/
+[JsBin]: http://jsbin.com/
+[Repl.it]: https://repl.it/languages
+
 ## JavaScript Libraries
 
 * [PrismJS] - lightweight, extensible syntax highlighter
 * [Shower] - HTML presentation engine. See [Github][Github Shower]
+
+[PrismJS]: http://prismjs.com/
+[Shower]: http://shwr.me/
+[Github Shower]: https://github.com/shower/shower
 
 ## Organizational Tools
 
@@ -39,6 +53,10 @@ they might go away)
 designed for visual inspiration, like Pinterest for the web.
 * [Phabricator] - Coding development platform similar to Github, created and
 used by Facebook
+
+[Pinboard]: https://pinboard.in/tour/
+[Dragdis]: https://dragdis.com/
+[Phabricator]: http://phabricator.org/
 
 ## Collaboration Tools
 
@@ -52,37 +70,39 @@ features. Requires AWS EC2 instance for back-end.
 * [Kobra] - Realtime collaborative coding, with built in
 video & voice chat. Not meant to be an IDE.
 
-## Transpilers
-
-* [EMScripten] - Compiles C and C++ into highly-optimizable JavaScript in asm.
-js format. This lets you run C and C++ on the web at near-native speed,
-without plugins.
-
-## Javascript
-
-* [React JS]
-* [Brief history of JavaScript Modules]
-
-[Pluralsight]: https://www.pluralsight.com/
-[Egghead]: https://egghead.io
-[JsFiddle]: https://jsfiddle.net/
-[Plunker]: http://plnkr.co/
-[CodePen]: http://codepen.io/about/
-[JsBin]: http://jsbin.com/
-[Repl.it]: https://repl.it/languages
-[PrismJS]: http://prismjs.com/
-[Shower]: http://shwr.me/
-[Github Shower]: https://github.com/shower/shower
-[Pinboard]: https://pinboard.in/tour/
-[Dragdis]: https://dragdis.com/
-[Phabricator]: http://phabricator.org/
 [Codeassium]: https://codassium.com/
 [Cloud9]: https://c9.io/
 [Nitrous]: http://nitrous.io/
 [Koding]: https://koding.com/
 [CodeAnywhere]: https://codeanywhere.com/
 [Kobra]: https://kobra.io/
-[Brief history of JavaScript Modules]: https://medium.com/@sungyeol.choi/javascript-module-module-loader-module-bundler-es6-module-confused-yet-6343510e7bde
+
+## Transpilers
+
+* [EMScripten] - Compiles C and C++ into highly-optimizable JavaScript in asm.
+js format. This lets you run C and C++ on the web at near-native speed,
+without plugins.
+
 [EMScripten]: http://kripken.github.io/emscripten-site/
+## Javascript
+
+* [React JS]
+* [Brief history of JavaScript Modules]
+
 [React JS]: http://facebook.github.io/react/index.html
-[Thinkster]: https://thinkster.io/
+[Brief history of JavaScript Modules]: https://medium.com/@sungyeol.choi/javascript-module-module-loader-module-bundler-es6-module-confused-yet-6343510e7bde
+## Container Technologies
+
+* [Docker]
+* [Open Container Initiative]
+  * [CRI-O] - container run-time
+  * [Podman] - used to interact with pods and containers
+  * [Buildah] - container build tool
+  * [OpenShift] - Red Hat containerization software
+
+[Docker]: https://en.wikipedia.org/wiki/Docker_(software)
+[Open Container Initiative]: https://en.wikipedia.org/wiki/Open_Container_Initiative
+[CRI-O]: https://cri-o.io/
+[Podman]: https://podman.io/
+[Buildah]: https://buildah.io/
+[OpenShift]: https://en.wikipedia.org/wiki/OpenShift
