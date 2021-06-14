@@ -69,13 +69,13 @@ Code highlighting is supported by the [Rouge gem].
 
 It's recommended that you use [Markdown] syntax to wrap code examples.
 
+````ruby
 ```ruby
-\`\`\`ruby
 def some_method
   puts "this is some method"
 end
-\`\`\`
 ```
+````
 
 See [Rouge Wiki - List of supported languages and lexers] for reference.
 
