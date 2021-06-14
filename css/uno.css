@@ -53,10 +53,12 @@ body {
  */
 @font-face {
 	font-family: "foundation-icons";
-	src: url("../fonts/foundation-icons/foundation-icons.eot");
-	src: url("../fonts/foundation-icons/foundation-icons.eot?") format("embedded-opentype"), url("../fonts/foundation-icons/foundation-icons.woff") format("woff"), url("../fonts/foundation-icons/foundation-icons.ttf") format("truetype"), url("../fonts/foundation-icons/foundation-icons.svg") format("svg");
+	src: local('Foundation Icons'), local('foundation-icons'), url("../fonts/foundation-icons/foundation-icons.woff") format("woff");
 	font-weight: normal;
-	font-style: normal; }
+	font-style: normal;
+  font-display: swap;
+}
+
 .icon:before {
 	font-family: "foundation-icons";
 	font-style: normal;
@@ -73,7 +75,10 @@ body {
   
 .icon-x-circle:before {
   content: "\f216"; }
-  
+
+.icon-rss:before {
+  content: "\f1aa"; }
+
 .icon-social-github:before {
   content: "\f1c9"; }
 
