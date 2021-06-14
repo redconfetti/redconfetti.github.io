@@ -31,7 +31,7 @@ defaults:
 destination: _site
 paginate: 10
 permalink: /:year/:month/:title/
-excerpt_separator: <!--more-->
+excerpt_separator: "<!--more-->"
 highlighter: rouge
 markdown: kramdown
 kramdown:

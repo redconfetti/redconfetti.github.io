@@ -5,6 +5,16 @@
 .disclaimer { color: #aaa; }
 .text-alert { color: #f00; }
 
+header.panel-cover {
+  background-image: url(/images/cover-denver.jpg)
+}
+
+@media only screen and (max-width: 600px) {
+  header.panel-cover {
+    background-image: url(/images/cover-denver-mobile.jpg)
+  }
+}
+
 /* Modifications */
 
 pre.highlight,
