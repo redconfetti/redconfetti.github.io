@@ -22,9 +22,11 @@ The following configuration in a `Procfile` in the root
 of our repository with the following configuration worked
 fine.
 
+{% raw %}
 ```yaml
 worker: bundle exec sidekiq -e $RAILS_ENV -C config/sidekiq.yml -i {{UNIQUE_INT}}
 ```
+{% endraw %}
 <!--more-->
 
 This was derived from the instructions in the

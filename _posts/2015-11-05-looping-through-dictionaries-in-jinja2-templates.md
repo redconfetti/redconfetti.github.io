@@ -33,8 +33,9 @@ Jinja2 templates or Python objects.
 At first I figured that I would simply loop through each element inside of the
 'wordpress_sites' dictionary like so:
 
-```django
 {% raw %}
+
+```django
 {% for site in wordpress_sites.values() %}
 echo "-------------------------------------------------------"
 echo "| Backing Up Assets and Database for {{ site.key }} |"
@@ -43,9 +44,9 @@ echo ""
 read -s -p "MySQL Password for '{{ site.env.db_user }}': " mysqlpw
 # Other script code goes here for each site
 {% endfor %}
-{% endraw %}
-
 ```
+
+{% endraw %}
 
 Unfortunately when I'd run the script to generate this site I would get this
 error:
@@ -62,14 +63,16 @@ dictionary object as it's value. Why am I getting a string object?
 After much experimentation (trial and error), I realized that I could traverse
 through the dictionary manually.
 
-```django
 {% raw %}
+
+```django
 {{ wordpress_sites }}
 {{ wordpress_sites['mysite.example.com'].env }}
 {{ wordpress_sites['mysite.example.com'].env.db_user }}
 {{ wordpress_sites['mysite.example.com'].env.doesnt_exist }}
-{% endraw %}
 ```
+
+{% endraw %}
 
 This resulted in an error about no attribute 'doesnt_exist', so I knew that the
 global variable is there and accessible. So there must be something wrong with
@@ -81,8 +84,9 @@ dictionary, and it would return the values.
 I guess that a for loop inside of a jinja2 template expects a list, not a
 dictionary.
 
-```django
 {% raw %}
+
+```django
 {% for site in wordpress_sites.values() %}
 echo "-------------------------------------------------------"
 echo "| Backing Up Assets and Database for {{ site.key }} |"
@@ -91,17 +95,18 @@ echo ""
 read -s -p "MySQL Password for '{{ site.env.db_user }}': " mysqlpw
 # Other script code goes here for each site
 {% endfor %}
-{% endraw %}
-
 ```
+
+{% endraw %}
 
 This still left me unable to access the key that was used to represent the site,
 which is needed by my script. I tested
 [a configuration that iterated with key and value](http://blog.mattcrampton.com/post/31254835293/iterating-over-a-dict-in-a-jinja-template)
 available inside of the code block.
 
-```django
 {% raw %}
+
+```django
 {% for site_name, site in wordpress_sites.iteritems() %}
 echo "-------------------------------------------------------"
 echo "| Backing Up Assets and Database for {{ site_name }} |"
@@ -110,8 +115,9 @@ echo ""
 read -s -p "MySQL Password for '{{ site.env.db_user }}': " mysqlpw
 echo ""
 {% endfor %}
-{% endraw %}
 ```
+
+{% endraw %}
 
 This resolved my issue.
 
