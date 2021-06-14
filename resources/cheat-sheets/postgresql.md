@@ -8,6 +8,7 @@ These commands are specific to Postgres installed on a Mac using
 [Homebrew](http://brew.sh/). See also [PostgreSQL SELECT Docs].
 
 [PostgreSQL SELECT Docs]: http://www.postgresql.org/docs/9.1/static/sql-select.html
+
 ## Command Line Commands
 
 ``` shell

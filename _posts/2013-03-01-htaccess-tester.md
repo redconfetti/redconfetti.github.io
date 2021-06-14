@@ -12,4 +12,4 @@ tags:
 I'm not sure how one would use this, but it looks like it's supposed to be
 useful.
 
-http://htaccess.madewithlove.be/
+[http://htaccess.madewithlove.be/]

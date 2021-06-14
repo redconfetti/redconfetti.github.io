@@ -10,6 +10,7 @@ tags: []
 
 I'm exploring Objective C right now. There are some things that I notice and am
 curious about, so I'm going to note what I find here.
+
 <!--more-->
 
 ## ArgC and ArgV

@@ -55,8 +55,7 @@ config/environments/production.rb that were recommended in various
 some point I finally started to see that Heroku was trying to precompile assets
 when I deployed.
 
-
-``` shell
+```shell
        Your bundle is complete! It was installed into ./vendor/bundle
        Cleaning up the bundler cache.
 -----> Writing config/database.yml to read from DATABASE_URL
@@ -86,7 +85,6 @@ your application during deployment.
 I'm using Figaro to load application configuration values, including the asset
 hostname.
 
-
 ```ruby
 # config/application.rb
 config.action_controller.asset_host = 'http://' + Figaro.env.hostname
@@ -96,7 +94,7 @@ This must be the reason it was failing to attempt the precompiling of assets
 during deployment.
 
 ``` shell
-$ heroku labs:enable user-env-compile -a myapp
+heroku labs:enable user-env-compile -a myapp
 ```
 
 I installed user-env-compile and now it's working just fine.

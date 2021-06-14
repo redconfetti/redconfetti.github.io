@@ -4,7 +4,7 @@ title: C Programming Language
 ---
 [Back to Cheat Sheets](/resources/cheat-sheets/)
 
-# Data Types
+## Data Types
 
 | Type                            | Keyword            | Bytes | Range                                                   |
 | ------------------------------- | ------------------ | ----- | ------------------------------------------------------- |
@@ -21,7 +21,7 @@ title: C Programming Language
 | Single-precision floating-point | float              | 4     | 1.2E-38 to 3.4E38¹                                      |
 | Double-precision floating-point | double             | 8     | 2.2E-308 to 1.8E308²                                    |
 
-# Constants
+## Constants
 
 ```c
 #define PI 3.14159
@@ -29,7 +29,7 @@ title: C Programming Language
 const int count = 100;
 ```
 
-# Operator Precedence
+## Operator Precedence
 
 | Operators         | Relative Precedence   |
 | ----------------- | --------------------- |

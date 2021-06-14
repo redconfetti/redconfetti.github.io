@@ -21,8 +21,8 @@ for details on each from [RubyGems]. Here are some discoveries I'm making.
 
 [Github profile for Annotate Gemfile]: https://github.com/redconfetti/annotate_gemfile
 [RubyGems]: http://rubygems.org/
-# Bundler.definition
 
+## Bundler.definition
 
 This appears to return an initialized object with the Gemfile definitions
 loaded. [Bundler.definition] returns an instance of Bundler::Definition for the
@@ -198,8 +198,7 @@ This is the meat of the Gemfile, the dependencies which are represented as
 It appears that dependencies do not specify a source if they are provided from a
 Ruby Gems server. Only if they are sourced from a Path or Git repository.
 
-
-``` ruby
+```ruby
 # Dependencies from my gem in development
 1.9.3p448 :021 > Bundler.definition.dependencies[0]
  => <Bundler::Dependency type=:runtime name="annotate_gem" requirements=">= 0">

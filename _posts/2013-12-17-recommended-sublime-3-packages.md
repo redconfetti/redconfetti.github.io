@@ -20,6 +20,7 @@ highly recommended for use with Sublime Text 3.
 
 [Package Control by wbond]: https://sublime.wbond.net/installation
 [Sublime Text 3]: http://www.sublimetext.com/3
+
 <!--more-->
 
 * [DocBlockr](https://sublime.wbond.net/packages/DocBlockr)
@@ -27,7 +28,7 @@ highly recommended for use with Sublime Text 3.
 * [GitGutter](https://sublime.wbond.net/packages/GitGutter) - Indicates lines
   that have been added, modified, or removed in the files you are viewing.
 * [LiveReload](https://sublime.wbond.net/packages/LiveReload)
-* [Markdown Preview](https://sublime.wbond.net/packages/Markdown Preview)
+* [Markdown Preview](https://packagecontrol.io/packages/MarkdownPreview)
 * [SideBarEnhancements](https://sublime.wbond.net/packages/SideBarEnhancements)
 * [Sass](https://sublime.wbond.net/packages/sass)
 * [SublimeLinter](https://sublime.wbond.net/packages/SublimeLinter) - Helps to

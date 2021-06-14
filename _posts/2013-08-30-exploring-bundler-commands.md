@@ -26,7 +26,7 @@ $ ls -la Gemfile
 ```
 <!--more-->
 
-# Bundle Console
+## Bundle Console
 
 For purer Ruby projects, this is useful. Start an IRB session in the context of
 the current bundle.
@@ -40,8 +40,7 @@ Resolving dependencies...
  => Rake
 ```
 
-# Bundle Open
-
+## Bundle Open
 
 After you have configured your [default text editor], which could be Vim, Emacs,
 Textmate, or Sublime, you can use 'bundle open' to quickly open your editor with
@@ -54,8 +53,7 @@ $ bundle open rake
 Resolving dependencies...
 ```
 
-# Bundle Gem
-
+## Bundle Gem
 
 Bundler can even help you get started with the development of a new gem.
 
@@ -72,7 +70,7 @@ $ bundle gem smash_pumpkin
 Initializating git repo in /Users/redconfetti/Sites/annotate_gemfile/smash_pumpkin
 ```
 
-# Bundle Inject
+## Bundle Inject
 
 Bundle Inject is an undocumented feature added on
 [November 29, 2012, in version 1.3.0.pre], implemented by Engine Yard likely for

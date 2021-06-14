@@ -24,6 +24,7 @@ your generated documentation set. This is perfect for changelogs, readme
 files, and other high level documentation. After installing the Redcarpet gem,
 you can name these files with the '.md' extension to use
 [Markdown formatting][3] on your documentation.
+
 <!--more-->
 
 After further investigation I discovered that Yard supports
@@ -32,12 +33,12 @@ number of different languages. This is accomplished by wrapping your code with
 lines that consist of three backticks, with the first line suffixed by the
 language name.
 
-```markdown
+````markdown
 ```ruby
 this = "Ruby Code"
 puts "This is #{this}"
 ```
-```
+````
 
 Unfortunately the Github docs refer you to this [hightlight.js test page][5]
 for the list of supported languages.

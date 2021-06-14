@@ -33,6 +33,7 @@ a clients website usually didn't pay much. Many website maintainers might be
 unresponsive for days or weeks before updating your website. Even communicating
 the simple text changes you desired were difficult to convey via email to your
 webmaster.
+
 ## My Romance with Wordpress
 
 I worked for a hosting company from 2004 - 2008 so that I could expand upon my

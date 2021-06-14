@@ -14,4 +14,4 @@ There is a rails plugin which adds schema information for the models in
 comments at the top of your model definition files. It's really useful. Check
 out the instructions on installing and using this plugin at:
 
-http://pragdave.pragprog.com/pragdave/2006/02/annotate_models.html
+[http://pragdave.pragprog.com/pragdave/2006/02/annotate_models.html]

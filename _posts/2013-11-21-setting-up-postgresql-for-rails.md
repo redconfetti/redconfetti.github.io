@@ -10,7 +10,7 @@ tags:
 ---
 
 I've always used either SQLite (the default) with new Rails projects, or I've
-used MySQL because I've been using it ever since 2002 when I started doing web 
+used MySQL because I've been using it ever since 2002 when I started doing web
 development with PHP. Recently however I was challenged with deploying an
 application to Heroku as part of a code challenge I'm taking part in.
 Unfortunately, Heroku doesn't support SQLite, and recommends PostgreSQL. Rather
@@ -30,9 +30,9 @@ I find that it's useful to control when the Postgres server is running using the
 installed via Homebrew.
 
 ``` shell
-$ gem install lunchy
-$ lunchy start postgres
-$ lunchy stop postgres
+gem install lunchy
+lunchy start postgres
+lunchy stop postgres
 ```
 
 [Lunchy gem]: https://github.com/mperham/lunchy
@@ -40,31 +40,41 @@ $ lunchy stop postgres
 
 ## Creating a User for your Rails App
 
-You likely don't want to configure your Rails app to use your username in development. It's best to use a username that is related to your application. The following command will let you add a super user/role to Postgres with the ability to create databases, create other user/roles, and login.
+You likely don't want to configure your Rails app to use your username in
+development. It's best to use a username that is related to your application.
+The following command will let you add a super user/role to Postgres with the
+ability to create databases, create other user/roles, and login.
 
-``` shell
-$ createuser --superuser --createrole --createdb --login myappuser
+```bash
+createuser --superuser --createrole --createdb --login myappuser
 ```
 
 If you need to delete a user/role, you can use 'dropuser'.
 
-``` shell
-$ dropuser myappuser
+```bash
+dropuser myappuser
 ```
 
-Now that a super user is setup, you can run the rake commands to create the database and run migrations.
+Now that a super user is setup, you can run the rake commands to create the
+database and run migrations.
 
 ``` shell
-$ bundle exec rake db:create:all
+bundle exec rake db:create:all
 
-$ bundle exec rake db:migrate
+bundle exec rake db:migrate
 
-$ bundle exec rake db:migrate RAILS_ENV=test
+bundle exec rake db:migrate RAILS_ENV=test
 ```
 
 ## Command Line Client
 
-The command line client is '[psql](http://www.postgresql.org/docs/8.4/static/app-psql.html)'. It defaults to using your actual Linux/Mac username, which is fine because Postgres is running under your username locally anyway. It requires a database name also, so you'll have to specify a database name to even get the prompt. You can use 'postgres' as the database name. Otherwise use your applications database name if you want.
+The command line client is '[psql]'. It defaults to using your actual Linux/Mac
+username, which is fine because Postgres is running under your username locally
+anyway. It requires a database name also, so you'll have to specify a database
+name to even get the prompt. You can use 'postgres' as the database name.
+Otherwise use your applications database name if you want.
+
+[psql]: http://www.postgresql.org/docs/8.4/static/app-psql.html
 
 ``` shell
 $ psql postgres
@@ -73,16 +83,19 @@ Type "help" for help.
 postgres=#
 ```
 
-Also 'quit' or 'exit' don't get you out of the client. You have to use '\q'. You can use the 'help' command as prompted to see other commands.
+Also 'quit' or 'exit' don't get you out of the client. You have to use '\q'. You
+can use the 'help' command as prompted to see other commands.
 
-If you want to view a list of users directly from the 'postgres' database, you can use the following query.
+If you want to view a list of users directly from the 'postgres' database, you
+can use the following query.
 
-``` shell
+```sql
 SELECT * FROM pg_roles;
 ```
 
-To view a list of databases, you can directly use the psql command from the command line.
+To view a list of databases, you can directly use the psql command from the
+command line.
 
-``` shell
-$ psql -l
+```bash
+psql -l
 ```

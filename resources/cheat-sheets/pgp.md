@@ -6,7 +6,7 @@ title: PGP
 
 [Pretty Good Privacy (PGP)](https://en.wikipedia.org/wiki/Pretty_Good_Privacy)
 
-See [Introduction to GnuPG](http://www.ianatkinson.net/computing/gnupg.htm){:target="_blank"} for more detail.
+See [Introduction to GnuPG]{:target="_blank"} for more detail.
 
 ``` shell
 # install using homebrew
@@ -36,3 +36,5 @@ gpg --import publickey.txt
 # get ASCII-armored public key
 gpg --output publickey.txt --armor --export jsmith@example.com
 ```
+
+[Introduction to GnuPG]: http://www.ianatkinson.net/computing/gnupg.htm

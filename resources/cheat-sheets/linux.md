@@ -2,13 +2,14 @@
 layout: page
 title: Linux
 ---
+
 [Back to Cheat Sheets](/resources/cheat-sheets/)
 
 Use the `man` command to read more about any of the following commands.
 
 For example, you can read more about the `file` command by running `man file`.
 
-# Misc commands
+## Misc commands
 
 ``` shell
 # Discover a files type (text, executable, etc)
@@ -30,28 +31,30 @@ man -k directories
 cal
 ```
 
-# grep
+## grep
+
 ``` shell
 # reveal 10 lines before, and 20 lines after matching line for context
 grep -B10 -A20 'HTTP 404' /path/to/file
 ```
 
-# top
+## top
+
 ``` shell
 # view running processes, including threads
 top -H
 ```
 
-# sudo
+## sudo
 
 ``` shell
 # list the sudo privileges for the current user
 sudo -l
 ```
 
-# tmux
+## tmux
 
-## Commands
+### Commands
 
 ``` shell
 # Create a named session

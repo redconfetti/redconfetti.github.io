@@ -13,7 +13,7 @@ categories:
 With the update to Formtastic version 2.0.0.rc1 the 'semantic_remote_form_for'
 method was removed and support was added to 'remote_form_for' used like this:
 
-```
+```erb
 <%= semantic_form_for @contact, :remote => true, :url => '/contact' do |f| %>
 ```
 

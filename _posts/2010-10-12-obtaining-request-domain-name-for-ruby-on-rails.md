@@ -12,7 +12,7 @@ comments: []
 I'm using Rails 2.3.8. To obtain the domain name for the website being
 requested (i.e. mysite.com, mysite.net), just reference 'request.host'.
 
-```
+```ruby
 ruby@host = request.host
 ```
 
