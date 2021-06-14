@@ -20,3 +20,14 @@ shutdown -h now
 # Reboot
 sudo reboot
 ```
+
+## WiringPi
+
+These are commands for the [WiringPi] tool kit.
+
+[WiringPi]: https://github.com/WiringPi/WiringPi
+
+```bash
+# read data from all GPIO pins
+gpio readall
+```
