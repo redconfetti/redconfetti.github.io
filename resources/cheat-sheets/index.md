@@ -12,6 +12,7 @@ or simply added a few commands below.
 * [Docker](/resources/cheat-sheets/docker/)
 * [Git](/resources/cheat-sheets/git/)
 * [Linux](/resources/cheat-sheets/linux/)
+* [MacOSX](/resources/cheat-sheets/macosx/)
 * [MySQL](/resources/cheat-sheets/mysql/)
 * [Node Package Manager (NPM)](/resources/cheat-sheets/npm/)
 * [PGP Encryption / Decryption](/resources/cheat-sheets/pgp/)
