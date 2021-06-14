@@ -6,12 +6,12 @@
 .text-alert { color: #f00; }
 
 header.panel-cover {
-  background-image: url(/images/cover-denver.jpg)
+  background-image: url(/images/cover-denver.webp)
 }
 
 @media only screen and (max-width: 600px) {
   header.panel-cover {
-    background-image: url(/images/cover-denver-mobile.jpg)
+    background-image: url(/images/cover-denver-mobile.webp)
   }
 }
 
