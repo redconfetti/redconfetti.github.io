@@ -2,7 +2,7 @@
 layout: page
 title: Blender Viewport Navigation
 ---
-[Back to Blender Index](/resources/notes/blender/)
+[Back to Blender Notes Index](/resources/notes/blender/)
 
 These notes are based on the [Viewport Navigation][1] video tutorial.
 
