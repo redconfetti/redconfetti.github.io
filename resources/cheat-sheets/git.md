@@ -33,7 +33,18 @@ title: Git
 # You can view the manual pages on any of the commands below by using
 # 'man git-' followed by the verbs supported by Git such as 'log' or 'commit'
 man git-log
+man git-blame
+man git-branch
+man git-checkout
 man git-commit
+man git-diff
+man git-gc
+man git-log
+man git-push
+man git-remote
+man git-show
+man git-stash
+man git-tag
 ```
 
 ## Git Branching
@@ -400,6 +411,9 @@ git revert 04567899ae36651daf3dfa117a1088d594632370
 
 # List tags sorted in descending order, include first 5 in output
 git tag -l -n1 --sort=-v:refname | head -n 5
+
+# Cleanup unnecessary files and optimize the local repository
+git gc
 ```
 
 [1]: https://robots.thoughtbot.com/autosquashing-git-commits
