@@ -3,6 +3,10 @@ layout: page
 title: Notes
 ---
 
+## Misc
+
+- [Blender](/resources/notes/blender/)
+
 ## JavaScript
 
 - [Javascript Reference](/resources/notes/javascript/reference/)
