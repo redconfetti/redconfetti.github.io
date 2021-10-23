@@ -17,6 +17,7 @@ categories: []
 tags: []
 comments: []
 ---
+
 The following is a series of articles I worked on in mid 2011, meant to provide
 a guide for someone new to web development that wished to start with Ruby on
 Rails. As a whole the course is incomplete, but some of the articles still could

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Linux
+title: GNU/Linux
 ---
 
 [Back to Cheat Sheets](/resources/cheat-sheets/)
