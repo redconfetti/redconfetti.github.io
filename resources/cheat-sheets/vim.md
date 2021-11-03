@@ -28,40 +28,54 @@ file.
 
 These are the same as using the arrow keys.
 
-- j - move down a line
-- k - move up a line
-- l - move to the right
-- h - move to the left
+- `j` - move down a line
+- `k` - move up a line
+- `l` - move to the right
+- `h` - move to the left
 
 Jump between words
 
-- w - move to next word
-- W - move to next word (ignore punctuation)
-- b - move to previous word
-- B - move to previoius word (ignore punctuation)
+- `w` - move to next word
+- `W` - move to next word (ignore punctuation)
+- `b` - move to previous word
+- `B` - move to previoius word (ignore punctuation)
+- `{num}w` - Moves forward {num} words
+- `{num}j` - Moves {num} lines down
 
 Jumping to lines
 
-- gg - Jump to beginning of file
-- G - Jump to end of file
+- `gg` - Jump to beginning of file
+- `G` - Jump to end of file
 - Line number followed by 'gg' or 'G' (e.g. '22g' or '22G')
 
 Jumping on a line
 
-- 0 - Move to beginning of a line
-- ^ - Move to beginning of a line
-- \$ - Move to end of a line
+- `0` - Move to beginning of a line
+- `^` - Move to beginning of a line
+- `$` - Move to end of a line
+- `f{char}` - Place cursor in first occurance of {char} to the right
+- `F{char}` - Place cursor in first occurance of {char} to the left
+- `t{char}` - Place cursor one character before the first occurance of {char} to the right
+- `T{char}` - Place cursor one character before the first occurance of {char} to the left
+- `;` - Repeats the last motion
 
 These are the same as using Page-Up and Page-Down keys, if present.
 
 - CTRL-F - move forward / page down
 - CTRL-B - move backwards / page up
 
+Jumping Sentences / Paragraphs
+
+- `(` - Move to the next sentence
+- `)` - Move to the previous sentence
+- `{` - Move to the next paragraph
+- `}` - Move to the previous paragraph
+
 Status Line
 
 - CTRL-g - display line with current status (file name, status, cursor position,
   total lines)
-- g + CTRL-g - display line with columns, lines, words, and bytes
+- `g` + CTRL-g - display line with columns, lines, words, and bytes
 
 Shift viewport
 
@@ -69,25 +83,27 @@ Shift viewport
 
 ### Modification
 
-- x - Delete (Cut) character under cursor
-- X - Delete (Cut) character before cursor (to the left)
-- dw - Delete (Cut) current word
-- dd - Delete current line
-- dl - Deletes the current character
-- dh - Deletes character before cursor (to the left)
-- dj - Deletes current line, and the one below it
-- dk - Deletes current line, and the one above it
-- d0 - Deletes from cursor to beginning of line
-- d\$ - Deletes from cursor to end of the line
-- D - Deletes from cursor to end of the line
-- y - Yank (copy) current character
-- yy - Yank (copy) current line
-- yw - Yank (copy) current word
-- y0 - Yank (copy) from cursor to beginning of line
-- y\$ - Yank (copy) from cursor to end of the line
-- p - Paste last deleted/yanked content after cursor
-- P - Paste last deleted/yanked content before cursor
-- u - Undo
+- `x` - Delete (Cut) character under cursor
+- `X` - Delete (Cut) character before cursor (to the left)
+- `{num}x` - Deletes {num} characters
+- `dw` - Delete (Cut) current word
+- `dd` - Delete current line
+- `dl` - Deletes the current character
+- `dh` - Deletes character before cursor (to the left)
+- `dj` - Deletes current line, and the one below it
+- `dk` - Deletes current line, and the one above it
+- `d0` - Deletes from cursor to beginning of line
+- `d\$` - Deletes from cursor to end of the line
+- `dG` - Deletes everything from the current line till the end of the file
+- `D` - Deletes from cursor to end of the line
+- `y` - Yank (copy) current character
+- `yy` - Yank (copy) current line
+- `yw` - Yank (copy) current word
+- `y0` - Yank (copy) from cursor to beginning of line
+- `y\$` - Yank (copy) from cursor to end of the line
+- `p` - Paste last deleted/yanked content after cursor
+- `P` - Paste last deleted/yanked content before cursor
+- `u` - Undo
 - CTRL-R - Redo
 - . - Issues the previous command
 
@@ -95,11 +111,11 @@ Shift viewport
 
 These commands begin with ':' to go into line mode, followed by ENTER.
 
-- wq - write quit
-- q - quit
-- q! - quit without saving
-- 0-100000000 - moves to line number specified
-- set ruler - display ruler
+- `wq` - write quit
+- `q` - quit
+- `q!` - quit without saving
+- `0-100000000` - moves to line number specified
+- `set ruler` - display ruler
 
 If you type a partial command, then press CTRL-D, you'll be shown a list of
 suggested commands.
