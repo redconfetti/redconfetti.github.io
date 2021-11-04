@@ -12,13 +12,22 @@ tags:
 ---
 
 __UPDATE:__ I ran into errors and decided to not use the findutils provided by
-Homebrew. I simply setup the following alias in .bash_profile and this did the
-trick. This is using the built in locate database provided with Mac OS X Snow
-Leopard.
+Homebrew.
 
-``` shell
-alias updatedb='sudo /usr/libexec/locate.updatedb'
+When you run the `locate` command, the system will now tell you to run the
+service that creates the file database:
+
+```shell
+WARNING: The locate database (/var/db/locate.database) does not exist.
+To create the database, run the following command:
+
+  sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+
+Please be aware that the database can take some time to generate; once
+the database has been created, this message will no longer appear.
 ```
+
+You're better of simply running this and then using the built in 'locate' command.
 
 ----
 
