@@ -11,6 +11,7 @@ using Blender 2.93 for Mac OS.
 
 * [Viewport Navigation](./viewport-navigation/)
 * [Interface Overview](./interface-overview/)
+* [Cheat Sheets](./cheat-sheets/)
 
 As an alternative to my incomplete notes above, I recommend that you browse one
 of the following versions of the latest official Blender manuals.
