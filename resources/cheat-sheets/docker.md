@@ -22,6 +22,10 @@ docker run -d -P --name web nginx
 # Initialize a container running in the background with a local directory mounted in the container, based on the nginx container
 docker run -d -P -v $HOME/site:/usr/share/nginx/html --name mysite nginx
 
+# Initialize a container in interactive mode with a pseudo-terminal emulator (pty)
+# running Bash. Remove container upon exit.
+docker run -i -t --rm ruby:2.6 bash
+
 # View container ports
 docker port [container_id]
 
