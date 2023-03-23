@@ -1,13 +1,15 @@
 ---
 layout: post
 published: true
+future: true
 title: RubyGems SSL Error with jRuby
-date: 2023-03-23 16:15:01 -0500
+date: '2023-03-22 17:08:51 -0500'
 comments: true
 categories:
   - Ruby
 tags:
   - jruby
+  - rubygems
   - bundler
   - ssl
 ---

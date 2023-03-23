@@ -1,7 +1,7 @@
 # Site settings
 title: rubycoloredglasses
 description: > # this means to ignore newlines until "url:"
-  I'm Jason, a web applications developer in the Denver, Colorado area.
+  I'm Jason, a web applications developer in East Tennessee.
 url: 'https://www.rubycoloredglasses.com'
 baseurl: ''
 timezone: America/New_York

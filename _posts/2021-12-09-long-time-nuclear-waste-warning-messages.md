@@ -2,7 +2,7 @@
 layout: post
 published: true
 title: Long time nuclear waste warning messages
-date: 2021-12-09 13:37:18 -0700
+date: '2021-12-09 13:37:18 -0700'
 comments: true
 categories:
   - misc
