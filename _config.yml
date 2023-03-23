@@ -4,7 +4,7 @@ description: > # this means to ignore newlines until "url:"
   I'm Jason, a web applications developer in the Denver, Colorado area.
 url: 'https://www.rubycoloredglasses.com'
 baseurl: ''
-timezone: America/Denver
+timezone: America/New_York
 
 disqus_shortname: ruby-colored-glasses
 
