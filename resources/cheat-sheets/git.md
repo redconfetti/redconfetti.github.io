@@ -164,6 +164,9 @@ git diff master my-feature-branch
 
 # show changes using time ranges
 git diff --since=1.week.ago --until=1.minute.ago
+
+# compare a file in different branches
+git diff mybranch main -- src/myfile.js
 ```
 
 ## Git Log
