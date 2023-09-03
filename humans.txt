@@ -2,7 +2,7 @@
 Your title: Jason Miller
 Site: http://www.rubycoloredglasses.com/
 Twitter: redconfetti
-Location: Denver, Colorado, United States of America
+Location: Erwin, Tennessee, United States of America
 
 /* THANKS */
 Name: Josh Gerdes
@@ -11,4 +11,4 @@ Name: Josh Gerdes
 Last update: 2020/12/08
 Standards: HTML5, CSS3
 Components: Jekyll
-Software: Sublime Text, Photoshop
+Software: VSCode, Photoshop
