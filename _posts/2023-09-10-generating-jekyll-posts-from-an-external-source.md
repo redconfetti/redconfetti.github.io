@@ -1,8 +1,7 @@
 ---
 layout: post
-published: true
 title: Generating Jekyll Posts from an External Source
-date: '2023-09-16 17:17:00 -0500'
+date: '2023-09-16 17:31:00 -0400'
 comments: true
 categories:
   - Ruby
