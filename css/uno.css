@@ -1,10 +1,16 @@
-@import 'https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto+Slab:300,400&display=swap';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:wght@400;500|Roboto:300,400&display=swap';
 /* http://meyerweb.com/eric/tools/css/reset/
 	 v2.0 | 20110126
 	 License: none (public domain)
 */
 @import url(animate.css);
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -13,8 +19,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display: block; }
+article, aside, details, figcaption, figure, footer, header, 
+hgroup, menu, nav, section {
+	display: block;
+}
 
 body {
 	line-height: 1; }
@@ -39,12 +47,15 @@ table {
 
 body {
 	width: 100%;
-	*zoom: 1; }
-	body:before, body:after {
-		content: "";
-		display: table; }
-	body:after {
-		clear: both; }
+	zoom: 1;
+}
+body:before, body:after {
+  content: "";
+  display: table;
+}
+body:after {
+	clear: both;
+}
 
 /*
  * Foundation Icons v 3.0
@@ -53,7 +64,8 @@ body {
  */
 @font-face {
 	font-family: "foundation-icons";
-	src: local('Foundation Icons'), local('foundation-icons'), url("../fonts/foundation-icons/foundation-icons.woff") format("woff");
+	src: local('Foundation Icons'), local('foundation-icons'),
+    url("../fonts/foundation-icons/foundation-icons.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
   font-display: swap;
@@ -173,7 +185,7 @@ html {
 	max-height: 100%; }
 
 body {
-	font-family: "Raleway", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-size: 1em;
 	color: #666666; }
 
@@ -188,6 +200,7 @@ a {
 	color: #e25440; }
 	a:hover {
 		color: #b9301c;
+    transition: .5s;
 		-o-transition: .5s;
 		-ms-transition: .5s;
 		-moz-transition: .5s;
@@ -201,31 +214,31 @@ h5,
 h5 {
 	margin-top: .8em;
 	margin-bottom: .4em;
-	font-family: "Roboto Slab", serif;
+	font-family: "Roboto", serif;
 	font-weight: lighter;
 	color: #333333;
 	-webkit-font-smoothing: antialiased; }
 
 h1 {
-	margin-top: 0;
-	font-size: 3.2em;
+	margin-top: 0.5em;
+	font-size: 2.0em;
 	line-height: 1.2em;
 	letter-spacing: .05em; }
 
 h2 {
-	font-size: 2.2em; }
+	font-size: 1.6em; }
 
 h3 {
-	font-size: 1.8em; }
+	font-size: 1.4em; }
 
 h4 {
-	font-size: 1.4em; }
+	font-size: 1.3em; }
 
 h4 {
 	font-size: 1.2em; }
 
 h5 {
-	font-size: 1em; }
+	font-size: 1.1em; }
 
 p {
 	margin-bottom: 1.3em;
@@ -243,7 +256,7 @@ blockquote {
 	background: #f8f8f8;
 	border: 1px solid #eeeeee;
 	border-radius: 3px;
-	font-family: "Roboto Slab", serif;
+	font-family: "Roboto", serif;
 	font-weight: lighter;
 	font-style: italic;
 	font-size: 1.3em;
@@ -270,7 +283,8 @@ code {
 	background: #e8f2fb;
 	border: 1px solid #c9e1f6;
 	border-radius: 3px;
-	font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+	font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 	font-size: .85em; }
 
 pre {
@@ -279,7 +293,8 @@ pre {
 	background: #e8f2fb;
 	border: 1px solid #c9e1f6; */
 	border-radius: 3px;
-	font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+	font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 	font-size: .9em;
 	font-weight: normal;
 	line-height: 1.3em; }
@@ -311,7 +326,7 @@ pre {
 	color: #999999; }
 
 .intro {
-	font-family: "Roboto Slab", serif;
+	font-family: "Roboto", serif;
 	font-size: 1.2em;
 	font-weight: lighter;
 	color: #999999; }
@@ -347,7 +362,7 @@ pre {
 .content-wrapper {
 	z-index: 800;
 	width: 60%;
-	max-width: 800px;
+	max-width: 1200px;
 	margin-left: 40%; }
 
 .content-wrapper__inner {
@@ -439,12 +454,12 @@ hr {
 
 .panel-title {
 	margin: 0 0 5px 0;
-	font-size: 2.5em;
+	font-size: 1.6em;
 	letter-spacing: 4px;
 	color: #FFF; }
 
 .panel-subtitle {
-	font-family: "Roboto Slab", serif;
+	font-family: "Roboto", serif;
 	font-size: 1.2em;
 	font-weight: lighter;
 	letter-spacing: 3px;
@@ -462,8 +477,8 @@ hr {
 	background-size: cover; }
 
 .panel-cover--collapsed {
-	width: 40%;
-	max-width: 530px; }
+	width: 35%;
+	max-width: 490px; }
 
 .panel-cover--overlay {
 	display: block;
@@ -505,7 +520,7 @@ hr {
 	vertical-align: middle;
 	position: relative;
 	z-index: 800;
-	padding: 0 60px; }
+	padding: 0 20px; }
 
 .panel-main__content {
 	max-width: 620px;
@@ -615,7 +630,7 @@ nav {
 	position: relative; }
 
 .navigation {
-	display: inline-block;
+	display: block;
 	float: left;
 	position: relative;
 	margin: 0;
@@ -821,7 +836,10 @@ input[type="tel"] {
 
 @media all and (min-width: 1300px) {
 	.content-wrapper {
-		margin-left: 530px; } }
+		margin-left: 500px;
+  }
+}
+
 @media all and (max-width: 1100px) {
 	.panel-cover__logo {
 		width: 70px; }
