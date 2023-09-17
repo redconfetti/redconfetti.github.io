@@ -9,6 +9,7 @@ tags:
 - javascript
 - JsLint
 ---
+
 Today our lead front-end developer pointed out to me that when using a 'for in'
 loop in Javascript that you want to make sure to use hasOwnProperty() on the
 element to make sure it belongs to the object, and not properties that were

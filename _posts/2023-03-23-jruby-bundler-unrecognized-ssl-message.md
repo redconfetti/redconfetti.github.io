@@ -18,6 +18,8 @@ I spent several days investigating an error that was coming up with our Rails
 application build using jRuby v9.3.3 - v9.3.10. Everytime the build would
 try to run `bundle install` we would get the following error.
 
+<!--more-->
+
 ```bash
 Fetching source index from https://rubygems.org/
 Retrying fetcher due to error (2/4): Bundler::HTTPError Could not fetch specs from https://rubygems.org/ due to underlying error <Unrecognized SSL message, plaintext connection? (https://rubygems.org/specs.4.8.gz)>
@@ -38,8 +40,6 @@ running:
 ```shell
 bundle install --local --retry 3 || { echo "WARNING: bundle install --local failed, running bundle install"; bundle install --retry 3 || { echo "ERROR: bundle install failed"; exit 1; } }
 ```
-
-<!--more-->
 
 When we would run our script from the command line, it would work just fine.
 When we would try to run it from our Bamboo application (used for Continuous

@@ -13,6 +13,7 @@ expressions used in a module [referenced 'self.name'] many times. I checked
 [ApiDock.com] for a reference to this class in the Ruby or Rails documentation,
 but I couldn't find one. The module itself didn't define a #name method, so I
 was perplexed.
+<!--more-->
 
 The module I was inspecting is meant to be used to extend other classes, meaning
 that it establishes the methods as class methods. It turns out that the

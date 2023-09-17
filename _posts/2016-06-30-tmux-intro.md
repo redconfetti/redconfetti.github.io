@@ -11,18 +11,23 @@ tags:
 ---
 
 Recently I learned a few of the basic commands needed to use
-the GNU [screen](https://en.wikipedia.org/wiki/GNU_Screen) command to keep
-a command line session running even after I've disconnected from a remote VPS.
-I learned this specifically so that I could keep [irssi](https://irssi.org/)
-running and logged into a specific IRC channel, so I could return to the session
+the GNU [screen][1] command to keep a command line session running even after
+I've disconnected from a remote VPS. I learned this specifically so that I could
+keep [irssi][2] running and logged into a specific IRC channel, so I could
+return to the session
 and view the history of messages that I had missed.
-
-Recently I heard about [Tmux](https://en.wikipedia.org/wiki/Tmux) as an
-alternative solution, and also discovered that it can also be used to maintain
-separate virtual terminals (windows), as well as split the screen into separate
-"panes". Splitting the screen into panes can also be done with GNU screen, but
-it's not as well supported. See [reasons to use tmux instead of screen](http://superuser.com/questions/236158/tmux-vs-screen).
 <!--more-->
+
+Recently I heard about [Tmux][3] as an alternative solution, and also discovered
+that it can also be used to maintain separate virtual terminals (windows), as
+well as split the screen into separate "panes". Splitting the screen into panes
+can also be done with GNU screen, but it's not as well supported. See
+[reasons to use tmux instead of screen][4].
+
+[1]: https://en.wikipedia.org/wiki/GNU_Screen
+[2]: https://irssi.org/
+[3]: https://en.wikipedia.org/wiki/Tmux
+[4]: http://superuser.com/questions/236158/tmux-vs-screen
 
 ## Installation
 
@@ -105,6 +110,10 @@ reconnect to the session.
 
 ## Further Reading
 
-* [tmux cheatsheet](/resources/cheat-sheets/linux/#tmux)
-* [Thoughtbot - A tmux Crash Course](https://robots.thoughtbot.com/a-tmux-crash-course)
-* [The Pragmatic Programmer - tmux](http://pragprog.com/book/bhtmux/tmux)
+* [tmux cheatsheet][5]
+* [Thoughtbot - A tmux Crash Course][6]
+* [The Pragmatic Programmer - tmux][7]
+
+[5]: /resources/cheat-sheets/linux/#tmux
+[6]: https://robots.thoughtbot.com/a-tmux-crash-course
+[7]: http://pragprog.com/book/bhtmux/tmux

@@ -12,8 +12,6 @@ tags:
   - cms
 ---
 
-## Mission
-
 I want to use a headless CMS with Jekyll as the source of my blog posts.
 There aren't many plugins that aim to faciliate this.
 
@@ -23,6 +21,8 @@ project, not a continual build process that sources all content from an API.
 
 [1]: https://import.jekyllrb.com/docs/wordpress/
 
+<!--more-->
+
 ## The Jekyll Engine
 
 Jekyll Posts are just a natively supported form of [Jekyll collection][2]. The
@@ -31,8 +31,6 @@ load from a different directory, you will need to move your `_posts` and
 `_drafts` folder under that directory as well.
 
 Jekyll builds your site through a process that involves the following steps:
-
-<!--more-->
 
 * Read - Reads data from directories/files into the [Jekyll::Site][3] object
 * Generate - Runs each of the Generators defined by plugins you've installed or

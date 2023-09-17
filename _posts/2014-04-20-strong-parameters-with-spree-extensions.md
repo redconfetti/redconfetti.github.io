@@ -9,6 +9,7 @@ categories:
 tags:
 - Spree
 ---
+
 I'm currently working on an extension for [Spree], an e-commerce solution for
 Ruby on Rails applications. The [developer documentation] for Spree is very
 helpful, letting developers know that they should use certain Ruby
@@ -67,14 +68,15 @@ inheritance isn't involved here. So this is definitely a situation where we
 
 I just noticed however that the [Spree::Api::OrdersController#order_params]
 method has a more complex method for permitting the attributes than I expected.
-In this case the order attributes are provided by [#permitted_order_attributes],
-which makes a 'super' call that refers to the parent controller
-[Spree::Api::BaseController]. The BaseController doesn't have a
-\#permitted_order_attributes method defined, however it does include
-[Spree::Core::ControllerHelpers::StrongParameters]. which defines
-[#permitted_order_attributes]. If you follow the dependencies further, you'll
-see that all these methods in Spree::Core::ControllerHelpers::StrongParameters
-rely on [Spree:PermittedAttributes].
+In this case the order attributes are provided by
+[Spree::Api::OrdersController#permitted_order_attributes], which makes a 'super'
+call that refers to the parent controller [Spree::Api::BaseController]. The
+BaseController doesn't have a \#permitted_order_attributes method defined,
+however it does include [Spree::Core::ControllerHelpers::StrongParameters].
+which defines [#permitted_order_attributes]. If you follow the dependencies
+further, you'll see that all these methods in
+Spree::Core::ControllerHelpers::StrongParameters rely on
+[Spree:PermittedAttributes].
 
 So all that is necessary to define a new Spree::Order attribute is to define a
 Spree::PermittedAttributes decorator like so:
@@ -90,11 +92,12 @@ I'll have to test this out, but it seems like the plausible approach. I hope
 this helps any other developers.
 
 [Spree::Api::OrdersController#order_params]: https://github.com/spree/spree/blob/e2bd38d4/api/app/controllers/spree/api/orders_controller.rb#L93
-[#permitted_order_attributes]: https://github.com/spree/spree/blob/e2bd38d4/api/app/controllers/spree/api/orders_controller.rb#L107
+
 [Spree::Api::BaseController]: https://github.com/spree/spree/blob/e2bd38d4/api/app/controllers/spree/api/base_controller.rb
 [Spree::Core::ControllerHelpers::StrongParameters]: https://github.com/spree/spree/blob/e2bd38d4/core/lib/spree/core/controller_helpers/strong_parameters.rb
 [#permitted_order_attributes]: https://github.com/spree/spree/blob/e2bd38d4/core/lib/spree/core/controller_helpers/strong_parameters.rb#L28
 [Spree:PermittedAttributes]: https://github.com/spree/spree/blob/e2bd38d4/core/lib/spree/permitted_attributes.rb
+[Spree::Api::OrdersController#permitted_order_attributes]: https://github.com/spree/spree/blob/e2bd38d4/api/app/controllers/spree/api/orders_controller.rb#L107
 
 ### Update
 

@@ -22,6 +22,8 @@ I want to work on, I don't want to have to pay more than $10 a month for
 hosting services. I'd prefer to have a humble little Docker server running
 all my little containers, with a self-spun automated build and deploy pipeline.
 
+<!--more-->
+
 [Vercel], [Render], and [Netlify] are all nice services, but honestly I don't
 trust their free entry plans. I wanted to setup a little site for my own
 personal notes with password protection, but that's not possible without paying
@@ -30,8 +32,6 @@ know damn well that Apache supports BasicAuth for websites that will work
 just fine to host my own public intranet site.
 
 So here's how you can setup your own personal web hosting for $4 - $12 a month.
-
-<!--more-->
 
 1. [Eleventy](https://www.11ty.dev/)
 1. Docker Desktop

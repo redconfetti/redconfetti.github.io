@@ -17,20 +17,20 @@ If you own a Subaru Outback or Legacy released in 2015 - 2018 that includes
 the Starlink system (the one without Apple Carplay), then you might not know
 that you can do the following cool things with a USB drive or SD card.
 
-Note: Don't add files to the navigation/map system SD card, as this will break
-the navigation.
-
 * View a slideshow of images
 * Upload an image to display when you turn the "screen off"
 * Sit back and watch videos while the car is parked (with parking break on)
+
+<!--more-->
 
 You can find details on how this is done in the
 [2017 Legacy and Outback Subaru Starlink Owners Manual][1], but I'm here to
 extract that and tell you what to do.
 
-[1]: https://cdn.subarunet.com/stis/doc/ownerManual/MSA5M1711A_STIS_Index2.pdf
+Note: Don't add files to the navigation/map system SD card, as this will break
+the navigation.
 
-<!--more-->
+[1]: https://cdn.subarunet.com/stis/doc/ownerManual/MSA5M1711A_STIS_Index2.pdf
 
 ## General
 

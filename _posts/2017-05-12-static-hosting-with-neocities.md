@@ -14,6 +14,7 @@ tags:
 I've been using a Wordpress site for my blog for years, but that has become
 cumbersome, especially when you have to deal with your website being exploited
 due to holes in one of the many plugins that your site is relying on.
+<!--more-->
 
 I used to focus on LAMP stack development, and so running my own
 [cPanel/WHM server] was a no brainer. I more recently migrated my tech blog,
@@ -26,7 +27,6 @@ that works with [Jekyll](https://jekyllrb.com/).
 
 [cPanel/WHM server]: https://cpanel.com/
 [Ruby Colored Glasses]: http://www.rubycoloredglasses.com/
-<!--more-->
 
 ## Neocities
 

@@ -22,6 +22,8 @@ and Vue-Loader from v14.2.2 to v15.9.0.
 
 After making this update I got the following error:
 
+<!--more-->
+
 ```javascript
 ERROR in ./app/javascript/my_pack/components/App.vue
 Module Error (from ./node_modules/vue-loader/lib/index.js):
@@ -31,8 +33,6 @@ Error: vue-loader was used without the corresponding plugin. Make sure to
 include VueLoaderPlugin in your webpack config. at Object.module.exports
 (/Users/jason/Projects/my_app/node_modules/vue-loader/lib/index.js:36:29)
 ```
-
-<!--more-->
 
 I was able to identify that I needed to make some configuration changes after
 [updatiing Vue-Loader from v14 to v15].

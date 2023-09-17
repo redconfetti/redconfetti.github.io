@@ -12,6 +12,7 @@ tags:
 
 You may be used to using 'bundle install' or 'bundle exec' often, but here are
 some commands you might have forgotten about or never heard of.
+<!--more-->
 
 ## Bundle Init
 
@@ -24,7 +25,6 @@ Writing new Gemfile to /Users/myuser/Projects/hey_guys/Gemfile
 $ ls -la Gemfile
 -rw-r--r--  1 myuser  mygroup  64 Aug 29 17:40 Gemfile
 ```
-<!--more-->
 
 ## Bundle Console
 

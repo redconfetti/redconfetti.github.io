@@ -14,6 +14,7 @@ I ran into an issue where we were mocking HTTP responses 400+ in our Rspec
 tests, which resulted in our application logging an error and a stack trace.
 When we expect errors because we're using WebMock to emulate an HTTP 500
 response, logging the stack trace involved can be too verbose.
+<!--more-->
 
 Sometimes we might need the stack trace, such as when a developer is debugging
 code involving the handling of error responses. I discussed this with other
@@ -22,7 +23,7 @@ configuration flag to turn the stack trace logging on or off.
 
 The ideal solution was to simply not log the stack trace when WebMock is being
 used in the 'test' environment.
-<!--more-->
+
 
 We're using HTTParty, which uses Net::HTTP. I did some investigating and
 discovered that when WebMock is enabled (via `WebMock.enable!`), that it

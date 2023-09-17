@@ -17,6 +17,7 @@ I am adding a script to our server using Ansible. The roles are all setup to
 support multiple Wordpress websites based on the dictionary defined in
 `ansible/group_vars/wordpress_sites.yml`, as my Ansible configuration is based
 on [Trellis](https://github.com/roots/trellis/){:target="\_blank"}.
+<!--more-->
 
 I don't want to use the
 [Ansible template module](http://docs.ansible.com/ansible/template_module.html){:target="\_blank"}
@@ -28,7 +29,6 @@ shell script.
 
 Well it turns out that this isn't do easy for someone not very familiar with
 Jinja2 templates or Python objects.
-<!--more-->
 
 At first I figured that I would simply loop through each element inside of the
 'wordpress_sites' dictionary like so:

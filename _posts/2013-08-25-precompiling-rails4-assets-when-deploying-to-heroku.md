@@ -15,6 +15,7 @@ I'm working on a Rails 4.0.0 application, using Ruby 2.0.0 for a code challenge
 I'm working on. Part of this challenge is to deploy my application to Heroku. I
 haven't done this before, as I'm accustomed to deploying to a VPS with
 Capistrano.
+<!--more-->
 
 Upon my first deploy I discovered that my assets weren't compiling. It wasn't
 even mentioned in the output while deploying. I reviewed the Heroku article on
@@ -23,8 +24,6 @@ issue.
 
 I discovered that I should [add the rails_12factor gem] to my production gem
 group in the Gemfile. Here's a pretty annotated version that I used.
-
-<!--more-->
 
 ``` ruby
 # Production

@@ -18,6 +18,7 @@ have with [Coinbase.com](http://www.coinbase.com/).
 I haven't been much into the zeitgeist of Bitcoin investment, or even the
 possibilities of blockchain methods used for real-world applications other than
 currency, until now.
+<!--more-->
 
 You will need a server that has at least 150 GB available, and as the size of
 the blockchain increases this will rise. I configured my node to use the
@@ -27,7 +28,6 @@ auto-pruning feature, but it still is using 128 GB currently.
 $ du -sh .bitcoin/
 128G  .bitcoin/
 ```
-<!--more-->
 
 ## Install the software-properties-common Package
 

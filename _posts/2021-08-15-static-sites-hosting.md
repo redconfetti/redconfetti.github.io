@@ -21,6 +21,7 @@ free on Github or Bitbucket, and have a service like [Render] perform your
 builds and host your static website for free. But I don't like depending on
 a service to perform my builds and hosting, I'd rather configure a server and
 software to perform the same function.
+<!--more-->
 
 I want to control the configuration of the server using Ansible,
 so that I can control not only the code running on the server, but the server
@@ -30,8 +31,6 @@ My goal is to use a $5 a month Droplet hosted by Digital Ocean to host my
 static website (the "production" environment), while using a local virtual
 server to test my Ansible configuration and application code (the "development"
 environment).
-
-<!--more-->
 
 This solution involves three repositories I'm hosting from Github.
 
@@ -49,8 +48,6 @@ This solution involves three repositories I'm hosting from Github.
 
 I've setup a new repository, [redconfetti/server-config], to store the
 configuration for the server.
-
-[redconfetti/server-config]: https://github.com/redconfetti/server-config
 
 ### EditorConfig
 
@@ -172,8 +169,10 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-I uncomment the following line so that I can go to http://localhost:8080 later
+I uncomment the following line so that I can go to [http://localhost:8080] later
 to test the Nginx server.
+
+[http://localhost:8080]: http://localhost:8080
 
 ```ruby
 config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
@@ -485,21 +484,25 @@ needed:
 [JAMStack]: https://jamstack.org/
 [Render]: https://render.com/
 
-[redconfetti/config]: https://github.com/redconfetti/config
-[5 ways to harden a new system with Ansible]: https://www.redhat.com/sysadmin/harden-new-system-ansible
-[marshmallowcreme/ei]: https://github.com/marshmallowcreme/ei
-[Github - Roots/Trellis]: https://github.com/roots/trellis
-[Ansible Docs - Playbook Blocks]: https://docs.ansible.com/ansible/latest/user_guide/playbooks_blocks.html
-[How to harden SSH configs with Ansible on Linux]: https://ulayer.net/blog/2019/08/02/how-to-harden-ssh-configs-with-ansible-on-linux/
-[Ansible Galaxy - ssh-hardening]: https://galaxy.ansible.com/dev-sec/ssh-hardening
-[Encrypting Vault with Ansible]: https://docs.ansible.com/ansible/latest/user_guide/vault.html#vault
-
 ## Reference
 
-- [Tips and Tricks]
-- [Roles]
-- [User Guide - Writing Tasks Plays and Playbooks]
+- [Ansible Docs - Writing Tasks Plays and Playbooks][]
+- [Ansible Docs - Playbook Blocks][]
+- [Ansible Docs - Tips and Tricks][]
+- [Ansible Docs - Encrypting Vault][]
+- [Ansible][roles]
+- [Ansible Galaxy - ssh-hardening][]
+- [How to harden SSH configs with Ansible on Linux][]
+- [5 ways to harden a new system with Ansible][]
+- [redconfetti/config]
+- [roots/trellis]
 
-[Tips and Tricks]: https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html#playbooks-tips-and-tricks
-[Roles]: https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html
-[User Guide - Writing Tasks Plays and Playbooks]: https://docs.ansible.com/ansible/latest/user_guide/index.html#writing-tasks-plays-and-playbooks
+[Ansible Docs - Writing Tasks Plays and Playbooks]: https://docs.ansible.com/ansible/latest/user_guide/index.html#writing-tasks-plays-and-playbooks
+[Ansible Docs - Playbook Blocks]: https://docs.ansible.com/ansible/latest/user_guide/playbooks_blocks.html
+[Ansible Docs - Tips and Tricks]: https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html#playbooks-tips-and-tricks
+[Ansible Galaxy - ssh-hardening]: https://galaxy.ansible.com/dev-sec/ssh-hardening
+[Ansible Docs - Encrypting Vault]: https://docs.ansible.com/ansible/latest/user_guide/vault.html#vault
+[How to harden SSH configs with Ansible on Linux]: https://ulayer.net/blog/2019/08/02/how-to-harden-ssh-configs-with-ansible-on-linux/
+[5 ways to harden a new system with Ansible]: https://www.redhat.com/sysadmin/harden-new-system-ansible
+[redconfetti/config]: https://github.com/redconfetti/config
+[roots/trellis]: https://github.com/roots/trellis

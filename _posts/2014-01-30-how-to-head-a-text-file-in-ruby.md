@@ -9,6 +9,7 @@ tags:
 - ruby
 - head
 ---
+
 I wanted to just view the first 20 lines of a 10,000 line CSV file returned by
 an API in a Ruby on Rails project I'm working on. Here is the chain of Ruby
 commands I came up with to effectively 'head' the CSV document returned.

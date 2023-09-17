@@ -13,8 +13,8 @@ I'm trying to configure my application so that it stores files in S3 by default
 when my application is running in the Production Rails environment, with local
 file storage and a customized file path for development and test environments.
 Here is my configuration.
-
 <!--more-->
+
 ## Paperclip Defaults
 
 You can view the default options by opening the Rails console and inspecting

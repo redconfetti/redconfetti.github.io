@@ -21,6 +21,7 @@ We're currently only using Cloud66 with our staging server.
 The following configuration in a `Procfile` in the root
 of our repository with the following configuration worked
 fine.
+<!--more-->
 
 {% raw %}
 
@@ -29,8 +30,6 @@ worker: bundle exec sidekiq -e $RAILS_ENV -C config/sidekiq.yml -i {{UNIQUE_INT}
 ```
 
 {% endraw %}
-
-<!--more-->
 
 This was derived from the instructions in the
 [How to run Background processes][0] guide.
