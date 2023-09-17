@@ -12,7 +12,7 @@ tags:
 ---
 
 For anyone who needs a free web based Bug Tracking system programmed using
-PHP/MySQL, check out Flyspray.
+PHP/MySQL, check out [Flyspray][1].
 
 I searched very far to find a web based program to track the bugs in the
 website I work on in ASP/MS-SQL. I know PHP/MySQL so I was able to setup this
@@ -20,3 +20,5 @@ bug tracker, and fortunately I can modify it to do things I need it to do.
 
 Its features appear to be good enough for tracking bugs in actual software,
 and it can be setup to suit those debugging web based software.
+
+[1]: https://github.com/Flyspray/flyspray/
