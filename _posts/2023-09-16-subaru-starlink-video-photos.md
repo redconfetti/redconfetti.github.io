@@ -30,6 +30,8 @@ extract that and tell you what to do.
 
 [1]: https://cdn.subarunet.com/stis/doc/ownerManual/MSA5M1711A_STIS_Index2.pdf
 
+<!--more-->
+
 ## General
 
 * The USB thumb drive or SD card should be formatted as FAT 16 or FAT 32

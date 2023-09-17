@@ -21,6 +21,8 @@ factory libraries such as [FactoryBot] or [Fabrication], authentication
 solutions such as [Devise] or [AuthLogic], and authorization solutions such as
 [CanCan] or [Pundit].
 
+<!--more-->
+
 It can feel heavy having to reconfigure a freshly generated Rails application
 to use these different components, because you spend most of your time
 configuring the new application rather than jumping into actually building

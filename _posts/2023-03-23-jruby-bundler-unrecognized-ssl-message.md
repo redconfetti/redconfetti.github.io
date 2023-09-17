@@ -39,6 +39,8 @@ running:
 bundle install --local --retry 3 || { echo "WARNING: bundle install --local failed, running bundle install"; bundle install --retry 3 || { echo "ERROR: bundle install failed"; exit 1; } }
 ```
 
+<!--more-->
+
 When we would run our script from the command line, it would work just fine.
 When we would try to run it from our Bamboo application (used for Continuous
 Integration), it would fail with the above errors.

@@ -14,6 +14,8 @@ tags:
 Here's a modified version of instructions provided by [Yosei Ito]. I used
 `apt remove` instead of `apt uninstall`.
 
+<!--more-->
+
 ```ruby
 sudo apt remove ruby-build
 $ mkdir -p "$(rbenv root)"/plugins

@@ -31,6 +31,8 @@ static website (the "production" environment), while using a local virtual
 server to test my Ansible configuration and application code (the "development"
 environment).
 
+<!--more-->
+
 This solution involves three repositories I'm hosting from Github.
 
 1. [redconfetti/server-config] - Ansible repository used to configure the server

@@ -32,6 +32,8 @@ load from a different directory, you will need to move your `_posts` and
 
 Jekyll builds your site through a process that involves the following steps:
 
+<!--more-->
+
 * Read - Reads data from directories/files into the [Jekyll::Site][3] object
 * Generate - Runs each of the Generators defined by plugins you've installed or
   coded yourself

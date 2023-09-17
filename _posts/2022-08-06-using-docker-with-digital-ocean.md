@@ -31,6 +31,8 @@ just fine to host my own public intranet site.
 
 So here's how you can setup your own personal web hosting for $4 - $12 a month.
 
+<!--more-->
+
 1. [Eleventy](https://www.11ty.dev/)
 1. Docker Desktop
 1. [Gitlab Free Tier account]
