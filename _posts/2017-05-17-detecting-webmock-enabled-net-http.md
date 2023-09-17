@@ -24,7 +24,6 @@ configuration flag to turn the stack trace logging on or off.
 The ideal solution was to simply not log the stack trace when WebMock is being
 used in the 'test' environment.
 
-
 We're using HTTParty, which uses Net::HTTP. I did some investigating and
 discovered that when WebMock is enabled (via `WebMock.enable!`), that it
 replaces the HTTP module with it's own. There isn't anything clear to indicate

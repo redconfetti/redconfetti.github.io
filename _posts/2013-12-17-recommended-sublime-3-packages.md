@@ -12,6 +12,7 @@ tags:
 If you haven't already switched to Vim, and you're hacking everything out from
 the command line, you might want to check out [Sublime Text 3]. Sublime Text is
 supported for Mac, Ubuntu, and Windows.
+<!--more-->
 
 Once you've obtained a copy of Sublime Text 3, make sure you install
 [Package Control by wbond]. Using the SHIFT + COMMAND + P keystroke provides
@@ -20,8 +21,6 @@ highly recommended for use with Sublime Text 3.
 
 [Package Control by wbond]: https://sublime.wbond.net/installation
 [Sublime Text 3]: http://www.sublimetext.com/3
-
-<!--more-->
 
 * [DocBlockr](https://sublime.wbond.net/packages/DocBlockr)
 * [EditorConfig](https://sublime.wbond.net/packages/EditorConfig)
