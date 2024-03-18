@@ -92,6 +92,9 @@ designated for Modulation Wheel, Breath Controller, Foot Controller, Volume,
 Balance, Pan, etc. have equivalent "LSB" messages designated to increase the
 resolution of their values if needed.
 
+You can see them all defined in [MIDI 1.0 Control Change Messages (Data Bytes)][]
+
 [Cubase]: https://www.steinberg.net/cubase/
 [Changing patches over MIDI using Bank Select Controller]: http://midi.teragonaudio.com/tutr/bank.htm
 [Bit Numbering]: https://en.wikipedia.org/wiki/Bit_numbering#Most_significant_bit
+[MIDI 1.0 Control Change Messages (Data Bytes)]: https://midi.org/midi-1-0-control-change-messages
