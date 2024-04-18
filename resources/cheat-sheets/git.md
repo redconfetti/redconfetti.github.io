@@ -348,6 +348,9 @@ git ls-files --stage
 # create patch based on single commit
 git format-patch -1 73699d42 --stdout > mycommit.patch
 
+# create patch based last 5 commits
+git format-patch cc1dde0dd^..6de6d4b06 --stdout > mycommit.patch
+
 # create patch file (auto generated name) for current feature branch,
 # using remote master as base
 git format-patch origin/master
