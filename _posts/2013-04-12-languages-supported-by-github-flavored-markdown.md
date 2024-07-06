@@ -105,5 +105,5 @@ full list in [Linguist - languages.yml][6]).
 [2]: https://github.com/lsegal/yard/blob/master/.yardopts
 [3]: http://daringfireball.net/projects/markdown/syntax
 [4]: https://help.github.com/articles/github-flavored-markdown
-[5]: http://softwaremaniacs.org/media/soft/highlight/test.html
+[5]: https://highlightjs.readthedocs.io/en/latest/supported-languages.html
 [6]: https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
