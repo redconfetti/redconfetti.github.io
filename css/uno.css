@@ -186,7 +186,7 @@ html {
 
 body {
 	font-family: "Open Sans", sans-serif;
-	font-size: 1em;
+	font-size: 0.85em;
 	color: #666666; }
 
 ::selection {
@@ -238,11 +238,13 @@ h4 {
 	font-size: 1.2em; }
 
 h5 {
-	font-size: 1.1em; }
+	font-size: 1.1em;
+}
 
 p {
-	margin-bottom: 1.3em;
-	line-height: 1.7em; }
+  margin-bottom: 1.3em;
+	line-height: 1.7em;
+}
 
 strong {
 	font-weight: bold; }
@@ -259,7 +261,7 @@ blockquote {
 	font-family: "Roboto", serif;
 	font-weight: lighter;
 	font-style: italic;
-	font-size: 1.3em;
+	font-size: 1.0em;
 	text-align: center; }
 	blockquote p:last-child {
 		margin-bottom: 0; }
@@ -441,7 +443,7 @@ hr {
 	border-top: 1px solid #dddddd; }
 
 .error-code {
-	font-size: 6em; }
+	font-size: 1.3em; }
 
 .panel {
 	display: table;
