@@ -12,28 +12,27 @@ Back to [Resources](/resources/)
   iOS, Git, and Databases), IT Ops, Data Professional, and Information and Cyber
   Security
 * [Egghead]
-* [Thinkster]
 
 [Pluralsight]: https://www.pluralsight.com/
 [Egghead]: https://egghead.io
-[Thinkster]: https://thinkster.io/
+
 ## Sandboxes
 
 * [JsFiddle] - Free solution with collaboration features
-* [JsBin] - Free solution, with upgraded features available
-for $18.90 monthly / $145.50 yearly
+* [JsBin] - Free solution, with upgraded features available for $18.90
+  monthly / $145.50 yearly
 * [Plunker] - Provides options for chat and collaboration
-with other remote developers
+  with other remote developers
 * [CodePen]
-* [Repl.it] - Create and share code examples, with
-execution and output, for many languages (Javascript, Ruby, Python, PHP, Go,
-etc.)
+* [Repl.it] - Create and share code examples, with execution and output, for
+  many languages (Javascript, Ruby, Python, PHP, Go, etc.). Build applications
+  with AI Agents.
 
 [JsFiddle]: https://jsfiddle.net/
 [Plunker]: http://plnkr.co/
-[CodePen]: http://codepen.io/about/
+[CodePen]: https://codepen.io/
 [JsBin]: http://jsbin.com/
-[Repl.it]: https://repl.it/languages
+[Repl.it]: https://replit.com/templates
 
 ## JavaScript Libraries
 
@@ -47,50 +46,42 @@ etc.)
 ## Organizational Tools
 
 * [Pinboard] - Social bookmarking for $11 yearly, alternative to Delicious.
-$25 yearly and they will store copies of the pages you bookmark (just in case
-they might go away)
-* [Dragdis] - Look a bookmarking platform, but visually oriented. Appears
-designed for visual inspiration, like Pinterest for the web.
-* [Phabricator] - Coding development platform similar to Github, created and
-used by Facebook
+  $25 yearly and they will store copies of the pages you bookmark (just in case
+  they might go away)
+* [BookmarkOS] - A visually oriented bookmarking platform. Designed for visual
+  inspiration, like Pinterest for the web.
 
 [Pinboard]: https://pinboard.in/tour/
-[Dragdis]: https://dragdis.com/
-[Phabricator]: http://phabricator.org/
+[BookmarkOS]: https://bookmarkos.com/
 
 ## Collaboration Tools
 
-* [Codeassium] - Collaborative code editor, video conferencing, code execution
-* [Cloud9] - Cloud / browser based IDE. Includes built in terminal, image
-editor, and language tools.
-* [Nitrous] - A development platform with a collaborative web IDE.
+* [Amazon Cloud9][] - Cloud / browser based IDE. Includes built in terminal,
+  image editor, and language tools.
 * [Koding] - A social development platform with real-time collaborative
-features. Requires AWS EC2 instance for back-end.
+  features. Requires AWS EC2 instance for back-end.
 * [CodeAnywhere] - Cross platform Web IDE
-* [Kobra] - Realtime collaborative coding, with built in
-video & voice chat. Not meant to be an IDE.
 
-[Codeassium]: https://codassium.com/
-[Cloud9]: https://c9.io/
-[Nitrous]: http://nitrous.io/
-[Koding]: https://koding.com/
+[Amazon Cloud9]: https://aws.amazon.com/cloud9/
+[Koding]: https://www.koding.com/
 [CodeAnywhere]: https://codeanywhere.com/
-[Kobra]: https://kobra.io/
 
 ## Transpilers
 
 * [EMScripten] - Compiles C and C++ into highly-optimizable JavaScript in asm.
-js format. This lets you run C and C++ on the web at near-native speed,
-without plugins.
+  js format. This lets you run C and C++ on the web at near-native speed,
+  without plugins.
 
-[EMScripten]: http://kripken.github.io/emscripten-site/
+[EMScripten]: https://emscripten.org/
+
 ## Javascript
 
-* [React JS]
+* [React][]
 * [Brief history of JavaScript Modules]
 
-[React JS]: http://facebook.github.io/react/index.html
+[React]: https://react.dev/
 [Brief history of JavaScript Modules]: https://medium.com/@sungyeol.choi/javascript-module-module-loader-module-bundler-es6-module-confused-yet-6343510e7bde
+
 ## Container Technologies
 
 * [Docker]
